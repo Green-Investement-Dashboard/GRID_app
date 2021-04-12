@@ -1,0 +1,86 @@
+
+
+    <div class="sidebar">
+      <div class="sidebar-wrapper">
+        <div class="logo">
+          <a target="_blank" rel="sponsored noopener noreferrer" 
+             href="https://grid-tech.fr" class="simple-text logo-mini">
+            <img src="/static/assets/img/Logo_N&B.svg" alt="Profile Photo">
+          </a>
+          <a target="_blank" rel="sponsored noopener noreferrer" 
+             href="https://grid-tech.fr" class="simple-text logo-normal">
+            Nom du projet
+          </a>
+        </div>
+
+        <ul class="nav">
+        {% if current_user.is_authenticated %}
+
+          <li class="{% if 'index' in segment %} active {% endif %}">
+            <a href="/in">
+              <i class="tim-icons icon-chart-pie-36"></i>
+              <p>Dashboard</p>
+            </a>
+          </li>
+		  <li class="{% if 'maps' in segment %} active {% endif %}">
+            <a href="/finance.html">
+              <i class="tim-icons icon-money-coins"></i>
+              <p>Finance</p>
+            </a>
+          </li>
+		  <li class="{% if 'maps' in segment %} active {% endif %}">
+            <a href="/env">
+              <i class="tim-icons icon-world2"></i>
+              <p>Environement</p>
+            </a>
+          </li>
+		  <li class="{% if 'maps' in segment %} active {% endif %}">
+            <a href="/soc">
+              <i class="icon icon-heart-2"></i>
+              <p>Social</p>
+            </a>
+          </li>
+		  <li class="{% if 'maps' in segment %} active {% endif %}">
+            <a href="/gouvernance.html">
+              <i class="icon icon-multiple-11"></i>
+              <p>Gouvernance</p>
+            </a>
+          </li>
+          <li class="{% if 'maps' in segment %} active {% endif %}">
+            <a href="/finance.html">
+              <i class="tim-icons icon-money-coins"></i>
+              <p>Finance</p>
+            </a>
+          </li>
+          <li class="{% if 'notifications' in segment %} active {% endif %}">
+            <a href="/ui-notifications.html">
+              <i class="tim-icons icon-bell-55"></i>
+              <p>Notifications</p>
+            </a>
+          </li>
+          <li class="{% if 'page-user' in segment %} active {% endif %}">
+            <a href="/page-user.html">
+              <i class="tim-icons icon-single-02"></i>
+              <p>User Profile</p>
+            </a>
+          </li>
+          <li>
+            <a href="{{ url_for('base_blueprint.logout') }}" >
+              <i class="tim-icons icon-button-power"></i>
+              <p>Logout</p>
+            </a>
+          </li>
+          {% else %}
+          <li class="active">
+            <a target="_blank" 
+               href="https://grid-tech.fr">
+              <i class="tim-icons icon-link-72"></i>
+              <p>GRID Website</p>
+            </a>
+          </li>   
+          {% endif %}
+                    
+        </ul>
+        
+      </div>
+    </div>
