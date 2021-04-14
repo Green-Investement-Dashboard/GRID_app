@@ -1,6 +1,8 @@
+<!-- TemplateBeginEditable name="head" -->
+<!-- TemplateEndEditable -->
 {% extends "layouts/base.html" %}
 
-{% block title %} Aspect social {% endblock %} 
+{% block title %} Page Blank {% endblock %} 
 
 <!-- Specific Page CSS goes HERE  -->
 {% block stylesheets %}{% endblock stylesheets %}
@@ -11,20 +13,15 @@
         <div class="col-md-12">
             <div class="card card-profile">
                 <div class="card-body">
-                    <h3 class="card-title">Social</h3>
-                    <p> Hello {{ name }}!</p>
-                  <div class="mapi" id='mapi'>
-                    
-                  </div>
+                    <h6 class="card-category text-gray">Page Blank</h6>
+                    <h4 class="card-title">
+                        Add your content 
+                    </h4>
                     <a href="/" class="btn btn-primary btn-round">Home</a>
                 </div>
             </div>
         </div>
     </div>
-<script>
-  var graphs = {{map | safe}};
-  Plotly.plot('mapi',map,{});
-</script>
     
 {% endblock content %}
 

@@ -1,0 +1,63 @@
+{% extends "layouts/base.html" %}
+
+{% block title %} Financial overview {% endblock %} 
+
+<!-- Specific Page CSS goes HERE  -->
+{% block stylesheets %}{% endblock stylesheets %}
+
+{% block content %}
+
+    <div class="row">
+    <div class="col-md-8">
+      <div class="card">
+
+        {% if end %}
+        <div class="card-header">
+        <p> {{ message }}</p></div>
+        {% else%}
+            <form role="form" method="post" action="">
+        
+          {{ form.hidden_tag() }} 
+
+          <div class="card-header">
+            <h2 class="title">Questionnaire d'entrée</h2>
+          </div>
+          <p> Ce questionnaire a pour but de recueillir les données nécessaire à audit. Merci de le remplir avec attention</p>
+          <p> En cas de souci, contactez-nous au 04..... </p>
+          <div class="card-body">
+
+              <div class="row">
+
+                <div class="col-md-3 px-md-1">
+                  <div class="form-group">
+                    <label>Nom de l'exploitation</label>
+                    {{ form.name_exploit(class="form-control") }}
+                  </div>
+                </div>
+
+              </div>
+              <div class="row">
+
+                <div class="col-md-3 px-md-1">
+                  <div class="form-group">
+                    <label>Adresse</label>
+                    {{ form.address(class="form-control") }}
+                  </div>
+                </div>
+            <div class="card-footer">
+            
+            &nbsp; &nbsp;
+                <button type="submit" name="register" class="btn btn-fill btn-primary">{{ form.submit(class="form-control") }}</button>
+            </div>
+
+        </form>
+        {% endif %}
+
+      </div>
+    </div>
+  </div>
+    
+{% endblock content %}
+
+<!-- Specific Page JS goes HERE  -->
+{% block javascripts %}{% endblock javascripts %}

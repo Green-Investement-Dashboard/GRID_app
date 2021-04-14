@@ -5,13 +5,20 @@ Copyright (c) 2019 - present AppSeed.us
 
 from flask_migrate import Migrate
 from flask import jsonify, render_template, redirect, request, url_for, render_template_string
+from flask_wtf import FlaskForm
+from wtforms import StringField, PasswordField, BooleanField, SubmitField
+from wtforms.validators import DataRequired
+from app.base.forms import Questionaires
+from flask import render_template, flash, redirect
+
 from os import environ
 from sys import exit
 from decouple import config
 import logging
 
 from config import config_dict
-from app import create_app, db, new_app
+from app import create_app, db
+import app.base.index_renderer as index_renderer
 #%%
 import plotly
 import plotly.graph_objs as go
@@ -20,7 +27,7 @@ import pandas
 import numpy
 import json
 
-import Viti.dataregion as VAS
+#import Viti.dataregion as VAS
 #%%
 # WARNING: Don't run with debug turned on in production!
 DEBUG = config('DEBUG', default=True, cast=bool)
@@ -61,14 +68,33 @@ def show_map():
 	mapping = plot_map()
 	return render_template('social.html', map=mapping, name='map')
 
-@app.route('/in')
+@app.route('/index')
 def plots():
-	co2 = plot_co2()
-	pct = plot_pct()
-	alerte = plot_alerte()
-	ebitda = plot_ebitda()
+	co2, pct, alerte, ebitda = index_renderer.plots()
 
 	return render_template('index.html', co2=co2, pct=pct, alertes=alerte, ebitda=ebitda)
+
+@app.route('/questionnaire', methods=['GET', 'POST'])
+def set_up_q():
+	form = Questionaires(request.form)
+
+	if form.validate_on_submit():
+		data = request.form
+		print(data)
+		save_data(data)
+		return render_template('questionaire.html',  end=True, message= 'Merci {}, données enregistrées'.format(form.name_exploit.data))
+
+	return render_template('questionaire.html',  end=False, form=form)
+
+def save_data (data):
+	df = pandas.read_json('data_agri.json', orient='table')
+	name_exploit = data['name_exploit']
+
+	for keys in data.keys():
+		if keys not in ['csrf_token', 'name_exploit']:
+			df.loc[name_exploit, keys] = data[keys]
+
+	df.to_json('data_agri.json', orient='table', indent=4)
 
 def plot_co2():
     data = pandas.read_csv('https://raw.githubusercontent.com/Green-Investement-Dashboard/sample_data/main/sample_data/co2_sample.csv')

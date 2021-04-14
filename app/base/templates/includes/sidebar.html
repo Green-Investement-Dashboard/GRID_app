@@ -17,7 +17,7 @@
         {% if current_user.is_authenticated %}
 
           <li class="{% if 'index' in segment %} active {% endif %}">
-            <a href="/in">
+            <a href="/">
               <i class="tim-icons icon-chart-pie-36"></i>
               <p>Dashboard</p>
             </a>
@@ -53,9 +53,9 @@
             </a>
           </li>
           <li class="{% if 'notifications' in segment %} active {% endif %}">
-            <a href="/ui-notifications.html">
+            <a href="/questionnaire">
               <i class="tim-icons icon-bell-55"></i>
-              <p>Notifications</p>
+              <p>Questionnaire</p>
             </a>
           </li>
           <li class="{% if 'page-user' in segment %} active {% endif %}">

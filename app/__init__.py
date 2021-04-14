@@ -39,11 +39,3 @@ def create_app(config):
     register_blueprints(app)
     configure_database(app)
     return app
-
-def new_app (config):
-    app = Flask(__name__, static_folder='home/templates')
-    app.config.from_object(config)
-    register_extensions(app)
-    register_blueprints(app)
-    configure_database(app)
-    return app

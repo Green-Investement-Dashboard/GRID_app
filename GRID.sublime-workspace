@@ -1,0 +1,1139 @@
+{
+	"auto_complete":
+	{
+		"selected_items":
+		[
+			[
+				"max",
+				"max-height\tproperty"
+			],
+			[
+				"render",
+				"render_template_string\tfunction ⟠"
+			],
+			[
+				"ren",
+				"render_template\t⟠"
+			],
+			[
+				"list",
+				"list_objects"
+			],
+			[
+				"data",
+				"data_df"
+			],
+			[
+				"df_fra",
+				"df_fra_backup"
+			],
+			[
+				"df",
+				"df_fra_nat"
+			],
+			[
+				"back",
+				"backup_df"
+			],
+			[
+				"pre",
+				"preview"
+			],
+			[
+				"wor",
+				"world_df\t⟠"
+			],
+			[
+				"type",
+				"type_graph"
+			],
+			[
+				"typ",
+				"type_style"
+			],
+			[
+				"re",
+				"result_reg"
+			],
+			[
+				"list_",
+				"list_result_reg"
+			],
+			[
+				"styl",
+				"style_cycle"
+			],
+			[
+				"loca",
+				"local_path_prev\t⟠"
+			],
+			[
+				"local",
+				"local_path_prev"
+			],
+			[
+				"get_",
+				"get_parent_dir(…)\tfunction ⟠"
+			],
+			[
+				"ge",
+				"gen_fct"
+			],
+			[
+				"to",
+				"to_datetime"
+			],
+			[
+				"Data",
+				"DataFrame"
+			],
+			[
+				"df_",
+				"df_cases"
+			],
+			[
+				"cons",
+				"console\t⟠"
+			],
+			[
+				"this",
+				"this.ratings\t⟠"
+			],
+			[
+				"new",
+				"new_rating >\t⟠"
+			],
+			[
+				"l",
+				"length-1\t⟠"
+			],
+			[
+				"passa",
+				"passagers\t⟠"
+			],
+			[
+				"lis",
+				"list_passagers\t⟠"
+			],
+			[
+				"co",
+				"console.log\t⟠"
+			],
+			[
+				"cos",
+				"console.log\t⟠"
+			],
+			[
+				"consol",
+				"console.log\t⟠"
+			],
+			[
+				"jour",
+				"journalier\t⟠"
+			],
+			[
+				"padd",
+				"padding-right\tproperty"
+			],
+			[
+				"pad",
+				"padding-left\tproperty"
+			],
+			[
+				"text",
+				"text-align\tproperty"
+			],
+			[
+				"tex",
+				"text-align\tproperty"
+			],
+			[
+				"h",
+				"html\thtml"
+			],
+			[
+				"ac",
+				"accuracy_max"
+			],
+			[
+				"du",
+				"duplicated_data"
+			],
+			[
+				"del",
+				"delta_rH_0"
+			],
+			[
+				"liste_li",
+				"liste_liste_V2\tparam"
+			],
+			[
+				"cla",
+				"classement\tstatement"
+			],
+			[
+				"iter",
+				"iteration\tstatement"
+			],
+			[
+				"liste_E",
+				"liste_E1\tstatement"
+			],
+			[
+				"file",
+				"file_export\tstatement"
+			],
+			[
+				"w",
+				"write\tfunction"
+			],
+			[
+				"liste_Te2",
+				"liste_Te2_eq\tparam"
+			],
+			[
+				"liste_lis",
+				"liste_liste_volumes\tstatement"
+			],
+			[
+				"liste_liste",
+				"liste_liste_V2\tstatement"
+			],
+			[
+				"line",
+				"linspace\tfunction"
+			],
+			[
+				"liste",
+				"liste_XA\tstatement"
+			],
+			[
+				"XA_m",
+				"XA_min\tparam"
+			],
+			[
+				"XA",
+				"XA_pas\tstatement"
+			],
+			[
+				"XA_",
+				"XA_min"
+			],
+			[
+				"op",
+				"optimize\tmodule"
+			],
+			[
+				"liste_Ti",
+				"liste_Ti2"
+			],
+			[
+				"liste_XA",
+				"liste_XA_final"
+			],
+			[
+				"a",
+				"append"
+			],
+			[
+				"Rang",
+				"rang_min"
+			],
+			[
+				"ran",
+				"rang_min"
+			],
+			[
+				"liste_1",
+				"liste_1_compo"
+			],
+			[
+				"liste_1_min",
+				"liste_1_min"
+			],
+			[
+				"fil",
+				"file_export"
+			],
+			[
+				"liste_liste_XA",
+				"liste_liste_XA1"
+			],
+			[
+				"liste_liste_T",
+				"liste_liste_T1"
+			],
+			[
+				"li",
+				"liste_T1_min"
+			],
+			[
+				"lits",
+				"liste_Vi"
+			],
+			[
+				"K",
+				"K2"
+			],
+			[
+				"liste_K",
+				"liste_K2"
+			],
+			[
+				"cl",
+				"close"
+			],
+			[
+				"str",
+				"str"
+			],
+			[
+				"liste_T_",
+				"liste_T_final"
+			],
+			[
+				"mar",
+				"margin-top"
+			],
+			[
+				"borde",
+				"border-radius"
+			],
+			[
+				"si",
+				"font-size"
+			],
+			[
+				"marg",
+				"margin-top"
+			],
+			[
+				"sl",
+				"slide2"
+			],
+			[
+				"bac",
+				"background-color"
+			],
+			[
+				"text-",
+				"text-transform"
+			],
+			[
+				"fo",
+				"footer"
+			],
+			[
+				"slid",
+				"slide8"
+			],
+			[
+				"an",
+				"anim_titre"
+			],
+			[
+				"margo",
+				"margin-top"
+			],
+			[
+				"margin",
+				"margin-top"
+			],
+			[
+				"font",
+				"font-size"
+			],
+			[
+				"pol",
+				"police_logo"
+			],
+			[
+				"is",
+				"isset"
+			],
+			[
+				"in",
+				"input\tTag"
+			],
+			[
+				"col",
+				"color"
+			],
+			[
+				"inn",
+				"inline-block"
+			],
+			[
+				"wi",
+				"width"
+			],
+			[
+				"font-s",
+				"font-style"
+			]
+		]
+	},
+	"buffers":
+	[
+		{
+			"file": "README.md",
+			"settings":
+			{
+				"buffer_size": 11675,
+				"line_ending": "Windows"
+			}
+		},
+		{
+			"file": "run.py",
+			"settings":
+			{
+				"buffer_size": 10173,
+				"encoding": "UTF-8",
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"file": "config.py",
+			"settings":
+			{
+				"buffer_size": 1254,
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"file": "app/__init__.py",
+			"settings":
+			{
+				"buffer_size": 1275,
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"file": "app/base/forms.py",
+			"settings":
+			{
+				"buffer_size": 790,
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"file": "app/base/models.py",
+			"settings":
+			{
+				"buffer_size": 1444,
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"file": "app/base/routes.py",
+			"settings":
+			{
+				"buffer_size": 3853,
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"file": "app/base/__init__.py",
+			"settings":
+			{
+				"buffer_size": 246,
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"file": "app/base/util.py",
+			"settings":
+			{
+				"buffer_size": 1075,
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"file": "app/home/routes.py",
+			"settings":
+			{
+				"buffer_size": 1184,
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"file": "app/home/__init__.py",
+			"settings":
+			{
+				"buffer_size": 244,
+				"line_ending": "Unix"
+			}
+		}
+	],
+	"build_system": "",
+	"build_system_choices":
+	[
+		[
+			[
+				[
+					"Packages/Python/Python.sublime-build",
+					""
+				],
+				[
+					"Packages/Python/Python.sublime-build",
+					"Syntax Check"
+				]
+			],
+			[
+				"Packages/Python/Python.sublime-build",
+				""
+			]
+		]
+	],
+	"build_varint": "",
+	"command_palette":
+	{
+		"height": 0.0,
+		"last_filter": "",
+		"selected_items":
+		[
+			[
+				"",
+				"About"
+			],
+			[
+				"Install Package Control",
+				"Package Control: Install Package"
+			],
+			[
+				"Package Control: In",
+				"Package Control: Install Package"
+			],
+			[
+				"Snippet: ",
+				"Snippet: __magic__"
+			],
+			[
+				"Package Control: ",
+				"Package Control: Disable Package"
+			],
+			[
+				"packa",
+				"Package Control: List Packages"
+			],
+			[
+				"pa",
+				"Package Control: List Packages"
+			],
+			[
+				"package",
+				"Package Control: List Packages"
+			],
+			[
+				"instal",
+				"Package Control: Install Package"
+			]
+		],
+		"width": 0.0
+	},
+	"console":
+	{
+		"height": 136.0,
+		"history":
+		[
+			"import socket; socket.socket(socket.AF_INET, socket.SOCK_STREAM).connect((\"localhost\", 59763))",
+			"import urllib.request,os,hashlib; h = '6f4c264a24d933ce70df5dedcf1dcaee' + 'ebe013ee18cced0ef93d5f746d80ef60'; pf = 'Package Control.sublime-package'; ipp = sublime.installed_packages_path(); urllib.request.install_opener( urllib.request.build_opener( urllib.request.ProxyHandler()) ); by = urllib.request.urlopen( 'http://packagecontrol.io/' + pf.replace(' ', '%20')).read(); dh = hashlib.sha256(by).hexdigest(); print('Error validating download (got %s instead of %s), please try manual install' % (dh, h)) if dh != h else open(os.path.join( ipp, pf), 'wb' ).write(by)"
+		]
+	},
+	"distraction_free":
+	{
+		"menu_visible": true,
+		"show_minimap": false,
+		"show_open_files": false,
+		"show_tabs": false,
+		"side_bar_visible": false,
+		"status_bar_visible": false
+	},
+	"file_history":
+	[
+		"/Users/Clement/Documents/GitHub/GRID_app/run.py",
+		"/Users/Clement/Documents/GitHub/frontend/environment.yml",
+		"/Users/Clement/Documents/Projets spéciaux/Analyse pharma/nme_1985-2019.csv",
+		"/Users/Clement/Downloads/meetingAttendanceReport(General).csv",
+		"/Users/Clement/Documents/GitHub/frontend/app/base/static/environement.html",
+		"/Users/Clement/Documents/GitHub/frontend/app/base/templates/includes/navigation-rtl.html",
+		"/Users/Clement/Documents/GitHub/COVID19/docs/source/how_to.install.rst",
+		"/Users/Clement/Documents/GitHub/COVID19/reports/France/Indic/Maps/Map_France_Indic.html",
+		"/Users/Clement/Documents/GitHub/COVID19/data/list_processed_data.json",
+		"/Users/Clement/Documents/GitHub/COVID19/data/list_files.json",
+		"/Users/Clement/Documents/GitHub/COVID19/src/visualization/E_GraphAllCountries.py",
+		"/Users/Clement/Documents/GitHub/COVID19/src/visualization/BB_FraIndic.py",
+		"/Users/Clement/Documents/GitHub/COVID19/docs/source/index.rst",
+		"/Users/Clement/Documents/GitHub/COVID19/docs/source/indices.rst",
+		"/Users/Clement/Documents/GitHub/COVID19/docs/source/readme.rst",
+		"/Users/Clement/Documents/GitHub/COVID19/update.bash",
+		"/Users/Clement/Documents/GitHub/COVID19/src/data/processing_data.py",
+		"/Users/Clement/Documents/GitHub/COVID19/docs/conf.py",
+		"/Users/Clement/Documents/GitHub/COVID19/docs/index.rst",
+		"/Users/Clement/Documents/GitHub/COVID19/docs/quickstart.rst",
+		"/Users/Clement/Documents/GitHub/COVID19/docs/installation.rst",
+		"/Users/Clement/Documents/GitHub/COVID19/data/processed/covid_data/fra/fra_reg.json",
+		"/Users/Clement/GRID/GRID - GRID Team - Documents/GRID Team/Répertoire GRID.md",
+		"/Users/Clement/Documents/GitHub/sample_data/ebitda_sample.csv",
+		"/Users/Clement/Documents/GitHub/sample_data/alerte_sample.csv",
+		"/Users/Clement/Documents/GitHub/sample_data/pctge_sample.csv",
+		"/Users/Clement/Documents/GitHub/sample_data/co2_sample.csv",
+		"/Users/Clement/Documents/GitHub/frontend/config.py",
+		"/Users/Clement/Documents/GitHub/frontend/run.py",
+		"/Users/Clement/Documents/GitHub/COVID19/app.yaml",
+		"/Users/Clement/Documents/GitHub/COVID19/.gcloudignore",
+		"/Users/Clement/Documents/Covid-19 Data/05 - Global/Graph all countries.py",
+		"/Users/Clement/Documents/GitHub/COVID19/data/processed/covid_data/world/world_jh.json",
+		"/Users/Clement/GRID/GRID - GRID Team - GRID Team/Admin Microsoft/bulkinvite_coach.csv",
+		"/Users/Clement/Documents/GitHub/COVID19/src/gen_fct/df_handeling.py",
+		"/Users/Clement/Documents/GitHub/COVID19/data/list_files_date.json",
+		"/Users/Clement/Downloads/extra.csv",
+		"/Users/Clement/Downloads/chiffres-cles.json",
+		"/Users/Clement/Documents/GitHub/COVID19/src/gen_fct/file_fct.py",
+		"/Users/Clement/Downloads/test_app",
+		"/Users/Clement/Documents/GitHub/COVID19/data/raw/covid_data/fra/backupcases.csv",
+		"/Users/Clement/Documents/GitHub/COVID19/src/visualization/03.3-FraVax.py",
+		"/Users/Clement/Documents/GitHub/COVID19/src/visualization/03.2-FraIndic.py",
+		"/Users/Clement/Documents/GitHub/COVID19/src/visualization/03.1-GenFra.py",
+		"/Users/Clement/Documents/GitHub/COVID19/src/visualization/01-GenGraph.py",
+		"/Users/Clement/Documents/GitHub/COVID19/data/last_update.json",
+		"/Users/Clement/Documents/GitHub/COVID19/data/processed/covid_data/fra/fra_nat.json",
+		"/Users/Clement/Downloads/Mail_FIFG.csv",
+		"/Users/Clement/Documents/Covid-19 Data/04 - French Data/4.0 - Data/data_main.csv",
+		"/Users/Clement/Documents/GitHub/COVID19/src/data/data_import.py",
+		"/Users/Clement/Documents/GitHub/COVID19/README.md",
+		"/Users/Clement/Documents/Covid-19 Data/99 - Other/FTP/FTP_v1.1.py",
+		"/Users/Clement/Documents/GitHub/COVID19/docs/requirement.txt",
+		"/Users/Clement/Documents/GitHub/COVID19/docs/.readthedocs.yml",
+		"/Users/Clement/Documents/Covid-19 Data/06 - Testing/60 - Testing_v1.py",
+		"/Users/Clement/Documents/Covid-19 Data/01 - Graph/10 - covid19 v2.3 2.py",
+		"/Users/Clement/Documents/Covid-19 Data/01 - Graph/10 - covid19 v2.3.py",
+		"/Users/Clement/Documents/GitHub/COVID19/src/features/1 - World graphs.py",
+		"/Users/Clement/Documents/Covid-19 Data/04 - French Data/40 - French Analysis v3.5.py",
+		"/Users/Clement/Downloads/Données eco.csv",
+		"/Users/Clement/Finance and Innovation For Good/Finance and Innovation For Good - General/Logo/Logo_N&B.svg",
+		"/Users/Clement/Documents/GitHub/COVID19/src/gen_fct/df_fct.py",
+		"/Users/Clement/Documents/GitHub/COVID19/reports/reports_db.json",
+		"/Users/Clement/Documents/GitHub/COVID19/data/data.json",
+		"/Users/Clement/Documents/GitHub/COVID19/reports/reports_db.csv",
+		"/Users/Clement/Documents/GitHub/COVID19/data/raw/covid_data/test.csv",
+		"/Users/Clement/Documents/GitHub/COVID19/docs/Data Import.rst",
+		"/Users/Clement/Documents/GitHub/COVID19/data/data1.json",
+		"/Users/Clement/Documents/GitHub/COVID19/data/raw/shapefile/us/.gitkeep",
+		"/Users/Clement/Documents/GitHub/COVID19/data/raw/shapefile/us/states/.gitkeep",
+		"/Users/Clement/Documents/GitHub/COVID19/data/raw/shapefile/fra/regions/.gitkeep",
+		"/Users/Clement/Documents/GitHub/COVID19/data/raw/shapefile/fra/departement/.gitkeep",
+		"/Users/Clement/Documents/GitHub/COVID19/data/raw/gen_data/.gitkeep",
+		"/Users/Clement/Documents/GitHub/COVID19/data/raw/covid_data/world/.gitkeep",
+		"/Users/Clement/Documents/GitHub/COVID19/data/raw/covid_data/us/.gitkeep",
+		"/Users/Clement/Documents/GitHub/COVID19/data/raw/covid_data/fra/.gitkeep",
+		"/Users/Clement/Documents/GitHub/COVID19/data/processed_data.json",
+		"/Users/Clement/Documents/GitHub/COVID19/data/data.csv",
+		"/Users/Clement/Documents/GitHub/COVID19/data/data3.json",
+		"/Users/Clement/Documents/GitHub/COVID19/data/data2.json",
+		"/Users/Clement/Documents/Scolaire/04 - HEC/Core/Successful Strategy Mobilization/06 - Post merger integration/O2H2 Futur organization - Organizational chart-04.svg",
+		"/Users/Clement/Downloads/Test_resume JSON/index.js",
+		"/Users/Clement/node_modules/commander/index.js",
+		"/Users/Clement/Documents/Covid-19 Data/04 - French Data/40 - French Analysis v3.3.py",
+		"/Users/Clement/Documents/Covid-19 Data/99 - Other/Test Polygones/Indicateur_dpt.csv",
+		"/Users/Clement/Downloads/Base Carbone - donnes V18.1.csv",
+		"/Users/Clement/Downloads/basecarbone-v17-fr.csv",
+		"/Users/Clement/Documents/Programation/JS/OpenClass Room/3 - Fonctions/3.6 - Fonction recursive.js",
+		"/Users/Clement/Documents/Programation/JS/OpenClass Room/3 - Fonctions/3.4 - Test.js",
+		"/Users/Clement/Documents/Programation/JS/OpenClass Room/3 - Fonctions/3.2 - Méthodes instance et champs.js",
+		"/Users/Clement/Documents/Programation/JS/OpenClass Room/01 - Données et type de données/1.5 - Array, set, map.js",
+		"/Users/Clement/Documents/Programation/JS/OpenClass Room/3 - Fonctions/3.1 - Syntaxe fonction.js",
+		"/Users/Clement/Documents/Programation/JS/OpenClass Room/01 - Données et type de données/1.4 - Objets et attributs.js",
+		"/Users/Clement/Documents/Covid-19 Data/04 - French Data/40 - French Analysis v3.2.py",
+		"/Users/Clement/Documents/Covid-19 Data/99 - Other/Test Polygones/example.py",
+		"/Users/Clement/Documents/Covid-19 Data/99 - Other/Test Polygones/Polygones.py",
+		"/Users/Clement/Downloads/test.py",
+		"/Users/Clement/Library/Application Support/Sublime Text 3/Packages/User/JavaScript.sublime-build",
+		"/Users/Clement/Library/Application Support/Sublime Text 3/Packages/User/Python3.sublime-build",
+		"/Users/Clement/Downloads/sys.py",
+		"/Users/Clement/Downloads/TestSHA256.py",
+		"/Users/Clement/Downloads/com.apple.print.custompresets.forprinter.HP_LaserJet_MFP_M130fn.plist",
+		"/Users/Clement/Documents/Projets spéciaux/Suivi data/Rapports/Confinement 2/02 - Report/style.css",
+		"/Users/Clement/Downloads/style.css",
+		"/Users/Clement/Downloads/test_tab.html",
+		"/Users/Clement/Documents/Projets spéciaux/Suivi data/Rapports/Confinement 2/02 - Report/index.html",
+		"/Users/Clement/Documents/Projets spéciaux/Suivi data/Rapports/Confinement 2/00 - Data/plan.csv",
+		"/Users/Clement/Documents/Projets spéciaux/Suivi data/HTML Report/style.css",
+		"/Users/Clement/Documents/Projets spéciaux/Suivi data/HTML Report/template_report.html",
+		"/Users/Clement/Documents/GitHub/BD_Bivouac/templating/test_template.html",
+		"/Users/Clement/Documents/GitHub/BD_Bivouac/templating/Test template.py",
+		"/Users/Clement/Documents/Projets spéciaux/Suivi data/style.css",
+		"/Users/Clement/Documents/Projets spéciaux/Suivi data/html_file.html",
+		"/Users/Clement/Documents/Projets spéciaux/Suivi data/report_data.html",
+		"/Users/Clement/Downloads/election_result.txt",
+		"/Users/Clement/Documents/Projets spéciaux/Suivi data/usage_data.csv",
+		"/Users/Clement/Documents/Projets spéciaux/Suivi data/available_data.csv",
+		"/Users/Clement/Downloads/general-electric-2.svg",
+		"/Users/Clement/Downloads/cfm-international-logo-svg-vector.svg",
+		"/Users/Clement/Library/Application Support/Sublime Text 3/Packages/sublime-github/GitHub.sublime-settings",
+		"/Users/Clement/Library/Application Support/Sublime Text 3/Packages/User/GitHub.sublime-settings",
+		"/Users/Clement/Documents/GitHub/BD_Bivouac/README.md",
+		"/Users/Clement/Documents/Projets spéciaux/BDB/templating/menu_template.html",
+		"/Users/Clement/Documents/Projets spéciaux/BDB/templating/test_template.html",
+		"/Users/Clement/Downloads/Refuge des Sept Laux_ Depuis Fond de France.gpx",
+		"/Users/Clement/Downloads/Covid-19 Data/02 - Cartographie/2.99 - Former versions/20 - Maps_v1.0.py",
+		"/Users/Clement/Downloads/Covid-19 Data/99 - Other/Region & Dpt DB/region&dpt_DB.py",
+		"/Users/Clement/Downloads/5eef8d455e85593b02c8cfb0.gpx"
+	],
+	"find":
+	{
+		"height": 24.0
+	},
+	"find_in_files":
+	{
+		"height": 101.0,
+		"where_history":
+		[
+		]
+	},
+	"find_state":
+	{
+		"case_sensitive": false,
+		"find_history":
+		[
+			"sqla"
+		],
+		"highlight": true,
+		"in_selection": false,
+		"preserve_case": false,
+		"regex": false,
+		"replace_history":
+		[
+		],
+		"reverse": false,
+		"show_context": true,
+		"use_buffer2": true,
+		"whole_word": false,
+		"wrap": true
+	},
+	"groups":
+	[
+		{
+			"selected": 0,
+			"sheets":
+			[
+				{
+					"buffer": 0,
+					"file": "README.md",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 11675,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								0,
+								0
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/Markdown/Markdown.sublime-syntax",
+							"tab_size": 3,
+							"translate_tabs_to_spaces": true
+						},
+						"translation.x": 0.0,
+						"translation.y": 426.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 0,
+					"type": "text"
+				},
+				{
+					"buffer": 1,
+					"file": "run.py",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 10173,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								0,
+								0
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/Python/Python.sublime-syntax"
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 10,
+					"type": "text"
+				},
+				{
+					"buffer": 2,
+					"file": "config.py",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 1254,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								686,
+								686
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/Python/Python.sublime-syntax",
+							"tab_size": 4,
+							"translate_tabs_to_spaces": true
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 9,
+					"type": "text"
+				},
+				{
+					"buffer": 3,
+					"file": "app/__init__.py",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 1275,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								0,
+								0
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/Python/Python.sublime-syntax",
+							"tab_size": 4,
+							"translate_tabs_to_spaces": true
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 8,
+					"type": "text"
+				},
+				{
+					"buffer": 4,
+					"file": "app/base/forms.py",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 790,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								0,
+								0
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/Python/Python.sublime-syntax"
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 7,
+					"type": "text"
+				},
+				{
+					"buffer": 5,
+					"file": "app/base/models.py",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 1444,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								0,
+								0
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/Python/Python.sublime-syntax",
+							"tab_size": 4,
+							"translate_tabs_to_spaces": true
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 6,
+					"type": "text"
+				},
+				{
+					"buffer": 6,
+					"file": "app/base/routes.py",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 3853,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								0,
+								0
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/Python/Python.sublime-syntax",
+							"tab_size": 4,
+							"translate_tabs_to_spaces": true
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 5,
+					"type": "text"
+				},
+				{
+					"buffer": 7,
+					"file": "app/base/__init__.py",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 246,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								0,
+								0
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/Python/Python.sublime-syntax"
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 4,
+					"type": "text"
+				},
+				{
+					"buffer": 8,
+					"file": "app/base/util.py",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 1075,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								0,
+								0
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/Python/Python.sublime-syntax",
+							"tab_size": 4,
+							"translate_tabs_to_spaces": true
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 3,
+					"type": "text"
+				},
+				{
+					"buffer": 9,
+					"file": "app/home/routes.py",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 1184,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								0,
+								0
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/Python/Python.sublime-syntax",
+							"tab_size": 4,
+							"translate_tabs_to_spaces": true
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 2,
+					"type": "text"
+				},
+				{
+					"buffer": 10,
+					"file": "app/home/__init__.py",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 244,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								0,
+								0
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/Python/Python.sublime-syntax"
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 1,
+					"type": "text"
+				}
+			]
+		}
+	],
+	"incremental_find":
+	{
+		"height": 24.0
+	},
+	"input":
+	{
+		"height": 36.0
+	},
+	"layout":
+	{
+		"cells":
+		[
+			[
+				0,
+				0,
+				1,
+				1
+			]
+		],
+		"cols":
+		[
+			0.0,
+			1.0
+		],
+		"rows":
+		[
+			0.0,
+			1.0
+		]
+	},
+	"menu_visible": true,
+	"output.anaconda_documentation":
+	{
+		"height": 108.0
+	},
+	"output.exec":
+	{
+		"height": 172.0
+	},
+	"output.find_results":
+	{
+		"height": 0.0
+	},
+	"pinned_build_system": "Packages/User/Python3.sublime-build",
+	"project": "GRID.sublime-project",
+	"replace":
+	{
+		"height": 44.0
+	},
+	"save_all_on_build": true,
+	"select_file":
+	{
+		"height": 0.0,
+		"last_filter": "",
+		"selected_items":
+		[
+			[
+				"",
+				"~/Documents/Scolaire/Ecole d'ingénieur/Assocs/TPLN/Site internet/index.php"
+			]
+		],
+		"width": 0.0
+	},
+	"select_project":
+	{
+		"height": 0.0,
+		"last_filter": "",
+		"selected_items":
+		[
+		],
+		"width": 0.0
+	},
+	"select_symbol":
+	{
+		"height": 392.0,
+		"last_filter": "",
+		"selected_items":
+		[
+		],
+		"width": 592.0
+	},
+	"selected_group": 0,
+	"settings":
+	{
+	},
+	"show_minimap": true,
+	"show_open_files": true,
+	"show_tabs": true,
+	"side_bar_visible": false,
+	"side_bar_width": 150.0,
+	"status_bar_visible": true,
+	"template_settings":
+	{
+	}
+}

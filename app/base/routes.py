@@ -27,6 +27,8 @@ import pandas as pd
 import numpy as np
 import json
 
+import app.base.index_renderer as index_renderer
+
 @blueprint.route('/')
 def route_default():
     return redirect(url_for('base_blueprint.login'))
@@ -36,8 +38,7 @@ def route_default():
 @blueprint.route('/login', methods=['GET', 'POST'])
 def login():
     login_form = LoginForm(request.form)
-    if 'login' in request.form:
-        
+    if login_form.validate_on_submit():
         # read form data
         username = request.form['username']
         password = request.form['password']
@@ -49,7 +50,9 @@ def login():
         if user and verify_pass( password, user.password):
 
             login_user(user)
-            return redirect(url_for('base_blueprint.route_default'))
+
+            co2, pct, alerte, ebitda = index_renderer.plots()
+            return render_template('index.html', co2=co2, pct=pct, alertes=alerte, ebitda=ebitda)
 
         # Something (user or pass) is not ok
         return render_template( 'accounts/login.html', msg='Wrong user or password', form=login_form)
@@ -57,7 +60,10 @@ def login():
     if not current_user.is_authenticated:
         return render_template( 'accounts/login.html',
                                 form=login_form)
-    return redirect(url_for('home_blueprint.index'))
+
+    co2, pct, alerte, ebitda = index_renderer.plots()
+            
+    return render_template('index.html', co2=co2, pct=pct, alertes=alerte, ebitda=ebitda)
 
 @blueprint.route('/register', methods=['GET', 'POST'])
 def register():
