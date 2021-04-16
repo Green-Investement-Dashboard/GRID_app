@@ -4,7 +4,6 @@ flask_migrate
 flask_wtf
 sqlalchemy
 flask-sqlalchemy
-postgresql
 email_validator
 python-decouple
 gunicorn
