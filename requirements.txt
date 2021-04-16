@@ -11,4 +11,3 @@ pyproj
 rtree
 shapely
 geopandas
-os
