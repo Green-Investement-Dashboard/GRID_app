@@ -2,8 +2,10 @@ flask
 flask_login
 flask_migrate
 flask_wtf
-SQLAlchemy
-Flask-SQLAlchemy
+sqlalchemy
+flask-sqlalchemy
+sqlite
+postgresql
 email_validator
 python-decouple
 gunicorn
