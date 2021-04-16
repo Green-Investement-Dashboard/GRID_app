@@ -3,7 +3,7 @@ flask_login
 flask_migrate
 flask_wtf
 SQLAlchemy
-flask_sqlalchemy
+Flask-SQLAlchemy
 email_validator
 python-decouple
 gunicorn
