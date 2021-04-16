@@ -27,6 +27,12 @@ import pandas
 import numpy
 import json
 
+<<<<<<< HEAD
+from app.home.content_gen import index_renderer
+from app.home.content_gen import test_graph
+from app.home.content_gen import zone_innondable
+=======
+>>>>>>> parent of 3bf8f55 (Updated doc mainly)
 #import Viti.dataregion as VAS
 #%%
 # WARNING: Don't run with debug turned on in production!
@@ -65,7 +71,8 @@ def show_plot():
 
 @app.route('/soc')
 def show_map():
-	mapping = plot_map()
+	mapping = zone_innondable.main([['n_tri_', '_inondable_03_04fai_s_', '.shp']], 34, 'montpellier')
+	#mapping = test_graph.plot_map()
 	return render_template('social.html', map=mapping, name='map')
 
 @app.route('/index')

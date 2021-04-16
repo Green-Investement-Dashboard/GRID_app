@@ -38,7 +38,7 @@ def route_default():
 @blueprint.route('/login', methods=['GET', 'POST'])
 def login():
     login_form = LoginForm(request.form)
-    if login_form.validate_on_submit():
+    if 'login' in request.form:
         # read form data
         username = request.form['username']
         password = request.form['password']
@@ -52,7 +52,9 @@ def login():
             login_user(user)
 
             co2, pct, alerte, ebitda = index_renderer.plots()
-            return render_template('index.html', co2=co2, pct=pct, alertes=alerte, ebitda=ebitda)
+            #r1 = redirect(url_for('base_blueprint.route_default', co2=co2, pct=pct, alertes=alerte, ebitda=ebitda))
+            r2 = render_template('index.html', co2=co2, pct=pct, alertes=alerte, ebitda=ebitda)
+            return r2
 
         # Something (user or pass) is not ok
         return render_template( 'accounts/login.html', msg='Wrong user or password', form=login_form)
@@ -62,8 +64,10 @@ def login():
                                 form=login_form)
 
     co2, pct, alerte, ebitda = index_renderer.plots()
+    #r1 = redirect(url_for('home_blueprint.index', co2=co2, pct=pct, alertes=alerte, ebitda=ebitda))
+    r2 = render_template('index.html', co2=co2, pct=pct, alertes=alerte, ebitda=ebitda)
             
-    return render_template('index.html', co2=co2, pct=pct, alertes=alerte, ebitda=ebitda)
+    return r2
 
 @blueprint.route('/register', methods=['GET', 'POST'])
 def register():

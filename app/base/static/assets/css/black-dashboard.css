@@ -4796,7 +4796,9 @@ input[type="button"].btn-block {
   font-size: 0.99925rem;
   line-height: inherit;
   white-space: nowrap;
+  overflow:hidden;
 }
+
 
 .navbar-brand:hover,
 .navbar-brand:focus {
@@ -4856,6 +4858,7 @@ input[type="button"].btn-block {
   background: no-repeat center center;
   background-size: 100% 100%;
 }
+
 
 @media (max-width: 575.98px) {
 
