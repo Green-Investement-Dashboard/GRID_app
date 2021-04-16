@@ -12,3 +12,4 @@ rtree
 shapely
 geopandas
 plotly
+matplotlib
