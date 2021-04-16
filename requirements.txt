@@ -18,7 +18,7 @@ black
 pyblas
 bleach
 blinker
-boost-cpp
+boost-py
 brotlipy
 bzip2
 c-ares
