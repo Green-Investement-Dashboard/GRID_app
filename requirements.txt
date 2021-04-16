@@ -1,8 +1,8 @@
 flask
+sqlalchemy
 flask_login
 flask_migrate
 flask_wtf
-sqlalchemy
 flask-sqlalchemy
 email_validator
 python-decouple
