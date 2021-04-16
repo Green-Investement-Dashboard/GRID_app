@@ -96,7 +96,7 @@ class InternalPlot:
                            height=650
                            )
         fig=go.Figure(data=data, layout=layout)
-        #fig.write_html("innondations.html")
+        fig.write_html("innondations.html")
         plot_json = json.dumps(fig, cls=plotly.utils.PlotlyJSONEncoder)
 
         return plot_json
@@ -105,8 +105,8 @@ class InternalPlot:
         
     
     
-dpt = 34
-town = 'montpellier'
+dpt = 30
+town = 'nimes'
 list_db = [['n_tri_', '_carte_inond_s_', '.shp'], #cartes de surfaces inondables produites sur un TRI donné
            ['n_tri_', '_carte_risq_s_', '.shp'], #cartes de risque d’inondation produites sur un TRI donné
            ['n_tri_', '_tri_s_', '.shp'], #emprise et les caractéristiques utiles du territoire à risque d’inondation

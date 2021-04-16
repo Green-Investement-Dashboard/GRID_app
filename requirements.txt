@@ -2,6 +2,7 @@ flask
 flask_login
 flask_migrate
 flask_wtf
+SQLAlchemy
 flask_sqlalchemy
 email_validator
 python-decouple
