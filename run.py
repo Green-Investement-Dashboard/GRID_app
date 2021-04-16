@@ -27,14 +27,10 @@ import pandas
 import numpy
 import json
 
-<<<<<<< HEAD
 from app.home.content_gen import index_renderer
 from app.home.content_gen import test_graph
 from app.home.content_gen import zone_innondable
-=======
->>>>>>> parent of 3bf8f55 (Updated doc mainly)
-#import Viti.dataregion as VAS
-#%%
+
 # WARNING: Don't run with debug turned on in production!
 DEBUG = config('DEBUG', default=True, cast=bool)
 
