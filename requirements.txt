@@ -1,5 +1,5 @@
 flask
-sqlalchemy>=1.3
+sqlalchemy==1.3.23
 flask_login
 flask_migrate
 flask_wtf
