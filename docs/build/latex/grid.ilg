@@ -1,0 +1,7 @@
+This is makeindex, version 2.15 [TeX Live 2020] (kpathsea + Thai support).
+Scanning style file ./python.ist.......done (7 attributes redefined, 0 ignored).
+Scanning input file grid.idx....done (71 entries accepted, 0 rejected).
+Sorting entries....done (478 comparisons).
+Generating output file grid.ind....done (144 lines written, 0 warnings).
+Output written in grid.ind.
+Transcript written in grid.ilg.
