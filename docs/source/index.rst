@@ -10,6 +10,7 @@ Welcome to GRID's documentation!
    :maxdepth: 4
    :caption: Contents:
 
+   intro
    modules
 
 
