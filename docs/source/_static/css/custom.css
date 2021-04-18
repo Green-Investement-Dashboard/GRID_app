@@ -28,7 +28,8 @@ a{color:#72b857}
 wy-input-context{color:#72b857;}
 .btn-link:visited{color:#5cba47;}
 a:visited{color:#5cba47;}
-.wy-side-scroll a:visited{color:#ffffff !important;}
+.wy-side-scroll .toctree-l1 a:visited{color:#ffffff !important;}
+.wy-side-scroll .toctree-l2 a:visited{color:#3d3d33 !important;}
 
 
 /* Remplacement #2980b9 */
