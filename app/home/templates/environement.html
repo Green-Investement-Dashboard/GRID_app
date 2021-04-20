@@ -12,17 +12,13 @@
             <div class="card card-profile">
                 <div class="card-body">
                     <h3 class="card-title">Environement</h3>
-                  <div class="chart" id="bargraph3">
+                  <div class="chart" id="class_map1">
                     <script>
-                        var graphs = {{bank| safe}};
-                        Plotly.newPlot('bargraph3',graphs.data,graphs.layout, config);  
+                        var graphs = {{canicule_map| safe}};
+                        Plotly.newPlot('class_map1',graphs.data,graphs.layout, config);  
                     </script>
                   </div>
-                    <div class="chart" id="bargraph2">
-                    <script>
-                        var graphs = {{viti | safe}};
-                        Plotly.plot('bargraph2',graphs,{});
-                    </script></div>
+                    
                     <a href="/" class="btn btn-primary btn-round">Home</a>
                 </div>
             </div>
@@ -38,11 +34,9 @@
 {% endfor %}
 </div>
 <script>
-  var graphs = {{bank | safe}};
+  var graphs = {{canicule | safe}};
   Plotly.newPlot('chart',graphs.data,graphs.layout,config);
   
-  var graphs = {{viti | safe}};
-  Plotly.newPlot('chart',graphs.data,graphs.layout,config);
 </script>
     
 {% endblock content %}

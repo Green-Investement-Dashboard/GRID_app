@@ -29,7 +29,7 @@ import json
 
 from app.home.content_gen import index_renderer
 from app.home.content_gen import test_graph
-from app.home.content_gen import zone_innondable
+from app.home.content_gen import canicule
 
 # WARNING: Don't run with debug turned on in production!
 DEBUG = config('DEBUG', default=True, cast=bool)
@@ -57,13 +57,11 @@ if DEBUG:
 
 @app.route('/env')
 def show_plot():
-    bank, viti, bs, pnl = ana_viti()
-    bs_t=[bs.to_html(classes='data')]
-    titles_bs=bs.columns.values
-    
-    pnl_t=[pnl.to_html(classes='data')]
-    titles_pnl=pnl.columns.values 
-    return render_template('environement.html', bank=bank, viti=viti, bs=bs_t, titles_bs=titles_bs, titles_pnl=titles_pnl, pnl=pnl_t)
+	canicule_instance = canicule.CaniculePlot('HWD', '85')
+	canicule_instance.read_json()
+	plot_canicule = canicule_instance.plot2()
+
+	return render_template('environement.html', canicule_map=plot_canicule)
 
 @app.route('/soc')
 def show_map():

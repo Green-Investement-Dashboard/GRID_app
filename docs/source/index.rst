@@ -9,7 +9,7 @@ Documentation du projet GRID
 
 Petit texte de pres ici?
 
-`Documentation PDF <http://docs.grid-tech.fr/grid.pdf>`__
+`Documentation PDF <http://docs.grid-tech.fr/grid.pdf>__
 
 ------
 

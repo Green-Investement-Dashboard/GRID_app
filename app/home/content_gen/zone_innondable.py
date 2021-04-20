@@ -96,7 +96,7 @@ class InternalPlot:
                            height=650
                            )
         fig=go.Figure(data=data, layout=layout)
-        fig.write_html("innondations.html")
+        #fig.write_html("innondations.html")
         plot_json = json.dumps(fig, cls=plotly.utils.PlotlyJSONEncoder)
 
         return plot_json
