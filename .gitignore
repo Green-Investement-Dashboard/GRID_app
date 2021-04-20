@@ -17,6 +17,7 @@ venv
 
 # other
 .DS_Store
+/Test
 
 # sphinx docs 
 #_build
@@ -27,3 +28,4 @@ venv
 package-lock.json
 .vscode/symbols.json
 app/home/content_gen/innondations.html
+
