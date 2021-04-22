@@ -12,6 +12,25 @@
             <div class="card card-profile">
                 <div class="card-body">
                     <h3 class="card-title">Environement</h3>
+                  <p>Ci-dessous sont représentés pour votre exploitation les indicateurs environmentaux</p>
+                  <h4><i class="tim-icons icon-world2"></i>Facteurs à risques environementaux:</h4>
+                    <ul>
+                      {% for critical in critical_alert[0] %}
+                      <li>{{critical}}</li>
+
+                      {% endfor %}
+                    </ul>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="row">
+        <div class="col-md-12">
+            <div class="card card-profile">
+                <div class="card-body">
+                    <h3 class="card-title">Carte du nombre de jour de canicules</h3>
                   <div class="chart" id="class_map1">
                     <script>
                         var graphs = {{canicule_map| safe}};
@@ -24,15 +43,29 @@
             </div>
         </div>
     </div>
-    <div> {% for table in bs %}
-            {{titles_bs[loop.index]}}
-            {{ table|safe }}
-{% endfor %}
-{% for table in pnl %}
-            {{titles_pnl[loop.index]}}
-            {{ table|safe }}
-{% endfor %}
-</div>
+
+    <div class="row">
+      <div class="col-lg-6">
+        <div class="card card-chart">
+          <div class="card-header">
+            <h3 class="card-title">Indicateur 1</h3>
+          </div>
+          <div class="card-body">
+            
+          </div>
+        </div>
+      </div>
+      <div class="col-lg-6">
+        <div class="card card-chart">
+          <div class="card-header">
+            <h3 class="card-title">Indicateur 2</h3>
+          </div>
+          <div class="card-body">
+            
+          </div>
+        </div>
+      </div>
+    </div>
 <script>
   var graphs = {{canicule | safe}};
   Plotly.newPlot('chart',graphs.data,graphs.layout,config);

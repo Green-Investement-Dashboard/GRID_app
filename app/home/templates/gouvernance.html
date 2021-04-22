@@ -12,11 +12,41 @@
             <div class="card card-profile">
                 <div class="card-body">
                     <h3 class="card-title">Gouvernance</h3>
-                    <p> Lorem Ipsum Dolores</p>
-                    <a href="/" class="btn btn-primary btn-round">Home</a>
+                  <p>Ci-dessous sont représentés pour votre exploitation les indicateurs de gouvernance</p>
+                  <h4><i class="tim-icons icon-world2"></i>Facteurs à risques de gouvernance:</h4>
+                    <ul>
+                      {% for critical in critical_alert[2] %}
+                      <li>{{critical}}</li>
+
+                      {% endfor %}
+                    </ul>
+                    </ul>
                 </div>
             </div>
         </div>
+    </div>
+
+    <div class="row">
+      <div class="col-lg-6">
+        <div class="card card-chart">
+          <div class="card-header">
+            <h3 class="card-title">Indicateur 1</h3>
+          </div>
+          <div class="card-body">
+            
+          </div>
+        </div>
+      </div>
+      <div class="col-lg-6">
+        <div class="card card-chart">
+          <div class="card-header">
+            <h3 class="card-title">Indicateur 2</h3>
+          </div>
+          <div class="card-body">
+            
+          </div>
+        </div>
+      </div>
     </div>
     
 {% endblock content %}

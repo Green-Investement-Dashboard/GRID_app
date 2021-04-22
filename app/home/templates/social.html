@@ -6,24 +6,54 @@
 {% block stylesheets %}{% endblock stylesheets %}
 
 {% block content %}
-
     <div class="row">
         <div class="col-md-12">
             <div class="card card-profile">
                 <div class="card-body">
                     <h3 class="card-title">Social</h3>
-                    <p> Hello {{ name }}!</p>
-                  <div id='map'>
-                    
-                  </div>
-                    <a href="/" class="btn btn-primary btn-round">Home</a>
+                  <p>Ci-dessous sont représentés pour votre exploitation les indicateurs environmentaux</p>
+                  <h4><i class="tim-icons icon-world2"></i>Facteurs à risques environementaux:</h4>
+                    <ul>
+                      {% for critical in critical_alert[0] %}
+                      <li>{{critical}}</li>
+
+                      {% endfor %}
+                    </ul>
+                    </ul>
                 </div>
             </div>
         </div>
     </div>
+
+
+    <div class="row">
+      <div class="col-lg-6">
+        <div class="card card-chart">
+          <div class="card-header">
+            <h3 class="card-title">Indicateur 1</h3>
+          </div>
+          <div class="card-body">
+            <div id='S1'>
+                    
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="col-lg-6">
+        <div class="card card-chart">
+          <div class="card-header">
+            <h3 class="card-title">Indicateur 2</h3>
+          </div>
+          <div class="card-body">
+            
+          </div>
+        </div>
+      </div>
+    </div>
+  
 <script>
-  var graphs = {{map | safe}};
-  Plotly.newPlot('map',graphs.data,graphs.layout, config);
+  var graphs = {{s1 | safe}};
+  Plotly.newPlot('S1',graphs.data,graphs.layout, config);
 </script>
     
 {% endblock content %}
