@@ -30,7 +30,7 @@ import json
 from app.home.content_gen import index_renderer
 from app.home.content_gen import test_graph
 from app.home.content_gen import canicule
-from app.home.content_gen import bullet_chart_gen
+from app.home.content_gen import gen_graph
 
 # WARNING: Don't run with debug turned on in production!
 DEBUG = config('DEBUG', default=True, cast=bool)
@@ -68,15 +68,19 @@ def env():
 @app.route('/gouv')
 def gouv():
 	critical_alert = index_renderer.CriticalAlert().main()
+	diver_chart = gen_graph.PieChart('G6', "Diversification d'activité").plot()
 
-	return render_template('gouvernance.html', critical_alert = critical_alert)
+	return render_template('gouvernance.html', diver_chart=diver_chart, critical_alert = critical_alert)
 
 @app.route('/soc')
 def soc():
-	S1_indic = bullet_chart_gen.BulletChart('S1', 'Test').plot()
+	S1_indic = gen_graph.BulletChart('S1', "Communication").plot()
+	S2_indic = gen_graph.BulletChart('S2', "Barrières douanières").plot()
+	#S2_indic = S1_indic 
 	critical_alert = index_renderer.CriticalAlert().main()
 
-	return render_template('social.html', s1=S1_indic, critical_alert = critical_alert)
+	return render_template('social.html', s1=S1_indic, S1_title="Communication", 
+		S2_title="Barrières douanières", s2=S2_indic, critical_alert = critical_alert)
 	
 
 @app.route('/index')
