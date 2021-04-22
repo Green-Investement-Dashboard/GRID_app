@@ -8,56 +8,31 @@
 {% block content %}
 
     <div class="row">
-
       <div class="col-12">
         <div class="card card-chart">
-          <div class="card-header ">
-            <div class="row">
-              <div class="col-sm-6 text-left">
-                <h5 class="card-category">Suivi environmental</h5>
-                <h2 class="card-title">Emissions de CO2 (eTCO2)</h2>
-              </div>
-              <div class="col-sm-6">
-                <!--
-                <div class="btn-group btn-group-toggle float-right" data-toggle="buttons">
-                  <label class="btn btn-sm btn-primary btn-simple active" id="0">
-                    <input type="radio" name="options" checked>
-                    <span class="d-none d-sm-block d-md-block d-lg-block d-xl-block">Accounts</span>
-                    <span class="d-block d-sm-none">
-                      <i class="tim-icons icon-single-02"></i>
-                    </span>
-                  </label>
-                  <label class="btn btn-sm btn-primary btn-simple" id="1">
-                    <input type="radio" class="d-none d-sm-none" name="options">
-                    <span class="d-none d-sm-block d-md-block d-lg-block d-xl-block">Purchases</span>
-                    <span class="d-block d-sm-none">
-                      <i class="tim-icons icon-gift-2"></i>
-                    </span>
-                  </label>
-                  <label class="btn btn-sm btn-primary btn-simple" id="2">
-                    <input type="radio" class="d-none" name="options">
-                    <span class="d-none d-sm-block d-md-block d-lg-block d-xl-block">Sessions</span>
-                    <span class="d-block d-sm-none">
-                      <i class="tim-icons icon-tap-02"></i>
-                    </span>
-                  </label>
-                </div>
-                -->
-              </div>
-            </div>
-          </div>
           <div class="card-body">
-            <div class="chart-area" id='co2'>
-              <script>
-                  var graphs = {{co2 | safe}};
-                  Plotly.newPlot('co2',graphs.data,graphs.layout, config);
-                </script>
-            </div>
-          </div>
+            <h3>Scoring</h3>
+              <div class="gauge">
+                  <h3 style="text-align:center;">Score environemental</h4>
+                  <canvas id="env" class="gauge_canvas"></canvas>
+                  <div id="preview-textfield"><p id='score_env'></p></div>
+              </div>
+              <div class="gauge">
+                <h3 style="text-align:center;">Score social</h4>
+                <canvas id="soc" class="gauge_canvas"></canvas>
+                <div id="preview-textfield"><p id='score_soc'></p></div>
+              </div>
+              <div class="gauge">
+                <h3 style="text-align:center;">Score gouvernance</h4>
+                <canvas id="gouv" class="gauge_canvas"></canvas>
+                <div id="preview-textfield"><p id='score_gov'></p></div>
+              </div>
+              <p> La zone jaune représente le score moyen des entreprises viticoles de votre région +/- 10%. <br></p>
+          </div>  
         </div>
       </div>
-
     </div>
+
     <div class="row">
       <div class="col-lg-4">
         <div class="card card-chart">
@@ -105,290 +80,7 @@
         </div>
       </div>
     </div>
-    <div class="row">
-      <div class="col-lg-6 col-md-12">
-        <div class="card card-tasks">
-          <div class="card-header ">
-            <h6 class="title d-inline">Tasks(5)</h6>
-            <p class="card-category d-inline">today</p>
-            <div class="dropdown">
-              <button type="button" class="btn btn-link dropdown-toggle btn-icon" data-toggle="dropdown">
-                <i class="tim-icons icon-settings-gear-63"></i>
-              </button>
-              <div class="dropdown-menu dropdown-menu-right" aria-labelledby="dropdownMenuLink">
-                <a class="dropdown-item" href="#pablo">Action</a>
-                <a class="dropdown-item" href="#pablo">Another action</a>
-                <a class="dropdown-item" href="#pablo">Something else</a>
-              </div>
-            </div>
-          </div>
-          <div class="card-body ">
-            <div class="table-full-width table-responsive">
-              <table class="table">
-                <tbody>
-                  <tr>
-                    <td>
-                      <div class="form-check">
-                        <label class="form-check-label">
-                          <input class="form-check-input" type="checkbox" value="">
-                          <span class="form-check-sign">
-                            <span class="check"></span>
-                          </span>
-                        </label>
-                      </div>
-                    </td>
-                    <td>
-                      <p class="title">Update the Documentation</p>
-                      <p class="text-muted">Dwuamish Head, Seattle, WA 8:47 AM</p>
-                    </td>
-                    <td class="td-actions text-right">
-                      <button type="button" rel="tooltip" title="" class="btn btn-link" data-original-title="Edit Task">
-                        <i class="tim-icons icon-pencil"></i>
-                      </button>
-                    </td>
-                  </tr>
-                  <tr>
-                    <td>
-                      <div class="form-check">
-                        <label class="form-check-label">
-                          <input class="form-check-input" type="checkbox" value="" checked="">
-                          <span class="form-check-sign">
-                            <span class="check"></span>
-                          </span>
-                        </label>
-                      </div>
-                    </td>
-                    <td>
-                      <p class="title">GDPR Compliance</p>
-                      <p class="text-muted">The GDPR is a regulation that requires businesses to protect the personal data and privacy of Europe citizens for transactions that occur within EU member states.</p>
-                    </td>
-                    <td class="td-actions text-right">
-                      <button type="button" rel="tooltip" title="" class="btn btn-link" data-original-title="Edit Task">
-                        <i class="tim-icons icon-pencil"></i>
-                      </button>
-                    </td>
-                  </tr>
-                  <tr>
-                    <td>
-                      <div class="form-check">
-                        <label class="form-check-label">
-                          <input class="form-check-input" type="checkbox" value="">
-                          <span class="form-check-sign">
-                            <span class="check"></span>
-                          </span>
-                        </label>
-                      </div>
-                    </td>
-                    <td>
-                      <p class="title">Solve the issues</p>
-                      <p class="text-muted">Fifty percent of all respondents said they would be more likely to shop at a company </p>
-                    </td>
-                    <td class="td-actions text-right">
-                      <button type="button" rel="tooltip" title="" class="btn btn-link" data-original-title="Edit Task">
-                        <i class="tim-icons icon-pencil"></i>
-                      </button>
-                    </td>
-                  </tr>
-                  <tr>
-                    <td>
-                      <div class="form-check">
-                        <label class="form-check-label">
-                          <input class="form-check-input" type="checkbox" value="">
-                          <span class="form-check-sign">
-                            <span class="check"></span>
-                          </span>
-                        </label>
-                      </div>
-                    </td>
-                    <td>
-                      <p class="title">Release v2.0.0</p>
-                      <p class="text-muted">Ra Ave SW, Seattle, WA 98116, SUA 11:19 AM</p>
-                    </td>
-                    <td class="td-actions text-right">
-                      <button type="button" rel="tooltip" title="" class="btn btn-link" data-original-title="Edit Task">
-                        <i class="tim-icons icon-pencil"></i>
-                      </button>
-                    </td>
-                  </tr>
-                  <tr>
-                    <td>
-                      <div class="form-check">
-                        <label class="form-check-label">
-                          <input class="form-check-input" type="checkbox" value="">
-                          <span class="form-check-sign">
-                            <span class="check"></span>
-                          </span>
-                        </label>
-                      </div>
-                    </td>
-                    <td>
-                      <p class="title">Export the processed files</p>
-                      <p class="text-muted">The report also shows that consumers will not easily forgive a company once a breach exposing their personal data occurs. </p>
-                    </td>
-                    <td class="td-actions text-right">
-                      <button type="button" rel="tooltip" title="" class="btn btn-link" data-original-title="Edit Task">
-                        <i class="tim-icons icon-pencil"></i>
-                      </button>
-                    </td>
-                  </tr>
-                  <tr>
-                    <td>
-                      <div class="form-check">
-                        <label class="form-check-label">
-                          <input class="form-check-input" type="checkbox" value="">
-                          <span class="form-check-sign">
-                            <span class="check"></span>
-                          </span>
-                        </label>
-                      </div>
-                    </td>
-                    <td>
-                      <p class="title">Arival at export process</p>
-                      <p class="text-muted">Capitol Hill, Seattle, WA 12:34 AM</p>
-                    </td>
-                    <td class="td-actions text-right">
-                      <button type="button" rel="tooltip" title="" class="btn btn-link" data-original-title="Edit Task">
-                        <i class="tim-icons icon-pencil"></i>
-                      </button>
-                    </td>
-                  </tr>
-                </tbody>
-              </table>
-            </div>
-          </div>
-        </div>
-      </div>
-      <div class="col-lg-6 col-md-12">
-        <div class="card ">
-          <div class="card-header">
-            <h4 class="card-title"> Simple Table</h4>
-          </div>
-          <div class="card-body">
-            <div class="table-responsive">
-              <table class="table tablesorter " id="">
-                <thead class=" text-primary">
-                  <tr>
-                    <th>
-                      Name
-                    </th>
-                    <th>
-                      Country
-                    </th>
-                    <th>
-                      City
-                    </th>
-                    <th class="text-center">
-                      Salary
-                    </th>
-                  </tr>
-                </thead>
-                <tbody>
-                  <tr>
-                    <td>
-                      Dakota Rice
-                    </td>
-                    <td>
-                      Niger
-                    </td>
-                    <td>
-                      Oud-Turnhout
-                    </td>
-                    <td class="text-center">
-                      $36,738
-                    </td>
-                  </tr>
-                  <tr>
-                    <td>
-                      Minerva Hooper
-                    </td>
-                    <td>
-                      Curaçao
-                    </td>
-                    <td>
-                      Sinaai-Waas
-                    </td>
-                    <td class="text-center">
-                      $23,789
-                    </td>
-                  </tr>
-                  <tr>
-                    <td>
-                      Sage Rodriguez
-                    </td>
-                    <td>
-                      Netherlands
-                    </td>
-                    <td>
-                      Baileux
-                    </td>
-                    <td class="text-center">
-                      $56,142
-                    </td>
-                  </tr>
-                  <tr>
-                    <td>
-                      Philip Chaney
-                    </td>
-                    <td>
-                      Korea, South
-                    </td>
-                    <td>
-                      Overland Park
-                    </td>
-                    <td class="text-center">
-                      $38,735
-                    </td>
-                  </tr>
-                  <tr>
-                    <td>
-                      Doris Greene
-                    </td>
-                    <td>
-                      Malawi
-                    </td>
-                    <td>
-                      Feldkirchen in Kärnten
-                    </td>
-                    <td class="text-center">
-                      $63,542
-                    </td>
-                  </tr>
-                  <tr>
-                    <td>
-                      Mason Porter
-                    </td>
-                    <td>
-                      Chile
-                    </td>
-                    <td>
-                      Gloucester
-                    </td>
-                    <td class="text-center">
-                      $78,615
-                    </td>
-                  </tr>
-                  <tr>
-                    <td>
-                      Jon Porter
-                    </td>
-                    <td>
-                      Portugal
-                    </td>
-                    <td>
-                      Gloucester
-                    </td>
-                    <td class="text-center">
-                      $98,615
-                    </td>
-                  </tr>
-                </tbody>
-              </table>
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
-
+    
 {% endblock content %}
 
 <!-- Specific Page JS goes HERE  -->
@@ -400,6 +92,103 @@
       demo.initDashboardPageCharts();
 
     });
+  </script>
+
+  <script>
+    var opts = {
+      lines: 12,
+      angle: 0.0,
+      radiusScale: 0.7,
+      lineWidth: 0.3,
+      pointer: {
+        length: 0.6,
+        strokeWidth: 0.035,
+        color: '#fff'
+      },
+      staticLabels: {
+        font: "15px sans-serif",  // Specifies font
+        labels: zone_env,  // Print labels at these values
+        color: "#ffffff",  // Optional: Label text color
+      },
+      staticZones: [
+       {strokeStyle: "#30B32D", min: zone_env[0], max: zone_env[1]}, // Gree
+       {strokeStyle: "#FFDD00", min: zone_env[1], max: zone_env[2]}, // Yellow
+       {strokeStyle: "#F03E3E", min: zone_env[2], max: zone_env[3]}, // Red
+      ],
+    };
+
+    var target = document.getElementById('env'); // your canvas element
+    var gauge = new Gauge(target).setOptions(opts); // create sexy gauge!
+    gauge.maxValue = gauge_env_max; // set max gauge value
+    gauge.setMinValue(0);  // set min value
+    gauge.set(gauge_env); // set actual value
+    document.getElementById('score_env').innerHTML = gauge_env;
+  </script>
+  <script>
+    var opts = {
+      lines: 12,
+      angle: 0.0,
+      radiusScale: 0.7,
+      lineWidth: 0.3,
+      pointer: {
+        length: 0.6,
+        strokeWidth: 0.035,
+        color: '#fff'
+      },
+      percentColors: [[0.0, "#a9d70b" ], [0.4, "#f9c802"], [0.7, "#ff0000"]],
+      strokeColor: '#E0E0E0',
+      generateGradient: true,
+      staticLabels: {
+        font: "15px sans-serif",  // Specifies font
+        labels: zone_soc,  // Print labels at these values
+        color: "#ffffff",  // Optional: Label text color
+      },
+      staticZones: [
+       {strokeStyle: "#F03E3E", min: zone_soc[0], max: zone_soc[1]}, // Red from 100 to 130
+       {strokeStyle: "#FFDD00", min: zone_soc[1], max: zone_soc[2]}, // Yellow
+       {strokeStyle: "#30B32D", min: zone_soc[2], max: zone_soc[3]}, // Green
+      ],
+    };
+
+    var target = document.getElementById('soc'); // your canvas element
+    var gauge = new Gauge(target).setOptions(opts); // create sexy gauge!
+    gauge.maxValue = gauge_soc_max; // set max gauge value
+    gauge.setMinValue(0);  // set min value
+    gauge.set(gauge_soc); // set actual value
+    document.getElementById('score_soc').innerHTML = gauge_soc;
+  </script>
+  <script>
+    var opts = {
+      lines: 12,
+      angle: 0.0,
+      radiusScale: 0.7,
+      lineWidth: 0.3,
+      pointer: {
+        length: 0.6,
+        strokeWidth: 0.035,
+        color: '#fff'
+      },
+      percentColors: [[0.0, "#a9d70b" ], [0.4, "#f9c802"], [0.7, "#ff0000"]],
+      strokeColor: '#E0E0E0',
+      generateGradient: true,
+      staticLabels: {
+        font: "15px sans-serif",  // Specifies font
+        labels: zone_soc,  // Print labels at these values
+        color: "#ffffff",  // Optional: Label text color
+      },
+      staticZones: [
+       {strokeStyle: "#30B32D", min: zone_gov[0], max: zone_gov[1]}, // Red from 100 to 130
+       {strokeStyle: "#FFDD00", min: zone_gov[1], max: zone_gov[2]}, // Yellow
+       {strokeStyle: "#F03E3E", min: zone_gov[2], max: zone_gov[3]}, // Green
+      ],
+    };
+
+    var target = document.getElementById('gouv'); // your canvas element
+    var gauge = new Gauge(target).setOptions(opts); // create sexy gauge!
+    gauge.maxValue = gauge_gov_max; // set max gauge value
+    gauge.setMinValue(0);  // set min value
+    gauge.set(gauge_gov); // set actual value
+    document.getElementById('score_gov').innerHTML = gauge_gov;
   </script>
 
 {% endblock javascripts %}

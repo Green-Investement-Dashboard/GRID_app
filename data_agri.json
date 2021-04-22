@@ -12,6 +12,10 @@
             {
                 "name":"submit",
                 "type":"string"
+            },
+            {
+                "name":"register",
+                "type":"string"
             }
         ],
         "primaryKey":[
@@ -23,12 +27,32 @@
         {
             "index":"F1",
             "address":null,
-            "submit":null
+            "submit":null,
+            "register":null
         },
         {
             "index":"F2",
             "address":"F4",
-            "submit":"Enregistrer"
+            "submit":"Enregistrer",
+            "register":null
+        },
+        {
+            "index":"r",
+            "address":"r",
+            "submit":"Enregistrer",
+            "register":null
+        },
+        {
+            "index":"t",
+            "address":"t",
+            "submit":"Enregistrer",
+            "register":""
+        },
+        {
+            "index":"f",
+            "address":"f",
+            "submit":"Enregistrer",
+            "register":""
         }
     ]
 }
