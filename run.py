@@ -71,9 +71,12 @@ def show_map():
 
 @app.route('/index')
 def plots():
-	co2, pct, alerte, ebitda = index_renderer.plots()
+	ebitda = index_renderer.Plots().plot_ebitda()
+	scoring = index_renderer.Scoring().main()
+	critical_alert = index_renderer.CriticalAlert().main()
+	print(scoring)
 
-	return render_template('index.html', co2=co2, pct=pct, alertes=alerte, ebitda=ebitda)
+	return render_template('index.html', ebitda=ebitda, scoring=scoring, critical_alert = critical_alert)
 
 @app.route('/questionnaire', methods=['GET', 'POST'])
 def set_up_q():

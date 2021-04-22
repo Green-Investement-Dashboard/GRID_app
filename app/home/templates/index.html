@@ -10,8 +10,10 @@
     <div class="row">
       <div class="col-12">
         <div class="card card-chart">
+          <div class="card-header">
+            <h3 class="card-title"><i class="tim-icons icon-chart-bar-32 text-primary"></i>Scoring</h3>
+          </div>
           <div class="card-body">
-            <h3>Scoring</h3>
               <div class="gauge">
                   <h3 style="text-align:center;">Score environemental</h4>
                   <canvas id="env" class="gauge_canvas"></canvas>
@@ -34,27 +36,10 @@
     </div>
 
     <div class="row">
-      <div class="col-lg-4">
+      <div class="col-lg-6">
         <div class="card card-chart">
           <div class="card-header">
-            <h5 class="card-category">Alertes envrionmentales sur l'année</h5>
-            <h3 class="card-title"><i class="tim-icons icon-bell-55 text-primary"></i>70</h3>
-          </div>
-          <div class="card-body">
-            <div class="chart-area" id='alertes'>
-              <script>
-                  var graphs = {{alertes | safe}};
-                  Plotly.newPlot('alertes',graphs.data,graphs.layout, config);
-                </script>
-            </div>
-          </div>
-        </div>
-      </div>
-      <div class="col-lg-4">
-        <div class="card card-chart">
-          <div class="card-header">
-            <h5 class="card-category">EBITDA</h5>
-            <h3 class="card-title"><i class="tim-icons icon-delivery-fast text-info"></i>3,500€</h3>
+            <h3 class="card-title"><i class="tim-icons icon-money-coins text-primary"></i>Données financières clés</h3>
           </div>
           <div class="card-body">
             <div class="chart-area" id='ebitda'>
@@ -66,7 +51,38 @@
           </div>
         </div>
       </div>
-      <div class="col-lg-4">
+      <div class="col-lg-6">
+        <div class="card card-chart">
+          <div class="card-header">
+            <h3 class="card-title"><i class="tim-icons icon-bell-55 text-success"></i>   Alertes critiques relevées par l'audit</h3>
+          </div>
+          <div class="card-body">
+            <h4><i class="tim-icons icon-world2"></i>Facteurs à risques environementaux:</h4>
+            <ul>
+              {% for critical in critical_alert[0] %}
+              <li>{{critical}}</li>
+
+              {% endfor %}
+            </ul>
+            <h4><i class="icon icon-heart-2"></i>   Facteurs à risques sociaux:</h4>
+            <ul>
+              {% for critical in critical_alert[1] %}
+              <li>{{critical}}</li>
+
+              {% endfor %}
+            </ul>
+            <h4><i class="icon icon-multiple-11"></i>   Facteurs à risques gouvernementaux:</h4>
+            <ul>
+              {% for critical in critical_alert[2] %}
+              <li>{{critical}}</li>
+
+              {% endfor %}
+            </ul>
+            
+          </div>
+        </div>
+      </div>
+      <!--<div class="col-lg-4">
         <div class="card card-chart">
           <div class="card-header">
             <h5 class="card-category">Sécheresse</h5>
@@ -78,7 +94,7 @@
             </div>
           </div>
         </div>
-      </div>
+      </div>-->
     </div>
     
 {% endblock content %}
@@ -95,6 +111,9 @@
   </script>
 
   <script>
+    var gauge_env = {{ scoring[0][0] }}
+    var gauge_env_max = {{ scoring[0][1] }}
+    var zone_env = {{ scoring[0][2] | tojson}}
     var opts = {
       lines: 12,
       angle: 0.0,
@@ -125,6 +144,9 @@
     document.getElementById('score_env').innerHTML = gauge_env;
   </script>
   <script>
+    var gauge_soc = {{ scoring[1][0] }}
+    var gauge_soc_max = {{ scoring[1][1] }}
+    var zone_soc = {{ scoring[1][2] | tojson}}
     var opts = {
       lines: 12,
       angle: 0.0,
@@ -158,6 +180,9 @@
     document.getElementById('score_soc').innerHTML = gauge_soc;
   </script>
   <script>
+    var gauge_gov = {{ scoring[2][0] }}
+    var gauge_gov_max = {{ scoring[2][1] }}
+    var zone_gov = {{ scoring[2][2] | tojson}}
     var opts = {
       lines: 12,
       angle: 0.0,

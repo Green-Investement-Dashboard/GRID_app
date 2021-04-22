@@ -27,7 +27,7 @@ import pandas as pd
 import numpy as np
 import json
 
-import app.base.index_renderer as index_renderer
+from app.home.content_gen import index_renderer
 
 @blueprint.route('/')
 def route_default():
@@ -51,10 +51,12 @@ def login():
 
             login_user(user)
 
-            co2, pct, alerte, ebitda = index_renderer.plots()
-            #r1 = redirect(url_for('base_blueprint.route_default', co2=co2, pct=pct, alertes=alerte, ebitda=ebitda))
-            r2 = render_template('index.html', co2=co2, pct=pct, alertes=alerte, ebitda=ebitda)
-            return r2
+            ebitda = index_renderer.Graph().plot_ebitda()
+            scoring = index_renderer.Scoring().main()
+            critical_alert = index_renderer.CriticalAlert().main()
+            print(scoring[0][2])
+
+            return render_template('index.html', ebitda=ebitda, scoring=scoring, critical_alert = critical_alert)
 
         # Something (user or pass) is not ok
         return render_template( 'accounts/login.html', msg='Wrong user or password', form=login_form)
@@ -63,11 +65,12 @@ def login():
         return render_template( 'accounts/login.html',
                                 form=login_form)
 
-    co2, pct, alerte, ebitda = index_renderer.plots()
-    #r1 = redirect(url_for('home_blueprint.index', co2=co2, pct=pct, alertes=alerte, ebitda=ebitda))
-    r2 = render_template('index.html', co2=co2, pct=pct, alertes=alerte, ebitda=ebitda)
-            
-    return r2
+    ebitda = index_renderer.Graph().plot_ebitda()
+    scoring = index_renderer.Scoring().main()
+    critical_alert = index_renderer.CriticalAlert().main()
+    print(scoring)
+
+    return render_template('index.html', ebitda=ebitda, scoring=scoring, critical_alert = critical_alert)
 
 @blueprint.route('/register', methods=['GET', 'POST'])
 def register():
