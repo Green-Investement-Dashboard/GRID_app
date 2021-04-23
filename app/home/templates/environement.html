@@ -38,6 +38,23 @@
                     </script>
                   </div>
                     
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="row">
+        <div class="col-md-12">
+            <div class="card card-profile">
+                <div class="card-body">
+                    <h3 class="card-title">Carte du risque incendie</h3>
+                  <div class="chart" id="fire_plot">
+                    <script>
+                        var graphs = {{plot_fire| safe}};
+                        Plotly.newPlot('fire_plot',graphs.data,graphs.layout, config);  
+                    </script>
+                  </div>
+                    
                     <a href="/" class="btn btn-primary btn-round">Home</a>
                 </div>
             </div>

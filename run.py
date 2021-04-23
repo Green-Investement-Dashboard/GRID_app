@@ -57,12 +57,12 @@ if DEBUG:
 
 @app.route('/env')
 def env():
-	canicule_instance = mgen.CaniculePlot('HWD', '85')
-	canicule_instance.read_json()
-	plot_canicule = canicule_instance.plot2()
+	plot_canicule = mgen.CaniculePlot().main()
+	plot_fire = mgen.FirePlot().main()
+	
 	critical_alert = index_renderer.CriticalAlert().main()
 
-	return render_template('environement.html', canicule_map=plot_canicule, critical_alert = critical_alert)
+	return render_template('environement.html', canicule_map=plot_canicule, plot_fire = plot_fire, critical_alert = critical_alert)
 
 @app.route('/gouv')
 def gouv():
