@@ -80,7 +80,7 @@ class CaniculePlot:
             
     
         fig.update_layout(mapbox_style="open-street-map",
-                           mapbox=dict(bearing=0,center=dict(lat=43.58, lon=4.04),pitch=0, zoom=4),
+                           mapbox=dict(bearing=0,center=dict(lat=43.58, lon=4.04),pitch=0, zoom=6),
                            paper_bgcolor='rgba(61,61,51,0.3)', plot_bgcolor='rgba(0,0,0,0)', font=dict(color='#5cba47'),
                            height=650, sliders=sliders
                            )

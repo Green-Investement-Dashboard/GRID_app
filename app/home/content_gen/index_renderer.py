@@ -101,7 +101,7 @@ class CriticalAlert:
     
       return [list_env, list_soc, list_gouv]
 
-Graph().plot_ebitda()
+#Graph().plot_ebitda()
 
 
 

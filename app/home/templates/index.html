@@ -6,6 +6,29 @@
 {% block stylesheets %}{% endblock stylesheets %}
 
 {% block content %}
+    <div class="row">
+      <div class="col-12">
+        <div class="card card-chart">
+          <div class="card-header">
+            <h3 class="card-title"><i class="tim-icons icon-bulb-63 text-primary"></i>Bienvenue!</h3>
+          </div>
+          <div class="card-body">
+              <p> Bienvenue sur GRID, votre outil permettant de transformer vos risques RSE en atout stratégique!</p>
+              <p> Comment utiliser ce dashboard? </p>
+              <ul> 
+                <li>Le résumé sur la page d'accueil:
+                  <ul>
+                    <li>Retrouvez le score ESG de l'exploitation dans la case supérieur ainsi que les alertes critiques</li>
+                    <li>La case données financières résume l'excédent brut d'exploitation et l'endettement</li>
+                  </ul>
+                </li> 
+                <li>Le détail du scoring et des données financières sur 4 pages: environement, social, gouvernance et finance
+                </li>
+              </ul>
+          </div>  
+        </div>
+      </div>
+    </div>
 
     <div class="row">
       <div class="col-12">
@@ -42,19 +65,16 @@
             <h3 class="card-title"><i class="tim-icons icon-money-coins text-primary"></i>Données financières clés</h3>
           </div>
           <div class="card-body">
-            <div class="chart-area" id='ebitda'>
-              <script>
-                  var graphs = {{ebitda | safe}};
-                  Plotly.newPlot('ebitda',graphs.data,graphs.layout, config);
-                </script>
-            </div>
+            <div class="chart-area" id='ebitda'> </div>
+            <div class="chart-area" id='endet'> </div>
+            <div class="chart-area" id='ebitda_endet'> </div>
           </div>
         </div>
       </div>
       <div class="col-lg-6">
         <div class="card card-chart">
           <div class="card-header">
-            <h3 class="card-title"><i class="tim-icons icon-bell-55 text-success"></i>   Alertes critiques relevées par l'audit</h3>
+            <h3 class="card-title"><i class="tim-icons icon-bell-55 text-success"></i>Alertes critiques relevées par l'audit</h3>
           </div>
           <div class="card-body">
             <h4><i class="tim-icons icon-world2"></i>Facteurs à risques environementaux:</h4>
@@ -82,25 +102,25 @@
           </div>
         </div>
       </div>
-      <!--<div class="col-lg-4">
-        <div class="card card-chart">
-          <div class="card-header">
-            <h5 class="card-category">Sécheresse</h5>
-            <h3 class="card-title"><i class="tim-icons icon-send text-success"></i></h3>
-          </div>
-          <div class="card-body">
-            <div class="chart-area">
-             <img src="/static/assets/img/carte_fra.jpg" alt="Profile Photo"> 
-            </div>
-          </div>
-        </div>
-      </div>-->
     </div>
     
 {% endblock content %}
 
 <!-- Specific Page JS goes HERE  -->
 {% block javascripts %}
+
+  <script>
+    var graphs = {{ebitda | safe}};
+    Plotly.newPlot('ebitda',graphs.data,graphs.layout, config);
+  </script>
+  <script>
+    var endet = {{endet | safe}};
+    Plotly.newPlot('endet',endet.data,endet.layout, config);
+  </script>
+  <script>
+    var ebit_endet = {{ebitda_endet | safe}};
+    Plotly.newPlot('ebitda_endet',ebit_endet.data,ebit_endet.layout, config);
+  </script>
 
   <script>
     $(document).ready(function() {
@@ -130,9 +150,9 @@
         color: "#ffffff",  // Optional: Label text color
       },
       staticZones: [
-       {strokeStyle: "#30B32D", min: zone_env[0], max: zone_env[1]}, // Gree
-       {strokeStyle: "#FFDD00", min: zone_env[1], max: zone_env[2]}, // Yellow
-       {strokeStyle: "#F03E3E", min: zone_env[2], max: zone_env[3]}, // Red
+       {strokeStyle: "#E85555", min: zone_env[0], max: zone_env[1]}, // Red
+       {strokeStyle: "#F5E05A", min: zone_env[1], max: zone_env[2]}, // Yellow
+       {strokeStyle: "#6CC16A", min: zone_env[2], max: zone_env[3]}, // Green
       ],
     };
 
@@ -166,9 +186,9 @@
         color: "#ffffff",  // Optional: Label text color
       },
       staticZones: [
-       {strokeStyle: "#F03E3E", min: zone_soc[0], max: zone_soc[1]}, // Red from 100 to 130
-       {strokeStyle: "#FFDD00", min: zone_soc[1], max: zone_soc[2]}, // Yellow
-       {strokeStyle: "#30B32D", min: zone_soc[2], max: zone_soc[3]}, // Green
+       {strokeStyle: "#E85555", min: zone_soc[0], max: zone_soc[1]}, // Red 
+       {strokeStyle: "#F5E05A", min: zone_soc[1], max: zone_soc[2]}, // Yellow
+       {strokeStyle: "#6CC16A", min: zone_soc[2], max: zone_soc[3]}, // Green
       ],
     };
 
@@ -202,9 +222,9 @@
         color: "#ffffff",  // Optional: Label text color
       },
       staticZones: [
-       {strokeStyle: "#30B32D", min: zone_gov[0], max: zone_gov[1]}, // Red from 100 to 130
-       {strokeStyle: "#FFDD00", min: zone_gov[1], max: zone_gov[2]}, // Yellow
-       {strokeStyle: "#F03E3E", min: zone_gov[2], max: zone_gov[3]}, // Green
+       {strokeStyle: "#E85555", min: zone_gov[0], max: zone_gov[1]}, // Red
+       {strokeStyle: "#F5E05A", min: zone_gov[1], max: zone_gov[2]}, // Yellow
+       {strokeStyle: "#6CC16A", min: zone_gov[2], max: zone_gov[3]}, // Green
       ],
     };
 

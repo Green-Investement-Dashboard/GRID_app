@@ -13075,6 +13075,7 @@ fieldset[disabled] .navbar .navbar-nav>a.btn.active {
 .navbar .navbar-nav>a.btn:not(.btn-icon) .tim-icons {
   position: relative;
   top: 1px;
+
 }
 
 .btn span,
@@ -16475,7 +16476,7 @@ h6,
 }
 
 p {
-  font-weight: 300;
+  font-weight: 400;
 }
 
 button,
@@ -16493,7 +16494,7 @@ textarea {
 .card h5,
 .card h6,
 .card p {
-  color: rgba(255, 255, 255, 0.8);
+  color: rgba(255, 255, 255, 1);
 }
 
 h1,
@@ -16503,7 +16504,7 @@ h4,
 h5,
 h6 {
   font-weight: 400;
-  color: rgba(255, 255, 255, 0.8);
+  color: rgba(255, 255, 255, 1);
 }
 
 a {
@@ -16567,7 +16568,7 @@ h6,
 }
 
 p {
-  color: rgba(255, 255, 255, 0.8);
+  color: rgba(255, 255, 255, 1);
   margin-bottom: 5px;
 }
 
@@ -19971,7 +19972,7 @@ Copyright (c) 2015 Daniel Eden
 .card .card-body .card-title {
   color: #ffffff;
   text-transform: inherit;
-  font-weight: 300;
+  font-weight: 600 !important;
   margin-bottom: .75rem;
 }
 
@@ -20214,6 +20215,7 @@ Copyright (c) 2015 Daniel Eden
   .card.card-chart .card-header .btn-group-toggle .tim-icons {
     font-size: .875rem;
     top: -1px;
+    margin-right: 10px; /* ------ Added CH 23/04 ------ */
   }
 }
 
@@ -20468,7 +20470,7 @@ Copyright (c) 2015 Daniel Eden
 .gauge {
   width:100%;
   max-width: 30.3333% !important;
-  height: 300px;
+  height: 200px;
   margin: 0 20px 20px 0;
   clear: both;
   position: relative;
@@ -20500,5 +20502,11 @@ Copyright (c) 2015 Daniel Eden
   font-size: 41px;
 }
 
+.card-header .card-title .tim-icons {
+  margin-right: 10px !important; /* ------ Added CH 23/04 ------ */
+  }
 
+  .card-body .tim-icons {
+  margin-right: 10px !important; /* ------ Added CH 23/04 ------ */
+  }
 

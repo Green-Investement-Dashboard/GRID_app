@@ -28,9 +28,8 @@ import numpy
 import json
 
 from app.home.content_gen import index_renderer
-from app.home.content_gen import test_graph
-from app.home.content_gen import canicule
-from app.home.content_gen import gen_graph
+from app.home.content_gen import map_generation as mgen
+from app.home.content_gen import graph_generation as ggen
 
 # WARNING: Don't run with debug turned on in production!
 DEBUG = config('DEBUG', default=True, cast=bool)
@@ -58,7 +57,7 @@ if DEBUG:
 
 @app.route('/env')
 def env():
-	canicule_instance = canicule.CaniculePlot('HWD', '85')
+	canicule_instance = mgen.CaniculePlot('HWD', '85')
 	canicule_instance.read_json()
 	plot_canicule = canicule_instance.plot2()
 	critical_alert = index_renderer.CriticalAlert().main()
@@ -68,14 +67,14 @@ def env():
 @app.route('/gouv')
 def gouv():
 	critical_alert = index_renderer.CriticalAlert().main()
-	diver_chart = gen_graph.PieChart('G6', "Diversification d'activité").plot()
+	diver_chart = ggen.PieChart('G6', "Diversification d'activité").plot()
 
 	return render_template('gouvernance.html', diver_chart=diver_chart, critical_alert = critical_alert)
 
 @app.route('/soc')
 def soc():
-	S1_indic = gen_graph.BulletChart('S1', "Communication").plot()
-	S2_indic = gen_graph.BulletChart('S2', "Barrières douanières").plot()
+	S1_indic = ggen.BulletChart('S1', "Communication").plot()
+	S2_indic = ggen.BulletChart('S2', "Barrières douanières").plot()
 	#S2_indic = S1_indic 
 	critical_alert = index_renderer.CriticalAlert().main()
 
@@ -85,12 +84,14 @@ def soc():
 
 @app.route('/index')
 def index():
-	ebitda = index_renderer.Plots().plot_ebitda()
 	scoring = index_renderer.Scoring().main()
 	critical_alert = index_renderer.CriticalAlert().main()
-	print(scoring)
 
-	return render_template('index.html', ebitda=ebitda, scoring=scoring, critical_alert = critical_alert)
+	list_graph = ggen.FinancialChart('F1', 'F2').plot_bar()
+	#ebitda, endet = gen_graph.FinancialChart('F1', 'F2').plot_sgl_line()
+	ebitda_endet = ggen.FinancialChart('F1', 'F2').plot_mltpl_line()
+
+	return render_template('index.html', ebitda=list_graph[0], endet=list_graph[1], ebitda_endet = ebitda_endet, scoring=scoring, critical_alert = critical_alert)
 
 @app.route('/questionnaire', methods=['GET', 'POST'])
 def set_up_q():

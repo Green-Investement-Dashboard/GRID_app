@@ -27,7 +27,7 @@ import pandas as pd
 import numpy as np
 import json
 
-from app.home.content_gen import index_renderer
+import run
 
 @blueprint.route('/')
 def route_default():
@@ -51,12 +51,9 @@ def login():
 
             login_user(user)
 
-            ebitda = index_renderer.Graph().plot_ebitda()
-            scoring = index_renderer.Scoring().main()
-            critical_alert = index_renderer.CriticalAlert().main()
-            print(scoring[0][2])
+            render = run.index()
+            return render
 
-            return render_template('index.html', ebitda=ebitda, scoring=scoring, critical_alert = critical_alert)
 
         # Something (user or pass) is not ok
         return render_template( 'accounts/login.html', msg='Wrong user or password', form=login_form)
@@ -65,12 +62,9 @@ def login():
         return render_template( 'accounts/login.html',
                                 form=login_form)
 
-    ebitda = index_renderer.Graph().plot_ebitda()
-    scoring = index_renderer.Scoring().main()
-    critical_alert = index_renderer.CriticalAlert().main()
-    print(scoring)
+    render = run.index()
+    return render
 
-    return render_template('index.html', ebitda=ebitda, scoring=scoring, critical_alert = critical_alert)
 
 @blueprint.route('/register', methods=['GET', 'POST'])
 def register():
