@@ -1,62 +1,64 @@
 {% extends "layouts/base.html" %}
 
-{% block title %} Financial overview {% endblock %} 
+{% block title %} Questionnaire {% endblock %} 
 
 <!-- Specific Page CSS goes HERE  -->
 {% block stylesheets %}{% endblock stylesheets %}
 
 {% block content %}
-
+  {% if end %}
     <div class="row">
-    <div class="col-md-8">
-      <div class="card">
-
-        {% if end %}
-        <div class="card-header">
-        <p> {{ message }}</p></div>
-
-        {% else%}
-            <form role="form" method="post" action="">
-        
-          {{ form.hidden_tag() }} 
-
+      <div class="col-12">
+        <div class="card card-chart">
           <div class="card-header">
-            <h2 class="title">Questionnaire d'entrée</h2>
+            <h3 class="card-title"><i class="tim-icons icon-bulb-63 text-primary"></i>Merci!</h3>
           </div>
-          <p> Ce questionnaire a pour but de recueillir les données nécessaire à audit. Merci de le remplir avec attention</p>
-          <p> En cas de souci, contactez-nous au 04..... </p>
           <div class="card-body">
-
-              <div class="row">
-
-                <div class="col-md-3 px-md-1">
-                  <div class="form-group">
-                    <label>Nom de l'exploitation</label>
-                    {{ form.name_exploit(class="form-control") }}
-                  </div>
-                </div>
-
-              </div>
-              <div class="row">
-
-                <div class="col-md-3 px-md-1">
-                  <div class="form-group">
-                    <label>Adresse</label>
-                    {{ form.address(class="form-control") }}
-                  </div>
-                </div>
-            <div class="card-footer">
-            
-            &nbsp; &nbsp;
-                <button type="submit" name="register" class="btn btn-fill btn-primary">{{ form.submit(class="form-control") }}</button>
-            </div>
-
-        </form>
-        {% endif %}
-
+             <p> {{ message }}</p>
+             <div class="table-responsive">{{ table|safe }} </div>
+          </div>  
+        </div>
       </div>
     </div>
-  </div>
+  {% else%}
+
+    <div class="row">
+      <div class="col-12">
+        <div class="card card-chart">
+          <div class="card-header">
+            <h3 class="card-title">Questionnaire d'entrée</h3>
+          </div>
+          <div class="card-body">
+            <p> Ce questionnaire a pour but de recueillir les données nécessaire à audit. Merci de le remplir avec attention</p>
+            <p> En cas de souci, contactez-nous au 04..... </p>
+
+            <form role="form" method="post" action="">
+
+              {{ form.hidden_tag() }} 
+              <div class="col-md-3 px-md-1">
+                <div class="form-group"><label>Nom de l'exploitation</label> {{ form.name_exploit(class="form-control") }} </div>
+                <div class="form-group"><label>Addresse</label>{{ form.address(class="form-control") }}</div>
+                <!--<div class="form-group"><label>Date</label>{{ form.date(class="form-control") }}</div>-->
+                <div class="form-group"><label>Language</label>{{ form.language(class="form-control") }}</div>
+                <div class="form-group"><label>Zone text</label>{{ form.text(class="form-control") }}</div>
+
+              </div>
+              
+
+
+            
+          </div>
+          <div class="card-footer">
+            &nbsp; &nbsp;
+            <button type="submit" name="register" class="btn btn-fill btn-primary">{{ form.submit(class="form-control") }}</button>
+          </form>
+          </div>  
+        </div>
+      </div>
+    </div>
+
+  {% endif %}
+
     
 {% endblock content %}
 

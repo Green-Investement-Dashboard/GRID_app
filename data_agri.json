@@ -10,11 +10,11 @@
                 "type":"string"
             },
             {
-                "name":"submit",
+                "name":"language",
                 "type":"string"
             },
             {
-                "name":"register",
+                "name":"text",
                 "type":"string"
             }
         ],
@@ -25,34 +25,28 @@
     },
     "data":[
         {
-            "index":"F1",
+            "index":"fez",
             "address":null,
-            "submit":null,
-            "register":null
+            "language":null,
+            "text":null
         },
         {
-            "index":"F2",
-            "address":"F4",
-            "submit":"Enregistrer",
-            "register":null
+            "index":"tt'",
+            "address":"yy('",
+            "language":"text",
+            "text":"y(("
         },
         {
-            "index":"r",
-            "address":"r",
-            "submit":"Enregistrer",
-            "register":null
+            "index":"fe",
+            "address":"fez",
+            "language":"cpp",
+            "text":"fee"
         },
         {
-            "index":"t",
-            "address":"t",
-            "submit":"Enregistrer",
-            "register":""
-        },
-        {
-            "index":"f",
-            "address":"f",
-            "submit":"Enregistrer",
-            "register":""
+            "index":"'grf",
+            "address":"f'e",
+            "language":"cpp",
+            "text":""
         }
     ]
 }

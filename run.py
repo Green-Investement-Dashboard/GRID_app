@@ -8,7 +8,6 @@ from flask import jsonify, render_template, redirect, request, url_for, render_t
 from flask_wtf import FlaskForm
 from wtforms import StringField, PasswordField, BooleanField, SubmitField
 from wtforms.validators import DataRequired
-from app.base.forms import Questionaires
 from flask import render_template, flash, redirect
 
 from os import environ
@@ -18,8 +17,7 @@ import logging
 
 from config import config_dict
 from app import create_app, db
-import app.base.index_renderer as index_renderer
-#%%
+
 import plotly
 import plotly.graph_objs as go
 
@@ -30,6 +28,7 @@ import json
 from app.home.content_gen import index_renderer
 from app.home.content_gen import map_generation as mgen
 from app.home.content_gen import graph_generation as ggen
+from app.home.content_gen import questionaire
 
 # WARNING: Don't run with debug turned on in production!
 DEBUG = config('DEBUG', default=True, cast=bool)
@@ -38,7 +37,7 @@ DEBUG = config('DEBUG', default=True, cast=bool)
 get_config_mode = 'Debug' if DEBUG else 'Production'
 
 try:
-    
+
     # Load the configuration using the default values 
     app_config = config_dict[get_config_mode.capitalize()]
 
@@ -95,28 +94,22 @@ def index():
 
 @app.route('/questionnaire', methods=['GET', 'POST'])
 def set_up_q():
-	form = Questionaires(request.form)
+	form = questionaire.QuestionairesAgri(request.form)
 
 	if form.validate_on_submit():
 		data = request.form
-		print(data)
-		save_data(data)
-		return render_template('questionaire.html',  end=True, message= 'Merci {}, données enregistrées'.format(form.name_exploit.data))
+		result= questionaire.save_data(data)
+		return render_template('questionaire.html',  end=True, message= 'Merci {}, données enregistrées'.format(form.name_exploit.data), table = result)	
 
 	return render_template('questionaire.html',  end=False, form=form)
 
-def save_data (data):
-	df = pandas.read_json('data_agri.json', orient='table')
-	name_exploit = data['name_exploit']
-
-	for keys in data.keys():
-		if keys not in ['csrf_token', 'name_exploit']:
-			df.loc[name_exploit, keys] = data[keys]
-
-	df.to_json('data_agri.json', orient='table', indent=4)
 
 
 if __name__ == "__main__":
     app.run()
+
+    app.config['RECAPTCHA_USE_SSL']= False
+    app.config['RECAPTCHA_PUBLIC_KEY']='6LePyrYaAAAAAJeb9GJ1HPDNq1izagSaVx-g_a2L'
+    app.config['RECAPTCHA_PRIVATE_KEY']=' 6LePyrYaAAAAAF28HOd3ui8MsFhvF7BeUkeH7Fpc'
     
 #Bonjour la GRID TEAM 

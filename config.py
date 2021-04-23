@@ -17,6 +17,11 @@ class Config(object):
     SQLALCHEMY_DATABASE_URI = 'sqlite:///' + os.path.join(basedir, 'db.sqlite3')
     SQLALCHEMY_TRACK_MODIFICATIONS = False
 
+    #Captcha
+    SSL = config('RECAPTCHA_USE_SSL', default= False)
+    PUBLIC_KEY = config('RECAPTCHA_PUBLIC_KEY', default='6LePyrYaAAAAAJeb9GJ1HPDNq1izagSaVx-g_a2L')
+    PRIVATE_KEY = config('RECAPTCHA_PRIVATE_KEY', default='6LePyrYaAAAAAF28HOd3ui8MsFhvF7BeUkeH7Fpc')
+
 class ProductionConfig(Config):
     DEBUG = False
 
