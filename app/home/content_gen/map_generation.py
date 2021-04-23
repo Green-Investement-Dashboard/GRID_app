@@ -227,7 +227,8 @@ class FirePlot:
                                                                     'ticktext':[0, "<b>Très bas</b>", 5.2, "<b>Bas</b>", 11.2, "<b>Modéré</b>", 21.3, "<b>Haut</b>", 38.0, "<b>Très haut</b>", 50.0, "<b>Extrême</b>"],
                                                                     'ticks':"outside"
                                                                     },
-                                                         cmin=0, cmax=zmax),
+                                                         cmin=0, cmax=zmax, opacity=1
+                                                         ),
                                            #radius=10,
                                            #colorbar= {'title':'Index feu'},
                                            #zmin=0, zmax=zmax,
@@ -236,11 +237,13 @@ class FirePlot:
                                            hovertemplate = '<b>%{customdata[0]}</b> index feu<br>' + "%{customdata[1]} <extra></extra>"
                                            )
                           )
+        fig.add_trace(go.Scattermapbox(lat=[43.58], lon=[4.04], marker = {'size': 30, 'color':["#0D9580"]},
+                                       hovertemplate = "<b>Exploitation</b> <extra></extra>"))
             
         steps = []
-        for i, date in zip(range(len(fig.data)), list_date):
+        for i, date in zip(range(len(fig.data)-1), list_date):
             step = dict(method='update',
-                        args=[{"visible": [False] * len(fig.data)},
+                        args=[{"visible": [False] * (len(fig.data)-1) + [True]},
                               {"title": f"Carte des canicules {date.strftime('%Y')}"}],
                         label=f"Year: {date.strftime('%Y')}",
                         )
@@ -256,7 +259,7 @@ class FirePlot:
                            height=650, sliders=sliders, showlegend=False
                            )
         #fig=go.Figure(data=data_slider, layout=layout)
-        #fig.write_html("fire.html")
+        fig.write_html("fire.html")
         plot_json = json.dumps(fig, cls=plotly.utils.PlotlyJSONEncoder)
 
         return plot_json
@@ -270,5 +273,5 @@ class FirePlot:
          
          
 if __name__ == '__main__':
-    canicule = CaniculePlot().main()
+    canicule = FirePlot().main()
     
