@@ -65,13 +65,14 @@ class CaniculePlot:
                                            hovertemplate = '<b>%{customdata[0]}</b> jours<br>' + "%{customdata[1]} <extra></extra>"
                                            )
                           )
-        
+        fig.add_trace(go.Scattermapbox(lat=[43.58], lon=[4.04], marker = {'size': 30, 'color':["#0D9580"]},
+                                       hovertemplate = "<b>Exploitation</b> <extra></extra>"))
         steps = []
-        for i, date in zip(range(len(fig.data)), list_date):
+        for i, date in zip(range(len(fig.data)-1), list_date):
             step = dict(method='update',
-                        args=[{"visible": [False] * len(fig.data)},
+                        args=[{"visible": [False] * (len(fig.data)-1) + [True]},
                               {"title": f"Carte des canicules {date.strftime('%Y')}"}],
-                        label=f"Year: {date.strftime('%Y')}"
+                        label=f"Year: {date.strftime('%Y')}",
                         )
             step["args"][0]["visible"][i] = True
             steps.append(step)
