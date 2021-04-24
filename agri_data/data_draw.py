@@ -60,7 +60,7 @@ class RandomDraw:
 	def scoring_data (self):
 		df = pandas.read_csv('https://raw.githubusercontent.com/Green-Investement-Dashboard/data/main/data_eg/scoring.csv')
 		df = df.set_index('indicateur')
-		range_env = [0,72]
+		range_env = [43,72]
 		range_soc = [45,55]
 		rang_gouv = [55,100]
 		
