@@ -49,13 +49,13 @@
           <div class="card-body">
             <div class="number_bchart"> 
                 {% if G9_indic.color=='red' %}
-                  <div class="nmb_red">r
+                  <div class="nmb_red">
                 {% elif G9_indic.color=='yellow' %}
                   <div class="nmb_yellow">
                 {% else %}
                   <div class="nmb_green">
                 {% endif %}
-                {{G9_indic.value}}</div>
+                <span class='bchart'><p>{{G9_indic.value}}</p></span></div>
               </div>
               <div id={{G9_indic.title.split(' ')[0]}}>
                 <script>

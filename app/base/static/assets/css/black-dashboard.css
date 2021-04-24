@@ -20537,6 +20537,29 @@ margin-right: 10px !important; /* ------ Added CH 23/04 ------ */
 }
 
 .questionnaire div {
+  padding: 50px;
+  margin:auto;
+}
+
+.number_bchart {
+  margin:auto;
+  text-align:center;
+  font-size: 30;
+  font-weight: bold;
+}
+
+.nmb_red{
+  color: red;
+  margin:auto;
+}
+
+.nmb_yellow{
+  color:yellow;
+  margin:auto;
+}
+
+.nmb_red{
+  color:red;
   margin:auto;
 }
 

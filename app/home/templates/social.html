@@ -37,13 +37,13 @@
               <h4>{{chart.title}}</h4>
               <div class="number_bchart"> 
                 {% if chart.color=='red' %}
-                  <div class="nmb_red">r
+                  <div class="nmb_red">
                 {% elif chart.color=='yellow' %}
                   <div class="nmb_yellow">
                 {% else %}
                   <div class="nmb_green">
                 {% endif %}
-                {{chart.value}}</div>
+                <span class='bchart'><p>{{chart.value}}</p></span></div>
               </div>
               <div id={{chart.title.split(' ')[0]}}>
                 <script>
