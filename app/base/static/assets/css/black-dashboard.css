@@ -2086,7 +2086,7 @@ pre code {
   font-size: 0.875rem;
   font-weight: 400;
   line-height: 1.428571;
-  color: rgba(255, 255, 255, 0.8);
+  color: #3D3D33;
   background-color: transparent;
   background-clip: padding-box;
   border: 1px solid #cad1d7;
@@ -15820,6 +15820,8 @@ img {
   position: absolute;
   z-index: 1050;
 }
+/* MBC définition couleur header*/
+
 
 .navbar.navbar-transparent {
   background: #72B857 !important;
@@ -16488,6 +16490,7 @@ textarea {
   font-family: "Poppins", sans-serif;
 }
 
+/* MBC définition couleurs titres*/
 .card h1,
 .card h2,
 .card h3,
@@ -16495,7 +16498,7 @@ textarea {
 .card h5,
 .card h6,
 .card p {
-  color: rgba(255, 255, 255, 1);
+  color: #3D3D34;
 }
 
 h1,
@@ -16505,11 +16508,11 @@ h4,
 h5,
 h6 {
   font-weight: 400;
-  color: rgba(255, 255, 255, 1);
+  color: #3D3D34;
 }
 
 a {
-  color: #5cba47;
+  color: #72B857;
   font-weight: 300;
 }
 
@@ -16569,7 +16572,7 @@ h6,
 }
 
 p {
-  color: rgba(255, 255, 255, 1);
+  color: #3D3D34;
   margin-bottom: 5px;
 }
 
@@ -16586,7 +16589,7 @@ p.description {
 }
 
 .title.title-up a {
-  color: #222a42;
+  color: #3D3D34;
   text-decoration: none;
 }
 
@@ -16654,10 +16657,11 @@ p.description {
 .blockquote.blockquote-white small {
   color: rgba(255, 255, 255, 0.8);
 }
+/* MBC définition couleur des cards*/
 
 ul li,
 ol li {
-  color: #ffffff;
+  color: #3D3D24;
 }
 
 pre {
@@ -17530,15 +17534,17 @@ table.tablesorter thead tr .headerSortDown {
 .off-canvas-sidebar .nav li:hover:not(.active)>a i,
 .off-canvas-sidebar .nav li:focus:not(.active)>a p,
 .off-canvas-sidebar .nav li:focus:not(.active)>a i {
-  color: #ffffff;
+  color: #72B857;
 }
 
 .sidebar .nav li:hover:not(.active)>a i,
 .sidebar .nav li:focus:not(.active)>a i,
 .off-canvas-sidebar .nav li:hover:not(.active)>a i,
 .off-canvas-sidebar .nav li:focus:not(.active)>a i {
-  color: #ffffff;
+  color: #72B857;
 }
+
+/*MBC définition du surlignage du menu */
 
 .sidebar .nav li.active>a:not([data-toggle="collapse"]),
 .off-canvas-sidebar .nav li.active>a:not([data-toggle="collapse"]) {
@@ -17812,6 +17818,7 @@ table.tablesorter thead tr .headerSortDown {
 .off-canvas-sidebar .nav>li>a:focus {
   background: rgba(200, 200, 200, 0.2);
 }
+/* MBC définition de la couleur du corps */
 
 .main-panel {
   position: relative;
@@ -17819,7 +17826,7 @@ table.tablesorter thead tr .headerSortDown {
   width: 100%;
   min-height: 100vh;
   border-top: 2px solid #3d3d33;
-  background: #FFFFFF;
+  background: #E7EDE6;
   
   /*background: linear-gradient(#1e1e2f, #1e1e24);*/
   -webkit-transition: all 0.5s cubic-bezier(0.685, 0.0473, 0.346, 1);
@@ -19946,17 +19953,20 @@ Copyright (c) 2015 Daniel Eden
   background: #3D3D33;
 }
 
+/* MBC définition des blocs card*/
+
 .card {
-  background: #27293d;
+  background: #F8FCF7;
   border: 0;
   position: relative;
   width: 100%;
   margin-bottom: 30px;
-  box-shadow: 0 1px 20px 0px rgba(0, 0, 0, 0.1);
+  box-shadow: 0 1px 20px 0px rgba(0, 0, 0, 0.3);
 }
 
 .card label {
-  color: rgba(255, 255, 255, 0.6);
+  color: #72B857;
+  font-weight: bold;
 }
 
 .card .card-title {
@@ -19973,7 +19983,9 @@ Copyright (c) 2015 Daniel Eden
 }
 
 .card .card-body .card-title {
-  color: #ffffff;
+  color: #72B857;
+  font-weight: bold;
+  text-transform: uppercase;
   text-transform: inherit;
   font-weight: 600 !important;
   margin-bottom: .75rem;
@@ -19995,12 +20007,15 @@ Copyright (c) 2015 Daniel Eden
 }
 
 .card .card-header .card-title {
-  color: #ffffff;
+  color: #72B857;
   font-weight: 100;
+  font-weight: bold;
+  text-transform: uppercase;
 }
 
 .card .card-header .card-category {
-  color: #9A9A9A;
+  color: #72B857;
+  font-weight: bold;
   margin-bottom: 5px;
   font-weight: 300;
 }
@@ -20513,8 +20528,12 @@ Copyright (c) 2015 Daniel Eden
 margin-right: 10px !important; /* ------ Added CH 23/04 ------ */
 }
 
+/* Addeed MBC 24/04 14:43 */
 
-.body{
-  background-color: #FFFFFF !important;
-
+.sidebar .sidebar-wrapper .nav p
+{
+  color: #FFFFFF;
+  margin-bottom: 5px;
 }
+
+

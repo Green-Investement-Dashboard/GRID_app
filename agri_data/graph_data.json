@@ -93,8 +93,16 @@
         },
         {
             "index":"S3",
-            "list_x":null,
-            "list_y":null
+            "list_x":[
+                "Vente directe",
+                "Coop\u00e9rative",
+                "Grande distribution"
+            ],
+            "list_y":[
+                50,
+                40,
+                10
+            ]
         },
         {
             "index":"S4",
