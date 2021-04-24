@@ -57,11 +57,13 @@ class PieChart:
     self.value_range = pandas.read_json('https://raw.githubusercontent.com/Green-Investement-Dashboard/data/main/data_eg/value_range.json', orient='table')
     self.indic = indic
     self.indic_name = indic_name
+    self.colors = ['#3D3D34', '#72B857', '#BA475C', "#4771BA"]
 
   def plot(self):
-    data = go.Pie(labels=self.data.loc[self.indic, 'list_x'], values=self.data.loc[self.indic, 'list_y'])
+    data = go.Pie(labels=self.data.loc[self.indic, 'list_x'], values=self.data.loc[self.indic, 'list_y'], marker=dict(colors=self.colors))
     layout = go.Layout(height=600,
                      paper_bgcolor='rgba(61,61,51,0.01)', plot_bgcolor='rgba(0,0,0,0)', font=dict(color='#5cba47'),
+                     
                            )
     fig = go.Figure(data, layout)
     #fig.write_html("pie_ch.html")
@@ -74,14 +76,15 @@ class FinancialChart:
     self.data =  data_import.ReadData('financial_data').read_json()
     self.data['list_x'] = self.data.apply(lambda x: [pandas.to_datetime(date) for date in x['list_x']], axis=1)
     self.list_indic = args
+    self.color = '#3D3D34'
 
   def plot_bar(self):
     list_graph = []
 
     for indic in self.list_indic:
-      data = go.Bar(x=self.data.loc[indic, 'list_x'], y=self.data.loc[indic, 'list_y'])
+      data = go.Bar(x=self.data.loc[indic, 'list_x'], y=self.data.loc[indic, 'list_y'], marker_color=self.color)
       layout = go.Layout(paper_bgcolor='rgba(61,61,51,0)', plot_bgcolor='rgba(0,0,0,0)',
-                         xaxis_title='Date' , yaxis_title=self.data.loc[indic, 'name'], font=dict(color='#5cba47'), margin=dict(l=0, r=20, t=20, b=0)
+                         xaxis_title='Date' , yaxis_title=self.data.loc[indic, 'name'], font=dict(color='#5cba47'), margin=dict(l=0, r=20, t=20, b=0),
                          )
       fig = go.Figure(data=data, layout=layout)
       graphjson = json.dumps(fig, cls=plotly.utils.PlotlyJSONEncoder)
@@ -136,6 +139,8 @@ class CaniculePlot:
 
     self.agri_data =  data_import.ReadData('data_agri').read_json()
 
+    self.colors = ['#3D3D34', '#72B857', '#BA475C', "#4771BA"]
+
   def find_closest (self):
     temp_df = self.df.reset_index()
     temp_df['diff_lon'] = temp_df['lon'].sub(self.agri_data['Long'].iloc[-1]).abs()
@@ -149,7 +154,7 @@ class CaniculePlot:
   def plot (self):
       data_extract = self.df.loc[(self.lat, self.lon, slice(None)), ['HWD_EU_climate']].reset_index()
       
-      data = go.Scatter(x=data_extract['time'], y=data_extract['HWD_EU_climate'])
+      data = go.Scatter(x=data_extract['time'], y=data_extract['HWD_EU_climate'], line=dict(color=self.colors[0]))
       layout = go.Layout(paper_bgcolor='rgba(61,61,51,0)', plot_bgcolor='rgba(0,0,0,0)',
                          xaxis_title='Date' , yaxis_title='Nombre de jours de canicules', font=dict(color='#5cba47'), margin=dict(l=0, r=20, t=20, b=0)
                          )

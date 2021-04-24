@@ -219,7 +219,7 @@ class FirePlot:
             
         fig.update_layout(mapbox_style="open-street-map",
                            mapbox=dict(bearing=0,center=dict(lat=self.lat, lon=self.lon),pitch=0, zoom=6),
-                           paper_bgcolor='rgba(61,61,51,0.3)', plot_bgcolor='rgba(0,0,0,0)', font=dict(color='#5cba47'),
+                           paper_bgcolor='#F8FCF7', plot_bgcolor='rgba(0,0,0,0)', font=dict(color='#5cba47'),
                            height=650, sliders=sliders, showlegend=False
                            )
         
