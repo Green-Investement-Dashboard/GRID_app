@@ -84,6 +84,13 @@ def soc():
 
 	return render_template('social.html', bullet_charts = [S1_indic, S2_indic], S3_indic = S3_indic,
 		critical_alert = critical_alert)
+
+@app.route('/finance')
+def finance():
+	list_graph = ggen.FinancialChart('F1', 'F2').plot_bar()
+
+	return render_template('finance.html', ebitda=list_graph[0], endet=list_graph[1])
+
 	
 
 @app.route('/index')
