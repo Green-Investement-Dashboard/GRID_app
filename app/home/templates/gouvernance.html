@@ -33,27 +33,41 @@
             <h3 class="card-title">Diversification d'activité</h3>
           </div>
           <div class="card-body">
-            <div id='diver_chart'> </div>
-            
+            <div id='G6_indic'> </div>
+                <script>
+                    var graphs = {{G6_indic | safe}};
+                    Plotly.newPlot('G6_indic',graphs.data,graphs.layout, config);
+                </script>
           </div>
         </div>
       </div>
       <div class="col-lg-6">
         <div class="card card-chart">
           <div class="card-header">
-            <h3 class="card-title">Indicateur 2</h3>
+            <h3 class="card-title">Matériel mutualisé</h3>
           </div>
           <div class="card-body">
-            
+            <div class="number_bchart"> 
+                {% if G9_indic.color=='red' %}
+                  <div class="nmb_red">r
+                {% elif G9_indic.color=='yellow' %}
+                  <div class="nmb_yellow">
+                {% else %}
+                  <div class="nmb_green">
+                {% endif %}
+                {{G9_indic.value}}</div>
+              </div>
+              <div id={{G9_indic.title.split(' ')[0]}}>
+                <script>
+                  var graphs = {{G9_indic.graph | safe}};
+                  Plotly.newPlot({{G9_indic.title.split(' ')[0]}},graphs.data,graphs.layout, config);
+                </script> 
+              </div>
           </div>
         </div>
       </div>
     </div>
     
-    <script>
-  var graphs = {{diver_chart | safe}};
-  Plotly.newPlot('diver_chart',graphs.data,graphs.layout, config);
-</script>
 {% endblock content %}
 
 <!-- Specific Page JS goes HERE  -->

@@ -17,7 +17,7 @@ class BulletChart:
         self.indic_name = indic_name
 
     def plot(self):
-        data = go.Indicator(mode = "number+gauge+delta", 
+        data = go.Indicator(mode = "gauge", 
                       gauge = {'shape': "bullet",
                                'steps': [
                                    {'range': [self.value_range.loc[self.indic, 'Min'], self.value_range.loc[self.indic, 'Bin'][0]], 'color': "#E85555"},
@@ -41,7 +41,14 @@ class BulletChart:
         #fig.write_html("gauge.html")
         plot_json = json.dumps(fig, cls=plotly.utils.PlotlyJSONEncoder)
 
-        return plot_json
+        if self.data.loc[self.indic, 'Value'] < self.value_range.loc[self.indic, 'Bin'][0]:
+          color = 'red'
+        elif self.data.loc[self.indic, 'Value'] > self.value_range.loc[self.indic, 'Bin'][0] and self.data.loc[self.indic, 'Value'] <= self.value_range.loc[self.indic, 'Bin'][1]:
+          color = 'yellow'
+        else:
+          color = 'red'
+
+        return {'graph':plot_json, 'title': self.indic_name, 'color':color, 'value':self.data.loc[self.indic, 'Value']}
 
 class PieChart:
   def __init__ (self, indic, indic_name):

@@ -33,20 +33,42 @@
             <h3 class="card-title">Indicateur 1</h3>
           </div>
           <div class="card-body">
-            <h4>{{S1_title}}</h4>
-            <div id='S1'> </div>
-            <h4>{{S2_title}}</h4>
-            <div id='S2'> </div>
+            {% for chart in bullet_charts %}
+              <h4>{{chart.title}}</h4>
+              <div class="number_bchart"> 
+                {% if chart.color=='red' %}
+                  <div class="nmb_red">r
+                {% elif chart.color=='yellow' %}
+                  <div class="nmb_yellow">
+                {% else %}
+                  <div class="nmb_green">
+                {% endif %}
+                {{chart.value}}</div>
+              </div>
+              <div id={{chart.title.split(' ')[0]}}>
+                <script>
+                  var graphs = {{chart.graph | safe}};
+                  Plotly.newPlot({{chart.title.split(' ')[0]}},graphs.data,graphs.layout, config);
+                </script> 
+              </div>
+            {% endfor %}
+
+        
           </div>
         </div>
       </div>
       <div class="col-lg-6">
         <div class="card card-chart">
           <div class="card-header">
-            <h3 class="card-title">Indicateur 2</h3>
+            <h3 class="card-title">Canaux de distribution</h3>
           </div>
           <div class="card-body">
-            
+            <div id='S3_indic'> </div>
+                <script>
+                    var graphs = {{S3_indic | safe}};
+                    Plotly.newPlot('S3_indic',graphs.data,graphs.layout, config);
+                </script>
+            </div>
           </div>
         </div>
       </div>
