@@ -112,14 +112,9 @@
   <script>
     var graphs = {{ebitda | safe}};
     Plotly.newPlot('ebitda',graphs.data,graphs.layout, config);
-  </script>
-  <script>
+    
     var endet = {{endet | safe}};
     Plotly.newPlot('endet',endet.data,endet.layout, config);
-  </script>
-  <script>
-    var ebit_endet = {{ebitda_endet | safe}};
-    Plotly.newPlot('ebitda_endet',ebit_endet.data,ebit_endet.layout, config);
   </script>
 
   <script>

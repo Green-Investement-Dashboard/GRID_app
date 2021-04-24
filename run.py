@@ -70,19 +70,20 @@ def env():
 @app.route('/gouv')
 def gouv():
 	critical_alert = index_renderer.CriticalAlert().main()
-	diver_chart = ggen.PieChart('G6', "Diversification d'activité").plot()
+	G6_indic = ggen.PieChart('G6', "Diversification d'activité").plot()
+	G9_indic = ggen.BulletChart('G9', "Matériel mutualisé").plot()
 
-	return render_template('gouvernance.html', diver_chart=diver_chart, critical_alert = critical_alert)
+	return render_template('gouvernance.html', G6_indic=G6_indic, G9_indic=G9_indic, critical_alert = critical_alert)
 
 @app.route('/soc')
 def soc():
 	S1_indic = ggen.BulletChart('S1', "Communication").plot()
 	S2_indic = ggen.BulletChart('S2', "Barrières douanières").plot()
-	#S2_indic = S1_indic 
+	S3_indic = ggen.PieChart('G6', "Diversification d'activité").plot() 
 	critical_alert = index_renderer.CriticalAlert().main()
 
-	return render_template('social.html', s1=S1_indic, S1_title="Communication", 
-		S2_title="Barrières douanières", s2=S2_indic, critical_alert = critical_alert)
+	return render_template('social.html', bullet_charts = [S1_indic, S2_indic], S3_indic = S3_indic,
+		critical_alert = critical_alert)
 	
 
 @app.route('/index')
