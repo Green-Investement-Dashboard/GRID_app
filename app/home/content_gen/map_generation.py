@@ -117,13 +117,13 @@ class FirePlot:
         
      
     def color_scale(self, zmax):
-        colorscale=[[0.00, '#FF6474'],
-                     [5.20, '#FD6D68'],
-                     [11.2, '#F9856C'],
-                     [21.3, '#F59A70'],
-                     [38.0, '#F0AD75'],
-                     [50.0, "#ECBD79"],
-                     [zmax, "#E8CB7D"],
+        colorscale=[[0.00, '#fee5d9'],
+                     [5.20, '#fcbba1'],
+                     [11.2, '#fc9272'],
+                     [21.3, '#fb6a4a'],
+                     [38.0, '#ef3b2c'],
+                     [50.0, "#cb181d"],
+                     [zmax, "#99000d"],
                      ]
 
         Delta = colorscale[-1][0] - colorscale[0][0]
