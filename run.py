@@ -25,7 +25,7 @@ import pandas
 import numpy
 import json
 
-from agri_data import data_draw
+#from agri_data import data_draw
 
 from app.home.content_gen import index_renderer
 from app.home.content_gen import map_generation as mgen
@@ -34,7 +34,7 @@ from app.home.content_gen import questionaire
 
 # WARNING: Don't run with debug turned on in production!
 DEBUG = config('DEBUG', default=True, cast=bool)
-data_draw.RandomDraw().main()
+#data_draw.RandomDraw().main()
 
 # The configuration
 get_config_mode = 'Debug' if DEBUG else 'Production'
@@ -111,5 +111,4 @@ def set_up_q():
 
 
 if __name__ == "__main__":
-	data_draw.RandomDraw.main()
 	app.run()

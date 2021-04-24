@@ -48,6 +48,21 @@ class RandomDraw:
 		print('Saved Stat data')
 		df.to_json(full_path, orient='table', indent=4)
 
+	def scoring_data (self):
+		df = pandas.read_csv('https://raw.githubusercontent.com/Green-Investement-Dashboard/data/main/data_eg/scoring.csv')
+		df = df.set_index('indicateur')
+		range_env = [0,72]
+		range_soc = [45,55]
+		rang_gouv = [55,100]
+		
+		for index, a_range in zip(df.index, [range_env, range_soc, rang_gouv]):
+			df.loc[index, 'value'] = numpy.random.randint(a_range[0], a_range[1])
+		print(df)
+
+		full_path = os.path.normcase(f'{self.current}/scoring.json')
+		print('Saved Scoring Data')
+		df.to_json(full_path, orient='table', indent=4)
+
 	def main(self):
 		self.data_agri()
 		self.financial_data()
@@ -55,4 +70,5 @@ class RandomDraw:
 		self.graph_val()
 		self.indic_critique()
 		self.stat_data()
+		self.scoring_data()
 		print('data_generated')
