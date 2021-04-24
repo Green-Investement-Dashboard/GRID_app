@@ -18,30 +18,30 @@
 /*     brand Colors              */
 /* navbar color */
 :root {
-  --blue: #5cba47;
-  --indigo: #5603ad;
-  --purple: #8965e0;
-  --pink: #f3a4b5;
-  --red: #f5365c;
-  --orange: #fb6340;
-  --yellow: #ffd600;
-  --green: #2dce89;
-  --teal: #11cdef;
-  --cyan: #2bffc6;
+  --blue: #ffffff;
+  --indigo: #FFFFFF;
+  --purple: #FFFFFF;
+  --pink: #FFFFFF;
+  --red: #FFFFFF;
+  --orange: #FFFFFF;
+  --yellow: #FFFFFF;
+  --green: #FFFFFF;
+  --teal: #FFFFFF;
+  --cyan: #FFFFFF;
   --white: #ffffff;
-  --gray: #6c757d;
-  --gray-dark: #32325d;
-  --light: #ced4da;
-  --lighter: #e9ecef;
-  --primary: #3d3d33;
-  --secondary: #f4f5f7;
-  --success: #00f2c3;
-  --info: #1d8cf8;
-  --warning: #ff8d72;
-  --danger: #fd5d93;
-  --light: #adb5bd;
-  --dark: #212529;
-  --default: #344675;
+  --gray: #FFFFFF;
+  --gray-dark: #ffffff;
+  --light: #FFFFFF;
+  --lighter: #FFFFFF;
+  --primary: #FFFFFF;
+  --secondary: #FFFFFF;
+  --success: #FFFFFF;
+  --info: #FFFFFF;
+  --warning: #FFFFFF;
+  --danger: #FFFFFF;
+  --light: #FFFFFF;
+  --dark: #FFFFFF;
+  --default: #ffffff;
   --white: #ffffff;
   --neutral: #ffffff;
   --darker: black;
@@ -88,13 +88,14 @@ section {
 body {
   margin: 0;
   font-family: "Kollektif", sans-serif;
-  font-size: 0.875rem;
+  font-size: 0.975rem;
   font-weight: 400;
   line-height: 1.5;
-  color: #525f7f;
+  color: #FFFFFF;
   text-align: left;
-  background-color: #1e1e2f;
+  background-color: #FFFFFF;
 }
+/* MBC 24/04 à 10h29 */
 
 [tabindex="-1"]:focus {
   outline: 0 !important;
@@ -15821,7 +15822,7 @@ img {
 }
 
 .navbar.navbar-transparent {
-  background: #1e1e2f !important;
+  background: #72B857 !important;
   position: fixed !important;
 }
 
@@ -17818,7 +17819,9 @@ table.tablesorter thead tr .headerSortDown {
   width: 100%;
   min-height: 100vh;
   border-top: 2px solid #3d3d33;
-  background: linear-gradient(#1e1e2f, #1e1e24);
+  background: #FFFFFF;
+  
+  /*background: linear-gradient(#1e1e2f, #1e1e24);*/
   -webkit-transition: all 0.5s cubic-bezier(0.685, 0.0473, 0.346, 1);
   -moz-transition: all 0.5s cubic-bezier(0.685, 0.0473, 0.346, 1);
   -o-transition: all 0.5s cubic-bezier(0.685, 0.0473, 0.346, 1);
@@ -19841,7 +19844,7 @@ Copyright (c) 2015 Daniel Eden
 }
 
 .white-content .card:not(.card-white) .tab-content .tab-pane {
-  color: #444444;
+  color: #3d3d33;
 }
 
 .white-content .card:not(.card-white) .card {
@@ -19940,7 +19943,7 @@ Copyright (c) 2015 Daniel Eden
 }
 
 .white-content .nav-pills .nav-item .nav-link:not(.active):hover {
-  background: #cccccc;
+  background: #3D3D33;
 }
 
 .card {
@@ -20510,3 +20513,7 @@ Copyright (c) 2015 Daniel Eden
   margin-right: 10px !important; /* ------ Added CH 23/04 ------ */
   }
 
+.body{
+  background-color: #FFFFFF !important;
+
+}
