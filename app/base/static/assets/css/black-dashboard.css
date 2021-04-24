@@ -20536,4 +20536,7 @@ margin-right: 10px !important; /* ------ Added CH 23/04 ------ */
   margin-bottom: 5px;
 }
 
+.questionnaire div {
+  margin:auto;
+}
 
