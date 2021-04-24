@@ -11,12 +11,15 @@ class QuestionairesAgri(FlaskForm):
 	sau = wtforms.TextField('sau', validators=[DataRequired()])
 	etp = wtforms.TextField('etp', validators=[DataRequired()])
 	haie = wtforms.SelectField(u'Presence haies', choices=[('y1', 'oui sur toutes les parcelles'), ('y2', 'oui sur une partie des parcelles'), ('no', 'non')])
-	cepage = wtforms.SelectMultipleField(choices=[('cep1', 'cabernet sauvignon'), ('cep2', 'carignan'), ('cep3', 'grenache noir'), ('cep4', 'syrah'), ('cep5', 'muscat'), ('cep6', 'chardonnay'), ('cep7', 'cinsault')
+	cepage = wtforms.SelectMultipleField(choices=[('cep1', 'cabernet sauvignon'), ('cep2', 'carignan'), ('cep3', 'grenache noir'), ('cep4', 'syrah'), ('cep5', 'muscat'), ('cep6', 'chardonnay'), ('cep7', 'cinsault')])
 	autract = wtforms.TextField('autre activite', validators=[DataRequired()])
 	autrcult = wtforms.SelectField(u'autre cultures', choices=[('y', 'oui'), ('n', 'non')])
 	typecult = wtforms.TextField('type culture', validators=[DataRequired()])
 	typefonc = wtforms.SelectField(u'type de foncier', choices=[('prop', 'proprietaire'), ('loc', 'locataire'), ('mist', 'proprietaire et locataire')])
-	certif = 
+	certif = wtforms.SelectField(u'certification', choices=[('bio', 'label BIO'),('hve', 'label HVE'),('els', 'autre'),('n', 'aucune')])
+	autrecertif = wtforms.TextField('autre certication', validators=[DataRequired()])
+	qual = wtforms.SelectField(u'certification qualite', choices=[('igp', 'IGP'),('aop', 'AOP'),('elsqual','autre'),('n', 'aucune')])
+	autrequal = wtforms.TextField('autre qualite', validators=[DataRequired()])
 
 	language = wtforms.SelectField(u'Programming Language', choices=[('cpp', 'C++'), ('py', 'Python'), ('text', 'Plain Text')])
 	text = wtforms.TextAreaField('Text multi ligne')
