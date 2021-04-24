@@ -26,19 +26,19 @@
     "data":[
         {
             "indicateur":"environement",
-            "value":58,
+            "value":7,
             "average":80,
             "max":100
         },
         {
             "indicateur":"social",
-            "value":47,
+            "value":46,
             "average":50,
             "max":100
         },
         {
             "indicateur":"gouvernance",
-            "value":99,
+            "value":63,
             "average":40,
             "max":100
         }

@@ -30,10 +30,10 @@ class BulletChart:
                       #title = {'text': f'<b>{self.indic_name}</b>'},
                       value = self.data.loc[self.indic, 'Value'], 
                       #delta = {'reference': 300},
-                      domain = {'x': [0, 1], 'y': [0, 1]},
+                      domain = {'x': [0, 1], 'y': [0, 1]}
                       )
         
-        layout = go.Layout(height=250, width=700,
+        layout = go.Layout(height=250, 
                      paper_bgcolor='rgba(61,61,51,0.01)', plot_bgcolor='rgba(0,0,0,0)', font=dict(color='#5cba47'),
                            )
 

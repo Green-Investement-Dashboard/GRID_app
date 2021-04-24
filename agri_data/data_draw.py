@@ -15,7 +15,16 @@ class RandomDraw:
 
 	def financial_data (self):
 		df = pandas.read_json('https://raw.githubusercontent.com/Green-Investement-Dashboard/data/main/data_eg/financial_data.json', orient='table')
-		
+		v0 = {'F1':1000, 'F2':1.2}
+		var = {'F1': [1.03, 1.1], 'F2': [0.95, 1.2]}
+
+		for index in df.index :
+			new_list = [numpy.random.random()*(var[index][1]*v0[index] - var[index][0]*v0[index]) + var[index][1]*v0[index]]
+			for k in range(len(df.loc[index, 'list_x'])-1):
+				rd_num = numpy.random.random()*(var[index][1]*new_list[-1] - var[index][0]*new_list[-1]) + var[index][1]*new_list[-1]
+				new_list.append(rd_num)
+
+
 		full_path = os.path.normcase(f'{self.current}/financial_data.json')
 		print('Saved Financial Data')
 		df.to_json(full_path, orient='table', indent=4)
@@ -57,7 +66,7 @@ class RandomDraw:
 		
 		for index, a_range in zip(df.index, [range_env, range_soc, rang_gouv]):
 			df.loc[index, 'value'] = numpy.random.randint(a_range[0], a_range[1])
-		print(df)
+		#print(df)
 
 		full_path = os.path.normcase(f'{self.current}/scoring.json')
 		print('Saved Scoring Data')
