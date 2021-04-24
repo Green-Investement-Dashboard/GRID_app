@@ -11,6 +11,8 @@ class QuestionairesAgri(FlaskForm):
 	date = wtforms.DateField('Date')
 	language = wtforms.SelectField(u'Programming Language', choices=[('cpp', 'C++'), ('py', 'Python'), ('text', 'Plain Text')])
 	text = wtforms.TextAreaField('Text multi ligne')
+	selection = wtforms.RadioField(choices=[('ch1', 'Choix 1'), ('ch1', 'Choix 2'), ('ch1', 'Choix 3')]) #1ere valeur du tuple: ce qui s'affichera dans la DB et 2eme: ce qui s'affiche dans l'HTML
+	multiple = wtforms.SelectMultipleField(choices=[('Elo 1','Bjr Elo 1'), ('Elo 2', 'Bjr Elo 2'), ('Elo 3', 'Bjr Elo 3')])
 	#recaptcha = RecaptchaField()
 	submit = wtforms.SubmitField('Enregistrer')
 
