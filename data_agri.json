@@ -2,57 +2,28 @@
     "schema":{
         "fields":[
             {
-                "name":"index",
+                "name":"Nom",
                 "type":"string"
             },
             {
-                "name":"address",
-                "type":"string"
+                "name":"Lat",
+                "type":"number"
             },
             {
-                "name":"language",
-                "type":"string"
-            },
-            {
-                "name":"text",
-                "type":"string"
+                "name":"Long",
+                "type":"number"
             }
         ],
         "primaryKey":[
-            "index"
+            "Nom"
         ],
         "pandas_version":"0.20.0"
     },
     "data":[
         {
-            "index":"fez",
-            "address":null,
-            "language":null,
-            "text":null
-        },
-        {
-            "index":"tt'",
-            "address":"yy('",
-            "language":"text",
-            "text":"y(("
-        },
-        {
-            "index":"fe",
-            "address":"fez",
-            "language":"cpp",
-            "text":"fee"
-        },
-        {
-            "index":"'grf",
-            "address":"f'e",
-            "language":"cpp",
-            "text":""
-        },
-        {
-            "index":"j",
-            "address":"j",
-            "language":"cpp",
-            "text":"j"
+            "Nom":"Agriculteur 1",
+            "Lat":43.831961,
+            "Long":3.874051
         }
     ]
 }
