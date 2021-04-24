@@ -7,6 +7,7 @@ import pandas
 class QuestionairesAgri(FlaskForm):
 	name_exploit = wtforms.TextField('Nom exploitation', validators=[DataRequired()])
 	address   = wtforms.TextField('Address', validators=[DataRequired()])
+	age = wtforms.TextField('Age', validators=[DataRequired()])
 	date = wtforms.DateField('Date')
 	language = wtforms.SelectField(u'Programming Language', choices=[('cpp', 'C++'), ('py', 'Python'), ('text', 'Plain Text')])
 	text = wtforms.TextAreaField('Text multi ligne')
