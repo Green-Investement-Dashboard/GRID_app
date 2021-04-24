@@ -20,9 +20,9 @@ class BulletChart:
         data = go.Indicator(mode = "gauge", 
                       gauge = {'shape': "bullet",
                                'steps': [
-                                   {'range': [self.value_range.loc[self.indic, 'Min'], self.value_range.loc[self.indic, 'Bin'][0]], 'color': "#E85555"},
-                                   {'range': [self.value_range.loc[self.indic, 'Bin'][0], self.value_range.loc[self.indic, 'Bin'][1]], 'color': "#F5E05A"},
-                                   {'range': [self.value_range.loc[self.indic, 'Bin'][1], self.value_range.loc[self.indic, 'Max']], 'color': "#6CC16A"}
+                                   {'range': [self.value_range.loc[self.indic, 'Min'], self.value_range.loc[self.indic, 'Bin'][0]], 'color': "#e5f5e0"},
+                                   {'range': [self.value_range.loc[self.indic, 'Bin'][0], self.value_range.loc[self.indic, 'Bin'][1]], 'color': "#a1d99b"},
+                                   {'range': [self.value_range.loc[self.indic, 'Bin'][1], self.value_range.loc[self.indic, 'Max']], 'color': "#31a354"}
                                    ],
                                'axis': {'range': [self.value_range.loc[self.indic, 'Min'], self.value_range.loc[self.indic, 'Max']]},
                                'bar': {'color': "black"}
@@ -57,7 +57,8 @@ class PieChart:
     self.value_range = pandas.read_json('https://raw.githubusercontent.com/Green-Investement-Dashboard/data/main/data_eg/value_range.json', orient='table')
     self.indic = indic
     self.indic_name = indic_name
-    self.colors = ['#3D3D34', '#72B857', '#BA475C', "#4771BA"]
+    self.colors = ['#35978f', '#66c2a4', '#c7eae5', "#dfc27d"]
+    #tonalités autour du vin ultra gentil :) 
 
   def plot(self):
     data = go.Pie(labels=self.data.loc[self.indic, 'list_x'], values=self.data.loc[self.indic, 'list_y'], marker=dict(colors=self.colors))

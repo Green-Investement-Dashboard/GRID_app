@@ -20546,25 +20546,26 @@ margin-right: 10px !important; /* ------ Added CH 23/04 ------ */
 .number_bchart {
   margin:auto;
   text-align:center;
-  font-size: 30;
   font-weight: bold;
 }
 
-.nmb_red p{
-  color: red;
+.row .card .card-body .number_bchart .nmb_red p{
+  color: #a1d99b;
   margin:auto;
+  font-size: 900;
+  
+  /* Vert foncé*/
 }
 
-.nmb_yellow p{
-  color:yellow;
+.row .card .card-body .number_bchart .nmb_yellow p{
+  color: #41ab5d;
   margin:auto;
+  font-size: 900;
 }
-
-.nmb_green p{
-  color:green;
+/*Vert un peu moins foncé*/
+.row .card .card-body .number_bchart .nmb_green p{
+  color: #005a32;
   margin:auto;
+  font-size: 900;
 }
-.btn .btn-fill btn-primary 
-{
-border-style: none;
-}
+/*vert pas foncé du tout*/
