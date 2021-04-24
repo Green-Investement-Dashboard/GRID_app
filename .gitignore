@@ -30,3 +30,5 @@ package-lock.json
 .vscode/symbols.json
 app/home/content_gen/innondations.html
 
+*.pyc
+*.pyc
