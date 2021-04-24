@@ -28,6 +28,7 @@ import numpy as np
 import json
 
 import run
+from agri_data import data_draw
 
 @blueprint.route('/')
 def route_default():
@@ -50,6 +51,7 @@ def login():
         if user and verify_pass( password, user.password):
 
             login_user(user)
+            data_draw.RandomDraw().main()
 
             render = run.index()
             return render
