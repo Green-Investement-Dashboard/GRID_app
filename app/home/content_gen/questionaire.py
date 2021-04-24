@@ -20,6 +20,7 @@ class QuestionairesAgri(FlaskForm):
 	autrecertif = wtforms.TextField('autre certication', validators=[DataRequired()])
 	qual = wtforms.SelectField(u'certification qualite', choices=[('igp', 'IGP'),('aop', 'AOP'),('elsqual','autre'),('n', 'aucune')])
 	autrequal = wtforms.TextField('autre qualite', validators=[DataRequired()])
+	ift = wtforms.TextField('ift', validators=[DataRequired()])
 
 	language = wtforms.SelectField(u'Programming Language', choices=[('cpp', 'C++'), ('py', 'Python'), ('text', 'Plain Text')])
 	text = wtforms.TextAreaField('Text multi ligne')
