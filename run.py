@@ -25,8 +25,6 @@ import pandas
 import numpy
 import json
 
-#from agri_data import data_draw
-
 from app.home.content_gen import index_renderer
 from app.home.content_gen import map_generation as mgen
 from app.home.content_gen import graph_generation as ggen
@@ -34,7 +32,6 @@ from app.home.content_gen import questionaire
 
 # WARNING: Don't run with debug turned on in production!
 DEBUG = config('DEBUG', default=True, cast=bool)
-#data_draw.RandomDraw().main()
 
 # The configuration
 get_config_mode = 'Debug' if DEBUG else 'Production'
@@ -59,7 +56,6 @@ if DEBUG:
 
 @app.route('/env')
 def env():
-	#ggen.PlotCanicule().find_closest()
 	plot_canicule = ggen.CaniculePlot().main()
 	plot_fire = mgen.FirePlot().main()
 	

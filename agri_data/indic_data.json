@@ -45,7 +45,7 @@
             "Code input":"E2",
             "Ph\u00e9nom\u00e8ne dangereux":"Brulure du soleil",
             "Valeur":null,
-            "Critique":null,
+            "Critique":1.0,
             " Description ":null
         },
         {
@@ -205,7 +205,7 @@
             "Code input":"G5",
             "Ph\u00e9nom\u00e8ne dangereux":"Perte de comp\u00e9titivit\u00e9",
             "Valeur":null,
-            "Critique":null,
+            "Critique":1.0,
             " Description ":null
         },
         {
@@ -221,7 +221,7 @@
             "Code input":"S1",
             "Ph\u00e9nom\u00e8ne dangereux":"Perte de renom\u00e9 ",
             "Valeur":null,
-            "Critique":null,
+            "Critique":1.0,
             " Description ":null
         },
         {
@@ -229,7 +229,7 @@
             "Code input":"S2",
             "Ph\u00e9nom\u00e8ne dangereux":"Difficult\u00e9s \u00e0 l'export",
             "Valeur":null,
-            "Critique":null,
+            "Critique":1.0,
             " Description ":null
         },
         {
@@ -237,7 +237,7 @@
             "Code input":"S3",
             "Ph\u00e9nom\u00e8ne dangereux":"Absence de clients suffisants",
             "Valeur":null,
-            "Critique":null,
+            "Critique":1.0,
             " Description ":null
         },
         {
