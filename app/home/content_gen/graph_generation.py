@@ -150,6 +150,7 @@ class CaniculePlot:
 
     self.lat = temp_df.loc[temp_df['global_diff'].idxmin(), 'lat']
     self.lon = temp_df.loc[temp_df['global_diff'].idxmin(), 'lon']
+    print(self.lat, self.lon)
     
 
   def plot (self):
@@ -164,7 +165,9 @@ class CaniculePlot:
       
   
   def main(self):
-      self.find_closest()
+      #self.find_closest()
+      self.lat = 43.8 
+      self.lon = 3.9
       self.plot()
       
       return self.graphjson
