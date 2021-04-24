@@ -65,7 +65,7 @@ def env():
 	
 	critical_alert = index_renderer.CriticalAlert().main()
 
-	return render_template('environement.html', canicule_map=plot_canicule, plot_fire = plot_fire, critical_alert = critical_alert)
+	return render_template('environnement.html', canicule_map=plot_canicule, plot_fire = plot_fire, critical_alert = critical_alert)
 
 @app.route('/gouv')
 def gouv():
