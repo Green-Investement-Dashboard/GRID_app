@@ -20548,18 +20548,18 @@ margin-right: 10px !important; /* ------ Added CH 23/04 ------ */
   font-weight: bold;
 }
 
-.nmb_red{
+.nmb_red p{
   color: red;
   margin:auto;
 }
 
-.nmb_yellow{
+.nmb_yellow p{
   color:yellow;
   margin:auto;
 }
 
-.nmb_red{
-  color:red;
+.nmb_green p{
+  color:green;
   margin:auto;
 }
 
