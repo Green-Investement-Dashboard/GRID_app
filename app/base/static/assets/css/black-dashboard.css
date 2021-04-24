@@ -91,7 +91,7 @@ body {
   font-size: 0.975rem;
   font-weight: 400;
   line-height: 1.5;
-  color: #FFFFFF;
+  color: #3D3D33;
   text-align: left;
   background-color: #FFFFFF;
 }
@@ -14612,7 +14612,7 @@ fieldset[disabled] .btn-link.active {
 }
 
 .footer .nav-link {
-  color: #ffffff;
+  color: #3D3D34;
   padding: 0 0.5rem;
   font-size: 0.75rem;
   text-transform: uppercase;
@@ -14626,7 +14626,7 @@ fieldset[disabled] .btn-link.active {
 .footer .copyright {
   font-size: 0.75rem;
   line-height: 1.8;
-  color: #ffffff;
+  color: #3D3D34;
 }
 
 .footer:after {
@@ -20537,10 +20537,12 @@ margin-right: 10px !important; /* ------ Added CH 23/04 ------ */
 }
 
 .questionnaire div {
-  padding: 50px;
+  padding: 10px;
   margin:auto;
 }
 
+
+/* Nombres au dessus des graphiques variant en fonction de la valeur */ 
 .number_bchart {
   margin:auto;
   text-align:center;
@@ -20562,4 +20564,7 @@ margin-right: 10px !important; /* ------ Added CH 23/04 ------ */
   color:green;
   margin:auto;
 }
-
+.btn .btn-fill btn-primary 
+{
+border-style: none;
+}

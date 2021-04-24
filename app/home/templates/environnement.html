@@ -12,8 +12,8 @@
             <div class="card card-profile">
                 <div class="card-body">
                     <h3 class="card-title">Environnement</h3>
-                  <p>Ci-dessous sont représentés pour votre exploitation les indicateurs environnmentaux</p>
-                  <h4><i class="tim-icons icon-world2"></i>Facteurs à risques environnementaux:</h4>
+                  <p>Ci-dessous sont représentés les indicateurs environnementaux du Chateau FIFG. </p>
+                  <h4><i class="tim-icons icon-world2"></i>Facteurs de risques environnementaux :</h4>
                     <ul>
                       {% for critical in critical_alert[0] %}
                       <li>{{critical}}</li>
@@ -30,7 +30,8 @@
         <div class="col-md-12">
             <div class="card card-profile">
                 <div class="card-body">
-                    <h3 class="card-title">Graph présentant le nombre de jour de canicule</h3>
+                    <h3 class="card-title">Graphique présentant l'évolution du nombre de jours de canicule</h3>
+                    <p> A l'horizon 2050, le risque de canicule pesant le Chateau FIFG aura considérablement augmenté. Consultez notre fiche XXX pour en savoir plus sur les solutions proposées. </p>
                   <div class="chart" id="graph_cancicule">
                     <script>
                         var graphs = {{canicule_map| safe}};
@@ -48,6 +49,8 @@
             <div class="card card-profile">
                 <div class="card-body">
                     <h3 class="card-title">Carte du risque incendie</h3>
+                    <p>En matière de risque incendie, les opérations de prévention sont déterminantes. </p>
+
                   <div class="chart" id="fire_plot">
                     <script>
                         var graphs = {{plot_fire| safe}};
