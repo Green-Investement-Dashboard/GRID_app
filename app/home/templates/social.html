@@ -11,8 +11,8 @@
             <div class="card card-profile">
                 <div class="card-body">
                     <h3 class="card-title">Social</h3>
-                  <p>Ci-dessous sont représentés pour votre exploitation les indicateurs environmentaux</p>
-                  <h4><i class="tim-icons icon-world2"></i>Facteurs à risques environementaux:</h4>
+                  <p>Ci-dessous sont représentés les indicateurs de la dimension sociale du Chateau FIFG</p>
+                  <h4><i class="tim-icons icon-world2"></i>Facteurs de risque social:</h4>
                     <ul>
                       {% for critical in critical_alert[0] %}
                       <li>{{critical}}</li>
@@ -30,7 +30,8 @@
       <div class="col-lg-6">
         <div class="card card-chart">
           <div class="card-header">
-            <h3 class="card-title">Indicateur 1</h3>
+            <h3 class="card-title">Rayonnement de l'exploitation</h3>
+            <p> L'absence de mise en place d'action de communication (accueil au domaine, évènementiels, participation à des salons, etc.) peut nuire à la renommé de l'exploitation auprès des clients.</p>
           </div>
           <div class="card-body">
             {% for chart in bullet_charts %}
@@ -60,7 +61,8 @@
       <div class="col-lg-6">
         <div class="card card-chart">
           <div class="card-header">
-            <h3 class="card-title">Canaux de distribution</h3>
+            <h3 class="card-title">Condition de travail des employés</h3>
+            <p> Lors des vendanges, les conditions de travail peuvent être difficiles et nuire à l'efficacité des employés. Consultez notre fiche -Condition de travail des employés- pour améliorer vos pratiques. </p>
           </div>
           <div class="card-body">
             <div id='S3_indic'> </div>
