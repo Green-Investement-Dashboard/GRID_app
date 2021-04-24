@@ -2,17 +2,22 @@ import plotly.graph_objects as go
 import pandas
 import json
 import plotly
+import numpy
 from plotly.subplots import make_subplots
+from agri_data import data_import
+import os
 
 class BulletChart:
-	def __init__ (self, indic, indic_name):
-		self.data = pandas.read_json('https://raw.githubusercontent.com/Green-Investement-Dashboard/data/main/data_eg/gauges_val.json', orient='table')
-		self.value_range = pandas.read_json('https://raw.githubusercontent.com/Green-Investement-Dashboard/data/main/data_eg/value_range.json', orient='table')
-		self.indic = indic
-		self.indic_name = indic_name
+    def __init__ (self, indic, indic_name):
+        self.data = data_import.ReadData('gauges_data').read_json()
+        #self.data = pandas.read_json('https://raw.githubusercontent.com/Green-Investement-Dashboard/data/main/data_eg/gauges_val.json', orient='table')
 
-	def plot(self):
-		data = go.Indicator(mode = "number+gauge+delta", 
+        self.value_range = pandas.read_json('https://raw.githubusercontent.com/Green-Investement-Dashboard/data/main/data_eg/value_range.json', orient='table')
+        self.indic = indic
+        self.indic_name = indic_name
+
+    def plot(self):
+        data = go.Indicator(mode = "number+gauge+delta", 
                       gauge = {'shape': "bullet",
                                'steps': [
                                    {'range': [self.value_range.loc[self.indic, 'Min'], self.value_range.loc[self.indic, 'Bin'][0]], 'color': "#E85555"},
@@ -27,20 +32,21 @@ class BulletChart:
                       #delta = {'reference': 300},
                       domain = {'x': [0, 1], 'y': [0, 1]},
                       )
-
-		layout = go.Layout(height=250, width=700,
+        
+        layout = go.Layout(height=250, width=700,
                      paper_bgcolor='rgba(61,61,51,0.01)', plot_bgcolor='rgba(0,0,0,0)', font=dict(color='#5cba47'),
                            )
 
-		fig = go.Figure(data, layout)
-		#fig.write_html("gauge.html")
-		plot_json = json.dumps(fig, cls=plotly.utils.PlotlyJSONEncoder)
+        fig = go.Figure(data, layout)
+        #fig.write_html("gauge.html")
+        plot_json = json.dumps(fig, cls=plotly.utils.PlotlyJSONEncoder)
 
-		return plot_json
+        return plot_json
 
 class PieChart:
   def __init__ (self, indic, indic_name):
-    self.data = pandas.read_json('https://raw.githubusercontent.com/Green-Investement-Dashboard/data/main/data_eg/graph_val.json', orient='table')
+    #self.data = pandas.read_json('https://raw.githubusercontent.com/Green-Investement-Dashboard/data/main/data_eg/graph_val.json', orient='table')
+    self.data =  data_import.ReadData('graph_data').read_json()
     self.value_range = pandas.read_json('https://raw.githubusercontent.com/Green-Investement-Dashboard/data/main/data_eg/value_range.json', orient='table')
     self.indic = indic
     self.indic_name = indic_name
@@ -57,7 +63,8 @@ class PieChart:
 
 class FinancialChart:
   def __init__ (self, *args):
-    self.data = pandas.read_json('https://raw.githubusercontent.com/Green-Investement-Dashboard/data/main/data_eg/financial_data.json', orient='table')
+    #self.data = pandas.read_json('https://raw.githubusercontent.com/Green-Investement-Dashboard/data/main/data_eg/financial_data.json', orient='table')
+    self.data =  data_import.ReadData('financial_data').read_json()
     self.data['list_x'] = self.data.apply(lambda x: [pandas.to_datetime(date) for date in x['list_x']], axis=1)
     self.list_indic = args
 
@@ -113,13 +120,55 @@ class FinancialChart:
 
     return graphjson
 
+class CaniculePlot:
+  def __init__ (self):
+    self.current = os.path.normcase(os.path.dirname(os.path.realpath(__file__)))
+    self.file_name='data/full_data_heatwave.json'
+    self.full_path = os.path.normcase(f'{self.current}/{self.file_name}')
+    self.df = pandas.read_json(self.full_path, orient='table')
+
+    self.agri_data =  data_import.ReadData('data_agri').read_json()
+
+  def find_closest (self):
+    temp_df = self.df.reset_index()
+    temp_df['diff_lon'] = temp_df['lon'].sub(self.agri_data['Long'].iloc[-1]).abs()
+    temp_df['diff_lat'] = temp_df['lat'].sub(self.agri_data['Lat'].iloc[-1]).abs()
+    temp_df['global_diff'] = temp_df.apply(lambda x: numpy.sqrt(x['diff_lat']**2 + x['diff_lon']**2), axis=1 )
+
+    self.lat = temp_df.loc[temp_df['global_diff'].idxmin(), 'lat']
+    self.lon = temp_df.loc[temp_df['global_diff'].idxmin(), 'lon']
+    
+
+  def plot (self):
+      data_extract = self.df.loc[(self.lat, self.lon, slice(None)), ['HWD_EU_climate']].reset_index()
+      
+      data = go.Scatter(x=data_extract['time'], y=data_extract['HWD_EU_climate'])
+      layout = go.Layout(paper_bgcolor='rgba(61,61,51,0)', plot_bgcolor='rgba(0,0,0,0)',
+                         xaxis_title='Date' , yaxis_title='Nombre de jours de canicules', font=dict(color='#5cba47'), margin=dict(l=0, r=20, t=20, b=0)
+                         )
+      fig = go.Figure(data=data, layout=layout)
+      self.graphjson = json.dumps(fig, cls=plotly.utils.PlotlyJSONEncoder)
+      
+  
+  def main(self):
+      self.find_closest()
+      self.plot()
+      
+      return self.graphjson
+      
+      
+      
+
+
 
     
 if __name__ == '__main__':
   #BulletChart('S1', 'Test').plot()
   #PieChart('G6', "Diversification d'activité").plot()
-  FinancialChart('F1', 'F2').plot_bar()
-  FinancialChart('F1', 'F2').plot_sgl_line()
-  FinancialChart('F1', 'F2').plot_mltpl_line()
+  #FinancialChart('F1', 'F2').plot_bar()
+  #FinancialChart('F1', 'F2').plot_sgl_line()
+  #FinancialChart('F1', 'F2').plot_mltpl_line()
+  
+  PlotCanicule().find_closest()
 
 

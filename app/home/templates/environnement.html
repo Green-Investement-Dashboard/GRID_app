@@ -1,0 +1,95 @@
+{% extends "layouts/base.html" %}
+
+{% block title %} Environnement {% endblock %} 
+
+<!-- Specific Page CSS goes HERE  -->
+{% block stylesheets %}{% endblock stylesheets %}
+
+{% block content %}
+
+    <div class="row">
+        <div class="col-md-12">
+            <div class="card card-profile">
+                <div class="card-body">
+                    <h3 class="card-title">Environnement</h3>
+                  <p>Ci-dessous sont représentés pour votre exploitation les indicateurs environnmentaux</p>
+                  <h4><i class="tim-icons icon-world2"></i>Facteurs à risques environnementaux:</h4>
+                    <ul>
+                      {% for critical in critical_alert[0] %}
+                      <li>{{critical}}</li>
+
+                      {% endfor %}
+                    </ul>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="row">
+        <div class="col-md-12">
+            <div class="card card-profile">
+                <div class="card-body">
+                    <h3 class="card-title">Graph présentant le nombre de jour de canicule</h3>
+                  <div class="chart" id="graph_cancicule">
+                    <script>
+                        var graphs = {{canicule_map| safe}};
+                        Plotly.newPlot('graph_cancicule1',graphs.data,graphs.layout, config);  
+                    </script>
+                  </div>
+                    
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="row">
+        <div class="col-md-12">
+            <div class="card card-profile">
+                <div class="card-body">
+                    <h3 class="card-title">Carte du risque incendie</h3>
+                  <div class="chart" id="fire_plot">
+                    <script>
+                        var graphs = {{plot_fire| safe}};
+                        Plotly.newPlot('fire_plot',graphs.data,graphs.layout, config);  
+                    </script>
+                  </div>
+                    
+                    <a href="/" class="btn btn-primary btn-round">Home</a>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="row">
+      <div class="col-lg-6">
+        <div class="card card-chart">
+          <div class="card-header">
+            <h3 class="card-title">Indicateur 1</h3>
+          </div>
+          <div class="card-body">
+            
+          </div>
+        </div>
+      </div>
+      <div class="col-lg-6">
+        <div class="card card-chart">
+          <div class="card-header">
+            <h3 class="card-title">Indicateur 2</h3>
+          </div>
+          <div class="card-body">
+            
+          </div>
+        </div>
+      </div>
+    </div>
+<script>
+  var graphs = {{canicule | safe}};
+  Plotly.newPlot('chart',graphs.data,graphs.layout,config);
+  
+</script>
+    
+{% endblock content %}
+
+<!-- Specific Page JS goes HERE  -->
+{% block javascripts %}{% endblock javascripts %}

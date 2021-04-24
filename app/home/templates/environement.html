@@ -1,6 +1,6 @@
 {% extends "layouts/base.html" %}
 
-{% block title %} Environement {% endblock %} 
+{% block title %} Environnement {% endblock %} 
 
 <!-- Specific Page CSS goes HERE  -->
 {% block stylesheets %}{% endblock stylesheets %}
@@ -11,9 +11,9 @@
         <div class="col-md-12">
             <div class="card card-profile">
                 <div class="card-body">
-                    <h3 class="card-title">Environement</h3>
-                  <p>Ci-dessous sont représentés pour votre exploitation les indicateurs environmentaux</p>
-                  <h4><i class="tim-icons icon-world2"></i>Facteurs à risques environementaux:</h4>
+                    <h3 class="card-title">Environnement</h3>
+                  <p>Ci-dessous sont représentés pour votre exploitation les indicateurs environnmentaux</p>
+                  <h4><i class="tim-icons icon-world2"></i>Facteurs à risques environnementaux:</h4>
                     <ul>
                       {% for critical in critical_alert[0] %}
                       <li>{{critical}}</li>
@@ -30,11 +30,11 @@
         <div class="col-md-12">
             <div class="card card-profile">
                 <div class="card-body">
-                    <h3 class="card-title">Carte du nombre de jour de canicules</h3>
-                  <div class="chart" id="class_map1">
+                    <h3 class="card-title">Graph présentant le nombre de jour de canicule</h3>
+                  <div class="chart" id="graph_cancicule">
                     <script>
                         var graphs = {{canicule_map| safe}};
-                        Plotly.newPlot('class_map1',graphs.data,graphs.layout, config);  
+                        Plotly.newPlot('graph_cancicule1',graphs.data,graphs.layout, config);  
                     </script>
                   </div>
                     

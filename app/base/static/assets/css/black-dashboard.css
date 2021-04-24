@@ -20509,9 +20509,10 @@ Copyright (c) 2015 Daniel Eden
   margin-right: 10px !important; /* ------ Added CH 23/04 ------ */
   }
 
-  .card-body .tim-icons {
-  margin-right: 10px !important; /* ------ Added CH 23/04 ------ */
-  }
+.card-body .tim-icons {
+margin-right: 10px !important; /* ------ Added CH 23/04 ------ */
+}
+
 
 .body{
   background-color: #FFFFFF !important;

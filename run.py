@@ -25,6 +25,8 @@ import pandas
 import numpy
 import json
 
+from agri_data import data_draw
+
 from app.home.content_gen import index_renderer
 from app.home.content_gen import map_generation as mgen
 from app.home.content_gen import graph_generation as ggen
@@ -32,6 +34,7 @@ from app.home.content_gen import questionaire
 
 # WARNING: Don't run with debug turned on in production!
 DEBUG = config('DEBUG', default=True, cast=bool)
+data_draw.RandomDraw().main()
 
 # The configuration
 get_config_mode = 'Debug' if DEBUG else 'Production'
@@ -56,12 +59,13 @@ if DEBUG:
 
 @app.route('/env')
 def env():
-	plot_canicule = mgen.CaniculePlot().main()
+	#ggen.PlotCanicule().find_closest()
+	plot_canicule = ggen.CaniculePlot().main()
 	plot_fire = mgen.FirePlot().main()
 	
 	critical_alert = index_renderer.CriticalAlert().main()
 
-	return render_template('environement.html', canicule_map=plot_canicule, plot_fire = plot_fire, critical_alert = critical_alert)
+	return render_template('environnement.html', canicule_map=plot_canicule, plot_fire = plot_fire, critical_alert = critical_alert)
 
 @app.route('/gouv')
 def gouv():
@@ -106,10 +110,5 @@ def set_up_q():
 
 
 if __name__ == "__main__":
-    app.run()
-
-    app.config['RECAPTCHA_USE_SSL']= False
-    app.config['RECAPTCHA_PUBLIC_KEY']='6LePyrYaAAAAAJeb9GJ1HPDNq1izagSaVx-g_a2L'
-    app.config['RECAPTCHA_PRIVATE_KEY']=' 6LePyrYaAAAAAF28HOd3ui8MsFhvF7BeUkeH7Fpc'
-    
-#Bonjour la GRID TEAM 
+	data_draw.RandomDraw.main()
+	app.run()
