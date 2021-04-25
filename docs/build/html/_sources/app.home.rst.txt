@@ -1,6 +1,14 @@
 app.home package
 ================
 
+Subpackages
+-----------
+
+.. toctree::
+   :maxdepth: 4
+
+   app.home.content_gen
+
 Submodules
 ----------
 

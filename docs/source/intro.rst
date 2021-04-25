@@ -2,8 +2,6 @@
 Introduction
 ===========================
 
-JE comprends pas ce qui se passe !
-
 
 
 Titre 1
