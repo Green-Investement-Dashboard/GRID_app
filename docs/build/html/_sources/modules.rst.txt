@@ -1,3 +1,5 @@
+.. _agri:
+
 Module agri_data
 =================
 

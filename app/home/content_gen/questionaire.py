@@ -1,10 +1,17 @@
 # -*- encoding: utf-8 -*-
+
+"""
+© GRID Team, 2021
+"""
+
 from flask_wtf import FlaskForm, RecaptchaField
 import wtforms
 from wtforms.validators import InputRequired, Email, DataRequired
 import pandas
 
 class QuestionairesAgri(FlaskForm):
+	"""Cette classe génère le questionaire Flask nécessaire au rendu HTML 
+    """
 	name_exploit = wtforms.TextField('Nom exploitation', validators=[DataRequired()])
 	address   = wtforms.TextField('Address', validators=[DataRequired()])
 	age = wtforms.TextField('Age', validators=[DataRequired()])
@@ -25,16 +32,16 @@ class QuestionairesAgri(FlaskForm):
 	irrig = wtforms.RadioField(choices=[('init', 'sélectionnez la proposition'),('no_irrig','aucune irrigation'),('yes_irrig1', 'oui sur la majorité des parcelles'),('yes_irrig2', 'oui sur certaines parcelles')])
 	mutu = wtforms.SelectMultipleField(choices=[('init', 'sélectionnez la proposition'),('yes_mutu', 'oui'),('no_mutu', 'non')])
 	
-
-	language = wtforms.SelectField(u'Programming Language', choices=[('cpp', 'C++'), ('py', 'Python'), ('text', 'Plain Text')])
-	text = wtforms.TextAreaField('Text multi ligne')
-	selection = wtforms.RadioField(choices=[('ch1', 'Choix 1'), ('ch1', 'Choix 2'), ('ch1', 'Choix 3')]) #1ere valeur du tuple: ce qui s'affichera dans la DB et 2eme: ce qui s'affiche dans l'HTML
-	multiple = wtforms.SelectMultipleField(choices=[('Elo 1','Bjr Elo 1'), ('Elo 2', 'Bjr Elo 2'), ('Elo 3', 'Bjr Elo 3')])
 	#recaptcha = RecaptchaField()
 	submit = wtforms.SubmitField('Enregistrer')
 
 
 def save_data(data):
+	"""Cette fonction enregistre les données du questionaire 
+
+	:return: dernières données rentrées pour l'affichage
+    :rtype: pandas df
+    """
 	df = pandas.read_json('data_agri.json', orient='table')
 	name_exploit = data['name_exploit']
 

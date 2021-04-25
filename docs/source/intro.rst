@@ -7,7 +7,7 @@ Introduction
 Se connecter
 ===========================
 
-Pour voir le dashboard, rendez-vous sur `app.grid-tech.fr <http://app.grid-tech.fr>`__ .
+Pour voir le dasboard, rendez-vous sur `app.grid-tech.fr <http://app.grid-tech.fr>`__ .
 
 Pour les besoins de la démonstration dans le cadre du concours FIFG, un compte test a été créé:
 
@@ -15,9 +15,12 @@ Pour les besoins de la démonstration dans le cadre du concours FIFG, un compte 
 * **Mot de passe**: test
 
 .. tip::
-   Avec notre infrastructure actuelle, le chargement des pages peut paraître long mais nous travaillons pour essayer d'améliroer la rapidité des pages.
+   Avec notre infrastructure actuelle, le chargement des pages peut praître long mais nous y travaillons.
 
-Pour plus de détails sur le déploiement :ref:`instal`
+.. attention::
+   Le dashboard est pour le moment optimiser pour les écrans d'ordinateurs
+
+Pour plus de détail sur le déploiement :ref:`instal`
 
 
 Les données
@@ -38,68 +41,11 @@ Le GRID fonctionne à partir de 2 types de données d'entrées:
 Données pour le PoC
 ---------------------
 
-Pour le PoC, afin de démontrer la capacité dynamique du dashboard, à chaque login, de nouvelles données aléatoires sont générées pour:
+Pour le PoC, afin de démontrer la capacité dynamique du dashboard, à chaque login, une partue des des données sont tirées au hasard, en particulier celles:
 
 * Les scores RSE présentés sur la première page
 * Les données financières (cf page indicateur et le module `agri_data` pour plus de détail)
 
+Toutes les données sont `ici <https://github.com/Green-Investement-Dashboard/data/tree/main/data_eg>`__
+
 Pour plus de détail sur les données et leur exploitation :ref:`indic`
-
-
-Sous-titre 1
----------------
-
-Sous-sous titre 1
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ 
-
-
-
-Titre 1
-===========================
-
-Sous-titre 1
----------------
-
-Sous-sous titre 1
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ 
-
-Code
-
-.. code-block:: python
-
-   a = 'hello';
-   b = 'something';
-
-**In line code** :code:`result = a + 23`
-
-
-**Keyboard**: Press :kbd:`ctrl` + :kbd:`s`
-
-Boxes:
-
-.. tip::
-   Tip
-
-.. hint::
-   Hint
-
-.. important::
-   Important
-
-.. seealso::
-   See Also
-
-.. note::
-   Note
-
-.. warning::
-   Warning
-
-.. attention::
-   Attention
-
-.. caution::
-   Caution
-
-.. error::
-   Error

@@ -12,7 +12,7 @@ Le répertoire est organisé autour de deux principaux modules :
 
 Le fichier principal lançant l'application est situé à la racine, il s'appelle :code:`run.py`
 
-. code-block:: bash
+.. code-block:: bash
 
    |
    |-- app/                                      # L'application en elle même
@@ -27,9 +27,12 @@ Le fichier principal lançant l'application est situé à la racine, il s'appell
 Point de vue Flask App / Python
 ==================================
 
-* Le module :code:`app` est organisé en 2 sous-modules :
-	* :code:`home` qui sert à générer les visuels
-	* :code:`base` qui sert à gérer l'authentification
+Le module :code:`app` est organisé en 2 sous-modules :
+
+* :code:`home` qui sert à générer les visuels, en particulier le sous-module :code:`content_gen`
+* :code:`base` qui sert à gérer l'authentification
+
+Le code est ensuite commenté et précisé dans les modules :ref:`agri` et :ref:`app`
 
 Le répértoire d'un point de vue Python à la structure suivante:
 

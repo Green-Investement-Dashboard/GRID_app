@@ -1,3 +1,7 @@
+"""
+© GRID Team, 2021
+"""
+
 import pandas
 import plotly
 import plotly.graph_objs as go
@@ -8,16 +12,24 @@ import json
 from agri_data import data_import
 
 class Scoring:
+    """Cette classe donne les données nécessaires au rendus des gauges indiquant les scores ESG 
+    """
     def __init__ (self):
       self.data = data_import.ReadData('scoring').read_json()
         
     
     def bin (self):
+      """Génère les intervalles autour de la valeur moyenne
+      """
       self.data['min'] = 0.0
       self.data['low_avg'] = 0.9*self.data['average']
       self.data['high_avg'] = 1.1*self.data['average']
     
     def main (self):
+      """
+        :return: liste de liste (1 par indicateur) contenant pour chaque: sa valeur, la valeur max de l'echelle, une liste avec les intervalles de couleurs
+        :rtype: list
+        """
       self.bin()
       list_output = []
       for indic in self.data.index:
@@ -29,11 +41,17 @@ class Scoring:
       return list_output
 
 class CriticalAlert:
+    """Cette classe donne les indicateurs considérés comme critique
+    """
     def __init__(self):
       self.data = pandas.read_csv('https://raw.githubusercontent.com/Green-Investement-Dashboard/data/main/data_eg/liste_indic.csv')
       self.data = self.data.set_index('Code input')
     
     def main(self):
+      """
+        :return: liste de liste (1 par indicateur) contenant pour chaque la liste des indicateurs critiques
+        :rtype: list
+        """
       list_env = []
       list_soc = []
       list_gouv = []
@@ -49,8 +67,6 @@ class CriticalAlert:
           list_gouv.append(self.data.loc[an_id, 'Phénomène dangereux'])
     
       return [list_env, list_soc, list_gouv]
-
-#Graph().plot_ebitda()
 
 
 

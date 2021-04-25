@@ -8,6 +8,7 @@ Documentation du projet GRID
 ================================
 
 Bienvenue sur la documentation du GRID! 
+
 Ici, vous trouverez:
 
 1. Le fonctionement général du projet
@@ -18,6 +19,10 @@ Ici, vous trouverez:
 6. La documentation spécifique au module `app` qui génère l'app
 
 `Documentation PDF <http://docs.grid-tech.fr/grid.pdf>`__
+
+.. attention::
+   Le dashboard est pour le moment optimiser pour les écrans d'ordinateurs
+
 
 ------
 
@@ -31,7 +36,6 @@ Table des matières
    infrastructure
    indicateurs
    use
-   contacts
    modules
    app
 

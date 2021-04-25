@@ -1,3 +1,8 @@
+"""
+© GRID Team, 2021
+"""
+
+
 import plotly.graph_objects as go
 import pandas
 import json
@@ -8,6 +13,13 @@ from agri_data import data_import
 import os
 
 class BulletChart:
+    """Cette classe génère une échelle à 3 couleurs pour un indicateur donnée
+
+      :param indic: le code indicateur au format Ex, Sx ou Gx (où x est un int)
+      :type indic: str
+      :param indic_name: le nom de l'indicateur utiliser pour le titre
+      :type addr: str
+    """
     def __init__ (self, indic, indic_name):
         self.data = data_import.ReadData('gauges_data').read_json()
         #self.data = pandas.read_json('https://raw.githubusercontent.com/Green-Investement-Dashboard/data/main/data_eg/gauges_val.json', orient='table')
@@ -17,6 +29,11 @@ class BulletChart:
         self.indic_name = indic_name
 
     def plot(self):
+        """Les données sont importés depuis l'init
+
+        :return: objet json contenant le plot
+        :rtype: json
+        """
         data = go.Indicator(mode = "gauge", 
                       gauge = {'shape': "bullet",
                                'steps': [
@@ -51,6 +68,13 @@ class BulletChart:
         return {'graph':plot_json, 'title': self.indic_name, 'color':color, 'value':self.data.loc[self.indic, 'Value']}
 
 class PieChart:
+  """Cette classe génère les diagrames camembert
+
+      :param indic: le code indicateur au format Ex, Sx ou Gx (où x est un int)
+      :type indic: str
+      :param indic_name: le nom de l'indicateur utiliser pour le titre
+      :type addr: str
+    """
   def __init__ (self, indic, indic_name):
     #self.data = pandas.read_json('https://raw.githubusercontent.com/Green-Investement-Dashboard/data/main/data_eg/graph_val.json', orient='table')
     self.data =  data_import.ReadData('graph_data').read_json()
@@ -58,9 +82,13 @@ class PieChart:
     self.indic = indic
     self.indic_name = indic_name
     self.colors = ['#35978f', '#66c2a4', '#c7eae5', "#dfc27d"]
-    #tonalités autour du vin ultra gentil :) 
 
   def plot(self):
+    """Les données sont importés depuis l'init
+
+        :return: objet json contenant le plot
+        :rtype: json
+    """
     data = go.Pie(labels=self.data.loc[self.indic, 'list_x'], values=self.data.loc[self.indic, 'list_y'], marker=dict(colors=self.colors))
     layout = go.Layout(height=600,
                      paper_bgcolor='rgba(61,61,51,0.01)', plot_bgcolor='rgba(0,0,0,0)', font=dict(color='#5cba47'),
@@ -72,6 +100,11 @@ class PieChart:
     return plot_json
 
 class FinancialChart:
+  """Cette classe génère les diagrames pour la partie finance
+
+    :param **args: le code indicateur au format Ex, Sx ou Gx (où x est un int)
+    :type indic: str
+  """
   def __init__ (self, *args):
     #self.data = pandas.read_json('https://raw.githubusercontent.com/Green-Investement-Dashboard/data/main/data_eg/financial_data.json', orient='table')
     self.data =  data_import.ReadData('financial_data').read_json()
@@ -80,6 +113,11 @@ class FinancialChart:
     self.color = '#3D3D34'
 
   def plot_bar(self):
+    """Les données sont importés depuis l'init. Génère un graphique barre
+
+        :return: list d'object json
+        :rtype: list[json]
+    """
     list_graph = []
 
     for indic in self.list_indic:
@@ -96,6 +134,11 @@ class FinancialChart:
     return list_graph
 
   def plot_sgl_line (self):
+    """Les données sont importés depuis l'init. Génère un graphique ligne
+
+        :return: list d'object json
+        :rtype: list[json]
+    """
     list_graph = []
 
     for indic in self.list_indic:
@@ -111,6 +154,11 @@ class FinancialChart:
     return list_graph
 
   def plot_mltpl_line (self):
+    """Les données sont importés depuis l'init. Génère un graphique ligne avec 2 axes y
+
+        :return: list d'object json
+        :rtype: list[json]
+    """
     fig = make_subplots(specs=[[{"secondary_y": True}]])
     secondary_axes = False
     for indic in self.list_indic:
@@ -132,6 +180,9 @@ class FinancialChart:
     return graphjson
 
 class CaniculePlot:
+  """Cette classe génère le graphique des canicules dans environement.
+  Les données sont importées directement
+  """
   def __init__ (self):
     self.current = os.path.normcase(os.path.dirname(os.path.realpath(__file__)))
     self.file_name='data/full_data_heatwave.json'
@@ -143,6 +194,9 @@ class CaniculePlot:
     self.colors = ['#3D3D34', '#72B857', '#BA475C', "#4771BA"]
 
   def find_closest (self):
+    """Sur la base de la localisation de la PME, recherche le point de donnée le plus proche.
+    Ces données deviennent les variables self.lat et self.lon
+    """
     temp_df = self.df.reset_index()
     temp_df['diff_lon'] = temp_df['lon'].sub(self.agri_data['Long'].iloc[-1]).abs()
     temp_df['diff_lat'] = temp_df['lat'].sub(self.agri_data['Lat'].iloc[-1]).abs()
@@ -154,6 +208,8 @@ class CaniculePlot:
     
 
   def plot (self):
+      """Plot un graphique ligne et stocke l'object json dans self.graphjson
+      """
       data_extract = self.df.loc[(self.lat, self.lon, slice(None)), ['HWD_EU_climate']].reset_index()
       
       data = go.Scatter(x=data_extract['time'], y=data_extract['HWD_EU_climate'], line=dict(color=self.colors[0]))
@@ -165,6 +221,11 @@ class CaniculePlot:
       
   
   def main(self):
+      """Fonction principale de la classe
+
+          :return: objet json
+          :rtype: json
+      """
       #self.find_closest()
       self.lat = 43.8 
       self.lon = 3.9
