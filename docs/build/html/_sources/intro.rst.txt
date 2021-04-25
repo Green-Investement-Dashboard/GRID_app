@@ -34,7 +34,7 @@ Le GRID fonctionne à partir de 2 types de données d'entrée:
 
 * Les données externes provenant de Météo France, Copernicus, etc ;
 * Les données liées à l'exploitation :
-	* Données internes rentrées par l'agriculteur dans un questionaire ;
+	* Données internes rentrées par l'agriculteur dans un questionnaire ;
 	* Données financières provenant de l'établissement bancaire. 
 
 

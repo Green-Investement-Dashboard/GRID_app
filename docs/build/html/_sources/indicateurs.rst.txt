@@ -28,4 +28,4 @@ Ces données ont ensuite été présentées sur une carte disponible dans l'ongl
 Graph des canicules
 ------------------------
 
-Toujours sur la base des données `du Climate Data Store <https://cds.climate.copernicus.eu/cdsapp#!/dataset/sis-heat-and-cold-spells?tab=overview>`__, nous avons selectionner ces données représentant le nombre de jours de canicule. Il nous est paru plus pertinent de représenter les jours de canciule uniquement à l'emplacement du viticultuteur.
+Toujours sur la base des données `du Climate Data Store <https://cds.climate.copernicus.eu/cdsapp#!/dataset/sis-heat-and-cold-spells?tab=overview>`__, nous avons selectionner ces données représentant le nombre de jours de canicule. Il nous est paru plus pertinent de représenter les jours de canicule uniquement à l'emplacement du viticultuteur.

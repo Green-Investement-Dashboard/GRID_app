@@ -32,7 +32,7 @@ Table des matières
    :maxdepth: 2
    :numbered:
 
-   introduction
+   intro
    infrastructure
    indicateurs
    use

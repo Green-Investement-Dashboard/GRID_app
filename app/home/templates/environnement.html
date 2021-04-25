@@ -31,14 +31,14 @@
             <div class="card card-profile">
                 <div class="card-body">
                     <h3 class="card-title">Graphique présentant l'évolution du nombre de jours de canicule depuis 1990.</h3>
-                    <p> A l'horizon 2050, le risque de canicule pesant le Chateau FIFG aura considérablement augmenté. Consultez notre fiche –Mitigation du risque canicule- pour en savoir plus sur les solutions proposées. </p>
+                    <p> A l'horizon 2050, le risque de canicule pesant le Chateau FIFG aura considérablement augmenté. <a href="http://grid-tech.fr/FT_Canicule.pdf" target="_blank">Consultez notre fiche –Mitigation du risque canicule-</a> pour en savoir plus sur les solutions proposées. </p>
                   <div class="chart" id="graph_cancicule">
                     <script>
                         var graphs = {{canicule_map| safe}};
                         Plotly.newPlot('graph_cancicule',graphs.data,graphs.layout, config);  
                     </script>
                   </div>
-                    Données issues du <a href="https://cds.climate.copernicus.eu/cdsapp#!/dataset/sis-heat-and-cold-spells?tab=overview">Climate Data Store</a> de l'UE depuis le modèle du GIEC RCP 8.5.
+                    Données issues du <a href="https://cds.climate.copernicus.eu/cdsapp#!/dataset/sis-heat-and-cold-spells?tab=overview" target="_blank">Climate Data Store</a> de l'UE depuis le modèle du GIEC RCP 8.5.
                 </div>
             </div>
         </div>
@@ -49,7 +49,7 @@
             <div class="card card-profile">
                 <div class="card-body">
                     <h3 class="card-title">Carte du risque incendie</h3>
-                    <p>En matière de risque incendie, les opérations de prévention sont déterminantes, consultez notre fiche -Mitigation du risque incendie- pour en savoir plus sur les solutions proposées </p>
+                    <p>En matière de risque incendie, les opérations de prévention sont déterminantes, <a href="http://grid-tech.fr/FT_Incendie.pdf" target="_blank">consultez notre fiche -Mitigation du risque incendie-</a> pour en savoir plus sur les solutions proposées </p>
 
                   <div class="chart" id="fire_plot">
                     <script>
@@ -58,7 +58,7 @@
                     </script>
                   </div>
                     
-                    Données issues du <a href="https://cds.climate.copernicus.eu/cdsapp#!/dataset/sis-tourism-fire-danger-indicators?tab=overview">Climate Data Store</a> de l'UE depuis le modèle du GIEC RCP 4.5.
+                    Données issues du <a href="https://cds.climate.copernicus.eu/cdsapp#!/dataset/sis-tourism-fire-danger-indicators?tab=overview" target="_blank">Climate Data Store</a> de l'UE depuis le modèle du GIEC RCP 4.5.
                 </div>
             </div>
         </div>

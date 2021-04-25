@@ -76,7 +76,7 @@
 
 \title{GRID}
 \date{avr. 25, 2021}
-\release{0.1}
+\release{1.0}
 \author{GRID Team}
 \newcommand{\sphinxlogo}{\vbox{}}
 \renewcommand{\releasename}{Version}
@@ -134,7 +134,7 @@ La documentation spécifique au module \sphinxtitleref{app} qui génère l’app
 
 \begin{sphinxadmonition}{attention}{Attention:}
 \sphinxAtStartPar
-Le dashboard est pour le moment optimiser pour les écrans d’ordinateurs
+Le dashboard est pour le moment optimisé uniquement pour les écrans d’ordinateurs
 \end{sphinxadmonition}
 
 
@@ -196,7 +196,7 @@ Les données externes provenant de Météo France, Copernicus, etc ;
 \item[{Les données liées à l’exploitation :}] \leavevmode\begin{itemize}
 \item {} 
 \sphinxAtStartPar
-Données internes rentrées par l’agriculteur dans un questionaire ;
+Données internes rentrées par l’agriculteur dans un questionnaire ;
 
 \item {} 
 \sphinxAtStartPar
@@ -406,7 +406,7 @@ Ces données ont ensuite été présentées sur une carte disponible dans l’on
 \subsubsection{Graph des canicules}
 \label{\detokenize{indicateurs:graph-des-canicules}}
 \sphinxAtStartPar
-Toujours sur la base des données \sphinxhref{https://cds.climate.copernicus.eu/cdsapp\#!/dataset/sis-heat-and-cold-spells?tab=overview}{du Climate Data Store}, nous avons selectionner ces données représentant le nombre de jours de canicule. Il nous est paru plus pertinent de représenter les jours de canciule uniquement à l’emplacement du viticultuteur.
+Toujours sur la base des données \sphinxhref{https://cds.climate.copernicus.eu/cdsapp\#!/dataset/sis-heat-and-cold-spells?tab=overview}{du Climate Data Store}, nous avons selectionner ces données représentant le nombre de jours de canicule. Il nous est paru plus pertinent de représenter les jours de canicule uniquement à l’emplacement du viticultuteur.
 
 
 \section{Déploiement et installation}
@@ -415,17 +415,17 @@ Toujours sur la base des données \sphinxhref{https://cds.climate.copernicus.eu/
 \subsection{Déploiement en ligne}
 \label{\detokenize{use:deploiement-en-ligne}}
 \sphinxAtStartPar
-Le code est stockée sur GitHub puis déployé sur Heroku pour qu’il soit accessible en ligne. Ce choix a été fait pour simplifier la création et la visualtions du PoC dans un premier temps. Cependant, à terme, l’application sera hébergée sur Google Cloud.
+Le code est stocké sur GitHub puis déployé sur Heroku pour qu’il soit accessible en ligne. Ce choix a été fait pour simplifier la création et la visualtions du PoC dans un premier temps. Cependant, à terme, l’application sera hébergée sur Google Cloud.
 
 \sphinxAtStartPar
-La conséquence principale de cela est que l’application met du temps à charger.
+La principale conséquence de ce choix est le temps que met l’application à charger.
 
 
 \subsection{Installation en local}
 \label{\detokenize{use:installation-en-local}}
 \sphinxAtStartPar
-Si vous les souhaitez, il est possible de faire tourner l’application en local, cependant cela nécessite Python 3.x et un manager de module type pip ou anaconda.
-Dans la suite, nous suposerons que ces pré\sphinxhyphen{}requis sont remplis.
+Si vous le souhaitez, il est possible de faire tourner l’application en local, cependant cela nécessite Python 3.x et un manager de module type pip ou anaconda.
+Pour la suite, nous supposerons que ces pré\sphinxhyphen{}requis sont remplis.
 
 \sphinxAtStartPar
 Pour utiliser l’application en local:
@@ -433,7 +433,7 @@ Pour utiliser l’application en local:
 \sphinxsetlistlabels{\arabic}{enumi}{enumii}{}{.}%
 \item {} 
 \sphinxAtStartPar
-Colonez la branche principale du \sphinxhref{https://github.com/Green-Investement-Dashboard/GRID\_app}{répértoire GitHub}
+Clonez la branche principale du \sphinxhref{https://github.com/Green-Investement-Dashboard/GRID\_app}{répértoire GitHub}
 
 \item {} \begin{description}
 \item[{Créez un environnement virtuel soit avec :}] \leavevmode\begin{enumerate}
@@ -878,7 +878,7 @@ json
 Bases : \sphinxcode{\sphinxupquote{object}}
 
 \sphinxAtStartPar
-Cette classe génère le graphique des canicules dans la page Environement.
+Cette classe génère le graphique des canicules dans la page Environnement.
 Les données sont importées directement
 \index{find\_closest() (méthode app.home.content\_gen.graph\_generation.CaniculePlot)@\spxentry{find\_closest()}\spxextra{méthode app.home.content\_gen.graph\_generation.CaniculePlot}}
 
@@ -963,7 +963,7 @@ list{[}json{]}
 \begin{fulllineitems}
 \phantomsection\label{\detokenize{app.home.content_gen:app.home.content_gen.graph_generation.FinancialChart.plot_mltpl_line}}\pysiglinewithargsret{\sphinxbfcode{\sphinxupquote{plot\_mltpl\_line}}}{}{}
 \sphinxAtStartPar
-Les données sont importés depuis l’\_\_init\_\_. Génère un graphique ligne avec 2 axes y
+Les données sont importées depuis l’\_\_init\_\_. Génère un graphique ligne avec 2 axes y
 \begin{quote}\begin{description}
 \item[{Renvoie}] \leavevmode
 \sphinxAtStartPar
@@ -1026,7 +1026,7 @@ Cette classe génère les diagrames camembert
 \begin{fulllineitems}
 \phantomsection\label{\detokenize{app.home.content_gen:app.home.content_gen.graph_generation.PieChart.plot}}\pysiglinewithargsret{\sphinxbfcode{\sphinxupquote{plot}}}{}{}
 \sphinxAtStartPar
-Les données sont importés depuis l’init
+Les données sont importées depuis l’\_\_init\_\_
 \begin{quote}\begin{description}
 \item[{Renvoie}] \leavevmode
 \sphinxAtStartPar
