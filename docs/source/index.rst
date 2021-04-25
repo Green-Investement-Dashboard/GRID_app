@@ -21,7 +21,7 @@ Ici, vous trouverez:
 `Documentation PDF <http://docs.grid-tech.fr/grid.pdf>`__
 
 .. attention::
-   Le dashboard est pour le moment optimiser pour les écrans d'ordinateurs
+   Le dashboard est pour le moment optimisé uniquement pour les écrans d'ordinateurs
 
 
 ------
@@ -32,7 +32,7 @@ Table des matières
    :maxdepth: 2
    :numbered:
 
-   intro
+   introduction
    infrastructure
    indicateurs
    use
