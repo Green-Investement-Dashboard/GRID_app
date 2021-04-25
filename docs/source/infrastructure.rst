@@ -2,13 +2,13 @@
 Infrastructure
 ================
 
-Organisation global du répertoire
+Organisation globale du répertoire
 ==================================
 
 Le répertoire est organisé autour de deux principaux modules :
 
 * :code:`app` : module générant l'application et ses rendus
-* :code:`agri_data` : module regroupant générant les données
+* :code:`agri_data` : module regroupant les données
 
 Le fichier principal lançant l'application est situé à la racine, il s'appelle :code:`run.py`
 
@@ -19,7 +19,7 @@ Le fichier principal lançant l'application est situé à la racine, il s'appell
    |    |-- home/                                # Génération des contenus spécifiques pas page HTML spécifiques
    |    |-- base/                                # Blueprint, contient la structure de l'application
    |
-   |-- agri_data/                                # Générations des données
+   |-- agri_data/                                # Génération des données
    |
    |-- ************************************************************************
 
@@ -32,9 +32,9 @@ Le module :code:`app` est organisé en 2 sous-modules :
 * :code:`home` qui sert à générer les visuels, en particulier le sous-module :code:`content_gen`
 * :code:`base` qui sert à gérer l'authentification
 
-Le code est ensuite commenté et précisé dans les modules :ref:`agri` et :ref:`app`
+Le code est ensuite commenté et précisé dans les modules :ref:`agri` et :ref:`app`. 
 
-Le répértoire d'un point de vue Python à la structure suivante:
+Le répértoire d'un point de vue Python à la structure suivante :
 
 .. code-block:: bash
 
@@ -42,9 +42,9 @@ Le répértoire d'un point de vue Python à la structure suivante:
    |-- app/                                      # L'application en elle même
    |    |-- home/                                
    |         |-- content_gen/                    # Module générant les visuels
-   |         |    |-- data/                      # Données externes pré-traités  
+   |         |    |-- data/                      # Données externes pré-traitées  
    |         |    |-- graph_generation.py        # Génération des graphiques
-   |         |    |-- index_renderer.py          # Générationd de l'index
+   |         |    |-- index_renderer.py          # Génération de l'index
    |         |    |-- map_generation.py          # Génération des cartes
    |         |    |-- questionaire.py.py         # Génération du questionaire agri
    |         |-- routes.py
@@ -60,8 +60,8 @@ Le répértoire d'un point de vue Python à la structure suivante:
    |    |-- data_import.py                       # Import des données de GitHub
    |    |-- *.json
    |
-   |-- requirements.txt                          # Librairies nécessaire pour faire fonctioner le code
-   |-- environment.yml                           # Environement anconda
+   |-- requirements.txt                          # Librairies nécessaires pour faire fonctionner le code
+   |-- environment.yml                           # Environnement anconda
    |-- requirements-mysql.txt                    # Module nécessaire pour Mysql DMBS
    |-- requirements-pqsql.txt                    # Module nécessaire pour PostgreSql DMBS
    |
@@ -76,7 +76,7 @@ Le répértoire d'un point de vue Python à la structure suivante:
 Point de vue fronte-end / HTML
 ==================================
 
-Les fichiers HTML sont organisées autour de 2 dossiers:
+Les fichiers HTML sont organisés autour de 2 dossiers :
 
 * **/home** : ici sont stockés les fichiers HTML des pages du dashboard
 * **/base** : ici sont stockés les fichiers HTML servant de modèles pour générer les pages
@@ -100,7 +100,7 @@ Les fichiers HTML sont organisées autour de 2 dossiers:
    |              |    |-- navigation.html       # Menu du haut
    |              |    |-- sidebar.html          # Menu latéral
    |              |    |-- footer.html           # Pied de page
-   |              |    |-- scripts.html          # Script communs aux pages HTML
+   |              |    |-- scripts.html          # Script commun aux pages HTML
    |              |
    |              |-- layouts/                   # Pages masters
    |              |    |-- base.html             # Layout des pages
