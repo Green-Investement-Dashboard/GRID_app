@@ -7,7 +7,7 @@
   
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   
-  <title>7.1.1. app.base package &mdash; Documentation GRID 0.1</title>
+  <title>6.1.1. app.base package &mdash; Documentation GRID 0.1</title>
   
 
   
@@ -42,8 +42,8 @@
     
     <link rel="index" title="Index" href="genindex.html" />
     <link rel="search" title="Recherche" href="search.html" />
-    <link rel="next" title="7.1.2. app.home package" href="app.home.html" />
-    <link rel="prev" title="7. app package" href="app.html" /> 
+    <link rel="next" title="6.1.2. app.home package" href="app.home.html" />
+    <link rel="prev" title="6. Module app" href="app.html" /> 
 </head>
 
 <body class="wy-body-for-nav">
@@ -94,25 +94,24 @@
               <ul class="current">
 <li class="toctree-l1"><a class="reference internal" href="intro.html">1. Introduction</a></li>
 <li class="toctree-l1"><a class="reference internal" href="infrastructure.html">2. Infrastructure</a></li>
-<li class="toctree-l1"><a class="reference internal" href="indicateurs.html">3. Indictateurs</a></li>
-<li class="toctree-l1"><a class="reference internal" href="use.html">4. Installation</a></li>
-<li class="toctree-l1"><a class="reference internal" href="contacts.html">5. Contacts</a></li>
-<li class="toctree-l1"><a class="reference internal" href="modules.html">6. Module agri_data</a></li>
-<li class="toctree-l1 current"><a class="reference internal" href="app.html">7. app package</a><ul class="current">
-<li class="toctree-l2 current"><a class="reference internal" href="app.html#subpackages">7.1. Subpackages</a><ul class="current">
-<li class="toctree-l3 current"><a class="current reference internal" href="#">7.1.1. app.base package</a><ul>
-<li class="toctree-l4"><a class="reference internal" href="#submodules">7.1.1.1. Submodules</a></li>
-<li class="toctree-l4"><a class="reference internal" href="#module-app.base.forms">7.1.1.2. app.base.forms module</a></li>
-<li class="toctree-l4"><a class="reference internal" href="#module-app.base.models">7.1.1.3. app.base.models module</a></li>
-<li class="toctree-l4"><a class="reference internal" href="#module-app.base.routes">7.1.1.4. app.base.routes module</a></li>
-<li class="toctree-l4"><a class="reference internal" href="#module-app.base.util">7.1.1.5. app.base.util module</a></li>
-<li class="toctree-l4"><a class="reference internal" href="#module-app.base">7.1.1.6. Module contents</a></li>
+<li class="toctree-l1"><a class="reference internal" href="indicateurs.html">3. Indictateurs et graphiques</a></li>
+<li class="toctree-l1"><a class="reference internal" href="use.html">4. Déploiement et installation</a></li>
+<li class="toctree-l1"><a class="reference internal" href="modules.html">5. Module agri_data</a></li>
+<li class="toctree-l1 current"><a class="reference internal" href="app.html">6. Module app</a><ul class="current">
+<li class="toctree-l2 current"><a class="reference internal" href="app.html#subpackages">6.1. Subpackages</a><ul class="current">
+<li class="toctree-l3 current"><a class="current reference internal" href="#">6.1.1. app.base package</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#submodules">6.1.1.1. Submodules</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#module-app.base.forms">6.1.1.2. app.base.forms module</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#module-app.base.models">6.1.1.3. app.base.models module</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#module-app.base.routes">6.1.1.4. app.base.routes module</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#module-app.base.util">6.1.1.5. app.base.util module</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#module-app.base">6.1.1.6. Module contents</a></li>
 </ul>
 </li>
-<li class="toctree-l3"><a class="reference internal" href="app.home.html">7.1.2. app.home package</a></li>
+<li class="toctree-l3"><a class="reference internal" href="app.home.html">6.1.2. app.home package</a></li>
 </ul>
 </li>
-<li class="toctree-l2"><a class="reference internal" href="app.html#module-app">7.2. Module contents</a></li>
+<li class="toctree-l2"><a class="reference internal" href="app.html#module-0">6.2. Module contents</a></li>
 </ul>
 </li>
 </ul>
@@ -163,9 +162,9 @@
     
       <li><a href="index.html" class="icon icon-home"></a> &raquo;</li>
         
-          <li><a href="app.html"><span class="section-number">7. </span>app package</a> &raquo;</li>
+          <li><a href="app.html"><span class="section-number">6. </span>Module app</a> &raquo;</li>
         
-      <li><span class="section-number">7.1.1. </span>app.base package</li>
+      <li><span class="section-number">6.1.1. </span>app.base package</li>
     
     
       <li class="wy-breadcrumbs-aside">
@@ -185,13 +184,14 @@
            <div itemprop="articleBody">
             
   <div class="section" id="app-base-package">
-<h1><span class="section-number">7.1.1. </span>app.base package<a class="headerlink" href="#app-base-package" title="Lien permanent vers ce titre">¶</a></h1>
+<h1><span class="section-number">6.1.1. </span>app.base package<a class="headerlink" href="#app-base-package" title="Lien permanent vers ce titre">¶</a></h1>
 <div class="section" id="submodules">
-<h2><span class="section-number">7.1.1.1. </span>Submodules<a class="headerlink" href="#submodules" title="Lien permanent vers ce titre">¶</a></h2>
+<h2><span class="section-number">6.1.1.1. </span>Submodules<a class="headerlink" href="#submodules" title="Lien permanent vers ce titre">¶</a></h2>
 </div>
 <div class="section" id="module-app.base.forms">
-<span id="app-base-forms-module"></span><h2><span class="section-number">7.1.1.2. </span>app.base.forms module<a class="headerlink" href="#module-app.base.forms" title="Lien permanent vers ce titre">¶</a></h2>
-<p>Copyright (c) 2019 - present AppSeed.us</p>
+<span id="app-base-forms-module"></span><h2><span class="section-number">6.1.1.2. </span>app.base.forms module<a class="headerlink" href="#module-app.base.forms" title="Lien permanent vers ce titre">¶</a></h2>
+<p>Copyright (c) 2019 - present AppSeed.us
+Modfied the GRID, 2021</p>
 <dl class="py class">
 <dt id="app.base.forms.CreateAccountForm">
 <em class="property"><span class="pre">class</span> </em><code class="sig-prename descclassname"><span class="pre">app.base.forms.</span></code><code class="sig-name descname"><span class="pre">CreateAccountForm</span></code><span class="sig-paren">(</span><em class="sig-param"><span class="o"><span class="pre">*</span></span><span class="n"><span class="pre">args</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#app.base.forms.CreateAccountForm" title="Lien permanent vers cette définition">¶</a></dt>
@@ -229,31 +229,11 @@
 
 </dd></dl>
 
-<dl class="py class">
-<dt id="app.base.forms.Questionaires">
-<em class="property"><span class="pre">class</span> </em><code class="sig-prename descclassname"><span class="pre">app.base.forms.</span></code><code class="sig-name descname"><span class="pre">Questionaires</span></code><span class="sig-paren">(</span><em class="sig-param"><span class="o"><span class="pre">*</span></span><span class="n"><span class="pre">args</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#app.base.forms.Questionaires" title="Lien permanent vers cette définition">¶</a></dt>
-<dd><p>Bases : <code class="xref py py-class docutils literal notranslate"><span class="pre">flask_wtf.form.FlaskForm</span></code></p>
-<dl class="py attribute">
-<dt id="app.base.forms.Questionaires.address">
-<code class="sig-name descname"><span class="pre">address</span></code><em class="property"> <span class="pre">=</span> <span class="pre">&lt;UnboundField(TextField,</span> <span class="pre">('Address',),</span> <span class="pre">{'id':</span> <span class="pre">'address',</span> <span class="pre">'validators':</span> <span class="pre">[&lt;wtforms.validators.DataRequired</span> <span class="pre">object&gt;]})&gt;</span></em><a class="headerlink" href="#app.base.forms.Questionaires.address" title="Lien permanent vers cette définition">¶</a></dt>
-<dd></dd></dl>
-
-<dl class="py attribute">
-<dt id="app.base.forms.Questionaires.name_exploit">
-<code class="sig-name descname"><span class="pre">name_exploit</span></code><em class="property"> <span class="pre">=</span> <span class="pre">&lt;UnboundField(TextField,</span> <span class="pre">('Nom</span> <span class="pre">exploitation',),</span> <span class="pre">{'id':</span> <span class="pre">'exploit',</span> <span class="pre">'validators':</span> <span class="pre">[&lt;wtforms.validators.DataRequired</span> <span class="pre">object&gt;]})&gt;</span></em><a class="headerlink" href="#app.base.forms.Questionaires.name_exploit" title="Lien permanent vers cette définition">¶</a></dt>
-<dd></dd></dl>
-
-<dl class="py attribute">
-<dt id="app.base.forms.Questionaires.submit">
-<code class="sig-name descname"><span class="pre">submit</span></code><em class="property"> <span class="pre">=</span> <span class="pre">&lt;UnboundField(SubmitField,</span> <span class="pre">('Enregistrer',),</span> <span class="pre">{})&gt;</span></em><a class="headerlink" href="#app.base.forms.Questionaires.submit" title="Lien permanent vers cette définition">¶</a></dt>
-<dd></dd></dl>
-
-</dd></dl>
-
 </div>
 <div class="section" id="module-app.base.models">
-<span id="app-base-models-module"></span><h2><span class="section-number">7.1.1.3. </span>app.base.models module<a class="headerlink" href="#module-app.base.models" title="Lien permanent vers ce titre">¶</a></h2>
-<p>Copyright (c) 2019 - present AppSeed.us</p>
+<span id="app-base-models-module"></span><h2><span class="section-number">6.1.1.3. </span>app.base.models module<a class="headerlink" href="#module-app.base.models" title="Lien permanent vers ce titre">¶</a></h2>
+<p>Copyright (c) 2019 - present AppSeed.us
+Modfied the GRID, 2021</p>
 <dl class="py class">
 <dt id="app.base.models.User">
 <em class="property"><span class="pre">class</span> </em><code class="sig-prename descclassname"><span class="pre">app.base.models.</span></code><code class="sig-name descname"><span class="pre">User</span></code><span class="sig-paren">(</span><em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#app.base.models.User" title="Lien permanent vers cette définition">¶</a></dt>
@@ -292,8 +272,9 @@
 
 </div>
 <div class="section" id="module-app.base.routes">
-<span id="app-base-routes-module"></span><h2><span class="section-number">7.1.1.4. </span>app.base.routes module<a class="headerlink" href="#module-app.base.routes" title="Lien permanent vers ce titre">¶</a></h2>
-<p>Copyright (c) 2019 - present AppSeed.us</p>
+<span id="app-base-routes-module"></span><h2><span class="section-number">6.1.1.4. </span>app.base.routes module<a class="headerlink" href="#module-app.base.routes" title="Lien permanent vers ce titre">¶</a></h2>
+<p>Copyright (c) 2019 - present AppSeed.us
+Modfied the GRID, 2021</p>
 <dl class="py function">
 <dt id="app.base.routes.access_forbidden">
 <code class="sig-prename descclassname"><span class="pre">app.base.routes.</span></code><code class="sig-name descname"><span class="pre">access_forbidden</span></code><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">error</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#app.base.routes.access_forbidden" title="Lien permanent vers cette définition">¶</a></dt>
@@ -341,7 +322,7 @@
 
 </div>
 <div class="section" id="module-app.base.util">
-<span id="app-base-util-module"></span><h2><span class="section-number">7.1.1.5. </span>app.base.util module<a class="headerlink" href="#module-app.base.util" title="Lien permanent vers ce titre">¶</a></h2>
+<span id="app-base-util-module"></span><h2><span class="section-number">6.1.1.5. </span>app.base.util module<a class="headerlink" href="#module-app.base.util" title="Lien permanent vers ce titre">¶</a></h2>
 <p>Copyright (c) 2019 - present AppSeed.us</p>
 <dl class="py function">
 <dt id="app.base.util.hash_pass">
@@ -357,8 +338,9 @@
 
 </div>
 <div class="section" id="module-app.base">
-<span id="module-contents"></span><h2><span class="section-number">7.1.1.6. </span>Module contents<a class="headerlink" href="#module-app.base" title="Lien permanent vers ce titre">¶</a></h2>
-<p>Copyright (c) 2019 - present AppSeed.us</p>
+<span id="module-contents"></span><h2><span class="section-number">6.1.1.6. </span>Module contents<a class="headerlink" href="#module-app.base" title="Lien permanent vers ce titre">¶</a></h2>
+<p>Copyright (c) 2019 - present AppSeed.us
+Modfied the GRID, 2021</p>
 </div>
 </div>
 
@@ -368,8 +350,8 @@
           </div>
           <footer>
     <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
-        <a href="app.home.html" class="btn btn-neutral float-right" title="7.1.2. app.home package" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
-        <a href="app.html" class="btn btn-neutral float-left" title="7. app package" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
+        <a href="app.home.html" class="btn btn-neutral float-right" title="6.1.2. app.home package" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+        <a href="app.html" class="btn btn-neutral float-left" title="6. Module app" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
     </div>
 
   <hr/>

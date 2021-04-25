@@ -1,9 +1,7 @@
 #!/usr/bin/env python3
 # -*- coding: utf-8 -*-
 """
-Created on Tue Apr 20 23:29:01 2021
-
-@author: Clement
+© GRID Team, 2021
 """
 import pandas
 import os
@@ -15,6 +13,9 @@ import numpy
 from agri_data import data_import
 
 class CaniculePlot:
+    """Cette classe génère une heat map des canicules sur la base des données de Copernicus
+    Les données ont été pré-traités et stockés dans le même répertoire.
+    """
     def __init__ (self):
          self.current = os.path.normcase(os.path.dirname(os.path.realpath(__file__)))
          self.file_name='data/full_data_heatwave.json'
@@ -25,7 +26,12 @@ class CaniculePlot:
          
          print(self.df)
          
-    def plot (self):
+    def plot_at_date (self):
+        """Créé un carte pour un date données
+
+        :return: objet json
+        :rtype: json
+        """
         date = pandas.to_datetime('2035-01-01')
         self.df = self.df.loc[(slice(None), slice(None), date),:]
         self.df = self.df.reset_index()
@@ -43,16 +49,18 @@ class CaniculePlot:
 
         return plot_json
     
-    def plot2 (self):
+    def plot_cursor (self):
+        """Créé un carte pour différentes dates avec un slider temporel
+        (dates définis dans la variable `list_date`)
+
+        :return: objet json
+        :rtype: json
+        """
         #self.df = self.df.reset_index()
         data_slider = []
         fig = go.Figure()
-        beg_date = pandas.to_datetime("2021-01-01")
-        end_date = pandas.to_datetime("2081-01-01")
-        #list_date=pandas.date_range(start=beg_date, end=end_date, freq="Y")
         list_date = ["2021-01-01", "2031-01-01", "2041-01-01", "2051-01-01", "2061-01-01", "2081-01-01"]
         list_date = [pandas.to_datetime(k) for k in list_date]
-        
         
         for date in tqdm.tqdm(list_date):
             temp_df = self.df.loc[(slice(None), slice(None), date),:].reset_index()
@@ -67,11 +75,11 @@ class CaniculePlot:
                                            )
                           )
         fig.add_trace(go.Scattermapbox(lat=[43.58], lon=[4.04], marker = {'size': 30, 'color':["#0D9580"]},
-                                       hovertemplate = "<b>Exploitation</b> <extra></extra>"))
+                                       hovertemplate = "<b>Exploitation</b> <extra></extra>")) #Agri location
         steps = []
-        for i, date in zip(range(len(fig.data)-1), list_date):
+        for i, date in zip(range(len(fig.data)-1), list_date): #Creation of slider by looping in dates
             step = dict(method='update',
-                        args=[{"visible": [False] * (len(fig.data)-1) + [True]},
+                        args=[{"visible": [False] * (len(fig.data)-1) + [True]}, #Add True at the end to show location
                               {"title": f"Carte des canicules {date.strftime('%Y')}"}],
                         label=f"Year: {date.strftime('%Y')}",
                         )
@@ -87,17 +95,27 @@ class CaniculePlot:
                            height=650, sliders=sliders
                            )
         #fig=go.Figure(data=data_slider, layout=layout)
-        #fig.write_html("cannicule.html")
+        #fig.write_html("cannicule.html") #utilisé en phase de test
         plot_json = json.dumps(fig, cls=plotly.utils.PlotlyJSONEncoder)
 
         return plot_json
+
+
     def main(self):
+        """Fonction lançant le tout
+
+        :return: objet json
+        :rtype: json
+        """
         self.read_json()
-        plot_json = self.plot2()
+        plot_json = self.plot_cursor()
         return plot_json
 
 
 class FirePlot:
+    """Cette classe génère une carte avec un scatter plot des risques incendies sur la base des données de Copernicus
+      Les données ont été pré-traités et stockés dans le même répertoire.
+    """
     def __init__ (self):
          self.current = os.path.normcase(os.path.dirname(os.path.realpath(__file__)))
          self.file_name='data/full_data_fire.json'
@@ -109,6 +127,8 @@ class FirePlot:
          
          
     def read_json (self):
+         """Lecture du fichier .json et tri de l'index
+         """
          self.df = pandas.read_json(self.full_path, orient='table')
          self.df = self.df.set_index(['lat','lon', 'time'])
          self.df = self.df.sort_index()
@@ -117,6 +137,12 @@ class FirePlot:
         
      
     def color_scale(self, zmax):
+        """Cette fonction accomplie 2 choses en parallèle: création d'une echelle de couleur pour correpondre au Fire Index européen et
+        trouve les valeurs centrales de chacun des intervales utilisées pour afficher l'echelle de couleur annotée
+
+        :return: liste de l'echelle de couleurs normé (i.e. valeurs entre 0 et 1) et liste du centre des intervales
+        :rtype: list
+        """
         colorscale=[[0.00, '#fee5d9'],
                      [5.20, '#fcbba1'],
                      [11.2, '#fc9272'],
@@ -152,6 +178,11 @@ class FirePlot:
         return colorscheme, tick_val
          
     def plot_at_date (self):
+        """Créé un carte pour un date données
+
+        :return: objet json
+        :rtype: json
+        """
         date = pandas.to_datetime('2097-11-01')
         self.df = self.df.loc[(slice(None), slice(None), date),:]
         self.df = self.df.reset_index()
@@ -164,12 +195,18 @@ class FirePlot:
                            height=650
                            )
         fig=go.Figure(data=data, layout=layout)
-        fig.write_html("fire.html")
+        #fig.write_html("fire.html") #utilisé en phase de test
         plot_json = json.dumps(fig, cls=plotly.utils.PlotlyJSONEncoder)
 
         return plot_json
     
     def plot_cursor (self):
+        """Créé un carte pour différentes dates avec un slider temporel
+        (dates définis dans la variable `list_date`)
+
+        :return: objet json
+        :rtype: json
+        """
         fig = go.Figure()
         
         list_date = ["2021-11-01", "2031-11-01", "2041-11-01", "2051-11-01", "2061-11-01", "2081-11-01"]
@@ -223,12 +260,17 @@ class FirePlot:
                            height=650, sliders=sliders, showlegend=False
                            )
         
-        #fig.write_html("fire.html")
+        #fig.write_html("fire.html") #utilisé en phase de test
         plot_json = json.dumps(fig, cls=plotly.utils.PlotlyJSONEncoder)
 
         return plot_json
     
     def main(self):
+        """Fonction lançant le tout
+
+        :return: objet json
+        :rtype: json
+        """
         self.read_json()
         plot_json = self.plot_cursor()
         return plot_json

@@ -101,9 +101,8 @@
 </li>
 <li class="toctree-l1"><a class="reference internal" href="indicateurs.html">3. Indictateurs et graphiques</a></li>
 <li class="toctree-l1"><a class="reference internal" href="use.html">4. Déploiement et installation</a></li>
-<li class="toctree-l1"><a class="reference internal" href="contacts.html">5. Contacts</a></li>
-<li class="toctree-l1"><a class="reference internal" href="modules.html">6. Module agri_data</a></li>
-<li class="toctree-l1"><a class="reference internal" href="app.html">7. app package</a></li>
+<li class="toctree-l1"><a class="reference internal" href="modules.html">5. Module agri_data</a></li>
+<li class="toctree-l1"><a class="reference internal" href="app.html">6. Module app</a></li>
 </ul>
 
             
@@ -181,32 +180,25 @@
 <li><p><code class="code docutils literal notranslate"><span class="pre">agri_data</span></code> : module regroupant générant les données</p></li>
 </ul>
 <p>Le fichier principal lançant l’application est situé à la racine, il s’appelle <code class="code docutils literal notranslate"><span class="pre">run.py</span></code></p>
-<p>. code-block:: bash</p>
-<blockquote>
-<div><div class="line-block">
-<div class="line"><br /></div>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="p">|</span>
+<span class="p">|</span>-- app/                                      <span class="c1"># L&#39;application en elle même</span>
+<span class="p">|</span>    <span class="p">|</span>-- home/                                <span class="c1"># Génération des contenus spécifiques pas page HTML spécifiques</span>
+<span class="p">|</span>    <span class="p">|</span>-- base/                                <span class="c1"># Blueprint, contient la structure de l&#39;application</span>
+<span class="p">|</span>
+<span class="p">|</span>-- agri_data/                                <span class="c1"># Générations des données</span>
+<span class="p">|</span>
+<span class="p">|</span>-- ************************************************************************
+</pre></div>
 </div>
-<p><a href="#id1"><span class="problematic" id="id2">|</span></a>– app/                                      # L’application en elle même
-|    <a href="#id3"><span class="problematic" id="id4">|</span></a>– home/                                # Génération des contenus spécifiques pas page HTML spécifiques
-|    <a href="#id5"><span class="problematic" id="id6">|</span></a>– base/                                # Blueprint, contient la structure de l’application
-|
-<a href="#id7"><span class="problematic" id="id8">|</span></a>– agri_data/                                # Générations des données
-|
-<a href="#id9"><span class="problematic" id="id10">|</span></a>– <strong>********************************************************************</strong></p>
-</div></blockquote>
 </div>
 <div class="section" id="point-de-vue-flask-app-python">
 <h2><span class="section-number">2.2. </span>Point de vue Flask App / Python<a class="headerlink" href="#point-de-vue-flask-app-python" title="Lien permanent vers ce titre">¶</a></h2>
+<p>Le module <code class="code docutils literal notranslate"><span class="pre">app</span></code> est organisé en 2 sous-modules :</p>
 <ul class="simple">
-<li><dl class="simple">
-<dt>Le module <code class="code docutils literal notranslate"><span class="pre">app</span></code> est organisé en 2 sous-modules :</dt><dd><ul>
 <li><p><code class="code docutils literal notranslate"><span class="pre">home</span></code> qui sert à générer les visuels</p></li>
 <li><p><code class="code docutils literal notranslate"><span class="pre">base</span></code> qui sert à gérer l’authentification</p></li>
 </ul>
-</dd>
-</dl>
-</li>
-</ul>
+<p>Le code est ensuite commenté et précisé dans les modules <a class="reference internal" href="modules.html#agri"><span class="std std-ref">Module agri_data</span></a> et <a class="reference internal" href="app.html#app"><span class="std std-ref">Module app</span></a></p>
 <p>Le répértoire d’un point de vue Python à la structure suivante:</p>
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="p">|</span>
 <span class="p">|</span>-- app/                                      <span class="c1"># L&#39;application en elle même</span>

@@ -1,6 +1,7 @@
 # -*- encoding: utf-8 -*-
 """
 Copyright (c) 2019 - present AppSeed.us
+Modfied the GRID, 2021
 """
 
 from flask_migrate import Migrate
@@ -75,7 +76,7 @@ def gouv():
 def soc():
 	S1_indic = ggen.BulletChart('S1', "Communication").plot()
 	S2_indic = ggen.BulletChart('S2', "Barrières douanières").plot()
-	S3_indic = ggen.PieChart('G6', "Diversification d'activité").plot() 
+	S3_indic = ggen.PieChart('S3', "Diversification d'activité").plot() 
 	critical_alert = index_renderer.CriticalAlert().main()
 
 	return render_template('social.html', bullet_charts = [S1_indic, S2_indic], S3_indic = S3_indic,

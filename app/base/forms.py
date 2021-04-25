@@ -1,6 +1,7 @@
 # -*- encoding: utf-8 -*-
 """
 Copyright (c) 2019 - present AppSeed.us
+Modfied the GRID, 2021
 """
 
 from flask_wtf import FlaskForm
@@ -18,8 +19,4 @@ class CreateAccountForm(FlaskForm):
     email    = TextField('Email'        , id='email_create'    , validators=[DataRequired(), Email()])
     password = PasswordField('Password' , id='pwd_create'      , validators=[DataRequired()])
 
-class Questionaires(FlaskForm):
-	name_exploit = TextField('Nom exploitation'     , id='exploit' , validators=[DataRequired()])
-	address   = TextField('Address'        , id='address'    , validators=[DataRequired()])
-	submit = SubmitField('Enregistrer')
 

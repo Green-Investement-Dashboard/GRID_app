@@ -8,6 +8,7 @@ Documentation du projet GRID
 ================================
 
 Bienvenue sur la documentation du GRID! 
+
 Ici, vous trouverez:
 
 1. Le fonctionement général du projet
@@ -31,7 +32,6 @@ Table des matières
    infrastructure
    indicateurs
    use
-   contacts
    modules
    app
 

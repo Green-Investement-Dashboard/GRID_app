@@ -1,4 +1,6 @@
-app package
+.. _app:
+
+Module app
 ===========
 
 Subpackages
