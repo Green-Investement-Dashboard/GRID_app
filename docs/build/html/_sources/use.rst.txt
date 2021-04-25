@@ -1,7 +1,8 @@
-===========================
-Installation
-===========================
+.. _instal:
 
+===========================
+Déploiement et installation
+===========================
 
 
 Installation en local
