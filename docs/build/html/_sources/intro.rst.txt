@@ -2,7 +2,7 @@
 Introduction
 ===========================
 
-Ceci est un exemple
+
 
 Titre 1
 ===========================

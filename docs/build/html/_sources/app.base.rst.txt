@@ -12,14 +12,6 @@ app.base.forms module
    :undoc-members:
    :show-inheritance:
 
-app.base.index\_renderer module
--------------------------------
-
-.. automodule:: app.base.index_renderer
-   :members:
-   :undoc-members:
-   :show-inheritance:
-
 app.base.models module
 ----------------------
 
@@ -40,14 +32,6 @@ app.base.util module
 --------------------
 
 .. automodule:: app.base.util
-   :members:
-   :undoc-members:
-   :show-inheritance:
-
-app.base.zone\_innondable module
---------------------------------
-
-.. automodule:: app.base.zone_innondable
    :members:
    :undoc-members:
    :show-inheritance:

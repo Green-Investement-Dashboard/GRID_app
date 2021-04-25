@@ -1,4 +1,4 @@
-agri_data
+Module agri_data
 =========
 
 .. toctree::
