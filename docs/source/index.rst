@@ -8,14 +8,14 @@ Documentation du projet GRID
 ================================
 
 Bienvenue sur la documentation du GRID! 
-Ici, vous trouverez:
+Ici, vous trouverez :
 
-1. Le fonctionement général du projet
-2. L'insfrastructure du projet
-3. Comment les indicateurs sont calculés
-4. Comment lire le projet
-5. La documentation spécifique au moudule `data_agri` qui génère les données
-6. La documentation spécifique au module `app` qui génère l'app
+1. Le fonctionnement général du projet ;
+2. L'insfrastructure du projet ;
+3. Comment les indicateurs sont calculés ;
+4. Comment lire le projet ;
+5. La documentation spécifique au module `data_agri` qui génère les données ;
+6. La documentation spécifique au module `app` qui génère l'app.
 
 `Documentation PDF <http://docs.grid-tech.fr/grid.pdf>`__
 

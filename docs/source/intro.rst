@@ -7,7 +7,7 @@ Introduction
 Se connecter
 ===========================
 
-Pour voir le dasboard, rendez-vous sur `app.grid-tech.fr <http://app.grid-tech.fr>`__ .
+Pour voir le dashboard, rendez-vous sur `app.grid-tech.fr <http://app.grid-tech.fr>`__ .
 
 Pour les besoins de la démonstration dans le cadre du concours FIFG, un compte test a été créé:
 
@@ -15,9 +15,9 @@ Pour les besoins de la démonstration dans le cadre du concours FIFG, un compte 
 * **Mot de passe**: test
 
 .. tip::
-   Avec notre infrastructure actuelle, le chargement des pages peut praître long mais nous y travaillons.
+   Avec notre infrastructure actuelle, le chargement des pages peut paraître long mais nous travaillons pour essayer d'améliroer la rapidité des pages.
 
-Pour plus de détail sur le déploiement :ref:`instal`
+Pour plus de détails sur le déploiement :ref:`instal`
 
 
 Les données
