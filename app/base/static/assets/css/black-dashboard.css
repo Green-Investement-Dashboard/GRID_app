@@ -15788,6 +15788,7 @@ img {
 .navbar {
   padding: 10px 30px 10px 15px;
   width: 100%;
+  height: 50px;
   z-index: 1050;
   background: #1a1e34;
 }

@@ -94,14 +94,14 @@
         {
             "index":"S3",
             "list_x":[
-                "Vente directe",
-                "Coop\u00e9rative",
-                "Grande distribution"
+                "Tr\u00e8s satisfaisant",
+                "Satisfaisant",
+                "A am\u00e9liorer"
             ],
             "list_y":[
-                50,
+                30,
                 40,
-                10
+                30
             ]
         },
         {
@@ -157,14 +157,14 @@
         {
             "index":"G6",
             "list_x":[
-                "Vin",
-                "Visite",
-                "Autres ventes"
+                "Vente directe",
+                "Coop\u00e9rative",
+                "Grande distribution"
             ],
             "list_y":[
                 90,
                 5,
-                5
+                1
             ]
         },
         {

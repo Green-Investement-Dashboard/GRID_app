@@ -211,7 +211,7 @@
         {
             "index":22,
             "Code input":"G9",
-            "Ph\u00e9nom\u00e8ne dangereux":"Mutialisation du travail",
+            "Ph\u00e9nom\u00e8ne dangereux":"Mutualisation du travail",
             "Valeur":null,
             "Critique":1.0,
             " Description ":null
@@ -219,7 +219,7 @@
         {
             "index":23,
             "Code input":"S1",
-            "Ph\u00e9nom\u00e8ne dangereux":"Perte de renom\u00e9 ",
+            "Ph\u00e9nom\u00e8ne dangereux":"Perte de renomm\u00e9e",
             "Valeur":null,
             "Critique":1.0,
             " Description ":null
@@ -235,7 +235,7 @@
         {
             "index":25,
             "Code input":"S3",
-            "Ph\u00e9nom\u00e8ne dangereux":"Absence de clients suffisants",
+            "Ph\u00e9nom\u00e8ne dangereux":"Diversit\u00e9 de clients insuffisante",
             "Valeur":null,
             "Critique":1.0,
             " Description ":null
@@ -267,7 +267,7 @@
         {
             "index":29,
             "Code input":"S7",
-            "Ph\u00e9nom\u00e8ne dangereux":"Accident au travail",
+            "Ph\u00e9nom\u00e8ne dangereux":"Accident du travail",
             "Valeur":null,
             "Critique":null,
             " Description ":null
