@@ -135,8 +135,9 @@ def set_up_q():
 	form = questionaire.QuestionairesAgri(request.form)
 
 	if form.validate_on_submit():
+		print('val')
 		data = request.form
-		result= questionaire.save_data(data)
+		result = questionaire.save_data(data)
 		return render_template('questionaire.html',  end=True, message= 'Merci {}, données enregistrées'.format(form.name_exploit.data), table = result)	
 
 	return render_template('questionaire.html',  end=False, form=form)

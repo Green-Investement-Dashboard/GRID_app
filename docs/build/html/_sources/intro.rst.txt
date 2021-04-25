@@ -49,3 +49,11 @@ Pour le PoC, afin de démontrer la capacité dynamique du dashboard, à chaque l
 Toutes les données sont disponibles `ici <https://github.com/Green-Investement-Dashboard/data/tree/main/data_eg>`__
 
 Pour plus de détail sur les données et leur exploitation :ref:`indic`
+
+
+Le code
+==========
+Vous pouvez retrouver notre code dans son intégralité `ici <https://github.com/Green-Investement-Dashboard/GRID_app>`__.
+
+
+

@@ -5,17 +5,17 @@
 \let\spxextra \sphinxstyleindexextra
 
   \bigletter A
-  \item \spxentry{access\_forbidden()}\spxextra{dans le module app.base.routes}, \hyperpage{8}
+  \item \spxentry{access\_forbidden()}\spxextra{dans le module app.base.routes}, \hyperpage{9}
   \item \spxentry{address}\spxextra{attribut app.home.content\_gen.questionaire.QuestionairesAgri}, 
 		\hyperpage{12}
   \item \spxentry{age}\spxextra{attribut app.home.content\_gen.questionaire.QuestionairesAgri}, 
 		\hyperpage{12}
   \item \spxentry{agri\_data}
-    \subitem \spxentry{module}, \hyperpage{7}
+    \subitem \spxentry{module}, \hyperpage{8}
   \item \spxentry{agri\_data.data\_draw}
     \subitem \spxentry{module}, \hyperpage{7}
   \item \spxentry{agri\_data.data\_import}
-    \subitem \spxentry{module}, \hyperpage{7}
+    \subitem \spxentry{module}, \hyperpage{8}
   \item \spxentry{app}
     \subitem \spxentry{module}, \hyperpage{13}
   \item \spxentry{app.base}
@@ -25,23 +25,23 @@
   \item \spxentry{app.base.models}
     \subitem \spxentry{module}, \hyperpage{8}
   \item \spxentry{app.base.routes}
-    \subitem \spxentry{module}, \hyperpage{8}
+    \subitem \spxentry{module}, \hyperpage{9}
   \item \spxentry{app.base.util}
     \subitem \spxentry{module}, \hyperpage{9}
   \item \spxentry{app.home}
     \subitem \spxentry{module}, \hyperpage{13}
   \item \spxentry{app.home.content\_gen}
-    \subitem \spxentry{module}, \hyperpage{12}
+    \subitem \spxentry{module}, \hyperpage{13}
   \item \spxentry{app.home.content\_gen.graph\_generation}
-    \subitem \spxentry{module}, \hyperpage{9}
-  \item \spxentry{app.home.content\_gen.index\_renderer}
     \subitem \spxentry{module}, \hyperpage{10}
+  \item \spxentry{app.home.content\_gen.index\_renderer}
+    \subitem \spxentry{module}, \hyperpage{11}
   \item \spxentry{app.home.content\_gen.map\_generation}
     \subitem \spxentry{module}, \hyperpage{11}
   \item \spxentry{app.home.content\_gen.questionaire}
     \subitem \spxentry{module}, \hyperpage{12}
   \item \spxentry{app.home.routes}
-    \subitem \spxentry{module}, \hyperpage{12}
+    \subitem \spxentry{module}, \hyperpage{13}
   \item \spxentry{autract}\spxextra{attribut app.home.content\_gen.questionaire.QuestionairesAgri}, 
 		\hyperpage{12}
   \item \spxentry{autrcult}\spxextra{attribut app.home.content\_gen.questionaire.QuestionairesAgri}, 
@@ -54,14 +54,14 @@
   \indexspace
   \bigletter B
   \item \spxentry{bin()}\spxextra{méthode app.home.content\_gen.index\_renderer.Scoring}, 
-		\hyperpage{10}
+		\hyperpage{11}
   \item \spxentry{BulletChart}\spxextra{classe dans app.home.content\_gen.graph\_generation}, 
-		\hyperpage{9}
+		\hyperpage{10}
 
   \indexspace
   \bigletter C
   \item \spxentry{CaniculePlot}\spxextra{classe dans app.home.content\_gen.graph\_generation}, 
-		\hyperpage{9}
+		\hyperpage{10}
   \item \spxentry{CaniculePlot}\spxextra{classe dans app.home.content\_gen.map\_generation}, 
 		\hyperpage{11}
   \item \spxentry{cepage}\spxextra{attribut app.home.content\_gen.questionaire.QuestionairesAgri}, 
@@ -69,12 +69,12 @@
   \item \spxentry{certif}\spxextra{attribut app.home.content\_gen.questionaire.QuestionairesAgri}, 
 		\hyperpage{12}
   \item \spxentry{color\_scale()}\spxextra{méthode app.home.content\_gen.map\_generation.FirePlot}, 
-		\hyperpage{11}
+		\hyperpage{12}
   \item \spxentry{configure\_database()}\spxextra{dans le module app}, \hyperpage{13}
   \item \spxentry{create\_app()}\spxextra{dans le module app}, \hyperpage{13}
   \item \spxentry{CreateAccountForm}\spxextra{classe dans app.base.forms}, \hyperpage{8}
   \item \spxentry{CriticalAlert}\spxextra{classe dans app.home.content\_gen.index\_renderer}, 
-		\hyperpage{10}
+		\hyperpage{11}
 
   \indexspace
   \bigletter D
@@ -94,14 +94,14 @@
   \item \spxentry{FinancialChart}\spxextra{classe dans app.home.content\_gen.graph\_generation}, 
 		\hyperpage{10}
   \item \spxentry{find\_closest()}\spxextra{méthode app.home.content\_gen.graph\_generation.CaniculePlot}, 
-		\hyperpage{9}
+		\hyperpage{10}
   \item \spxentry{FirePlot}\spxextra{classe dans app.home.content\_gen.map\_generation}, 
-		\hyperpage{11}
+		\hyperpage{12}
 
   \indexspace
   \bigletter G
   \item \spxentry{gauges\_val()}\spxextra{méthode agri\_data.data\_draw.RandomDraw}, \hyperpage{7}
-  \item \spxentry{get\_segment()}\spxextra{dans le module app.home.routes}, \hyperpage{12}
+  \item \spxentry{get\_segment()}\spxextra{dans le module app.home.routes}, \hyperpage{13}
   \item \spxentry{graph\_val()}\spxextra{méthode agri\_data.data\_draw.RandomDraw}, \hyperpage{7}
 
   \indexspace
@@ -118,7 +118,7 @@
   \item \spxentry{index()}\spxextra{dans le module app.home.routes}, \hyperpage{13}
   \item \spxentry{indic\_critique()}\spxextra{méthode agri\_data.data\_draw.RandomDraw}, 
 		\hyperpage{7}
-  \item \spxentry{internal\_error()}\spxextra{dans le module app.base.routes}, \hyperpage{8}
+  \item \spxentry{internal\_error()}\spxextra{dans le module app.base.routes}, \hyperpage{9}
   \item \spxentry{intrant}\spxextra{attribut app.home.content\_gen.questionaire.QuestionairesAgri}, 
 		\hyperpage{12}
   \item \spxentry{irrig}\spxextra{attribut app.home.content\_gen.questionaire.QuestionairesAgri}, 
@@ -126,48 +126,48 @@
 
   \indexspace
   \bigletter L
-  \item \spxentry{login()}\spxextra{dans le module app.base.routes}, \hyperpage{8}
+  \item \spxentry{login()}\spxextra{dans le module app.base.routes}, \hyperpage{9}
   \item \spxentry{LoginForm}\spxextra{classe dans app.base.forms}, \hyperpage{8}
-  \item \spxentry{logout()}\spxextra{dans le module app.base.routes}, \hyperpage{8}
+  \item \spxentry{logout()}\spxextra{dans le module app.base.routes}, \hyperpage{9}
 
   \indexspace
   \bigletter M
   \item \spxentry{main()}\spxextra{méthode agri\_data.data\_draw.RandomDraw}, \hyperpage{7}
   \item \spxentry{main()}\spxextra{méthode app.home.content\_gen.graph\_generation.CaniculePlot}, 
-		\hyperpage{9}
-  \item \spxentry{main()}\spxextra{méthode app.home.content\_gen.index\_renderer.CriticalAlert}, 
 		\hyperpage{10}
+  \item \spxentry{main()}\spxextra{méthode app.home.content\_gen.index\_renderer.CriticalAlert}, 
+		\hyperpage{11}
   \item \spxentry{main()}\spxextra{méthode app.home.content\_gen.index\_renderer.Scoring}, 
 		\hyperpage{11}
   \item \spxentry{main()}\spxextra{méthode app.home.content\_gen.map\_generation.CaniculePlot}, 
 		\hyperpage{11}
   \item \spxentry{main()}\spxextra{méthode app.home.content\_gen.map\_generation.FirePlot}, 
-		\hyperpage{11}
+		\hyperpage{12}
   \item \spxentry{module}
-    \subitem \spxentry{agri\_data}, \hyperpage{7}
+    \subitem \spxentry{agri\_data}, \hyperpage{8}
     \subitem \spxentry{agri\_data.data\_draw}, \hyperpage{7}
-    \subitem \spxentry{agri\_data.data\_import}, \hyperpage{7}
+    \subitem \spxentry{agri\_data.data\_import}, \hyperpage{8}
     \subitem \spxentry{app}, \hyperpage{13}
     \subitem \spxentry{app.base}, \hyperpage{9}
     \subitem \spxentry{app.base.forms}, \hyperpage{8}
     \subitem \spxentry{app.base.models}, \hyperpage{8}
-    \subitem \spxentry{app.base.routes}, \hyperpage{8}
+    \subitem \spxentry{app.base.routes}, \hyperpage{9}
     \subitem \spxentry{app.base.util}, \hyperpage{9}
     \subitem \spxentry{app.home}, \hyperpage{13}
-    \subitem \spxentry{app.home.content\_gen}, \hyperpage{12}
-    \subitem \spxentry{app.home.content\_gen.graph\_generation}, \hyperpage{9}
-    \subitem \spxentry{app.home.content\_gen.index\_renderer}, \hyperpage{10}
+    \subitem \spxentry{app.home.content\_gen}, \hyperpage{13}
+    \subitem \spxentry{app.home.content\_gen.graph\_generation}, \hyperpage{10}
+    \subitem \spxentry{app.home.content\_gen.index\_renderer}, \hyperpage{11}
     \subitem \spxentry{app.home.content\_gen.map\_generation}, \hyperpage{11}
     \subitem \spxentry{app.home.content\_gen.questionaire}, \hyperpage{12}
-    \subitem \spxentry{app.home.routes}, \hyperpage{12}
+    \subitem \spxentry{app.home.routes}, \hyperpage{13}
   \item \spxentry{mutu}\spxextra{attribut app.home.content\_gen.questionaire.QuestionairesAgri}, 
 		\hyperpage{12}
 
   \indexspace
   \bigletter N
   \item \spxentry{name\_exploit}\spxextra{attribut app.home.content\_gen.questionaire.QuestionairesAgri}, 
-		\hyperpage{12}
-  \item \spxentry{not\_found\_error()}\spxextra{dans le module app.base.routes}, \hyperpage{8}
+		\hyperpage{13}
+  \item \spxentry{not\_found\_error()}\spxextra{dans le module app.base.routes}, \hyperpage{9}
 
   \indexspace
   \bigletter P
@@ -177,21 +177,21 @@
   \item \spxentry{PieChart}\spxextra{classe dans app.home.content\_gen.graph\_generation}, 
 		\hyperpage{10}
   \item \spxentry{plot()}\spxextra{méthode app.home.content\_gen.graph\_generation.BulletChart}, 
-		\hyperpage{9}
+		\hyperpage{10}
   \item \spxentry{plot()}\spxextra{méthode app.home.content\_gen.graph\_generation.CaniculePlot}, 
 		\hyperpage{10}
   \item \spxentry{plot()}\spxextra{méthode app.home.content\_gen.graph\_generation.PieChart}, 
-		\hyperpage{10}
+		\hyperpage{11}
   \item \spxentry{plot\_at\_date()}\spxextra{méthode app.home.content\_gen.map\_generation.CaniculePlot}, 
 		\hyperpage{11}
   \item \spxentry{plot\_at\_date()}\spxextra{méthode app.home.content\_gen.map\_generation.FirePlot}, 
-		\hyperpage{11}
+		\hyperpage{12}
   \item \spxentry{plot\_bar()}\spxextra{méthode app.home.content\_gen.graph\_generation.FinancialChart}, 
 		\hyperpage{10}
   \item \spxentry{plot\_cursor()}\spxextra{méthode app.home.content\_gen.map\_generation.CaniculePlot}, 
 		\hyperpage{11}
   \item \spxentry{plot\_cursor()}\spxextra{méthode app.home.content\_gen.map\_generation.FirePlot}, 
-		\hyperpage{11}
+		\hyperpage{12}
   \item \spxentry{plot\_mltpl\_line()}\spxextra{méthode app.home.content\_gen.graph\_generation.FinancialChart}, 
 		\hyperpage{10}
   \item \spxentry{plot\_sgl\_line()}\spxextra{méthode app.home.content\_gen.graph\_generation.FinancialChart}, 
@@ -200,53 +200,53 @@
   \indexspace
   \bigletter Q
   \item \spxentry{qual}\spxextra{attribut app.home.content\_gen.questionaire.QuestionairesAgri}, 
-		\hyperpage{12}
+		\hyperpage{13}
   \item \spxentry{QuestionairesAgri}\spxextra{classe dans app.home.content\_gen.questionaire}, 
 		\hyperpage{12}
 
   \indexspace
   \bigletter R
   \item \spxentry{RandomDraw}\spxextra{classe dans agri\_data.data\_draw}, \hyperpage{7}
-  \item \spxentry{read\_json()}\spxextra{méthode agri\_data.data\_import.ReadData}, \hyperpage{7}
+  \item \spxentry{read\_json()}\spxextra{méthode agri\_data.data\_import.ReadData}, \hyperpage{8}
   \item \spxentry{read\_json()}\spxextra{méthode app.home.content\_gen.map\_generation.CaniculePlot}, 
 		\hyperpage{11}
   \item \spxentry{read\_json()}\spxextra{méthode app.home.content\_gen.map\_generation.FirePlot}, 
 		\hyperpage{12}
-  \item \spxentry{ReadData}\spxextra{classe dans agri\_data.data\_import}, \hyperpage{7}
-  \item \spxentry{register()}\spxextra{dans le module app.base.routes}, \hyperpage{8}
+  \item \spxentry{ReadData}\spxextra{classe dans agri\_data.data\_import}, \hyperpage{8}
+  \item \spxentry{register()}\spxextra{dans le module app.base.routes}, \hyperpage{9}
   \item \spxentry{register\_blueprints()}\spxextra{dans le module app}, \hyperpage{13}
   \item \spxentry{register\_extensions()}\spxextra{dans le module app}, \hyperpage{13}
   \item \spxentry{request\_loader()}\spxextra{dans le module app.base.models}, \hyperpage{8}
-  \item \spxentry{route\_default()}\spxextra{dans le module app.base.routes}, \hyperpage{8}
+  \item \spxentry{route\_default()}\spxextra{dans le module app.base.routes}, \hyperpage{9}
   \item \spxentry{route\_template()}\spxextra{dans le module app.home.routes}, \hyperpage{13}
 
   \indexspace
   \bigletter S
   \item \spxentry{sau}\spxextra{attribut app.home.content\_gen.questionaire.QuestionairesAgri}, 
-		\hyperpage{12}
+		\hyperpage{13}
   \item \spxentry{save\_data()}\spxextra{dans le module app.home.content\_gen.questionaire}, 
-		\hyperpage{12}
+		\hyperpage{13}
   \item \spxentry{Scoring}\spxextra{classe dans app.home.content\_gen.index\_renderer}, 
-		\hyperpage{10}
+		\hyperpage{11}
   \item \spxentry{scoring\_data()}\spxextra{méthode agri\_data.data\_draw.RandomDraw}, 
 		\hyperpage{7}
-  \item \spxentry{shutdown()}\spxextra{dans le module app.base.routes}, \hyperpage{8}
+  \item \spxentry{shutdown()}\spxextra{dans le module app.base.routes}, \hyperpage{9}
   \item \spxentry{stat\_data()}\spxextra{méthode agri\_data.data\_draw.RandomDraw}, \hyperpage{7}
   \item \spxentry{submit}\spxextra{attribut app.home.content\_gen.questionaire.QuestionairesAgri}, 
-		\hyperpage{12}
+		\hyperpage{13}
 
   \indexspace
   \bigletter T
   \item \spxentry{typecult}\spxextra{attribut app.home.content\_gen.questionaire.QuestionairesAgri}, 
-		\hyperpage{12}
+		\hyperpage{13}
   \item \spxentry{typefonc}\spxextra{attribut app.home.content\_gen.questionaire.QuestionairesAgri}, 
-		\hyperpage{12}
+		\hyperpage{13}
 
   \indexspace
   \bigletter U
   \item \spxentry{unauthorized\_handler()}\spxextra{dans le module app.base.routes}, \hyperpage{9}
   \item \spxentry{User}\spxextra{classe dans app.base.models}, \hyperpage{8}
-  \item \spxentry{user\_loader()}\spxextra{dans le module app.base.models}, \hyperpage{8}
+  \item \spxentry{user\_loader()}\spxextra{dans le module app.base.models}, \hyperpage{9}
   \item \spxentry{username}\spxextra{attribut app.base.forms.CreateAccountForm}, \hyperpage{8}
   \item \spxentry{username}\spxextra{attribut app.base.forms.LoginForm}, \hyperpage{8}
   \item \spxentry{username}\spxextra{attribut app.base.models.User}, \hyperpage{8}

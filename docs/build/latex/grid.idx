@@ -9,12 +9,12 @@
 \indexentry{main() (méthode agri\_data.data\_draw.RandomDraw)@\spxentry{main()}\spxextra{méthode agri\_data.data\_draw.RandomDraw}|hyperpage}{7}
 \indexentry{scoring\_data() (méthode agri\_data.data\_draw.RandomDraw)@\spxentry{scoring\_data()}\spxextra{méthode agri\_data.data\_draw.RandomDraw}|hyperpage}{7}
 \indexentry{stat\_data() (méthode agri\_data.data\_draw.RandomDraw)@\spxentry{stat\_data()}\spxextra{méthode agri\_data.data\_draw.RandomDraw}|hyperpage}{7}
-\indexentry{module@\spxentry{module}!agri\_data.data\_import@\spxentry{agri\_data.data\_import}|hyperpage}{7}
-\indexentry{agri\_data.data\_import@\spxentry{agri\_data.data\_import}!module@\spxentry{module}|hyperpage}{7}
-\indexentry{ReadData (classe dans agri\_data.data\_import)@\spxentry{ReadData}\spxextra{classe dans agri\_data.data\_import}|hyperpage}{7}
-\indexentry{read\_json() (méthode agri\_data.data\_import.ReadData)@\spxentry{read\_json()}\spxextra{méthode agri\_data.data\_import.ReadData}|hyperpage}{7}
-\indexentry{module@\spxentry{module}!agri\_data@\spxentry{agri\_data}|hyperpage}{7}
-\indexentry{agri\_data@\spxentry{agri\_data}!module@\spxentry{module}|hyperpage}{7}
+\indexentry{module@\spxentry{module}!agri\_data.data\_import@\spxentry{agri\_data.data\_import}|hyperpage}{8}
+\indexentry{agri\_data.data\_import@\spxentry{agri\_data.data\_import}!module@\spxentry{module}|hyperpage}{8}
+\indexentry{ReadData (classe dans agri\_data.data\_import)@\spxentry{ReadData}\spxextra{classe dans agri\_data.data\_import}|hyperpage}{8}
+\indexentry{read\_json() (méthode agri\_data.data\_import.ReadData)@\spxentry{read\_json()}\spxextra{méthode agri\_data.data\_import.ReadData}|hyperpage}{8}
+\indexentry{module@\spxentry{module}!agri\_data@\spxentry{agri\_data}|hyperpage}{8}
+\indexentry{agri\_data@\spxentry{agri\_data}!module@\spxentry{module}|hyperpage}{8}
 \indexentry{module@\spxentry{module}!app.base.forms@\spxentry{app.base.forms}|hyperpage}{8}
 \indexentry{app.base.forms@\spxentry{app.base.forms}!module@\spxentry{module}|hyperpage}{8}
 \indexentry{CreateAccountForm (classe dans app.base.forms)@\spxentry{CreateAccountForm}\spxextra{classe dans app.base.forms}|hyperpage}{8}
@@ -32,17 +32,17 @@
 \indexentry{password (attribut app.base.models.User)@\spxentry{password}\spxextra{attribut app.base.models.User}|hyperpage}{8}
 \indexentry{username (attribut app.base.models.User)@\spxentry{username}\spxextra{attribut app.base.models.User}|hyperpage}{8}
 \indexentry{request\_loader() (dans le module app.base.models)@\spxentry{request\_loader()}\spxextra{dans le module app.base.models}|hyperpage}{8}
-\indexentry{user\_loader() (dans le module app.base.models)@\spxentry{user\_loader()}\spxextra{dans le module app.base.models}|hyperpage}{8}
-\indexentry{module@\spxentry{module}!app.base.routes@\spxentry{app.base.routes}|hyperpage}{8}
-\indexentry{app.base.routes@\spxentry{app.base.routes}!module@\spxentry{module}|hyperpage}{8}
-\indexentry{access\_forbidden() (dans le module app.base.routes)@\spxentry{access\_forbidden()}\spxextra{dans le module app.base.routes}|hyperpage}{8}
-\indexentry{internal\_error() (dans le module app.base.routes)@\spxentry{internal\_error()}\spxextra{dans le module app.base.routes}|hyperpage}{8}
-\indexentry{login() (dans le module app.base.routes)@\spxentry{login()}\spxextra{dans le module app.base.routes}|hyperpage}{8}
-\indexentry{logout() (dans le module app.base.routes)@\spxentry{logout()}\spxextra{dans le module app.base.routes}|hyperpage}{8}
-\indexentry{not\_found\_error() (dans le module app.base.routes)@\spxentry{not\_found\_error()}\spxextra{dans le module app.base.routes}|hyperpage}{8}
-\indexentry{register() (dans le module app.base.routes)@\spxentry{register()}\spxextra{dans le module app.base.routes}|hyperpage}{8}
-\indexentry{route\_default() (dans le module app.base.routes)@\spxentry{route\_default()}\spxextra{dans le module app.base.routes}|hyperpage}{8}
-\indexentry{shutdown() (dans le module app.base.routes)@\spxentry{shutdown()}\spxextra{dans le module app.base.routes}|hyperpage}{8}
+\indexentry{user\_loader() (dans le module app.base.models)@\spxentry{user\_loader()}\spxextra{dans le module app.base.models}|hyperpage}{9}
+\indexentry{module@\spxentry{module}!app.base.routes@\spxentry{app.base.routes}|hyperpage}{9}
+\indexentry{app.base.routes@\spxentry{app.base.routes}!module@\spxentry{module}|hyperpage}{9}
+\indexentry{access\_forbidden() (dans le module app.base.routes)@\spxentry{access\_forbidden()}\spxextra{dans le module app.base.routes}|hyperpage}{9}
+\indexentry{internal\_error() (dans le module app.base.routes)@\spxentry{internal\_error()}\spxextra{dans le module app.base.routes}|hyperpage}{9}
+\indexentry{login() (dans le module app.base.routes)@\spxentry{login()}\spxextra{dans le module app.base.routes}|hyperpage}{9}
+\indexentry{logout() (dans le module app.base.routes)@\spxentry{logout()}\spxextra{dans le module app.base.routes}|hyperpage}{9}
+\indexentry{not\_found\_error() (dans le module app.base.routes)@\spxentry{not\_found\_error()}\spxextra{dans le module app.base.routes}|hyperpage}{9}
+\indexentry{register() (dans le module app.base.routes)@\spxentry{register()}\spxextra{dans le module app.base.routes}|hyperpage}{9}
+\indexentry{route\_default() (dans le module app.base.routes)@\spxentry{route\_default()}\spxextra{dans le module app.base.routes}|hyperpage}{9}
+\indexentry{shutdown() (dans le module app.base.routes)@\spxentry{shutdown()}\spxextra{dans le module app.base.routes}|hyperpage}{9}
 \indexentry{unauthorized\_handler() (dans le module app.base.routes)@\spxentry{unauthorized\_handler()}\spxextra{dans le module app.base.routes}|hyperpage}{9}
 \indexentry{module@\spxentry{module}!app.base.util@\spxentry{app.base.util}|hyperpage}{9}
 \indexentry{app.base.util@\spxentry{app.base.util}!module@\spxentry{module}|hyperpage}{9}
@@ -50,26 +50,26 @@
 \indexentry{verify\_pass() (dans le module app.base.util)@\spxentry{verify\_pass()}\spxextra{dans le module app.base.util}|hyperpage}{9}
 \indexentry{module@\spxentry{module}!app.base@\spxentry{app.base}|hyperpage}{9}
 \indexentry{app.base@\spxentry{app.base}!module@\spxentry{module}|hyperpage}{9}
-\indexentry{module@\spxentry{module}!app.home.content\_gen.graph\_generation@\spxentry{app.home.content\_gen.graph\_generation}|hyperpage}{9}
-\indexentry{app.home.content\_gen.graph\_generation@\spxentry{app.home.content\_gen.graph\_generation}!module@\spxentry{module}|hyperpage}{9}
-\indexentry{BulletChart (classe dans app.home.content\_gen.graph\_generation)@\spxentry{BulletChart}\spxextra{classe dans app.home.content\_gen.graph\_generation}|hyperpage}{9}
-\indexentry{plot() (méthode app.home.content\_gen.graph\_generation.BulletChart)@\spxentry{plot()}\spxextra{méthode app.home.content\_gen.graph\_generation.BulletChart}|hyperpage}{9}
-\indexentry{CaniculePlot (classe dans app.home.content\_gen.graph\_generation)@\spxentry{CaniculePlot}\spxextra{classe dans app.home.content\_gen.graph\_generation}|hyperpage}{9}
-\indexentry{find\_closest() (méthode app.home.content\_gen.graph\_generation.CaniculePlot)@\spxentry{find\_closest()}\spxextra{méthode app.home.content\_gen.graph\_generation.CaniculePlot}|hyperpage}{9}
-\indexentry{main() (méthode app.home.content\_gen.graph\_generation.CaniculePlot)@\spxentry{main()}\spxextra{méthode app.home.content\_gen.graph\_generation.CaniculePlot}|hyperpage}{9}
+\indexentry{module@\spxentry{module}!app.home.content\_gen.graph\_generation@\spxentry{app.home.content\_gen.graph\_generation}|hyperpage}{10}
+\indexentry{app.home.content\_gen.graph\_generation@\spxentry{app.home.content\_gen.graph\_generation}!module@\spxentry{module}|hyperpage}{10}
+\indexentry{BulletChart (classe dans app.home.content\_gen.graph\_generation)@\spxentry{BulletChart}\spxextra{classe dans app.home.content\_gen.graph\_generation}|hyperpage}{10}
+\indexentry{plot() (méthode app.home.content\_gen.graph\_generation.BulletChart)@\spxentry{plot()}\spxextra{méthode app.home.content\_gen.graph\_generation.BulletChart}|hyperpage}{10}
+\indexentry{CaniculePlot (classe dans app.home.content\_gen.graph\_generation)@\spxentry{CaniculePlot}\spxextra{classe dans app.home.content\_gen.graph\_generation}|hyperpage}{10}
+\indexentry{find\_closest() (méthode app.home.content\_gen.graph\_generation.CaniculePlot)@\spxentry{find\_closest()}\spxextra{méthode app.home.content\_gen.graph\_generation.CaniculePlot}|hyperpage}{10}
+\indexentry{main() (méthode app.home.content\_gen.graph\_generation.CaniculePlot)@\spxentry{main()}\spxextra{méthode app.home.content\_gen.graph\_generation.CaniculePlot}|hyperpage}{10}
 \indexentry{plot() (méthode app.home.content\_gen.graph\_generation.CaniculePlot)@\spxentry{plot()}\spxextra{méthode app.home.content\_gen.graph\_generation.CaniculePlot}|hyperpage}{10}
 \indexentry{FinancialChart (classe dans app.home.content\_gen.graph\_generation)@\spxentry{FinancialChart}\spxextra{classe dans app.home.content\_gen.graph\_generation}|hyperpage}{10}
 \indexentry{plot\_bar() (méthode app.home.content\_gen.graph\_generation.FinancialChart)@\spxentry{plot\_bar()}\spxextra{méthode app.home.content\_gen.graph\_generation.FinancialChart}|hyperpage}{10}
 \indexentry{plot\_mltpl\_line() (méthode app.home.content\_gen.graph\_generation.FinancialChart)@\spxentry{plot\_mltpl\_line()}\spxextra{méthode app.home.content\_gen.graph\_generation.FinancialChart}|hyperpage}{10}
 \indexentry{plot\_sgl\_line() (méthode app.home.content\_gen.graph\_generation.FinancialChart)@\spxentry{plot\_sgl\_line()}\spxextra{méthode app.home.content\_gen.graph\_generation.FinancialChart}|hyperpage}{10}
 \indexentry{PieChart (classe dans app.home.content\_gen.graph\_generation)@\spxentry{PieChart}\spxextra{classe dans app.home.content\_gen.graph\_generation}|hyperpage}{10}
-\indexentry{plot() (méthode app.home.content\_gen.graph\_generation.PieChart)@\spxentry{plot()}\spxextra{méthode app.home.content\_gen.graph\_generation.PieChart}|hyperpage}{10}
-\indexentry{module@\spxentry{module}!app.home.content\_gen.index\_renderer@\spxentry{app.home.content\_gen.index\_renderer}|hyperpage}{10}
-\indexentry{app.home.content\_gen.index\_renderer@\spxentry{app.home.content\_gen.index\_renderer}!module@\spxentry{module}|hyperpage}{10}
-\indexentry{CriticalAlert (classe dans app.home.content\_gen.index\_renderer)@\spxentry{CriticalAlert}\spxextra{classe dans app.home.content\_gen.index\_renderer}|hyperpage}{10}
-\indexentry{main() (méthode app.home.content\_gen.index\_renderer.CriticalAlert)@\spxentry{main()}\spxextra{méthode app.home.content\_gen.index\_renderer.CriticalAlert}|hyperpage}{10}
-\indexentry{Scoring (classe dans app.home.content\_gen.index\_renderer)@\spxentry{Scoring}\spxextra{classe dans app.home.content\_gen.index\_renderer}|hyperpage}{10}
-\indexentry{bin() (méthode app.home.content\_gen.index\_renderer.Scoring)@\spxentry{bin()}\spxextra{méthode app.home.content\_gen.index\_renderer.Scoring}|hyperpage}{10}
+\indexentry{plot() (méthode app.home.content\_gen.graph\_generation.PieChart)@\spxentry{plot()}\spxextra{méthode app.home.content\_gen.graph\_generation.PieChart}|hyperpage}{11}
+\indexentry{module@\spxentry{module}!app.home.content\_gen.index\_renderer@\spxentry{app.home.content\_gen.index\_renderer}|hyperpage}{11}
+\indexentry{app.home.content\_gen.index\_renderer@\spxentry{app.home.content\_gen.index\_renderer}!module@\spxentry{module}|hyperpage}{11}
+\indexentry{CriticalAlert (classe dans app.home.content\_gen.index\_renderer)@\spxentry{CriticalAlert}\spxextra{classe dans app.home.content\_gen.index\_renderer}|hyperpage}{11}
+\indexentry{main() (méthode app.home.content\_gen.index\_renderer.CriticalAlert)@\spxentry{main()}\spxextra{méthode app.home.content\_gen.index\_renderer.CriticalAlert}|hyperpage}{11}
+\indexentry{Scoring (classe dans app.home.content\_gen.index\_renderer)@\spxentry{Scoring}\spxextra{classe dans app.home.content\_gen.index\_renderer}|hyperpage}{11}
+\indexentry{bin() (méthode app.home.content\_gen.index\_renderer.Scoring)@\spxentry{bin()}\spxextra{méthode app.home.content\_gen.index\_renderer.Scoring}|hyperpage}{11}
 \indexentry{main() (méthode app.home.content\_gen.index\_renderer.Scoring)@\spxentry{main()}\spxextra{méthode app.home.content\_gen.index\_renderer.Scoring}|hyperpage}{11}
 \indexentry{module@\spxentry{module}!app.home.content\_gen.map\_generation@\spxentry{app.home.content\_gen.map\_generation}|hyperpage}{11}
 \indexentry{app.home.content\_gen.map\_generation@\spxentry{app.home.content\_gen.map\_generation}!module@\spxentry{module}|hyperpage}{11}
@@ -78,11 +78,11 @@
 \indexentry{plot\_at\_date() (méthode app.home.content\_gen.map\_generation.CaniculePlot)@\spxentry{plot\_at\_date()}\spxextra{méthode app.home.content\_gen.map\_generation.CaniculePlot}|hyperpage}{11}
 \indexentry{plot\_cursor() (méthode app.home.content\_gen.map\_generation.CaniculePlot)@\spxentry{plot\_cursor()}\spxextra{méthode app.home.content\_gen.map\_generation.CaniculePlot}|hyperpage}{11}
 \indexentry{read\_json() (méthode app.home.content\_gen.map\_generation.CaniculePlot)@\spxentry{read\_json()}\spxextra{méthode app.home.content\_gen.map\_generation.CaniculePlot}|hyperpage}{11}
-\indexentry{FirePlot (classe dans app.home.content\_gen.map\_generation)@\spxentry{FirePlot}\spxextra{classe dans app.home.content\_gen.map\_generation}|hyperpage}{11}
-\indexentry{color\_scale() (méthode app.home.content\_gen.map\_generation.FirePlot)@\spxentry{color\_scale()}\spxextra{méthode app.home.content\_gen.map\_generation.FirePlot}|hyperpage}{11}
-\indexentry{main() (méthode app.home.content\_gen.map\_generation.FirePlot)@\spxentry{main()}\spxextra{méthode app.home.content\_gen.map\_generation.FirePlot}|hyperpage}{11}
-\indexentry{plot\_at\_date() (méthode app.home.content\_gen.map\_generation.FirePlot)@\spxentry{plot\_at\_date()}\spxextra{méthode app.home.content\_gen.map\_generation.FirePlot}|hyperpage}{11}
-\indexentry{plot\_cursor() (méthode app.home.content\_gen.map\_generation.FirePlot)@\spxentry{plot\_cursor()}\spxextra{méthode app.home.content\_gen.map\_generation.FirePlot}|hyperpage}{11}
+\indexentry{FirePlot (classe dans app.home.content\_gen.map\_generation)@\spxentry{FirePlot}\spxextra{classe dans app.home.content\_gen.map\_generation}|hyperpage}{12}
+\indexentry{color\_scale() (méthode app.home.content\_gen.map\_generation.FirePlot)@\spxentry{color\_scale()}\spxextra{méthode app.home.content\_gen.map\_generation.FirePlot}|hyperpage}{12}
+\indexentry{main() (méthode app.home.content\_gen.map\_generation.FirePlot)@\spxentry{main()}\spxextra{méthode app.home.content\_gen.map\_generation.FirePlot}|hyperpage}{12}
+\indexentry{plot\_at\_date() (méthode app.home.content\_gen.map\_generation.FirePlot)@\spxentry{plot\_at\_date()}\spxextra{méthode app.home.content\_gen.map\_generation.FirePlot}|hyperpage}{12}
+\indexentry{plot\_cursor() (méthode app.home.content\_gen.map\_generation.FirePlot)@\spxentry{plot\_cursor()}\spxextra{méthode app.home.content\_gen.map\_generation.FirePlot}|hyperpage}{12}
 \indexentry{read\_json() (méthode app.home.content\_gen.map\_generation.FirePlot)@\spxentry{read\_json()}\spxextra{méthode app.home.content\_gen.map\_generation.FirePlot}|hyperpage}{12}
 \indexentry{module@\spxentry{module}!app.home.content\_gen.questionaire@\spxentry{app.home.content\_gen.questionaire}|hyperpage}{12}
 \indexentry{app.home.content\_gen.questionaire@\spxentry{app.home.content\_gen.questionaire}!module@\spxentry{module}|hyperpage}{12}
@@ -101,18 +101,18 @@
 \indexentry{intrant (attribut app.home.content\_gen.questionaire.QuestionairesAgri)@\spxentry{intrant}\spxextra{attribut app.home.content\_gen.questionaire.QuestionairesAgri}|hyperpage}{12}
 \indexentry{irrig (attribut app.home.content\_gen.questionaire.QuestionairesAgri)@\spxentry{irrig}\spxextra{attribut app.home.content\_gen.questionaire.QuestionairesAgri}|hyperpage}{12}
 \indexentry{mutu (attribut app.home.content\_gen.questionaire.QuestionairesAgri)@\spxentry{mutu}\spxextra{attribut app.home.content\_gen.questionaire.QuestionairesAgri}|hyperpage}{12}
-\indexentry{name\_exploit (attribut app.home.content\_gen.questionaire.QuestionairesAgri)@\spxentry{name\_exploit}\spxextra{attribut app.home.content\_gen.questionaire.QuestionairesAgri}|hyperpage}{12}
-\indexentry{qual (attribut app.home.content\_gen.questionaire.QuestionairesAgri)@\spxentry{qual}\spxextra{attribut app.home.content\_gen.questionaire.QuestionairesAgri}|hyperpage}{12}
-\indexentry{sau (attribut app.home.content\_gen.questionaire.QuestionairesAgri)@\spxentry{sau}\spxextra{attribut app.home.content\_gen.questionaire.QuestionairesAgri}|hyperpage}{12}
-\indexentry{submit (attribut app.home.content\_gen.questionaire.QuestionairesAgri)@\spxentry{submit}\spxextra{attribut app.home.content\_gen.questionaire.QuestionairesAgri}|hyperpage}{12}
-\indexentry{typecult (attribut app.home.content\_gen.questionaire.QuestionairesAgri)@\spxentry{typecult}\spxextra{attribut app.home.content\_gen.questionaire.QuestionairesAgri}|hyperpage}{12}
-\indexentry{typefonc (attribut app.home.content\_gen.questionaire.QuestionairesAgri)@\spxentry{typefonc}\spxextra{attribut app.home.content\_gen.questionaire.QuestionairesAgri}|hyperpage}{12}
-\indexentry{save\_data() (dans le module app.home.content\_gen.questionaire)@\spxentry{save\_data()}\spxextra{dans le module app.home.content\_gen.questionaire}|hyperpage}{12}
-\indexentry{module@\spxentry{module}!app.home.content\_gen@\spxentry{app.home.content\_gen}|hyperpage}{12}
-\indexentry{app.home.content\_gen@\spxentry{app.home.content\_gen}!module@\spxentry{module}|hyperpage}{12}
-\indexentry{module@\spxentry{module}!app.home.routes@\spxentry{app.home.routes}|hyperpage}{12}
-\indexentry{app.home.routes@\spxentry{app.home.routes}!module@\spxentry{module}|hyperpage}{12}
-\indexentry{get\_segment() (dans le module app.home.routes)@\spxentry{get\_segment()}\spxextra{dans le module app.home.routes}|hyperpage}{12}
+\indexentry{name\_exploit (attribut app.home.content\_gen.questionaire.QuestionairesAgri)@\spxentry{name\_exploit}\spxextra{attribut app.home.content\_gen.questionaire.QuestionairesAgri}|hyperpage}{13}
+\indexentry{qual (attribut app.home.content\_gen.questionaire.QuestionairesAgri)@\spxentry{qual}\spxextra{attribut app.home.content\_gen.questionaire.QuestionairesAgri}|hyperpage}{13}
+\indexentry{sau (attribut app.home.content\_gen.questionaire.QuestionairesAgri)@\spxentry{sau}\spxextra{attribut app.home.content\_gen.questionaire.QuestionairesAgri}|hyperpage}{13}
+\indexentry{submit (attribut app.home.content\_gen.questionaire.QuestionairesAgri)@\spxentry{submit}\spxextra{attribut app.home.content\_gen.questionaire.QuestionairesAgri}|hyperpage}{13}
+\indexentry{typecult (attribut app.home.content\_gen.questionaire.QuestionairesAgri)@\spxentry{typecult}\spxextra{attribut app.home.content\_gen.questionaire.QuestionairesAgri}|hyperpage}{13}
+\indexentry{typefonc (attribut app.home.content\_gen.questionaire.QuestionairesAgri)@\spxentry{typefonc}\spxextra{attribut app.home.content\_gen.questionaire.QuestionairesAgri}|hyperpage}{13}
+\indexentry{save\_data() (dans le module app.home.content\_gen.questionaire)@\spxentry{save\_data()}\spxextra{dans le module app.home.content\_gen.questionaire}|hyperpage}{13}
+\indexentry{module@\spxentry{module}!app.home.content\_gen@\spxentry{app.home.content\_gen}|hyperpage}{13}
+\indexentry{app.home.content\_gen@\spxentry{app.home.content\_gen}!module@\spxentry{module}|hyperpage}{13}
+\indexentry{module@\spxentry{module}!app.home.routes@\spxentry{app.home.routes}|hyperpage}{13}
+\indexentry{app.home.routes@\spxentry{app.home.routes}!module@\spxentry{module}|hyperpage}{13}
+\indexentry{get\_segment() (dans le module app.home.routes)@\spxentry{get\_segment()}\spxextra{dans le module app.home.routes}|hyperpage}{13}
 \indexentry{index() (dans le module app.home.routes)@\spxentry{index()}\spxextra{dans le module app.home.routes}|hyperpage}{13}
 \indexentry{route\_template() (dans le module app.home.routes)@\spxentry{route\_template()}\spxextra{dans le module app.home.routes}|hyperpage}{13}
 \indexentry{module@\spxentry{module}!app.home@\spxentry{app.home}|hyperpage}{13}

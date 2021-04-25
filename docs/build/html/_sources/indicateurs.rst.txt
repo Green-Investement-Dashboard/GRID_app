@@ -1,7 +1,7 @@
 .. _indic:
 
 ===========================
-Indictateurs et graphiques
+Indicateurs et graphiques
 ===========================
 
 Les types de représentations
