@@ -13,11 +13,11 @@ from agri_data import data_import
 import os
 
 class BulletChart:
-    """Cette classe génère une échelle à 3 couleurs pour un indicateur donnée
+    """Cette classe génère une échelle à 3 couleurs pour un indicateur donné
 
       :param indic: le code indicateur au format Ex, Sx ou Gx (où x est un int)
       :type indic: str
-      :param indic_name: le nom de l'indicateur utiliser pour le titre
+      :param indic_name: le nom de l'indicateur utilisé pour le titre
       :type addr: str
     """
     def __init__ (self, indic, indic_name):
@@ -29,7 +29,7 @@ class BulletChart:
         self.indic_name = indic_name
 
     def plot(self):
-        """Les données sont importés depuis l'init
+        """Les données sont importées depuis l'__init__
 
         :return: objet json contenant le plot
         :rtype: json
@@ -100,7 +100,7 @@ class PieChart:
     return plot_json
 
 class FinancialChart:
-  """Cette classe génère les diagrames pour la partie finance
+  """Cette classe génère les diagrammes pour la partie finance
 
     :param **args: le code indicateur au format Ex, Sx ou Gx (où x est un int)
     :type indic: str
@@ -113,9 +113,9 @@ class FinancialChart:
     self.color = '#3D3D34'
 
   def plot_bar(self):
-    """Les données sont importés depuis l'init. Génère un graphique barre
+    """Les données sont importées depuis l'__init__. Génère un graphique barre
 
-        :return: list d'object json
+        :return: list d'objet json
         :rtype: list[json]
     """
     list_graph = []
@@ -134,9 +134,9 @@ class FinancialChart:
     return list_graph
 
   def plot_sgl_line (self):
-    """Les données sont importés depuis l'init. Génère un graphique ligne
+    """Les données sont importées depuis l'__init__. Génère un graphique ligne
 
-        :return: list d'object json
+        :return: list d'objet json
         :rtype: list[json]
     """
     list_graph = []
@@ -154,9 +154,9 @@ class FinancialChart:
     return list_graph
 
   def plot_mltpl_line (self):
-    """Les données sont importés depuis l'init. Génère un graphique ligne avec 2 axes y
+    """Les données sont importés depuis l'__init__. Génère un graphique ligne avec 2 axes y
 
-        :return: list d'object json
+        :return: list d'objet json
         :rtype: list[json]
     """
     fig = make_subplots(specs=[[{"secondary_y": True}]])
@@ -180,7 +180,7 @@ class FinancialChart:
     return graphjson
 
 class CaniculePlot:
-  """Cette classe génère le graphique des canicules dans environement.
+  """Cette classe génère le graphique des canicules dans la page Environement.
   Les données sont importées directement
   """
   def __init__ (self):

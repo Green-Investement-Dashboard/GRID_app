@@ -13,8 +13,9 @@ import numpy
 from agri_data import data_import
 
 class CaniculePlot:
-    """Cette classe génère une heat map des canicules sur la base des données de Copernicus
-    Les données ont été pré-traités et stockés dans le même répertoire.
+    """Cette classe génère une heat map des canicules sur la base des données de Copernicus.
+
+    Les données ont été pré-traitées et stockées dans le même répertoire.
     """
     def __init__ (self):
          self.current = os.path.normcase(os.path.dirname(os.path.realpath(__file__)))
@@ -27,7 +28,7 @@ class CaniculePlot:
          print(self.df)
          
     def plot_at_date (self):
-        """Créé un carte pour un date données
+        """Crée un carte pour un date données
 
         :return: objet json
         :rtype: json
@@ -50,8 +51,8 @@ class CaniculePlot:
         return plot_json
     
     def plot_cursor (self):
-        """Créé un carte pour différentes dates avec un slider temporel
-        (dates définis dans la variable `list_date`)
+        """Crée un carte pour différentes dates avec un slider temporel
+        (dates définies dans la variable `list_date`)
 
         :return: objet json
         :rtype: json
@@ -113,8 +114,9 @@ class CaniculePlot:
 
 
 class FirePlot:
-    """Cette classe génère une carte avec un scatter plot des risques incendies sur la base des données de Copernicus
-      Les données ont été pré-traités et stockés dans le même répertoire.
+    """Cette classe génère une carte avec un scatter plot des risques incendies sur la base des données de Copernicus.
+
+      Les données ont été pré-traitées et stockées dans le même répertoire.
     """
     def __init__ (self):
          self.current = os.path.normcase(os.path.dirname(os.path.realpath(__file__)))
@@ -137,10 +139,10 @@ class FirePlot:
         
      
     def color_scale(self, zmax):
-        """Cette fonction accomplie 2 choses en parallèle: création d'une echelle de couleur pour correpondre au Fire Index européen et
-        trouve les valeurs centrales de chacun des intervales utilisées pour afficher l'echelle de couleur annotée
+        """Cette fonction accomplit 2 choses en parallèle: création d'une echelle de couleurs pour correpondre au Fire Index européen et
+        trouve les valeurs centrales de chacun des intervalles utilisés pour afficher l'echelle de couleur annotée
 
-        :return: liste de l'echelle de couleurs normé (i.e. valeurs entre 0 et 1) et liste du centre des intervales
+        :return: liste de l'echelle de couleurs normée (i.e. valeurs entre 0 et 1) et liste du centre des intervalles
         :rtype: list
         """
         colorscale=[[0.00, '#fee5d9'],
@@ -178,7 +180,7 @@ class FirePlot:
         return colorscheme, tick_val
          
     def plot_at_date (self):
-        """Créé un carte pour un date données
+        """Crée un carte pour une date donnée
 
         :return: objet json
         :rtype: json
@@ -201,8 +203,8 @@ class FirePlot:
         return plot_json
     
     def plot_cursor (self):
-        """Créé un carte pour différentes dates avec un slider temporel
-        (dates définis dans la variable `list_date`)
+        """Crée un carte pour différentes dates avec un slider temporel
+        (dates définies dans la variable `list_date`)
 
         :return: objet json
         :rtype: json

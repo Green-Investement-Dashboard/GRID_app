@@ -170,7 +170,7 @@
 <span class="kn">import</span> <span class="nn">os</span>
 
 <div class="viewcode-block" id="ReadData"><a class="viewcode-back" href="../../agri_data.html#agri_data.data_import.ReadData">[docs]</a><span class="k">class</span> <span class="nc">ReadData</span><span class="p">:</span>
-	<span class="sd">&quot;&quot;&quot;Cette classe lit les données json disponible en local et retourne une dataframe</span>
+	<span class="sd">&quot;&quot;&quot;Cette classe lit les données json disponibles en locals et retourne une dataframe</span>
 <span class="sd">    &quot;&quot;&quot;</span>
 	<span class="k">def</span> <span class="fm">__init__</span> <span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">name</span><span class="p">):</span>
 		<span class="bp">self</span><span class="o">.</span><span class="n">current</span> <span class="o">=</span> <span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">normcase</span><span class="p">(</span><span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">dirname</span><span class="p">(</span><span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">realpath</span><span class="p">(</span><span class="vm">__file__</span><span class="p">)))</span>

@@ -1,5 +1,7 @@
 # -*- encoding: utf-8 -*-
 """
+Modified for GRID, 2021
+
 Copyright (c) 2019 - present AppSeed.us
 """
 

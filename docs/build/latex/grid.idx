@@ -70,7 +70,7 @@
 \indexentry{main() (méthode app.home.content\_gen.index\_renderer.CriticalAlert)@\spxentry{main()}\spxextra{méthode app.home.content\_gen.index\_renderer.CriticalAlert}|hyperpage}{10}
 \indexentry{Scoring (classe dans app.home.content\_gen.index\_renderer)@\spxentry{Scoring}\spxextra{classe dans app.home.content\_gen.index\_renderer}|hyperpage}{10}
 \indexentry{bin() (méthode app.home.content\_gen.index\_renderer.Scoring)@\spxentry{bin()}\spxextra{méthode app.home.content\_gen.index\_renderer.Scoring}|hyperpage}{10}
-\indexentry{main() (méthode app.home.content\_gen.index\_renderer.Scoring)@\spxentry{main()}\spxextra{méthode app.home.content\_gen.index\_renderer.Scoring}|hyperpage}{10}
+\indexentry{main() (méthode app.home.content\_gen.index\_renderer.Scoring)@\spxentry{main()}\spxextra{méthode app.home.content\_gen.index\_renderer.Scoring}|hyperpage}{11}
 \indexentry{module@\spxentry{module}!app.home.content\_gen.map\_generation@\spxentry{app.home.content\_gen.map\_generation}|hyperpage}{11}
 \indexentry{app.home.content\_gen.map\_generation@\spxentry{app.home.content\_gen.map\_generation}!module@\spxentry{module}|hyperpage}{11}
 \indexentry{CaniculePlot (classe dans app.home.content\_gen.map\_generation)@\spxentry{CaniculePlot}\spxextra{classe dans app.home.content\_gen.map\_generation}|hyperpage}{11}
@@ -83,7 +83,7 @@
 \indexentry{main() (méthode app.home.content\_gen.map\_generation.FirePlot)@\spxentry{main()}\spxextra{méthode app.home.content\_gen.map\_generation.FirePlot}|hyperpage}{11}
 \indexentry{plot\_at\_date() (méthode app.home.content\_gen.map\_generation.FirePlot)@\spxentry{plot\_at\_date()}\spxextra{méthode app.home.content\_gen.map\_generation.FirePlot}|hyperpage}{11}
 \indexentry{plot\_cursor() (méthode app.home.content\_gen.map\_generation.FirePlot)@\spxentry{plot\_cursor()}\spxextra{méthode app.home.content\_gen.map\_generation.FirePlot}|hyperpage}{11}
-\indexentry{read\_json() (méthode app.home.content\_gen.map\_generation.FirePlot)@\spxentry{read\_json()}\spxextra{méthode app.home.content\_gen.map\_generation.FirePlot}|hyperpage}{11}
+\indexentry{read\_json() (méthode app.home.content\_gen.map\_generation.FirePlot)@\spxentry{read\_json()}\spxextra{méthode app.home.content\_gen.map\_generation.FirePlot}|hyperpage}{12}
 \indexentry{module@\spxentry{module}!app.home.content\_gen.questionaire@\spxentry{app.home.content\_gen.questionaire}|hyperpage}{12}
 \indexentry{app.home.content\_gen.questionaire@\spxentry{app.home.content\_gen.questionaire}!module@\spxentry{module}|hyperpage}{12}
 \indexentry{QuestionairesAgri (classe dans app.home.content\_gen.questionaire)@\spxentry{QuestionairesAgri}\spxextra{classe dans app.home.content\_gen.questionaire}|hyperpage}{12}
@@ -113,8 +113,8 @@
 \indexentry{module@\spxentry{module}!app.home.routes@\spxentry{app.home.routes}|hyperpage}{12}
 \indexentry{app.home.routes@\spxentry{app.home.routes}!module@\spxentry{module}|hyperpage}{12}
 \indexentry{get\_segment() (dans le module app.home.routes)@\spxentry{get\_segment()}\spxextra{dans le module app.home.routes}|hyperpage}{12}
-\indexentry{index() (dans le module app.home.routes)@\spxentry{index()}\spxextra{dans le module app.home.routes}|hyperpage}{12}
-\indexentry{route\_template() (dans le module app.home.routes)@\spxentry{route\_template()}\spxextra{dans le module app.home.routes}|hyperpage}{12}
+\indexentry{index() (dans le module app.home.routes)@\spxentry{index()}\spxextra{dans le module app.home.routes}|hyperpage}{13}
+\indexentry{route\_template() (dans le module app.home.routes)@\spxentry{route\_template()}\spxextra{dans le module app.home.routes}|hyperpage}{13}
 \indexentry{module@\spxentry{module}!app.home@\spxentry{app.home}|hyperpage}{13}
 \indexentry{app.home@\spxentry{app.home}!module@\spxentry{module}|hyperpage}{13}
 \indexentry{module@\spxentry{module}!app@\spxentry{app}|hyperpage}{13}

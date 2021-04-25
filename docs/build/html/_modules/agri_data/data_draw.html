@@ -171,7 +171,7 @@
 <span class="kn">import</span> <span class="nn">os</span>
 
 <div class="viewcode-block" id="RandomDraw"><a class="viewcode-back" href="../../agri_data.html#agri_data.data_draw.RandomDraw">[docs]</a><span class="k">class</span> <span class="nc">RandomDraw</span><span class="p">:</span>
-	<span class="sd">&quot;&quot;&quot;Cette classe télécharge les données de GitHub et les stocke en locale. Pour certains jeux de données, ils sont modifiés par un tri </span>
+	<span class="sd">&quot;&quot;&quot;Cette classe télécharge les données de GitHub et les stocke en local. Pour certains jeux de données, ils sont modifiés par un tri </span>
 <span class="sd">	alétoire à chaque login</span>
 <span class="sd">    &quot;&quot;&quot;</span>
 
@@ -179,7 +179,7 @@
 		<span class="bp">self</span><span class="o">.</span><span class="n">current</span> <span class="o">=</span> <span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">normcase</span><span class="p">(</span><span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">dirname</span><span class="p">(</span><span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">realpath</span><span class="p">(</span><span class="vm">__file__</span><span class="p">)))</span>
 
 <div class="viewcode-block" id="RandomDraw.data_agri"><a class="viewcode-back" href="../../agri_data.html#agri_data.data_draw.RandomDraw.data_agri">[docs]</a>	<span class="k">def</span> <span class="nf">data_agri</span> <span class="p">(</span><span class="bp">self</span><span class="p">):</span>
-		<span class="sd">&quot;&quot;&quot;Télécharge et enrehistre les données liées à l&#39;emplacement de l&#39;agriculteur</span>
+		<span class="sd">&quot;&quot;&quot;Télécharge et enregistre les données liées à l&#39;emplacement de l&#39;agriculteur.</span>
 <span class="sd">        &quot;&quot;&quot;</span>
 		<span class="n">df</span> <span class="o">=</span> <span class="n">pandas</span><span class="o">.</span><span class="n">read_json</span><span class="p">(</span><span class="s1">&#39;https://raw.githubusercontent.com/Green-Investement-Dashboard/data/main/data_eg/data_agri.json&#39;</span><span class="p">,</span> <span class="n">orient</span><span class="o">=</span><span class="s1">&#39;table&#39;</span><span class="p">)</span>
 
@@ -188,8 +188,8 @@
 		<span class="n">df</span><span class="o">.</span><span class="n">to_json</span><span class="p">(</span><span class="n">full_path</span><span class="p">,</span> <span class="n">orient</span><span class="o">=</span><span class="s1">&#39;table&#39;</span><span class="p">,</span> <span class="n">indent</span><span class="o">=</span><span class="mi">4</span><span class="p">)</span></div>
 
 <div class="viewcode-block" id="RandomDraw.financial_data"><a class="viewcode-back" href="../../agri_data.html#agri_data.data_draw.RandomDraw.financial_data">[docs]</a>	<span class="k">def</span> <span class="nf">financial_data</span> <span class="p">(</span><span class="bp">self</span><span class="p">):</span>
-		<span class="sd">&quot;&quot;&quot;Télécharge et enrehistre les données liées aux données financières</span>
-<span class="sd">		Elles sont randomisées avant l&#39;enregistrement</span>
+		<span class="sd">&quot;&quot;&quot;Télécharge et enregistre les données liées aux données financières.</span>
+<span class="sd">		Elles sont randomisées avant l&#39;enregistrement.</span>
 <span class="sd">        &quot;&quot;&quot;</span>
 		<span class="n">df</span> <span class="o">=</span> <span class="n">pandas</span><span class="o">.</span><span class="n">read_json</span><span class="p">(</span><span class="s1">&#39;https://raw.githubusercontent.com/Green-Investement-Dashboard/data/main/data_eg/financial_data.json&#39;</span><span class="p">,</span> <span class="n">orient</span><span class="o">=</span><span class="s1">&#39;table&#39;</span><span class="p">)</span>
 		<span class="n">v0</span> <span class="o">=</span> <span class="p">{</span><span class="s1">&#39;F1&#39;</span><span class="p">:</span><span class="mi">1000</span><span class="p">,</span> <span class="s1">&#39;F2&#39;</span><span class="p">:</span><span class="mf">1.2</span><span class="p">}</span>
@@ -211,7 +211,7 @@
 		<span class="n">df</span><span class="o">.</span><span class="n">to_json</span><span class="p">(</span><span class="n">full_path</span><span class="p">,</span> <span class="n">orient</span><span class="o">=</span><span class="s1">&#39;table&#39;</span><span class="p">,</span> <span class="n">indent</span><span class="o">=</span><span class="mi">4</span><span class="p">)</span></div>
 
 <div class="viewcode-block" id="RandomDraw.gauges_val"><a class="viewcode-back" href="../../agri_data.html#agri_data.data_draw.RandomDraw.gauges_val">[docs]</a>	<span class="k">def</span> <span class="nf">gauges_val</span> <span class="p">(</span><span class="bp">self</span><span class="p">):</span>
-		<span class="sd">&quot;&quot;&quot;Télécharge et enregistre les données pour générer échelles de couleurs</span>
+		<span class="sd">&quot;&quot;&quot;Télécharge et enregistre les données pour générer les échelles de couleurs.</span>
 <span class="sd">        &quot;&quot;&quot;</span>
 		<span class="n">df</span> <span class="o">=</span> <span class="n">pandas</span><span class="o">.</span><span class="n">read_json</span><span class="p">(</span><span class="s1">&#39;https://raw.githubusercontent.com/Green-Investement-Dashboard/data/main/data_eg/gauges_val.json&#39;</span><span class="p">,</span> <span class="n">orient</span><span class="o">=</span><span class="s1">&#39;table&#39;</span><span class="p">)</span>
 		
@@ -220,7 +220,7 @@
 		<span class="n">df</span><span class="o">.</span><span class="n">to_json</span><span class="p">(</span><span class="n">full_path</span><span class="p">,</span> <span class="n">orient</span><span class="o">=</span><span class="s1">&#39;table&#39;</span><span class="p">,</span> <span class="n">indent</span><span class="o">=</span><span class="mi">4</span><span class="p">)</span></div>
 
 <div class="viewcode-block" id="RandomDraw.graph_val"><a class="viewcode-back" href="../../agri_data.html#agri_data.data_draw.RandomDraw.graph_val">[docs]</a>	<span class="k">def</span> <span class="nf">graph_val</span> <span class="p">(</span><span class="bp">self</span><span class="p">):</span>
-		<span class="sd">&quot;&quot;&quot;Télécharge et enregistre les données pour générer les graphs</span>
+		<span class="sd">&quot;&quot;&quot;Télécharge et enregistre les données pour générer les graphs.</span>
 <span class="sd">        &quot;&quot;&quot;</span>
 		<span class="n">df</span> <span class="o">=</span> <span class="n">pandas</span><span class="o">.</span><span class="n">read_json</span><span class="p">(</span><span class="s1">&#39;https://raw.githubusercontent.com/Green-Investement-Dashboard/data/main/data_eg/graph_val.json&#39;</span><span class="p">,</span> <span class="n">orient</span><span class="o">=</span><span class="s1">&#39;table&#39;</span><span class="p">)</span>
 		
@@ -229,7 +229,7 @@
 		<span class="n">df</span><span class="o">.</span><span class="n">to_json</span><span class="p">(</span><span class="n">full_path</span><span class="p">,</span> <span class="n">orient</span><span class="o">=</span><span class="s1">&#39;table&#39;</span><span class="p">,</span> <span class="n">indent</span><span class="o">=</span><span class="mi">4</span><span class="p">)</span></div>
 
 <div class="viewcode-block" id="RandomDraw.indic_critique"><a class="viewcode-back" href="../../agri_data.html#agri_data.data_draw.RandomDraw.indic_critique">[docs]</a>	<span class="k">def</span> <span class="nf">indic_critique</span> <span class="p">(</span><span class="bp">self</span><span class="p">):</span>
-		<span class="sd">&quot;&quot;&quot;Télécharge et enregistre les données donnant les indices critiques</span>
+		<span class="sd">&quot;&quot;&quot;Télécharge et enregistre les données donnant les indices critiques.</span>
 <span class="sd">        &quot;&quot;&quot;</span>
 		<span class="n">df</span> <span class="o">=</span> <span class="n">pandas</span><span class="o">.</span><span class="n">read_csv</span><span class="p">(</span><span class="s1">&#39;https://raw.githubusercontent.com/Green-Investement-Dashboard/data/main/data_eg/liste_indic.csv&#39;</span><span class="p">)</span>
 
@@ -238,7 +238,7 @@
 		<span class="n">df</span><span class="o">.</span><span class="n">to_json</span><span class="p">(</span><span class="n">full_path</span><span class="p">,</span> <span class="n">orient</span><span class="o">=</span><span class="s1">&#39;table&#39;</span><span class="p">,</span> <span class="n">indent</span><span class="o">=</span><span class="mi">4</span><span class="p">)</span></div>
 
 <div class="viewcode-block" id="RandomDraw.stat_data"><a class="viewcode-back" href="../../agri_data.html#agri_data.data_draw.RandomDraw.stat_data">[docs]</a>	<span class="k">def</span> <span class="nf">stat_data</span> <span class="p">(</span><span class="bp">self</span><span class="p">):</span>
-		<span class="sd">&quot;&quot;&quot;Télécharge et enregistre les données donnant les statiques liés à la région</span>
+		<span class="sd">&quot;&quot;&quot;Télécharge et enregistre les données donnant les statiques liés à la région.</span>
 <span class="sd">        &quot;&quot;&quot;</span>
 		<span class="n">df</span> <span class="o">=</span> <span class="n">pandas</span><span class="o">.</span><span class="n">read_json</span><span class="p">(</span><span class="s1">&#39;https://raw.githubusercontent.com/Green-Investement-Dashboard/data/main/data_eg/stat.json&#39;</span><span class="p">,</span> <span class="n">orient</span><span class="o">=</span><span class="s1">&#39;table&#39;</span><span class="p">)</span>
 		
@@ -247,8 +247,8 @@
 		<span class="n">df</span><span class="o">.</span><span class="n">to_json</span><span class="p">(</span><span class="n">full_path</span><span class="p">,</span> <span class="n">orient</span><span class="o">=</span><span class="s1">&#39;table&#39;</span><span class="p">,</span> <span class="n">indent</span><span class="o">=</span><span class="mi">4</span><span class="p">)</span></div>
 
 <div class="viewcode-block" id="RandomDraw.scoring_data"><a class="viewcode-back" href="../../agri_data.html#agri_data.data_draw.RandomDraw.scoring_data">[docs]</a>	<span class="k">def</span> <span class="nf">scoring_data</span> <span class="p">(</span><span class="bp">self</span><span class="p">):</span>
-		<span class="sd">&quot;&quot;&quot;Télécharge et enregistre les données de scoring ESG.</span>
-<span class="sd">		Elles sont randomisées avant l&#39;enregistrement</span>
+		<span class="sd">&quot;&quot;&quot;Télécharge et enregistre les données de scoring RSE.</span>
+<span class="sd">		Elles sont randomisées avant l&#39;enregistrement.</span>
 <span class="sd">        &quot;&quot;&quot;</span>
 		<span class="n">df</span> <span class="o">=</span> <span class="n">pandas</span><span class="o">.</span><span class="n">read_csv</span><span class="p">(</span><span class="s1">&#39;https://raw.githubusercontent.com/Green-Investement-Dashboard/data/main/data_eg/scoring.csv&#39;</span><span class="p">)</span>
 		<span class="n">df</span> <span class="o">=</span> <span class="n">df</span><span class="o">.</span><span class="n">set_index</span><span class="p">(</span><span class="s1">&#39;indicateur&#39;</span><span class="p">)</span>

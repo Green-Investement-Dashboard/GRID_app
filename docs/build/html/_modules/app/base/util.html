@@ -166,6 +166,8 @@
   <h1>Code source de app.base.util</h1><div class="highlight"><pre>
 <span></span><span class="c1"># -*- encoding: utf-8 -*-</span>
 <span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">Modified for GRID, 2021</span>
+
 <span class="sd">Copyright (c) 2019 - present AppSeed.us</span>
 <span class="sd">&quot;&quot;&quot;</span>
  
@@ -174,7 +176,7 @@
 <span class="c1"># Inspiration -&gt; https://www.vitoshacademy.com/hashing-passwords-in-python/</span>
 
 <div class="viewcode-block" id="hash_pass"><a class="viewcode-back" href="../../../app.base.html#app.base.util.hash_pass">[docs]</a><span class="k">def</span> <span class="nf">hash_pass</span><span class="p">(</span> <span class="n">password</span> <span class="p">):</span>
-    <span class="sd">&quot;&quot;&quot;Hash a password for storing.&quot;&quot;&quot;</span>
+    <span class="sd">&quot;&quot;&quot;Hash mot de passe SHA-256&quot;&quot;&quot;</span>
     <span class="n">salt</span> <span class="o">=</span> <span class="n">hashlib</span><span class="o">.</span><span class="n">sha256</span><span class="p">(</span><span class="n">os</span><span class="o">.</span><span class="n">urandom</span><span class="p">(</span><span class="mi">60</span><span class="p">))</span><span class="o">.</span><span class="n">hexdigest</span><span class="p">()</span><span class="o">.</span><span class="n">encode</span><span class="p">(</span><span class="s1">&#39;ascii&#39;</span><span class="p">)</span>
     <span class="n">pwdhash</span> <span class="o">=</span> <span class="n">hashlib</span><span class="o">.</span><span class="n">pbkdf2_hmac</span><span class="p">(</span><span class="s1">&#39;sha512&#39;</span><span class="p">,</span> <span class="n">password</span><span class="o">.</span><span class="n">encode</span><span class="p">(</span><span class="s1">&#39;utf-8&#39;</span><span class="p">),</span> 
                                 <span class="n">salt</span><span class="p">,</span> <span class="mi">100000</span><span class="p">)</span>
@@ -182,7 +184,7 @@
     <span class="k">return</span> <span class="p">(</span><span class="n">salt</span> <span class="o">+</span> <span class="n">pwdhash</span><span class="p">)</span> <span class="c1"># return bytes</span></div>
 
 <div class="viewcode-block" id="verify_pass"><a class="viewcode-back" href="../../../app.base.html#app.base.util.verify_pass">[docs]</a><span class="k">def</span> <span class="nf">verify_pass</span><span class="p">(</span><span class="n">provided_password</span><span class="p">,</span> <span class="n">stored_password</span><span class="p">):</span>
-    <span class="sd">&quot;&quot;&quot;Verify a stored password against one provided by user&quot;&quot;&quot;</span>
+    <span class="sd">&quot;&quot;&quot;Verification du mot de passe par Hash&quot;&quot;&quot;</span>
     <span class="n">stored_password</span> <span class="o">=</span> <span class="n">stored_password</span><span class="o">.</span><span class="n">decode</span><span class="p">(</span><span class="s1">&#39;ascii&#39;</span><span class="p">)</span>
     <span class="n">salt</span> <span class="o">=</span> <span class="n">stored_password</span><span class="p">[:</span><span class="mi">64</span><span class="p">]</span>
     <span class="n">stored_password</span> <span class="o">=</span> <span class="n">stored_password</span><span class="p">[</span><span class="mi">64</span><span class="p">:]</span>

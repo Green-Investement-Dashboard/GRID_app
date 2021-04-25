@@ -12,7 +12,7 @@ import json
 from agri_data import data_import
 
 class Scoring:
-    """Cette classe donne les données nécessaires au rendus des gauges indiquant les scores ESG 
+    """Cette classe donne les données nécessaires au rendu des gauges indiquant les scores ESG 
     """
     def __init__ (self):
       self.data = data_import.ReadData('scoring').read_json()
@@ -27,7 +27,7 @@ class Scoring:
     
     def main (self):
       """
-        :return: liste de liste (1 par indicateur) contenant pour chaque: sa valeur, la valeur max de l'echelle, une liste avec les intervalles de couleurs
+        :return: liste de listes (une par indicateur) contenant pour chaque: sa valeur, la valeur max de l'echelle, une liste avec les intervalles de couleurs
         :rtype: list
         """
       self.bin()
@@ -41,7 +41,7 @@ class Scoring:
       return list_output
 
 class CriticalAlert:
-    """Cette classe donne les indicateurs considérés comme critique
+    """Cette classe donne las liste des indicateurs considérés comme critique.
     """
     def __init__(self):
       self.data = pandas.read_csv('https://raw.githubusercontent.com/Green-Investement-Dashboard/data/main/data_eg/liste_indic.csv')
@@ -49,7 +49,7 @@ class CriticalAlert:
     
     def main(self):
       """
-        :return: liste de liste (1 par indicateur) contenant pour chaque la liste des indicateurs critiques
+        :return: liste de listes (une par indicateur) contenant pour chaque la liste des indicateurs critiques
         :rtype: list
         """
       list_env = []

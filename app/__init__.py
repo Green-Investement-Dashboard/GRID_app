@@ -1,7 +1,8 @@
 # -*- encoding: utf-8 -*-
 """
+Modfied for GRID, 2021
+
 Copyright (c) 2019 - present AppSeed.us
-Modfied the GRID, 2021
 """
 
 from flask import Flask, url_for

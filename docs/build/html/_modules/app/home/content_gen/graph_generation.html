@@ -179,11 +179,11 @@
 <span class="kn">import</span> <span class="nn">os</span>
 
 <div class="viewcode-block" id="BulletChart"><a class="viewcode-back" href="../../../../app.home.content_gen.html#app.home.content_gen.graph_generation.BulletChart">[docs]</a><span class="k">class</span> <span class="nc">BulletChart</span><span class="p">:</span>
-    <span class="sd">&quot;&quot;&quot;Cette classe génère une échelle à 3 couleurs pour un indicateur donnée</span>
+    <span class="sd">&quot;&quot;&quot;Cette classe génère une échelle à 3 couleurs pour un indicateur donné</span>
 
 <span class="sd">      :param indic: le code indicateur au format Ex, Sx ou Gx (où x est un int)</span>
 <span class="sd">      :type indic: str</span>
-<span class="sd">      :param indic_name: le nom de l&#39;indicateur utiliser pour le titre</span>
+<span class="sd">      :param indic_name: le nom de l&#39;indicateur utilisé pour le titre</span>
 <span class="sd">      :type addr: str</span>
 <span class="sd">    &quot;&quot;&quot;</span>
     <span class="k">def</span> <span class="fm">__init__</span> <span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">indic</span><span class="p">,</span> <span class="n">indic_name</span><span class="p">):</span>
@@ -195,7 +195,7 @@
         <span class="bp">self</span><span class="o">.</span><span class="n">indic_name</span> <span class="o">=</span> <span class="n">indic_name</span>
 
 <div class="viewcode-block" id="BulletChart.plot"><a class="viewcode-back" href="../../../../app.home.content_gen.html#app.home.content_gen.graph_generation.BulletChart.plot">[docs]</a>    <span class="k">def</span> <span class="nf">plot</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
-        <span class="sd">&quot;&quot;&quot;Les données sont importés depuis l&#39;init</span>
+        <span class="sd">&quot;&quot;&quot;Les données sont importées depuis l&#39;__init__</span>
 
 <span class="sd">        :return: objet json contenant le plot</span>
 <span class="sd">        :rtype: json</span>
@@ -266,7 +266,7 @@
     <span class="k">return</span> <span class="n">plot_json</span></div></div>
 
 <div class="viewcode-block" id="FinancialChart"><a class="viewcode-back" href="../../../../app.home.content_gen.html#app.home.content_gen.graph_generation.FinancialChart">[docs]</a><span class="k">class</span> <span class="nc">FinancialChart</span><span class="p">:</span>
-  <span class="sd">&quot;&quot;&quot;Cette classe génère les diagrames pour la partie finance</span>
+  <span class="sd">&quot;&quot;&quot;Cette classe génère les diagrammes pour la partie finance</span>
 
 <span class="sd">    :param **args: le code indicateur au format Ex, Sx ou Gx (où x est un int)</span>
 <span class="sd">    :type indic: str</span>
@@ -279,9 +279,9 @@
     <span class="bp">self</span><span class="o">.</span><span class="n">color</span> <span class="o">=</span> <span class="s1">&#39;#3D3D34&#39;</span>
 
 <div class="viewcode-block" id="FinancialChart.plot_bar"><a class="viewcode-back" href="../../../../app.home.content_gen.html#app.home.content_gen.graph_generation.FinancialChart.plot_bar">[docs]</a>  <span class="k">def</span> <span class="nf">plot_bar</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
-    <span class="sd">&quot;&quot;&quot;Les données sont importés depuis l&#39;init. Génère un graphique barre</span>
+    <span class="sd">&quot;&quot;&quot;Les données sont importées depuis l&#39;__init__. Génère un graphique barre</span>
 
-<span class="sd">        :return: list d&#39;object json</span>
+<span class="sd">        :return: list d&#39;objet json</span>
 <span class="sd">        :rtype: list[json]</span>
 <span class="sd">    &quot;&quot;&quot;</span>
     <span class="n">list_graph</span> <span class="o">=</span> <span class="p">[]</span>
@@ -300,9 +300,9 @@
     <span class="k">return</span> <span class="n">list_graph</span></div>
 
 <div class="viewcode-block" id="FinancialChart.plot_sgl_line"><a class="viewcode-back" href="../../../../app.home.content_gen.html#app.home.content_gen.graph_generation.FinancialChart.plot_sgl_line">[docs]</a>  <span class="k">def</span> <span class="nf">plot_sgl_line</span> <span class="p">(</span><span class="bp">self</span><span class="p">):</span>
-    <span class="sd">&quot;&quot;&quot;Les données sont importés depuis l&#39;init. Génère un graphique ligne</span>
+    <span class="sd">&quot;&quot;&quot;Les données sont importées depuis l&#39;__init__. Génère un graphique ligne</span>
 
-<span class="sd">        :return: list d&#39;object json</span>
+<span class="sd">        :return: list d&#39;objet json</span>
 <span class="sd">        :rtype: list[json]</span>
 <span class="sd">    &quot;&quot;&quot;</span>
     <span class="n">list_graph</span> <span class="o">=</span> <span class="p">[]</span>
@@ -320,9 +320,9 @@
     <span class="k">return</span> <span class="n">list_graph</span></div>
 
 <div class="viewcode-block" id="FinancialChart.plot_mltpl_line"><a class="viewcode-back" href="../../../../app.home.content_gen.html#app.home.content_gen.graph_generation.FinancialChart.plot_mltpl_line">[docs]</a>  <span class="k">def</span> <span class="nf">plot_mltpl_line</span> <span class="p">(</span><span class="bp">self</span><span class="p">):</span>
-    <span class="sd">&quot;&quot;&quot;Les données sont importés depuis l&#39;init. Génère un graphique ligne avec 2 axes y</span>
+    <span class="sd">&quot;&quot;&quot;Les données sont importés depuis l&#39;__init__. Génère un graphique ligne avec 2 axes y</span>
 
-<span class="sd">        :return: list d&#39;object json</span>
+<span class="sd">        :return: list d&#39;objet json</span>
 <span class="sd">        :rtype: list[json]</span>
 <span class="sd">    &quot;&quot;&quot;</span>
     <span class="n">fig</span> <span class="o">=</span> <span class="n">make_subplots</span><span class="p">(</span><span class="n">specs</span><span class="o">=</span><span class="p">[[{</span><span class="s2">&quot;secondary_y&quot;</span><span class="p">:</span> <span class="kc">True</span><span class="p">}]])</span>
@@ -346,7 +346,7 @@
     <span class="k">return</span> <span class="n">graphjson</span></div></div>
 
 <div class="viewcode-block" id="CaniculePlot"><a class="viewcode-back" href="../../../../app.home.content_gen.html#app.home.content_gen.graph_generation.CaniculePlot">[docs]</a><span class="k">class</span> <span class="nc">CaniculePlot</span><span class="p">:</span>
-  <span class="sd">&quot;&quot;&quot;Cette classe génère le graphique des canicules dans environement.</span>
+  <span class="sd">&quot;&quot;&quot;Cette classe génère le graphique des canicules dans la page Environement.</span>
 <span class="sd">  Les données sont importées directement</span>
 <span class="sd">  &quot;&quot;&quot;</span>
   <span class="k">def</span> <span class="fm">__init__</span> <span class="p">(</span><span class="bp">self</span><span class="p">):</span>

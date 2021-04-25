@@ -6,7 +6,7 @@ import pandas
 import os
 
 class ReadData:
-	"""Cette classe lit les données json disponible en local et retourne une dataframe
+	"""Cette classe lit les données json disponibles en locals et retourne une dataframe
     """
 	def __init__ (self, name):
 		self.current = os.path.normcase(os.path.dirname(os.path.realpath(__file__)))

@@ -115,7 +115,7 @@
   \item \spxentry{id}\spxextra{attribut app.base.models.User}, \hyperpage{8}
   \item \spxentry{ift}\spxextra{attribut app.home.content\_gen.questionaire.QuestionairesAgri}, 
 		\hyperpage{12}
-  \item \spxentry{index()}\spxextra{dans le module app.home.routes}, \hyperpage{12}
+  \item \spxentry{index()}\spxextra{dans le module app.home.routes}, \hyperpage{13}
   \item \spxentry{indic\_critique()}\spxextra{méthode agri\_data.data\_draw.RandomDraw}, 
 		\hyperpage{7}
   \item \spxentry{internal\_error()}\spxextra{dans le module app.base.routes}, \hyperpage{8}
@@ -138,7 +138,7 @@
   \item \spxentry{main()}\spxextra{méthode app.home.content\_gen.index\_renderer.CriticalAlert}, 
 		\hyperpage{10}
   \item \spxentry{main()}\spxextra{méthode app.home.content\_gen.index\_renderer.Scoring}, 
-		\hyperpage{10}
+		\hyperpage{11}
   \item \spxentry{main()}\spxextra{méthode app.home.content\_gen.map\_generation.CaniculePlot}, 
 		\hyperpage{11}
   \item \spxentry{main()}\spxextra{méthode app.home.content\_gen.map\_generation.FirePlot}, 
@@ -211,14 +211,14 @@
   \item \spxentry{read\_json()}\spxextra{méthode app.home.content\_gen.map\_generation.CaniculePlot}, 
 		\hyperpage{11}
   \item \spxentry{read\_json()}\spxextra{méthode app.home.content\_gen.map\_generation.FirePlot}, 
-		\hyperpage{11}
+		\hyperpage{12}
   \item \spxentry{ReadData}\spxextra{classe dans agri\_data.data\_import}, \hyperpage{7}
   \item \spxentry{register()}\spxextra{dans le module app.base.routes}, \hyperpage{8}
   \item \spxentry{register\_blueprints()}\spxextra{dans le module app}, \hyperpage{13}
   \item \spxentry{register\_extensions()}\spxextra{dans le module app}, \hyperpage{13}
   \item \spxentry{request\_loader()}\spxextra{dans le module app.base.models}, \hyperpage{8}
   \item \spxentry{route\_default()}\spxextra{dans le module app.base.routes}, \hyperpage{8}
-  \item \spxentry{route\_template()}\spxextra{dans le module app.home.routes}, \hyperpage{12}
+  \item \spxentry{route\_template()}\spxextra{dans le module app.home.routes}, \hyperpage{13}
 
   \indexspace
   \bigletter S

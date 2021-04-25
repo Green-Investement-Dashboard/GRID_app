@@ -151,10 +151,10 @@ Le dashboard est pour le moment optimiser pour les écrans d’ordinateurs
 \subsection{Se connecter}
 \label{\detokenize{intro:se-connecter}}
 \sphinxAtStartPar
-Pour voir le dasboard, rendez\sphinxhyphen{}vous sur \sphinxhref{http://app.grid-tech.fr}{app.grid\sphinxhyphen{}tech.fr} .
+Pour voir le dashboard, rendez\sphinxhyphen{}vous sur \sphinxhref{http://app.grid-tech.fr}{app.grid\sphinxhyphen{}tech.fr} .
 
 \sphinxAtStartPar
-Pour les besoins de la démonstration dans le cadre du concours FIFG, un compte test a été créé:
+Pour les besoins de la démonstration dans le cadre du concours FIFG, un compte test a été créé :
 \begin{itemize}
 \item {} 
 \sphinxAtStartPar
@@ -168,16 +168,16 @@ Pour les besoins de la démonstration dans le cadre du concours FIFG, un compte 
 
 \begin{sphinxadmonition}{tip}{Astuce:}
 \sphinxAtStartPar
-Avec notre infrastructure actuelle, le chargement des pages peut praître long mais nous y travaillons.
+Avec notre infrastructure actuelle, le chargement des pages peut paraître long mais nous travaillons pour y remédier.
 \end{sphinxadmonition}
 
 \begin{sphinxadmonition}{attention}{Attention:}
 \sphinxAtStartPar
-Le dashboard est pour le moment optimiser pour les écrans d’ordinateurs
+Le dashboard est pour le moment optimisé pour les écrans d’ordinateurs.
 \end{sphinxadmonition}
 
 \sphinxAtStartPar
-Pour plus de détail sur le déploiement {\hyperref[\detokenize{use:instal}]{\sphinxcrossref{\DUrole{std,std-ref}{Déploiement et installation}}}}
+Pour plus de détails sur le déploiement {\hyperref[\detokenize{use:instal}]{\sphinxcrossref{\DUrole{std,std-ref}{Déploiement et installation}}}}
 
 
 \subsection{Les données}
@@ -186,21 +186,21 @@ Pour plus de détail sur le déploiement {\hyperref[\detokenize{use:instal}]{\sp
 \subsubsection{Les données d’entrée}
 \label{\detokenize{intro:les-donnees-d-entree}}
 \sphinxAtStartPar
-Le GRID fonctionne à partir de 2 types de données d’entrées:
+Le GRID fonctionne à partir de 2 types de données d’entrée:
 \begin{itemize}
 \item {} 
 \sphinxAtStartPar
-Les données externes provenant de Météo France, Copernicus, etc
+Les données externes provenant de Météo France, Copernicus, etc ;
 
 \item {} \begin{description}
-\item[{Les données liées à l’exploitation:}] \leavevmode\begin{itemize}
+\item[{Les données liées à l’exploitation :}] \leavevmode\begin{itemize}
 \item {} 
 \sphinxAtStartPar
-Données internes rentrées par l’agriculteur par un questionaire
+Données internes rentrées par l’agriculteur dans un questionaire ;
 
 \item {} 
 \sphinxAtStartPar
-Données financières rentrées par le banquier
+Données financières provenant de l’établissement bancaire.
 
 \end{itemize}
 
@@ -212,20 +212,20 @@ Données financières rentrées par le banquier
 \subsubsection{Données pour le PoC}
 \label{\detokenize{intro:donnees-pour-le-poc}}
 \sphinxAtStartPar
-Pour le PoC, afin de démontrer la capacité dynamique du dashboard, à chaque login, une partue des des données sont tirées au hasard, en particulier celles:
+Pour le PoC, afin de démontrer la capacité dynamique du dashboard, à chaque login, une partie des données sont tirées au hasard, en particulier celles relatives :
 \begin{itemize}
 \item {} 
 \sphinxAtStartPar
-Les scores RSE présentés sur la première page
+aux scores RSE présentés sur la première page
 
 \item {} 
 \sphinxAtStartPar
-Les données financières (cf page indicateur et le module \sphinxtitleref{agri\_data} pour plus de détail)
+aux données financières (cf page indicateur et le module \sphinxtitleref{agri\_data} pour plus de détail)
 
 \end{itemize}
 
 \sphinxAtStartPar
-Toutes les données sont \sphinxhref{https://github.com/Green-Investement-Dashboard/data/tree/main/data\_eg}{ici}
+Toutes les données sont disponibles \sphinxhref{https://github.com/Green-Investement-Dashboard/data/tree/main/data\_eg}{ici}
 
 \sphinxAtStartPar
 Pour plus de détail sur les données et leur exploitation {\hyperref[\detokenize{indicateurs:indic}]{\sphinxcrossref{\DUrole{std,std-ref}{Indictateurs et graphiques}}}}
@@ -234,8 +234,8 @@ Pour plus de détail sur les données et leur exploitation {\hyperref[\detokeniz
 \section{Infrastructure}
 \label{\detokenize{infrastructure:infrastructure}}\label{\detokenize{infrastructure::doc}}
 
-\subsection{Organisation global du répertoire}
-\label{\detokenize{infrastructure:organisation-global-du-repertoire}}
+\subsection{Organisation globale du répertoire}
+\label{\detokenize{infrastructure:organisation-globale-du-repertoire}}
 \sphinxAtStartPar
 Le répertoire est organisé autour de deux principaux modules :
 \begin{itemize}
@@ -245,12 +245,12 @@ Le répertoire est organisé autour de deux principaux modules :
 
 \item {} 
 \sphinxAtStartPar
-\sphinxcode{\sphinxupquote{agri\_data}} : module regroupant générant les données
+\sphinxcode{\sphinxupquote{agri\_data}} : module regroupant et générant les données
 
 \end{itemize}
 
 \sphinxAtStartPar
-Le fichier principal lançant l’application est situé à la racine, il s’appelle \sphinxcode{\sphinxupquote{run.py}}
+Le fichier principal qui lance l’application est situé à la racine, il s’appelle \sphinxcode{\sphinxupquote{run.py}}
 
 \begin{sphinxVerbatim}[commandchars=\\\{\}]
 \PYG{p}{|}
@@ -258,7 +258,7 @@ Le fichier principal lançant l’application est situé à la racine, il s’ap
 \PYG{p}{|}    \PYG{p}{|}\PYGZhy{}\PYGZhy{} home/                                \PYG{c+c1}{\PYGZsh{} Génération des contenus spécifiques pas page HTML spécifiques}
 \PYG{p}{|}    \PYG{p}{|}\PYGZhy{}\PYGZhy{} base/                                \PYG{c+c1}{\PYGZsh{} Blueprint, contient la structure de l\PYGZsq{}application}
 \PYG{p}{|}
-\PYG{p}{|}\PYGZhy{}\PYGZhy{} agri\PYGZus{}data/                                \PYG{c+c1}{\PYGZsh{} Générations des données}
+\PYG{p}{|}\PYGZhy{}\PYGZhy{} agri\PYGZus{}data/                                \PYG{c+c1}{\PYGZsh{} Génération des données}
 \PYG{p}{|}
 \PYG{p}{|}\PYGZhy{}\PYGZhy{} ************************************************************************
 \end{sphinxVerbatim}
@@ -283,23 +283,23 @@ Le module \sphinxcode{\sphinxupquote{app}} est organisé en 2 sous\sphinxhyphen{
 Le code est ensuite commenté et précisé dans les modules {\hyperref[\detokenize{modules:agri}]{\sphinxcrossref{\DUrole{std,std-ref}{Module agri\_data}}}} et {\hyperref[\detokenize{app:app}]{\sphinxcrossref{\DUrole{std,std-ref}{Module app}}}}
 
 \sphinxAtStartPar
-Le répértoire d’un point de vue Python à la structure suivante:
+La structure du répértoire ,d’un point de vue Python, est la suivante:
 
 \begin{sphinxVerbatim}[commandchars=\\\{\}]
 \PYG{p}{|}
 \PYG{p}{|}\PYGZhy{}\PYGZhy{} app/                                      \PYG{c+c1}{\PYGZsh{} L\PYGZsq{}application en elle même}
 \PYG{p}{|}    \PYG{p}{|}\PYGZhy{}\PYGZhy{} home/
 \PYG{p}{|}         \PYG{p}{|}\PYGZhy{}\PYGZhy{} content\PYGZus{}gen/                    \PYG{c+c1}{\PYGZsh{} Module générant les visuels}
-\PYG{p}{|}         \PYG{p}{|}    \PYG{p}{|}\PYGZhy{}\PYGZhy{} data/                      \PYG{c+c1}{\PYGZsh{} Données externes pré\PYGZhy{}traités}
+\PYG{p}{|}         \PYG{p}{|}    \PYG{p}{|}\PYGZhy{}\PYGZhy{} data/                      \PYG{c+c1}{\PYGZsh{} Données externes pré\PYGZhy{}traitées}
 \PYG{p}{|}         \PYG{p}{|}    \PYG{p}{|}\PYGZhy{}\PYGZhy{} graph\PYGZus{}generation.py        \PYG{c+c1}{\PYGZsh{} Génération des graphiques}
-\PYG{p}{|}         \PYG{p}{|}    \PYG{p}{|}\PYGZhy{}\PYGZhy{} index\PYGZus{}renderer.py          \PYG{c+c1}{\PYGZsh{} Générationd de l\PYGZsq{}index}
+\PYG{p}{|}         \PYG{p}{|}    \PYG{p}{|}\PYGZhy{}\PYGZhy{} index\PYGZus{}renderer.py          \PYG{c+c1}{\PYGZsh{} Génération de l\PYGZsq{}index}
 \PYG{p}{|}         \PYG{p}{|}    \PYG{p}{|}\PYGZhy{}\PYGZhy{} map\PYGZus{}generation.py          \PYG{c+c1}{\PYGZsh{} Génération des cartes}
-\PYG{p}{|}         \PYG{p}{|}    \PYG{p}{|}\PYGZhy{}\PYGZhy{} questionaire.py.py         \PYG{c+c1}{\PYGZsh{} Génération du questionaire agri}
+\PYG{p}{|}         \PYG{p}{|}    \PYG{p}{|}\PYGZhy{}\PYGZhy{} questionaire.py.py         \PYG{c+c1}{\PYGZsh{} Génération du questionnaire agri}
 \PYG{p}{|}         \PYG{p}{|}\PYGZhy{}\PYGZhy{} routes.py
 \PYG{p}{|}
 \PYG{p}{|}    \PYG{p}{|}\PYGZhy{}\PYGZhy{} base/
 \PYG{p}{|}         \PYG{p}{|}\PYGZhy{}\PYGZhy{} forms.py                        \PYG{c+c1}{\PYGZsh{} Script gérant le formulaire de login et d\PYGZsq{}inscription}
-\PYG{p}{|}         \PYG{p}{|}\PYGZhy{}\PYGZhy{} models.py                       \PYG{c+c1}{\PYGZsh{} Script gérant la lecture de la base de donées des logins}
+\PYG{p}{|}         \PYG{p}{|}\PYGZhy{}\PYGZhy{} models.py                       \PYG{c+c1}{\PYGZsh{} Script gérant la lecture de la base de données des logins}
 \PYG{p}{|}         \PYG{p}{|}\PYGZhy{}\PYGZhy{} routes.py                       \PYG{c+c1}{\PYGZsh{} Script gérant les actions}
 \PYG{p}{|}         \PYG{p}{|}\PYGZhy{}\PYGZhy{} util.py                         \PYG{c+c1}{\PYGZsh{} Script gérant le hachage du mot de passe}
 \PYG{p}{|}
@@ -308,8 +308,8 @@ Le répértoire d’un point de vue Python à la structure suivante:
 \PYG{p}{|}    \PYG{p}{|}\PYGZhy{}\PYGZhy{} data\PYGZus{}import.py                       \PYG{c+c1}{\PYGZsh{} Import des données de GitHub}
 \PYG{p}{|}    \PYG{p}{|}\PYGZhy{}\PYGZhy{} *.json
 \PYG{p}{|}
-\PYG{p}{|}\PYGZhy{}\PYGZhy{} requirements.txt                          \PYG{c+c1}{\PYGZsh{} Librairies nécessaire pour faire fonctioner le code}
-\PYG{p}{|}\PYGZhy{}\PYGZhy{} environment.yml                           \PYG{c+c1}{\PYGZsh{} Environement anconda}
+\PYG{p}{|}\PYGZhy{}\PYGZhy{} requirements.txt                          \PYG{c+c1}{\PYGZsh{} Librairies nécessaires pour faire fonctionner le code}
+\PYG{p}{|}\PYGZhy{}\PYGZhy{} environment.yml                           \PYG{c+c1}{\PYGZsh{} Environnement anaconda}
 \PYG{p}{|}\PYGZhy{}\PYGZhy{} requirements\PYGZhy{}mysql.txt                    \PYG{c+c1}{\PYGZsh{} Module nécessaire pour Mysql DMBS}
 \PYG{p}{|}\PYGZhy{}\PYGZhy{} requirements\PYGZhy{}pqsql.txt                    \PYG{c+c1}{\PYGZsh{} Module nécessaire pour PostgreSql DMBS}
 \PYG{p}{|}
@@ -324,7 +324,7 @@ Le répértoire d’un point de vue Python à la structure suivante:
 \subsection{Point de vue fronte\sphinxhyphen{}end / HTML}
 \label{\detokenize{infrastructure:point-de-vue-fronte-end-html}}
 \sphinxAtStartPar
-Les fichiers HTML sont organisées autour de 2 dossiers:
+Les fichiers HTML sont organisés autour de 2 dossiers:
 \begin{itemize}
 \item {} 
 \sphinxAtStartPar
@@ -353,7 +353,7 @@ Les fichiers HTML sont organisées autour de 2 dossiers:
 \PYG{p}{|}              \PYG{p}{|}    \PYG{p}{|}\PYGZhy{}\PYGZhy{} navigation.html       \PYG{c+c1}{\PYGZsh{} Menu du haut}
 \PYG{p}{|}              \PYG{p}{|}    \PYG{p}{|}\PYGZhy{}\PYGZhy{} sidebar.html          \PYG{c+c1}{\PYGZsh{} Menu latéral}
 \PYG{p}{|}              \PYG{p}{|}    \PYG{p}{|}\PYGZhy{}\PYGZhy{} footer.html           \PYG{c+c1}{\PYGZsh{} Pied de page}
-\PYG{p}{|}              \PYG{p}{|}    \PYG{p}{|}\PYGZhy{}\PYGZhy{} scripts.html          \PYG{c+c1}{\PYGZsh{} Script communs aux pages HTML}
+\PYG{p}{|}              \PYG{p}{|}    \PYG{p}{|}\PYGZhy{}\PYGZhy{} scripts.html          \PYG{c+c1}{\PYGZsh{} Scripts communs aux pages HTML}
 \PYG{p}{|}              \PYG{p}{|}
 \PYG{p}{|}              \PYG{p}{|}\PYGZhy{}\PYGZhy{} layouts/                   \PYG{c+c1}{\PYGZsh{} Pages masters}
 \PYG{p}{|}              \PYG{p}{|}    \PYG{p}{|}\PYGZhy{}\PYGZhy{} base.html             \PYG{c+c1}{\PYGZsh{} Layout des pages}
@@ -376,19 +376,19 @@ Afin de rendre compte au mieux des données, nous utilisons trois types de repr�
 \begin{itemize}
 \item {} 
 \sphinxAtStartPar
-\sphinxstylestrong{Compteurs}: ceux\sphinxhyphen{}ci codés en JS représentent les 3 scores ESG sur la page d’accueil
+\sphinxstylestrong{Compteurs}: ceux\sphinxhyphen{}ci codés en JS représentent les 3 scores ESG sur la page d’accueil.
 
 \item {} 
 \sphinxAtStartPar
-\sphinxstylestrong{Graphiques}: que ce soit des graphiques lignes ou bar ils servent à représenter l’évolution temporel d’un indicateur
+\sphinxstylestrong{Graphiques}: que ce soit des graphiques lignes ou à barres ils servent à représenter l’évolution temporelle d’un indicateur .
 
 \item {} 
 \sphinxAtStartPar
-\sphinxstylestrong{Echelles de couleurs}: lorsque qu’un indicateur est calculé à partir d’un modèle, il est représenté sous la forme d’une échelle de couleurs comme on peut le retrouver dans la page Social avec le rayonement de l’exploitation.
+\sphinxstylestrong{Echelles de couleurs}: lorsque qu’un indicateur est calculé à partir d’un modèle, il est représenté sous la forme d’une échelle de couleurs comme on peut le retrouver dans l’onglet Social avec le rayonnement de l’exploitation.
 
 \item {} 
 \sphinxAtStartPar
-\sphinxstylestrong{Cartes}: ce support est utilisé pour représentées des données spatiales avec une dimension temporelle
+\sphinxstylestrong{Cartes}: ce support est utilisé pour représenter des données spatiales avec une dimension temporelle.
 
 \end{itemize}
 
@@ -399,14 +399,14 @@ Afin de rendre compte au mieux des données, nous utilisons trois types de repr�
 \subsubsection{Carte des feu de forêts}
 \label{\detokenize{indicateurs:carte-des-feu-de-forets}}
 \sphinxAtStartPar
-Sur la base des données \sphinxhref{https://cds.climate.copernicus.eu/cdsapp\#!/dataset/sis-tourism-fire-danger-indicators?tab=overview}{du Climate Data Store}, base de l’UE, nous avons pu exporter ces données, les traiter et les netoyer pour notre usage. Nous avons décidé de choisir les données du modèle du GIEC RCP 4.5 car représente le scenario le plus probable.
-Ces données ont ensuite été présentées sur une carte disponible dans Environnement.
+Sur la base des données \sphinxhref{https://cds.climate.copernicus.eu/cdsapp\#!/dataset/sis-tourism-fire-danger-indicators?tab=overview}{du Climate Data Store}, base de données de l’UE, nous avons pu exporter ces données, les traiter et les nettoyer pour notre usage. Nous avons décidé de choisir les données du modèle du GIEC RCP 4.5 car celui\sphinxhyphen{}ci correspond au scenario le plus probable.
+Ces données ont ensuite été présentées sur une carte disponible dans l’onglet Environnement.
 
 
 \subsubsection{Graph des canicules}
 \label{\detokenize{indicateurs:graph-des-canicules}}
 \sphinxAtStartPar
-Toujours sur la base des données \sphinxhref{https://cds.climate.copernicus.eu/cdsapp\#!/dataset/sis-heat-and-cold-spells?tab=overview}{du Climate Data Store}, nous avons selectioner ces données représentant le nombre de jour de canicule. Il nous a semblé plus judicieux de ne représenter les jours de canciules que à l’emplacement du viticultuteur.
+Toujours sur la base des données \sphinxhref{https://cds.climate.copernicus.eu/cdsapp\#!/dataset/sis-heat-and-cold-spells?tab=overview}{du Climate Data Store}, nous avons selectionner ces données représentant le nombre de jours de canicule. Il nous est paru plus pertinent de représenter les jours de canciule uniquement à l’emplacement du viticultuteur.
 
 
 \section{Déploiement et installation}
@@ -474,14 +474,14 @@ anaconda \sphinxcode{\sphinxupquote{conda env create \sphinxhyphen{}f environmen
 Bases : \sphinxcode{\sphinxupquote{object}}
 
 \sphinxAtStartPar
-Cette classe télécharge les données de GitHub et les stocke en locale. Pour certains jeux de données, ils sont modifiés par un tri
+Cette classe télécharge les données de GitHub et les stocke en local. Pour certains jeux de données, ils sont modifiés par un tri
 alétoire à chaque login
 \index{data\_agri() (méthode agri\_data.data\_draw.RandomDraw)@\spxentry{data\_agri()}\spxextra{méthode agri\_data.data\_draw.RandomDraw}}
 
 \begin{fulllineitems}
 \phantomsection\label{\detokenize{agri_data:agri_data.data_draw.RandomDraw.data_agri}}\pysiglinewithargsret{\sphinxbfcode{\sphinxupquote{data\_agri}}}{}{}
 \sphinxAtStartPar
-Télécharge et enrehistre les données liées à l’emplacement de l’agriculteur
+Télécharge et enregistre les données liées à l’emplacement de l’agriculteur.
 
 \end{fulllineitems}
 
@@ -490,8 +490,8 @@ Télécharge et enrehistre les données liées à l’emplacement de l’agricul
 \begin{fulllineitems}
 \phantomsection\label{\detokenize{agri_data:agri_data.data_draw.RandomDraw.financial_data}}\pysiglinewithargsret{\sphinxbfcode{\sphinxupquote{financial\_data}}}{}{}
 \sphinxAtStartPar
-Télécharge et enrehistre les données liées aux données financières
-Elles sont randomisées avant l’enregistrement
+Télécharge et enregistre les données liées aux données financières.
+Elles sont randomisées avant l’enregistrement.
 
 \end{fulllineitems}
 
@@ -500,7 +500,7 @@ Elles sont randomisées avant l’enregistrement
 \begin{fulllineitems}
 \phantomsection\label{\detokenize{agri_data:agri_data.data_draw.RandomDraw.gauges_val}}\pysiglinewithargsret{\sphinxbfcode{\sphinxupquote{gauges\_val}}}{}{}
 \sphinxAtStartPar
-Télécharge et enregistre les données pour générer échelles de couleurs
+Télécharge et enregistre les données pour générer les échelles de couleurs.
 
 \end{fulllineitems}
 
@@ -509,7 +509,7 @@ Télécharge et enregistre les données pour générer échelles de couleurs
 \begin{fulllineitems}
 \phantomsection\label{\detokenize{agri_data:agri_data.data_draw.RandomDraw.graph_val}}\pysiglinewithargsret{\sphinxbfcode{\sphinxupquote{graph\_val}}}{}{}
 \sphinxAtStartPar
-Télécharge et enregistre les données pour générer les graphs
+Télécharge et enregistre les données pour générer les graphs.
 
 \end{fulllineitems}
 
@@ -518,7 +518,7 @@ Télécharge et enregistre les données pour générer les graphs
 \begin{fulllineitems}
 \phantomsection\label{\detokenize{agri_data:agri_data.data_draw.RandomDraw.indic_critique}}\pysiglinewithargsret{\sphinxbfcode{\sphinxupquote{indic\_critique}}}{}{}
 \sphinxAtStartPar
-Télécharge et enregistre les données donnant les indices critiques
+Télécharge et enregistre les données donnant les indices critiques.
 
 \end{fulllineitems}
 
@@ -533,8 +533,8 @@ Télécharge et enregistre les données donnant les indices critiques
 \begin{fulllineitems}
 \phantomsection\label{\detokenize{agri_data:agri_data.data_draw.RandomDraw.scoring_data}}\pysiglinewithargsret{\sphinxbfcode{\sphinxupquote{scoring\_data}}}{}{}
 \sphinxAtStartPar
-Télécharge et enregistre les données de scoring ESG.
-Elles sont randomisées avant l’enregistrement
+Télécharge et enregistre les données de scoring RSE.
+Elles sont randomisées avant l’enregistrement.
 
 \end{fulllineitems}
 
@@ -543,7 +543,7 @@ Elles sont randomisées avant l’enregistrement
 \begin{fulllineitems}
 \phantomsection\label{\detokenize{agri_data:agri_data.data_draw.RandomDraw.stat_data}}\pysiglinewithargsret{\sphinxbfcode{\sphinxupquote{stat\_data}}}{}{}
 \sphinxAtStartPar
-Télécharge et enregistre les données donnant les statiques liés à la région
+Télécharge et enregistre les données donnant les statiques liés à la région.
 
 \end{fulllineitems}
 
@@ -564,7 +564,7 @@ Télécharge et enregistre les données donnant les statiques liés à la régio
 Bases : \sphinxcode{\sphinxupquote{object}}
 
 \sphinxAtStartPar
-Cette classe lit les données json disponible en local et retourne une dataframe
+Cette classe lit les données json disponibles en locals et retourne une dataframe
 \index{read\_json() (méthode agri\_data.data\_import.ReadData)@\spxentry{read\_json()}\spxextra{méthode agri\_data.data\_import.ReadData}}
 
 \begin{fulllineitems}
@@ -594,13 +594,13 @@ Cette classe lit les données json disponible en local et retourne une dataframe
 \paragraph{app.base.forms module}
 \label{\detokenize{app.base:module-app.base.forms}}\label{\detokenize{app.base:app-base-forms-module}}\index{module@\spxentry{module}!app.base.forms@\spxentry{app.base.forms}}\index{app.base.forms@\spxentry{app.base.forms}!module@\spxentry{module}}
 \sphinxAtStartPar
-Modfied for GRID, 2021
+Modified for GRID, 2021
 
 \sphinxAtStartPar
 Copyright (c) 2019 \sphinxhyphen{} present AppSeed.us
 
 \sphinxAtStartPar
-Génère les formulaires d’inscription et connexion
+Génère les formulaires d’inscription et de connexion
 \index{CreateAccountForm (classe dans app.base.forms)@\spxentry{CreateAccountForm}\spxextra{classe dans app.base.forms}}
 
 \begin{fulllineitems}
@@ -654,7 +654,7 @@ Bases : \sphinxcode{\sphinxupquote{flask\_wtf.form.FlaskForm}}
 \paragraph{app.base.models module}
 \label{\detokenize{app.base:module-app.base.models}}\label{\detokenize{app.base:app-base-models-module}}\index{module@\spxentry{module}!app.base.models@\spxentry{app.base.models}}\index{app.base.models@\spxentry{app.base.models}!module@\spxentry{module}}
 \sphinxAtStartPar
-Modfied for GRID, 2021
+Modified for GRID, 2021
 
 \sphinxAtStartPar
 Copyright (c) 2019 \sphinxhyphen{} present AppSeed.us
@@ -711,7 +711,7 @@ Bases : \sphinxcode{\sphinxupquote{sqlalchemy.ext.declarative.api.Model}}, \sphi
 \paragraph{app.base.routes module}
 \label{\detokenize{app.base:module-app.base.routes}}\label{\detokenize{app.base:app-base-routes-module}}\index{module@\spxentry{module}!app.base.routes@\spxentry{app.base.routes}}\index{app.base.routes@\spxentry{app.base.routes}!module@\spxentry{module}}
 \sphinxAtStartPar
-Modfied for GRID, 2021
+Modified for GRID, 2021
 
 \sphinxAtStartPar
 Copyright (c) 2019 \sphinxhyphen{} present AppSeed.us
@@ -777,13 +777,16 @@ Gère les routines des connnexions et inscription
 \paragraph{app.base.util module}
 \label{\detokenize{app.base:module-app.base.util}}\label{\detokenize{app.base:app-base-util-module}}\index{module@\spxentry{module}!app.base.util@\spxentry{app.base.util}}\index{app.base.util@\spxentry{app.base.util}!module@\spxentry{module}}
 \sphinxAtStartPar
+Modified for GRID, 2021
+
+\sphinxAtStartPar
 Copyright (c) 2019 \sphinxhyphen{} present AppSeed.us
 \index{hash\_pass() (dans le module app.base.util)@\spxentry{hash\_pass()}\spxextra{dans le module app.base.util}}
 
 \begin{fulllineitems}
 \phantomsection\label{\detokenize{app.base:app.base.util.hash_pass}}\pysiglinewithargsret{\sphinxcode{\sphinxupquote{app.base.util.}}\sphinxbfcode{\sphinxupquote{hash\_pass}}}{\emph{\DUrole{n}{password}}}{}
 \sphinxAtStartPar
-Hash a password for storing.
+Hash mot de passe SHA\sphinxhyphen{}256
 
 \end{fulllineitems}
 
@@ -792,7 +795,7 @@ Hash a password for storing.
 \begin{fulllineitems}
 \phantomsection\label{\detokenize{app.base:app.base.util.verify_pass}}\pysiglinewithargsret{\sphinxcode{\sphinxupquote{app.base.util.}}\sphinxbfcode{\sphinxupquote{verify\_pass}}}{\emph{\DUrole{n}{provided\_password}}, \emph{\DUrole{n}{stored\_password}}}{}
 \sphinxAtStartPar
-Verify a stored password against one provided by user
+Verification du mot de passe par Hash
 
 \end{fulllineitems}
 
@@ -801,8 +804,10 @@ Verify a stored password against one provided by user
 \paragraph{Module contents}
 \label{\detokenize{app.base:module-app.base}}\label{\detokenize{app.base:module-contents}}\index{module@\spxentry{module}!app.base@\spxentry{app.base}}\index{app.base@\spxentry{app.base}!module@\spxentry{module}}
 \sphinxAtStartPar
+Modified for GRID, 2021
+
+\sphinxAtStartPar
 Copyright (c) 2019 \sphinxhyphen{} present AppSeed.us
-Modfied the GRID, 2021
 
 
 \subsubsection{app.home package}
@@ -829,7 +834,7 @@ Modfied the GRID, 2021
 Bases : \sphinxcode{\sphinxupquote{object}}
 
 \sphinxAtStartPar
-Cette classe génère une échelle à 3 couleurs pour un indicateur donnée
+Cette classe génère une échelle à 3 couleurs pour un indicateur donné
 \begin{quote}\begin{description}
 \item[{Paramètres}] \leavevmode\begin{itemize}
 \item {} 
@@ -838,7 +843,7 @@ Cette classe génère une échelle à 3 couleurs pour un indicateur donnée
 
 \item {} 
 \sphinxAtStartPar
-\sphinxstyleliteralstrong{\sphinxupquote{indic\_name}} \textendash{} le nom de l’indicateur utiliser pour le titre
+\sphinxstyleliteralstrong{\sphinxupquote{indic\_name}} \textendash{} le nom de l’indicateur utilisé pour le titre
 
 \end{itemize}
 
@@ -848,7 +853,7 @@ Cette classe génère une échelle à 3 couleurs pour un indicateur donnée
 \begin{fulllineitems}
 \phantomsection\label{\detokenize{app.home.content_gen:app.home.content_gen.graph_generation.BulletChart.plot}}\pysiglinewithargsret{\sphinxbfcode{\sphinxupquote{plot}}}{}{}
 \sphinxAtStartPar
-Les données sont importés depuis l’init
+Les données sont importées depuis l’\_\_init\_\_
 \begin{quote}\begin{description}
 \item[{Renvoie}] \leavevmode
 \sphinxAtStartPar
@@ -873,7 +878,7 @@ json
 Bases : \sphinxcode{\sphinxupquote{object}}
 
 \sphinxAtStartPar
-Cette classe génère le graphique des canicules dans environement.
+Cette classe génère le graphique des canicules dans la page Environement.
 Les données sont importées directement
 \index{find\_closest() (méthode app.home.content\_gen.graph\_generation.CaniculePlot)@\spxentry{find\_closest()}\spxextra{méthode app.home.content\_gen.graph\_generation.CaniculePlot}}
 
@@ -924,7 +929,7 @@ Plot un graphique ligne et stocke l’object json dans self.graphjson
 Bases : \sphinxcode{\sphinxupquote{object}}
 
 \sphinxAtStartPar
-Cette classe génère les diagrames pour la partie finance
+Cette classe génère les diagrammes pour la partie finance
 \begin{quote}\begin{description}
 \item[{Paramètres}] \leavevmode
 \sphinxAtStartPar
@@ -939,11 +944,11 @@ le code indicateur au format Ex, Sx ou Gx (où x est un int)
 \begin{fulllineitems}
 \phantomsection\label{\detokenize{app.home.content_gen:app.home.content_gen.graph_generation.FinancialChart.plot_bar}}\pysiglinewithargsret{\sphinxbfcode{\sphinxupquote{plot\_bar}}}{}{}
 \sphinxAtStartPar
-Les données sont importés depuis l’init. Génère un graphique barre
+Les données sont importées depuis l’\_\_init\_\_. Génère un graphique barre
 \begin{quote}\begin{description}
 \item[{Renvoie}] \leavevmode
 \sphinxAtStartPar
-list d’object json
+list d’objet json
 
 \item[{Type renvoyé}] \leavevmode
 \sphinxAtStartPar
@@ -958,11 +963,11 @@ list{[}json{]}
 \begin{fulllineitems}
 \phantomsection\label{\detokenize{app.home.content_gen:app.home.content_gen.graph_generation.FinancialChart.plot_mltpl_line}}\pysiglinewithargsret{\sphinxbfcode{\sphinxupquote{plot\_mltpl\_line}}}{}{}
 \sphinxAtStartPar
-Les données sont importés depuis l’init. Génère un graphique ligne avec 2 axes y
+Les données sont importés depuis l’\_\_init\_\_. Génère un graphique ligne avec 2 axes y
 \begin{quote}\begin{description}
 \item[{Renvoie}] \leavevmode
 \sphinxAtStartPar
-list d’object json
+list d’objet json
 
 \item[{Type renvoyé}] \leavevmode
 \sphinxAtStartPar
@@ -977,11 +982,11 @@ list{[}json{]}
 \begin{fulllineitems}
 \phantomsection\label{\detokenize{app.home.content_gen:app.home.content_gen.graph_generation.FinancialChart.plot_sgl_line}}\pysiglinewithargsret{\sphinxbfcode{\sphinxupquote{plot\_sgl\_line}}}{}{}
 \sphinxAtStartPar
-Les données sont importés depuis l’init. Génère un graphique ligne
+Les données sont importées depuis l’\_\_init\_\_. Génère un graphique ligne
 \begin{quote}\begin{description}
 \item[{Renvoie}] \leavevmode
 \sphinxAtStartPar
-list d’object json
+list d’objet json
 
 \item[{Type renvoyé}] \leavevmode
 \sphinxAtStartPar
@@ -1052,14 +1057,14 @@ json
 Bases : \sphinxcode{\sphinxupquote{object}}
 
 \sphinxAtStartPar
-Cette classe donne les indicateurs considérés comme critique
+Cette classe donne las liste des indicateurs considérés comme critique.
 \index{main() (méthode app.home.content\_gen.index\_renderer.CriticalAlert)@\spxentry{main()}\spxextra{méthode app.home.content\_gen.index\_renderer.CriticalAlert}}
 
 \begin{fulllineitems}
 \phantomsection\label{\detokenize{app.home.content_gen:app.home.content_gen.index_renderer.CriticalAlert.main}}\pysiglinewithargsret{\sphinxbfcode{\sphinxupquote{main}}}{}{}~\begin{quote}\begin{description}
 \item[{Renvoie}] \leavevmode
 \sphinxAtStartPar
-liste de liste (1 par indicateur) contenant pour chaque la liste des indicateurs critiques
+liste de listes (une par indicateur) contenant pour chaque la liste des indicateurs critiques
 
 \item[{Type renvoyé}] \leavevmode
 \sphinxAtStartPar
@@ -1080,7 +1085,7 @@ list
 Bases : \sphinxcode{\sphinxupquote{object}}
 
 \sphinxAtStartPar
-Cette classe donne les données nécessaires au rendus des gauges indiquant les scores ESG
+Cette classe donne les données nécessaires au rendu des gauges indiquant les scores ESG
 \index{bin() (méthode app.home.content\_gen.index\_renderer.Scoring)@\spxentry{bin()}\spxextra{méthode app.home.content\_gen.index\_renderer.Scoring}}
 
 \begin{fulllineitems}
@@ -1096,7 +1101,7 @@ Génère les intervalles autour de la valeur moyenne
 \phantomsection\label{\detokenize{app.home.content_gen:app.home.content_gen.index_renderer.Scoring.main}}\pysiglinewithargsret{\sphinxbfcode{\sphinxupquote{main}}}{}{}~\begin{quote}\begin{description}
 \item[{Renvoie}] \leavevmode
 \sphinxAtStartPar
-liste de liste (1 par indicateur) contenant pour chaque: sa valeur, la valeur max de l’echelle, une liste avec les intervalles de couleurs
+liste de listes (une par indicateur) contenant pour chaque: sa valeur, la valeur max de l’echelle, une liste avec les intervalles de couleurs
 
 \item[{Type renvoyé}] \leavevmode
 \sphinxAtStartPar
@@ -1123,8 +1128,10 @@ list
 Bases : \sphinxcode{\sphinxupquote{object}}
 
 \sphinxAtStartPar
-Cette classe génère une heat map des canicules sur la base des données de Copernicus
-Les données ont été pré\sphinxhyphen{}traités et stockés dans le même répertoire.
+Cette classe génère une heat map des canicules sur la base des données de Copernicus.
+
+\sphinxAtStartPar
+Les données ont été pré\sphinxhyphen{}traitées et stockées dans le même répertoire.
 \index{main() (méthode app.home.content\_gen.map\_generation.CaniculePlot)@\spxentry{main()}\spxextra{méthode app.home.content\_gen.map\_generation.CaniculePlot}}
 
 \begin{fulllineitems}
@@ -1149,7 +1156,7 @@ json
 \begin{fulllineitems}
 \phantomsection\label{\detokenize{app.home.content_gen:app.home.content_gen.map_generation.CaniculePlot.plot_at_date}}\pysiglinewithargsret{\sphinxbfcode{\sphinxupquote{plot\_at\_date}}}{}{}
 \sphinxAtStartPar
-Créé un carte pour un date données
+Crée un carte pour un date données
 \begin{quote}\begin{description}
 \item[{Renvoie}] \leavevmode
 \sphinxAtStartPar
@@ -1168,8 +1175,8 @@ json
 \begin{fulllineitems}
 \phantomsection\label{\detokenize{app.home.content_gen:app.home.content_gen.map_generation.CaniculePlot.plot_cursor}}\pysiglinewithargsret{\sphinxbfcode{\sphinxupquote{plot\_cursor}}}{}{}
 \sphinxAtStartPar
-Créé un carte pour différentes dates avec un slider temporel
-(dates définis dans la variable \sphinxtitleref{list\_date})
+Crée un carte pour différentes dates avec un slider temporel
+(dates définies dans la variable \sphinxtitleref{list\_date})
 \begin{quote}\begin{description}
 \item[{Renvoie}] \leavevmode
 \sphinxAtStartPar
@@ -1200,19 +1207,21 @@ json
 Bases : \sphinxcode{\sphinxupquote{object}}
 
 \sphinxAtStartPar
-Cette classe génère une carte avec un scatter plot des risques incendies sur la base des données de Copernicus
-Les données ont été pré\sphinxhyphen{}traités et stockés dans le même répertoire.
+Cette classe génère une carte avec un scatter plot des risques incendies sur la base des données de Copernicus.
+
+\sphinxAtStartPar
+Les données ont été pré\sphinxhyphen{}traitées et stockées dans le même répertoire.
 \index{color\_scale() (méthode app.home.content\_gen.map\_generation.FirePlot)@\spxentry{color\_scale()}\spxextra{méthode app.home.content\_gen.map\_generation.FirePlot}}
 
 \begin{fulllineitems}
 \phantomsection\label{\detokenize{app.home.content_gen:app.home.content_gen.map_generation.FirePlot.color_scale}}\pysiglinewithargsret{\sphinxbfcode{\sphinxupquote{color\_scale}}}{\emph{\DUrole{n}{zmax}}}{}
 \sphinxAtStartPar
-Cette fonction accomplie 2 choses en parallèle: création d’une echelle de couleur pour correpondre au Fire Index européen et
-trouve les valeurs centrales de chacun des intervales utilisées pour afficher l’echelle de couleur annotée
+Cette fonction accomplit 2 choses en parallèle: création d’une echelle de couleurs pour correpondre au Fire Index européen et
+trouve les valeurs centrales de chacun des intervalles utilisés pour afficher l’echelle de couleur annotée
 \begin{quote}\begin{description}
 \item[{Renvoie}] \leavevmode
 \sphinxAtStartPar
-liste de l’echelle de couleurs normé (i.e. valeurs entre 0 et 1) et liste du centre des intervales
+liste de l’echelle de couleurs normée (i.e. valeurs entre 0 et 1) et liste du centre des intervalles
 
 \item[{Type renvoyé}] \leavevmode
 \sphinxAtStartPar
@@ -1246,7 +1255,7 @@ json
 \begin{fulllineitems}
 \phantomsection\label{\detokenize{app.home.content_gen:app.home.content_gen.map_generation.FirePlot.plot_at_date}}\pysiglinewithargsret{\sphinxbfcode{\sphinxupquote{plot\_at\_date}}}{}{}
 \sphinxAtStartPar
-Créé un carte pour un date données
+Crée un carte pour une date donnée
 \begin{quote}\begin{description}
 \item[{Renvoie}] \leavevmode
 \sphinxAtStartPar
@@ -1265,8 +1274,8 @@ json
 \begin{fulllineitems}
 \phantomsection\label{\detokenize{app.home.content_gen:app.home.content_gen.map_generation.FirePlot.plot_cursor}}\pysiglinewithargsret{\sphinxbfcode{\sphinxupquote{plot\_cursor}}}{}{}
 \sphinxAtStartPar
-Créé un carte pour différentes dates avec un slider temporel
-(dates définis dans la variable \sphinxtitleref{list\_date})
+Crée un carte pour différentes dates avec un slider temporel
+(dates définies dans la variable \sphinxtitleref{list\_date})
 \begin{quote}\begin{description}
 \item[{Renvoie}] \leavevmode
 \sphinxAtStartPar
@@ -1464,6 +1473,9 @@ pandas df
 \paragraph{app.home.routes module}
 \label{\detokenize{app.home:module-app.home.routes}}\label{\detokenize{app.home:app-home-routes-module}}\index{module@\spxentry{module}!app.home.routes@\spxentry{app.home.routes}}\index{app.home.routes@\spxentry{app.home.routes}!module@\spxentry{module}}
 \sphinxAtStartPar
+Modified for GRID, 2021
+
+\sphinxAtStartPar
 Copyright (c) 2019 \sphinxhyphen{} present AppSeed.us
 \index{get\_segment() (dans le module app.home.routes)@\spxentry{get\_segment()}\spxextra{dans le module app.home.routes}}
 
@@ -1488,15 +1500,19 @@ Copyright (c) 2019 \sphinxhyphen{} present AppSeed.us
 \paragraph{Module contents}
 \label{\detokenize{app.home:module-app.home}}\label{\detokenize{app.home:module-contents}}\index{module@\spxentry{module}!app.home@\spxentry{app.home}}\index{app.home@\spxentry{app.home}!module@\spxentry{module}}
 \sphinxAtStartPar
+Modified for GRID, 2021
+
+\sphinxAtStartPar
 Copyright (c) 2019 \sphinxhyphen{} present AppSeed.us
-Modfied the GRID, 2021
 
 
 \subsection{Module contents}
 \label{\detokenize{app:module-0}}\label{\detokenize{app:module-contents}}\index{module@\spxentry{module}!app@\spxentry{app}}\index{app@\spxentry{app}!module@\spxentry{module}}
 \sphinxAtStartPar
+Modfied for GRID, 2021
+
+\sphinxAtStartPar
 Copyright (c) 2019 \sphinxhyphen{} present AppSeed.us
-Modfied the GRID, 2021
 \index{configure\_database() (dans le module app)@\spxentry{configure\_database()}\spxextra{dans le module app}}
 
 \begin{fulllineitems}

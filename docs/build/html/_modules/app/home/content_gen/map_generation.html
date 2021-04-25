@@ -179,8 +179,9 @@
 <span class="kn">from</span> <span class="nn">agri_data</span> <span class="kn">import</span> <span class="n">data_import</span>
 
 <div class="viewcode-block" id="CaniculePlot"><a class="viewcode-back" href="../../../../app.home.content_gen.html#app.home.content_gen.map_generation.CaniculePlot">[docs]</a><span class="k">class</span> <span class="nc">CaniculePlot</span><span class="p">:</span>
-    <span class="sd">&quot;&quot;&quot;Cette classe génère une heat map des canicules sur la base des données de Copernicus</span>
-<span class="sd">    Les données ont été pré-traités et stockés dans le même répertoire.</span>
+    <span class="sd">&quot;&quot;&quot;Cette classe génère une heat map des canicules sur la base des données de Copernicus.</span>
+
+<span class="sd">    Les données ont été pré-traitées et stockées dans le même répertoire.</span>
 <span class="sd">    &quot;&quot;&quot;</span>
     <span class="k">def</span> <span class="fm">__init__</span> <span class="p">(</span><span class="bp">self</span><span class="p">):</span>
          <span class="bp">self</span><span class="o">.</span><span class="n">current</span> <span class="o">=</span> <span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">normcase</span><span class="p">(</span><span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">dirname</span><span class="p">(</span><span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">realpath</span><span class="p">(</span><span class="vm">__file__</span><span class="p">)))</span>
@@ -193,7 +194,7 @@
          <span class="nb">print</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">df</span><span class="p">)</span></div>
          
 <div class="viewcode-block" id="CaniculePlot.plot_at_date"><a class="viewcode-back" href="../../../../app.home.content_gen.html#app.home.content_gen.map_generation.CaniculePlot.plot_at_date">[docs]</a>    <span class="k">def</span> <span class="nf">plot_at_date</span> <span class="p">(</span><span class="bp">self</span><span class="p">):</span>
-        <span class="sd">&quot;&quot;&quot;Créé un carte pour un date données</span>
+        <span class="sd">&quot;&quot;&quot;Crée un carte pour un date données</span>
 
 <span class="sd">        :return: objet json</span>
 <span class="sd">        :rtype: json</span>
@@ -216,8 +217,8 @@
         <span class="k">return</span> <span class="n">plot_json</span></div>
     
 <div class="viewcode-block" id="CaniculePlot.plot_cursor"><a class="viewcode-back" href="../../../../app.home.content_gen.html#app.home.content_gen.map_generation.CaniculePlot.plot_cursor">[docs]</a>    <span class="k">def</span> <span class="nf">plot_cursor</span> <span class="p">(</span><span class="bp">self</span><span class="p">):</span>
-        <span class="sd">&quot;&quot;&quot;Créé un carte pour différentes dates avec un slider temporel</span>
-<span class="sd">        (dates définis dans la variable `list_date`)</span>
+        <span class="sd">&quot;&quot;&quot;Crée un carte pour différentes dates avec un slider temporel</span>
+<span class="sd">        (dates définies dans la variable `list_date`)</span>
 
 <span class="sd">        :return: objet json</span>
 <span class="sd">        :rtype: json</span>
@@ -279,8 +280,9 @@
 
 
 <div class="viewcode-block" id="FirePlot"><a class="viewcode-back" href="../../../../app.home.content_gen.html#app.home.content_gen.map_generation.FirePlot">[docs]</a><span class="k">class</span> <span class="nc">FirePlot</span><span class="p">:</span>
-    <span class="sd">&quot;&quot;&quot;Cette classe génère une carte avec un scatter plot des risques incendies sur la base des données de Copernicus</span>
-<span class="sd">      Les données ont été pré-traités et stockés dans le même répertoire.</span>
+    <span class="sd">&quot;&quot;&quot;Cette classe génère une carte avec un scatter plot des risques incendies sur la base des données de Copernicus.</span>
+
+<span class="sd">      Les données ont été pré-traitées et stockées dans le même répertoire.</span>
 <span class="sd">    &quot;&quot;&quot;</span>
     <span class="k">def</span> <span class="fm">__init__</span> <span class="p">(</span><span class="bp">self</span><span class="p">):</span>
          <span class="bp">self</span><span class="o">.</span><span class="n">current</span> <span class="o">=</span> <span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">normcase</span><span class="p">(</span><span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">dirname</span><span class="p">(</span><span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">realpath</span><span class="p">(</span><span class="vm">__file__</span><span class="p">)))</span>
@@ -303,10 +305,10 @@
         
      
 <div class="viewcode-block" id="FirePlot.color_scale"><a class="viewcode-back" href="../../../../app.home.content_gen.html#app.home.content_gen.map_generation.FirePlot.color_scale">[docs]</a>    <span class="k">def</span> <span class="nf">color_scale</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">zmax</span><span class="p">):</span>
-        <span class="sd">&quot;&quot;&quot;Cette fonction accomplie 2 choses en parallèle: création d&#39;une echelle de couleur pour correpondre au Fire Index européen et</span>
-<span class="sd">        trouve les valeurs centrales de chacun des intervales utilisées pour afficher l&#39;echelle de couleur annotée</span>
+        <span class="sd">&quot;&quot;&quot;Cette fonction accomplit 2 choses en parallèle: création d&#39;une echelle de couleurs pour correpondre au Fire Index européen et</span>
+<span class="sd">        trouve les valeurs centrales de chacun des intervalles utilisés pour afficher l&#39;echelle de couleur annotée</span>
 
-<span class="sd">        :return: liste de l&#39;echelle de couleurs normé (i.e. valeurs entre 0 et 1) et liste du centre des intervales</span>
+<span class="sd">        :return: liste de l&#39;echelle de couleurs normée (i.e. valeurs entre 0 et 1) et liste du centre des intervalles</span>
 <span class="sd">        :rtype: list</span>
 <span class="sd">        &quot;&quot;&quot;</span>
         <span class="n">colorscale</span><span class="o">=</span><span class="p">[[</span><span class="mf">0.00</span><span class="p">,</span> <span class="s1">&#39;#fee5d9&#39;</span><span class="p">],</span>
@@ -344,7 +346,7 @@
         <span class="k">return</span> <span class="n">colorscheme</span><span class="p">,</span> <span class="n">tick_val</span></div>
          
 <div class="viewcode-block" id="FirePlot.plot_at_date"><a class="viewcode-back" href="../../../../app.home.content_gen.html#app.home.content_gen.map_generation.FirePlot.plot_at_date">[docs]</a>    <span class="k">def</span> <span class="nf">plot_at_date</span> <span class="p">(</span><span class="bp">self</span><span class="p">):</span>
-        <span class="sd">&quot;&quot;&quot;Créé un carte pour un date données</span>
+        <span class="sd">&quot;&quot;&quot;Crée un carte pour une date donnée</span>
 
 <span class="sd">        :return: objet json</span>
 <span class="sd">        :rtype: json</span>
@@ -367,8 +369,8 @@
         <span class="k">return</span> <span class="n">plot_json</span></div>
     
 <div class="viewcode-block" id="FirePlot.plot_cursor"><a class="viewcode-back" href="../../../../app.home.content_gen.html#app.home.content_gen.map_generation.FirePlot.plot_cursor">[docs]</a>    <span class="k">def</span> <span class="nf">plot_cursor</span> <span class="p">(</span><span class="bp">self</span><span class="p">):</span>
-        <span class="sd">&quot;&quot;&quot;Créé un carte pour différentes dates avec un slider temporel</span>
-<span class="sd">        (dates définis dans la variable `list_date`)</span>
+        <span class="sd">&quot;&quot;&quot;Crée un carte pour différentes dates avec un slider temporel</span>
+<span class="sd">        (dates définies dans la variable `list_date`)</span>
 
 <span class="sd">        :return: objet json</span>
 <span class="sd">        :rtype: json</span>

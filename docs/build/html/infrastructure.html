@@ -94,7 +94,7 @@
               <ul class="current">
 <li class="toctree-l1"><a class="reference internal" href="intro.html">1. Introduction</a></li>
 <li class="toctree-l1 current"><a class="current reference internal" href="#">2. Infrastructure</a><ul>
-<li class="toctree-l2"><a class="reference internal" href="#organisation-global-du-repertoire">2.1. Organisation global du répertoire</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#organisation-globale-du-repertoire">2.1. Organisation globale du répertoire</a></li>
 <li class="toctree-l2"><a class="reference internal" href="#point-de-vue-flask-app-python">2.2. Point de vue Flask App / Python</a></li>
 <li class="toctree-l2"><a class="reference internal" href="#point-de-vue-fronte-end-html">2.3. Point de vue fronte-end / HTML</a></li>
 </ul>
@@ -172,20 +172,20 @@
             
   <div class="section" id="infrastructure">
 <h1><span class="section-number">2. </span>Infrastructure<a class="headerlink" href="#infrastructure" title="Lien permanent vers ce titre">¶</a></h1>
-<div class="section" id="organisation-global-du-repertoire">
-<h2><span class="section-number">2.1. </span>Organisation global du répertoire<a class="headerlink" href="#organisation-global-du-repertoire" title="Lien permanent vers ce titre">¶</a></h2>
+<div class="section" id="organisation-globale-du-repertoire">
+<h2><span class="section-number">2.1. </span>Organisation globale du répertoire<a class="headerlink" href="#organisation-globale-du-repertoire" title="Lien permanent vers ce titre">¶</a></h2>
 <p>Le répertoire est organisé autour de deux principaux modules :</p>
 <ul class="simple">
 <li><p><code class="code docutils literal notranslate"><span class="pre">app</span></code> : module générant l’application et ses rendus</p></li>
-<li><p><code class="code docutils literal notranslate"><span class="pre">agri_data</span></code> : module regroupant générant les données</p></li>
+<li><p><code class="code docutils literal notranslate"><span class="pre">agri_data</span></code> : module regroupant et générant les données</p></li>
 </ul>
-<p>Le fichier principal lançant l’application est situé à la racine, il s’appelle <code class="code docutils literal notranslate"><span class="pre">run.py</span></code></p>
+<p>Le fichier principal qui lance l’application est situé à la racine, il s’appelle <code class="code docutils literal notranslate"><span class="pre">run.py</span></code></p>
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="p">|</span>
 <span class="p">|</span>-- app/                                      <span class="c1"># L&#39;application en elle même</span>
 <span class="p">|</span>    <span class="p">|</span>-- home/                                <span class="c1"># Génération des contenus spécifiques pas page HTML spécifiques</span>
 <span class="p">|</span>    <span class="p">|</span>-- base/                                <span class="c1"># Blueprint, contient la structure de l&#39;application</span>
 <span class="p">|</span>
-<span class="p">|</span>-- agri_data/                                <span class="c1"># Générations des données</span>
+<span class="p">|</span>-- agri_data/                                <span class="c1"># Génération des données</span>
 <span class="p">|</span>
 <span class="p">|</span>-- ************************************************************************
 </pre></div>
@@ -199,21 +199,21 @@
 <li><p><code class="code docutils literal notranslate"><span class="pre">base</span></code> qui sert à gérer l’authentification</p></li>
 </ul>
 <p>Le code est ensuite commenté et précisé dans les modules <a class="reference internal" href="modules.html#agri"><span class="std std-ref">Module agri_data</span></a> et <a class="reference internal" href="app.html#app"><span class="std std-ref">Module app</span></a></p>
-<p>Le répértoire d’un point de vue Python à la structure suivante:</p>
+<p>La structure du répértoire ,d’un point de vue Python, est la suivante:</p>
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="p">|</span>
 <span class="p">|</span>-- app/                                      <span class="c1"># L&#39;application en elle même</span>
 <span class="p">|</span>    <span class="p">|</span>-- home/
 <span class="p">|</span>         <span class="p">|</span>-- content_gen/                    <span class="c1"># Module générant les visuels</span>
-<span class="p">|</span>         <span class="p">|</span>    <span class="p">|</span>-- data/                      <span class="c1"># Données externes pré-traités</span>
+<span class="p">|</span>         <span class="p">|</span>    <span class="p">|</span>-- data/                      <span class="c1"># Données externes pré-traitées</span>
 <span class="p">|</span>         <span class="p">|</span>    <span class="p">|</span>-- graph_generation.py        <span class="c1"># Génération des graphiques</span>
-<span class="p">|</span>         <span class="p">|</span>    <span class="p">|</span>-- index_renderer.py          <span class="c1"># Générationd de l&#39;index</span>
+<span class="p">|</span>         <span class="p">|</span>    <span class="p">|</span>-- index_renderer.py          <span class="c1"># Génération de l&#39;index</span>
 <span class="p">|</span>         <span class="p">|</span>    <span class="p">|</span>-- map_generation.py          <span class="c1"># Génération des cartes</span>
-<span class="p">|</span>         <span class="p">|</span>    <span class="p">|</span>-- questionaire.py.py         <span class="c1"># Génération du questionaire agri</span>
+<span class="p">|</span>         <span class="p">|</span>    <span class="p">|</span>-- questionaire.py.py         <span class="c1"># Génération du questionnaire agri</span>
 <span class="p">|</span>         <span class="p">|</span>-- routes.py
 <span class="p">|</span>
 <span class="p">|</span>    <span class="p">|</span>-- base/
 <span class="p">|</span>         <span class="p">|</span>-- forms.py                        <span class="c1"># Script gérant le formulaire de login et d&#39;inscription</span>
-<span class="p">|</span>         <span class="p">|</span>-- models.py                       <span class="c1"># Script gérant la lecture de la base de donées des logins</span>
+<span class="p">|</span>         <span class="p">|</span>-- models.py                       <span class="c1"># Script gérant la lecture de la base de données des logins</span>
 <span class="p">|</span>         <span class="p">|</span>-- routes.py                       <span class="c1"># Script gérant les actions</span>
 <span class="p">|</span>         <span class="p">|</span>-- util.py                         <span class="c1"># Script gérant le hachage du mot de passe</span>
 <span class="p">|</span>
@@ -222,8 +222,8 @@
 <span class="p">|</span>    <span class="p">|</span>-- data_import.py                       <span class="c1"># Import des données de GitHub</span>
 <span class="p">|</span>    <span class="p">|</span>-- *.json
 <span class="p">|</span>
-<span class="p">|</span>-- requirements.txt                          <span class="c1"># Librairies nécessaire pour faire fonctioner le code</span>
-<span class="p">|</span>-- environment.yml                           <span class="c1"># Environement anconda</span>
+<span class="p">|</span>-- requirements.txt                          <span class="c1"># Librairies nécessaires pour faire fonctionner le code</span>
+<span class="p">|</span>-- environment.yml                           <span class="c1"># Environnement anaconda</span>
 <span class="p">|</span>-- requirements-mysql.txt                    <span class="c1"># Module nécessaire pour Mysql DMBS</span>
 <span class="p">|</span>-- requirements-pqsql.txt                    <span class="c1"># Module nécessaire pour PostgreSql DMBS</span>
 <span class="p">|</span>
@@ -237,7 +237,7 @@
 </div>
 <div class="section" id="point-de-vue-fronte-end-html">
 <h2><span class="section-number">2.3. </span>Point de vue fronte-end / HTML<a class="headerlink" href="#point-de-vue-fronte-end-html" title="Lien permanent vers ce titre">¶</a></h2>
-<p>Les fichiers HTML sont organisées autour de 2 dossiers:</p>
+<p>Les fichiers HTML sont organisés autour de 2 dossiers:</p>
 <ul class="simple">
 <li><p><strong>/home</strong> : ici sont stockés les fichiers HTML des pages du dashboard</p></li>
 <li><p><strong>/base</strong> : ici sont stockés les fichiers HTML servant de modèles pour générer les pages</p></li>
@@ -258,7 +258,7 @@
 <span class="p">|</span>              <span class="p">|</span>    <span class="p">|</span>-- navigation.html       <span class="c1"># Menu du haut</span>
 <span class="p">|</span>              <span class="p">|</span>    <span class="p">|</span>-- sidebar.html          <span class="c1"># Menu latéral</span>
 <span class="p">|</span>              <span class="p">|</span>    <span class="p">|</span>-- footer.html           <span class="c1"># Pied de page</span>
-<span class="p">|</span>              <span class="p">|</span>    <span class="p">|</span>-- scripts.html          <span class="c1"># Script communs aux pages HTML</span>
+<span class="p">|</span>              <span class="p">|</span>    <span class="p">|</span>-- scripts.html          <span class="c1"># Scripts communs aux pages HTML</span>
 <span class="p">|</span>              <span class="p">|</span>
 <span class="p">|</span>              <span class="p">|</span>-- layouts/                   <span class="c1"># Pages masters</span>
 <span class="p">|</span>              <span class="p">|</span>    <span class="p">|</span>-- base.html             <span class="c1"># Layout des pages</span>

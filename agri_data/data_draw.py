@@ -7,7 +7,7 @@ import numpy
 import os
 
 class RandomDraw:
-	"""Cette classe télécharge les données de GitHub et les stocke en locale. Pour certains jeux de données, ils sont modifiés par un tri 
+	"""Cette classe télécharge les données de GitHub et les stocke en local. Pour certains jeux de données, ils sont modifiés par un tri 
 	alétoire à chaque login
     """
 
@@ -15,7 +15,7 @@ class RandomDraw:
 		self.current = os.path.normcase(os.path.dirname(os.path.realpath(__file__)))
 
 	def data_agri (self):
-		"""Télécharge et enrehistre les données liées à l'emplacement de l'agriculteur
+		"""Télécharge et enregistre les données liées à l'emplacement de l'agriculteur.
         """
 		df = pandas.read_json('https://raw.githubusercontent.com/Green-Investement-Dashboard/data/main/data_eg/data_agri.json', orient='table')
 
@@ -24,8 +24,8 @@ class RandomDraw:
 		df.to_json(full_path, orient='table', indent=4)
 
 	def financial_data (self):
-		"""Télécharge et enrehistre les données liées aux données financières
-		Elles sont randomisées avant l'enregistrement
+		"""Télécharge et enregistre les données liées aux données financières.
+		Elles sont randomisées avant l'enregistrement.
         """
 		df = pandas.read_json('https://raw.githubusercontent.com/Green-Investement-Dashboard/data/main/data_eg/financial_data.json', orient='table')
 		v0 = {'F1':1000, 'F2':1.2}
@@ -47,7 +47,7 @@ class RandomDraw:
 		df.to_json(full_path, orient='table', indent=4)
 
 	def gauges_val (self):
-		"""Télécharge et enregistre les données pour générer échelles de couleurs
+		"""Télécharge et enregistre les données pour générer les échelles de couleurs.
         """
 		df = pandas.read_json('https://raw.githubusercontent.com/Green-Investement-Dashboard/data/main/data_eg/gauges_val.json', orient='table')
 		
@@ -56,7 +56,7 @@ class RandomDraw:
 		df.to_json(full_path, orient='table', indent=4)
 
 	def graph_val (self):
-		"""Télécharge et enregistre les données pour générer les graphs
+		"""Télécharge et enregistre les données pour générer les graphs.
         """
 		df = pandas.read_json('https://raw.githubusercontent.com/Green-Investement-Dashboard/data/main/data_eg/graph_val.json', orient='table')
 		
@@ -65,7 +65,7 @@ class RandomDraw:
 		df.to_json(full_path, orient='table', indent=4)
 
 	def indic_critique (self):
-		"""Télécharge et enregistre les données donnant les indices critiques
+		"""Télécharge et enregistre les données donnant les indices critiques.
         """
 		df = pandas.read_csv('https://raw.githubusercontent.com/Green-Investement-Dashboard/data/main/data_eg/liste_indic.csv')
 
@@ -74,7 +74,7 @@ class RandomDraw:
 		df.to_json(full_path, orient='table', indent=4)
 
 	def stat_data (self):
-		"""Télécharge et enregistre les données donnant les statiques liés à la région
+		"""Télécharge et enregistre les données donnant les statiques liés à la région.
         """
 		df = pandas.read_json('https://raw.githubusercontent.com/Green-Investement-Dashboard/data/main/data_eg/stat.json', orient='table')
 		
@@ -83,8 +83,8 @@ class RandomDraw:
 		df.to_json(full_path, orient='table', indent=4)
 
 	def scoring_data (self):
-		"""Télécharge et enregistre les données de scoring ESG.
-		Elles sont randomisées avant l'enregistrement
+		"""Télécharge et enregistre les données de scoring RSE.
+		Elles sont randomisées avant l'enregistrement.
         """
 		df = pandas.read_csv('https://raw.githubusercontent.com/Green-Investement-Dashboard/data/main/data_eg/scoring.csv')
 		df = df.set_index('indicateur')

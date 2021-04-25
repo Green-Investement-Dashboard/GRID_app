@@ -1,7 +1,9 @@
 # -*- encoding: utf-8 -*-
 """
+Modified for GRID, 2021
+
 Copyright (c) 2019 - present AppSeed.us
-Modfied the GRID, 2021
+
 
 Ce fichier est celui qui génère les pages HTML à partir des fonctions ci dessous
 """
