@@ -84,7 +84,7 @@ class PieChart:
     self.colors = ['#35978f', '#66c2a4', '#c7eae5', "#dfc27d"]
 
   def plot(self):
-    """Les données sont importés depuis l'init
+    """Les données sont importées depuis l'__init__
 
         :return: objet json contenant le plot
         :rtype: json
@@ -154,7 +154,7 @@ class FinancialChart:
     return list_graph
 
   def plot_mltpl_line (self):
-    """Les données sont importés depuis l'__init__. Génère un graphique ligne avec 2 axes y
+    """Les données sont importées depuis l'__init__. Génère un graphique ligne avec 2 axes y
 
         :return: list d'objet json
         :rtype: list[json]
@@ -180,7 +180,7 @@ class FinancialChart:
     return graphjson
 
 class CaniculePlot:
-  """Cette classe génère le graphique des canicules dans la page Environement.
+  """Cette classe génère le graphique des canicules dans la page Environnement.
   Les données sont importées directement
   """
   def __init__ (self):
