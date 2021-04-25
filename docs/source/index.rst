@@ -20,6 +20,10 @@ Ici, vous trouverez:
 
 `Documentation PDF <http://docs.grid-tech.fr/grid.pdf>`__
 
+.. attention::
+   Le dashboard est pour le moment optimiser pour les écrans d'ordinateurs
+
+
 ------
 
 Table des matières

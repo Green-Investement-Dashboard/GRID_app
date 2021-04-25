@@ -14,8 +14,11 @@ Pour les besoins de la démonstration dans le cadre du concours FIFG, un compte 
 * **Nom d'utilisateur**: test
 * **Mot de passe**: test
 
-.. attention::
+.. tip::
    Avec notre infrastructure actuelle, le chargement des pages peut praître long mais nous y travaillons.
+
+.. attention::
+   Le dashboard est pour le moment optimiser pour les écrans d'ordinateurs
 
 Pour plus de détail sur le déploiement :ref:`instal`
 

@@ -29,7 +29,7 @@ Point de vue Flask App / Python
 
 Le module :code:`app` est organisé en 2 sous-modules :
 
-* :code:`home` qui sert à générer les visuels
+* :code:`home` qui sert à générer les visuels, en particulier le sous-module :code:`content_gen`
 * :code:`base` qui sert à gérer l'authentification
 
 Le code est ensuite commenté et précisé dans les modules :ref:`agri` et :ref:`app`

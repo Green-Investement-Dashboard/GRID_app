@@ -1,7 +1,10 @@
 # -*- encoding: utf-8 -*-
 """
+Modfied for GRID, 2021
+
 Copyright (c) 2019 - present AppSeed.us
-Modfied the GRID, 2021
+
+Gère les routines des connnexions et inscription
 """
 
 from flask import jsonify, render_template, redirect, request, url_for

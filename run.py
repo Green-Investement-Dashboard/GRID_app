@@ -2,6 +2,8 @@
 """
 Copyright (c) 2019 - present AppSeed.us
 Modfied the GRID, 2021
+
+Ce fichier est celui qui génère les pages HTML à partir des fonctions ci dessous
 """
 
 from flask_migrate import Migrate
@@ -26,6 +28,7 @@ import pandas
 import numpy
 import json
 
+#Ci dessous, import des modules internes pour générer les graphs
 from app.home.content_gen import index_renderer
 from app.home.content_gen import map_generation as mgen
 from app.home.content_gen import graph_generation as ggen
@@ -57,6 +60,10 @@ if DEBUG:
 
 @app.route('/env')
 def env():
+	"""Cette fonction génère la page environnement avec ses représentations graphiques
+
+	:return: renderer de la page avec ses variables associées
+    """
 	plot_canicule = ggen.CaniculePlot().main()
 	plot_fire = mgen.FirePlot().main()
 	
@@ -66,6 +73,10 @@ def env():
 
 @app.route('/gouv')
 def gouv():
+	"""Cette fonction génère la page gouvernance avec ses représentations graphiques
+
+	:return: renderer de la page avec ses variables associées
+    """
 	critical_alert = index_renderer.CriticalAlert().main()
 	G6_indic = ggen.PieChart('G6', "Diversification d'activité").plot()
 	G9_indic = ggen.BulletChart('G9', "Matériel mutualisé").plot()
@@ -74,6 +85,10 @@ def gouv():
 
 @app.route('/soc')
 def soc():
+	"""Cette fonction génère la page social avec ses représentations graphiques
+
+	:return: renderer de la page avec ses variables associées
+    """
 	S1_indic = ggen.BulletChart('S1', "Communication").plot()
 	S2_indic = ggen.BulletChart('S2', "Barrières douanières").plot()
 	S3_indic = ggen.PieChart('S3', "Diversification d'activité").plot() 
@@ -84,6 +99,10 @@ def soc():
 
 @app.route('/finance')
 def finance():
+	"""Cette fonction génère la page finance avec ses représentations graphiques
+
+	:return: renderer de la page avec ses variables associées
+    """
 	list_graph = ggen.FinancialChart('F1', 'F2').plot_bar()
 
 	return render_template('finance.html', ebitda=list_graph[0], endet=list_graph[1])
@@ -92,6 +111,10 @@ def finance():
 
 @app.route('/index')
 def index():
+	"""Cette fonction génère la page index avec ses représentations graphiques
+
+	:return: renderer de la page avec ses variables associées
+    """
 	scoring = index_renderer.Scoring().main()
 	critical_alert = index_renderer.CriticalAlert().main()
 
@@ -103,6 +126,10 @@ def index():
 
 @app.route('/questionnaire', methods=['GET', 'POST'])
 def set_up_q():
+	"""Cette fonction génère le questionaire
+
+	:return: renderer de la page avec ses variables associées
+    """
 	form = questionaire.QuestionairesAgri(request.form)
 
 	if form.validate_on_submit():
