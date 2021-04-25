@@ -30,7 +30,7 @@ class Scoring:
 
 class CriticalAlert:
     def __init__(self):
-      self.data = pandas.read_csv('https://raw.githubusercontent.com/Green-Investement-Dashboard/data/main/sample_data/liste_indic.csv')
+      self.data = pandas.read_csv('https://raw.githubusercontent.com/Green-Investement-Dashboard/data/main/data_eg/liste_indic.csv')
       self.data = self.data.set_index('Code input')
     
     def main(self):
