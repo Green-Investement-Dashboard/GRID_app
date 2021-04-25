@@ -10,19 +10,20 @@
       <div class="col-12">
         <div class="card card-chart">
           <div class="card-header">
-            <h3 class="card-title"><i class="tim-icons icon-bulb-63 text-primary"></i>Bienvenue!</h3>
+            <h3 class="card-title"><i class="tim-icons icon-bulb-63 text-primary"></i>Bienvenue !</h3>
           </div>
           <div class="card-body">
-              <p> Bienvenue sur GRID, votre outil permettant de transformer vos risques RSE en atout stratégique!</p>
-              <p> Comment utiliser ce dashboard? </p>
+              <p> Bienvenue sur GRID, votre outil de cartographie des risques RSE. </p>
+              <p> Comment utiliser ce dashboard ? </p>
               <ul> 
-                <li>Le résumé sur la page d'accueil:
+                <li>Vous retrouverez sur cette page une synthèse de l'étude de risques du Chateau FIFG :  
                   <ul>
-                    <li>Retrouvez le score ESG de l'exploitation dans la case supérieur ainsi que les alertes critiques</li>
-                    <li>La case données financières résume l'excédent brut d'exploitation et l'endettement</li>
+                    <li> Le score RSE de l'exploitation ; </li>
+                    <li> Les points de vigilance relevés par l'audit ;</li>
+                    <li>Les données financières (EBE et endettement).</li>
                   </ul>
                 </li> 
-                <li>Le détail du scoring et des données financières sur 4 pages: environement, social, gouvernance et finance
+                <li>Pour plus de détails, consultez les pages : environnement, social, gouvernance et finance. 
                 </li>
               </ul>
           </div>  
@@ -48,7 +49,7 @@
                 <div id="preview-textfield"><p id='score_soc'></p></div>
               </div>
               <div class="gauge">
-                <h3 style="text-align:center;">Score gouvernance</h4>
+                <h3 style="text-align:center;">Score de gouvernance</h4>
                 <canvas id="gouv" class="gauge_canvas"></canvas>
                 <div id="preview-textfield"><p id='score_gov'></p></div>
               </div>
@@ -62,7 +63,7 @@
       <div class="col-lg-6">
         <div class="card card-chart">
           <div class="card-header">
-            <h3 class="card-title"><i class="tim-icons icon-money-coins text-primary"></i>Données financières clés</h3>
+            <h3 class="card-title"><i class="tim-icons icon-money-coins text-primary"></i>Données financières</h3>
           </div>
           <div class="card-body">
             <div class="chart-area" id='ebitda'> </div>
@@ -73,24 +74,24 @@
       <div class="col-lg-6">
         <div class="card card-chart">
           <div class="card-header">
-            <h3 class="card-title"><i class="tim-icons icon-bell-55 text-primary"></i>Alertes critiques relevées par l'audit</h3>
+            <h3 class="card-title"><i class="tim-icons icon-bell-55 text-primary"></i>Points de vigilance relevés par l'audit</h3>
           </div>
           <div class="card-body">
-            <h4><i class="tim-icons icon-world2"></i>Facteurs à risques environnementaux:</h4>
+            <h4><i class="tim-icons icon-world2"></i>Facteurs de risques environnementaux</h4>
             <ul>
               {% for critical in critical_alert[0] %}
               <li>{{critical}}</li>
 
               {% endfor %}
             </ul>
-            <h4><i class="icon icon-heart-2"></i>   Facteurs à risques sociaux:</h4>
+            <h4><i class="icon icon-heart-2"></i>   Facteurs de risques sociaux</h4>
             <ul>
               {% for critical in critical_alert[1] %}
               <li>{{critical}}</li>
 
               {% endfor %}
             </ul>
-            <h4><i class="icon icon-multiple-11"></i>   Facteurs à risques gouvernementaux:</h4>
+            <h4><i class="icon icon-multiple-11"></i>   Facteurs de risques gouvernementaux</h4>
             <ul>
               {% for critical in critical_alert[2] %}
               <li>{{critical}}</li>
@@ -144,9 +145,9 @@
         color: "#000",  // Optional: Label text color
       },
       staticZones: [
-       {strokeStyle: "#e5f5e0", min: zone_env[0], max: zone_env[1]}, // Clair
-       {strokeStyle: "#a1d99b", min: zone_env[1], max: zone_env[2]}, // Un peu foncé  
-       {strokeStyle: "#31a354", min: zone_env[2], max: zone_env[3]}, // Foncé
+       {strokeStyle: "#74c476", min: zone_env[0], max: zone_env[1]}, // Clair
+       {strokeStyle: "#31a354", min: zone_env[1], max: zone_env[2]}, // Un peu foncé  
+       {strokeStyle: "#006d2c", min: zone_env[2], max: zone_env[3]}, // Foncé
       ],
     };
 
@@ -180,9 +181,9 @@
         color: "#000",  // Optional: Label text color
       },
       staticZones: [
-       {strokeStyle: "#e5f5e0", min: zone_soc[0], max: zone_soc[1]}, // Clair 
-       {strokeStyle: "#a1d99b", min: zone_soc[1], max: zone_soc[2]}, // Un peu foncé
-       {strokeStyle: "#31a354", min: zone_soc[2], max: zone_soc[3]}, // Foncé
+       {strokeStyle: "#74c476", min: zone_soc[0], max: zone_soc[1]}, // Clair 
+       {strokeStyle: "#31a354", min: zone_soc[1], max: zone_soc[2]}, // Un peu foncé
+       {strokeStyle: "#006d2c", min: zone_soc[2], max: zone_soc[3]}, // Foncé
       ],
     };
 
@@ -216,9 +217,9 @@
         color: "#000000",  // Optional: Label text color
       },
       staticZones: [
-       {strokeStyle: "#e5f5e0", min: zone_gov[0], max: zone_gov[1]}, // Clair
-       {strokeStyle: "#a1d99b", min: zone_gov[1], max: zone_gov[2]}, // Un peu foncé
-       {strokeStyle: "#31a354", min: zone_gov[2], max: zone_gov[3]}, // Foncé
+       {strokeStyle: "#74c476", min: zone_gov[0], max: zone_gov[1]}, // Clair
+       {strokeStyle: "#31a354", min: zone_gov[1], max: zone_gov[2]}, // Un peu foncé
+       {strokeStyle: "#006d2c", min: zone_gov[2], max: zone_gov[3]}, // Foncé
       ],
     };
 
