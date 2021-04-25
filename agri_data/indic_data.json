@@ -35,7 +35,7 @@
         {
             "index":0,
             "Code input":"E1",
-            "Ph\u00e9nom\u00e8ne dangereux":"Vague de froid",
+            "Ph\u00e9nom\u00e8ne dangereux":"Risque de temp\u00e9ratures extr\u00eames",
             "Valeur":null,
             "Critique":1.0,
             " Description ":null
@@ -43,7 +43,7 @@
         {
             "index":1,
             "Code input":"E2",
-            "Ph\u00e9nom\u00e8ne dangereux":"Brulure du soleil",
+            "Ph\u00e9nom\u00e8ne dangereux":"Risque d'incendie",
             "Valeur":null,
             "Critique":1.0,
             " Description ":null
@@ -101,7 +101,7 @@
             "Code input":"E9",
             "Ph\u00e9nom\u00e8ne dangereux":"Pollution de l'eau",
             "Valeur":null,
-            "Critique":1.0,
+            "Critique":null,
             " Description ":null
         },
         {
@@ -141,7 +141,7 @@
             "Code input":"E14",
             "Ph\u00e9nom\u00e8ne dangereux":"Maladie (perte de biodiversit\u00e9)",
             "Valeur":null,
-            "Critique":1.0,
+            "Critique":null,
             " Description ":null
         },
         {
@@ -181,7 +181,7 @@
             "Code input":"G2",
             "Ph\u00e9nom\u00e8ne dangereux":"Perte de savoir faire",
             "Valeur":null,
-            "Critique":1.0,
+            "Critique":null,
             " Description ":null
         },
         {
@@ -197,21 +197,21 @@
             "Code input":"G4",
             "Ph\u00e9nom\u00e8ne dangereux":"Manque de main d'\u0153uvre permanente qualifi\u00e9e",
             "Valeur":null,
-            "Critique":1.0,
+            "Critique":null,
             " Description ":null
         },
         {
             "index":21,
             "Code input":"G5",
-            "Ph\u00e9nom\u00e8ne dangereux":"Perte de comp\u00e9titivit\u00e9",
+            "Ph\u00e9nom\u00e8ne dangereux":"Manque de diversit\u00e9 d'activit\u00e9",
             "Valeur":null,
             "Critique":1.0,
             " Description ":null
         },
         {
             "index":22,
-            "Code input":"G8",
-            "Ph\u00e9nom\u00e8ne dangereux":"Perte d'autonomie",
+            "Code input":"G9",
+            "Ph\u00e9nom\u00e8ne dangereux":"Mutialisation du travail",
             "Valeur":null,
             "Critique":1.0,
             " Description ":null
@@ -245,7 +245,7 @@
             "Code input":"S4",
             "Ph\u00e9nom\u00e8ne dangereux":"Difficult\u00e9 d'appro en carburant",
             "Valeur":null,
-            "Critique":1.0,
+            "Critique":null,
             " Description ":null
         },
         {
@@ -277,7 +277,7 @@
             "Code input":"S8",
             "Ph\u00e9nom\u00e8ne dangereux":"Manque d'employ\u00e9",
             "Valeur":null,
-            "Critique":1.0,
+            "Critique":null,
             " Description ":null
         },
         {
