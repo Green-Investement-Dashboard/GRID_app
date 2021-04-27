@@ -15,3 +15,5 @@ geopandas
 plotly
 matplotlib
 tqdm
+qrcode
+pyotp
