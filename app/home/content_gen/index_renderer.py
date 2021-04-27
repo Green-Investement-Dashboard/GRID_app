@@ -1,3 +1,4 @@
+# -*- coding: utf-8 -*-
 """
 © GRID Team, 2021
 """
@@ -15,28 +16,20 @@ class Scoring:
     """Cette classe donne les données nécessaires au rendu des gauges indiquant les scores ESG 
     """
     def __init__ (self):
-      self.data = data_import.ReadData('scoring').read_json()
-        
-    
-    def bin (self):
-      """Génère les intervalles autour de la valeur moyenne
-      """
-      self.data['min'] = 0.0
-      self.data['low_avg'] = 0.9*self.data['average']
-      self.data['high_avg'] = 1.1*self.data['average']
+      #self.data = data_import.ReadData('scoring').read_json()
+      self.data =  data_import.ReadData('graph_data').read_json()
+      self.value_rg = data_import.ReadData('value_range').read_json()
     
     def main (self):
       """
         :return: liste de listes (une par indicateur) contenant pour chaque: sa valeur, la valeur max de l'echelle, une liste avec les intervalles de couleurs
         :rtype: list
         """
-      self.bin()
       list_output = []
-      for indic in self.data.index:
-        indic_val = [self.data.loc[indic, 'value']]
-        indic_val.append(self.data.loc[indic, 'max'])
-        indic_val.append([self.data.loc[indic, 'min'], self.data.loc[indic, 'low_avg'], self.data.loc[indic, 'high_avg'], float(self.data.loc[indic, 'max'])])
-        list_output.append(indic_val)
+      for indic in 'ESG':
+        indic_val = self.data.loc[f'{indic}0', 'list_y'][-1]
+        bin_val = self.value_rg.loc[f'{indic}0', 'Bin']
+        list_output.append([indic_val, bin_val])
     
       return list_output
 

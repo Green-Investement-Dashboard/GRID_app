@@ -121,10 +121,8 @@ def index():
 	critical_alert = index_renderer.CriticalAlert().main()
 
 	list_graph = ggen.FinancialChart('F1', 'F2').plot_bar()
-	#ebitda, endet = gen_graph.FinancialChart('F1', 'F2').plot_sgl_line()
-	ebitda_endet = ggen.FinancialChart('F1', 'F2').plot_mltpl_line()
 
-	return render_template('index.html', ebitda=list_graph[0], endet=list_graph[1], ebitda_endet = ebitda_endet, scoring=scoring, critical_alert = critical_alert)
+	return render_template('index.html', ebitda=list_graph[0], endet=list_graph[1], scoring=scoring, critical_alert = critical_alert)
 
 @app.route('/questionnaire', methods=['GET', 'POST'])
 def set_up_q():

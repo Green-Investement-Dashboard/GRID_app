@@ -1,3 +1,4 @@
+# -*- coding: utf-8 -*-
 """
 © GRID Team, 2021
 """
@@ -21,10 +22,8 @@ class BulletChart:
       :type addr: str
     """
     def __init__ (self, indic, indic_name):
-        self.data = data_import.ReadData('gauges_data').read_json()
-        #self.data = pandas.read_json('https://raw.githubusercontent.com/Green-Investement-Dashboard/data/main/data_eg/gauges_val.json', orient='table')
-
-        self.value_range = pandas.read_json('https://raw.githubusercontent.com/Green-Investement-Dashboard/data/main/data_eg/value_range.json', orient='table')
+        self.data = data_import.ReadData('graph_val').read_json()
+        self.value_range = data_import.ReadData('value_range').read_json()
         self.indic = indic
         self.indic_name = indic_name
 
@@ -34,18 +33,19 @@ class BulletChart:
         :return: objet json contenant le plot
         :rtype: json
         """
+        value = self.data.loc[self.indic, 'list_y'][-1]
         data = go.Indicator(mode = "gauge", 
                       gauge = {'shape': "bullet",
                                'steps': [
-                                   {'range': [self.value_range.loc[self.indic, 'Min'], self.value_range.loc[self.indic, 'Bin'][0]], 'color': "#e5f5e0"},
-                                   {'range': [self.value_range.loc[self.indic, 'Bin'][0], self.value_range.loc[self.indic, 'Bin'][1]], 'color': "#a1d99b"},
-                                   {'range': [self.value_range.loc[self.indic, 'Bin'][1], self.value_range.loc[self.indic, 'Max']], 'color': "#31a354"}
+                                   {'range': [self.value_range.loc[self.indic, 'Bin'][0], self.value_range.loc[self.indic, 'Bin'][1]], 'color': "#e5f5e0"},
+                                   {'range': [self.value_range.loc[self.indic, 'Bin'][1], self.value_range.loc[self.indic, 'Bin'][2]], 'color': "#a1d99b"},
+                                   {'range': [self.value_range.loc[self.indic, 'Bin'][2], self.value_range.loc[self.indic, 'Bin'][3]], 'color': "#31a354"}
                                    ],
-                               'axis': {'range': [self.value_range.loc[self.indic, 'Min'], self.value_range.loc[self.indic, 'Max']]},
+                               'axis': {'range': [self.value_range.loc[self.indic, 'Bin'][0], self.value_range.loc[self.indic, 'Bin'][-1]]},
                                'bar': {'color': "black"}
                                },
                       #title = {'text': f'<b>{self.indic_name}</b>'},
-                      value = self.data.loc[self.indic, 'Value'], 
+                      value = value, 
                       #delta = {'reference': 300},
                       domain = {'x': [0, 1], 'y': [0, 1]}
                       )
@@ -55,17 +55,17 @@ class BulletChart:
                            )
 
         fig = go.Figure(data, layout)
-        #fig.write_html("gauge.html")
+        #fig.write_html("html/gauge.html")
         plot_json = json.dumps(fig, cls=plotly.utils.PlotlyJSONEncoder)
 
-        if self.data.loc[self.indic, 'Value'] < self.value_range.loc[self.indic, 'Bin'][0]:
+        if value < self.value_range.loc[self.indic, 'Bin'][1]:
           color = 'red'
-        elif self.data.loc[self.indic, 'Value'] > self.value_range.loc[self.indic, 'Bin'][0] and self.data.loc[self.indic, 'Value'] <= self.value_range.loc[self.indic, 'Bin'][1]:
+        elif value > self.value_range.loc[self.indic, 'Bin'][1] and value <= self.value_range.loc[self.indic, 'Bin'][2]:
           color = 'yellow'
         else:
           color = 'red'
 
-        return {'graph':plot_json, 'title': self.indic_name, 'color':color, 'value':self.data.loc[self.indic, 'Value']}
+        return {'graph':plot_json, 'title': self.indic_name, 'color':color, 'value':value}
 
 class PieChart:
   """Cette classe génère les diagrames camembert
@@ -76,9 +76,7 @@ class PieChart:
       :type addr: str
     """
   def __init__ (self, indic, indic_name):
-    #self.data = pandas.read_json('https://raw.githubusercontent.com/Green-Investement-Dashboard/data/main/data_eg/graph_val.json', orient='table')
     self.data =  data_import.ReadData('graph_data').read_json()
-    self.value_range = pandas.read_json('https://raw.githubusercontent.com/Green-Investement-Dashboard/data/main/data_eg/value_range.json', orient='table')
     self.indic = indic
     self.indic_name = indic_name
     self.colors = ['#35978f', '#66c2a4', '#c7eae5', "#dfc27d"]
@@ -102,14 +100,18 @@ class PieChart:
 class FinancialChart:
   """Cette classe génère les diagrammes pour la partie finance
 
-    :param **args: le code indicateur au format Ex, Sx ou Gx (où x est un int)
+    :param *args: le code indicateur au format Ex, Sx ou Gx (où x est un int)
     :type indic: str
   """
   def __init__ (self, *args):
-    #self.data = pandas.read_json('https://raw.githubusercontent.com/Green-Investement-Dashboard/data/main/data_eg/financial_data.json', orient='table')
-    self.data =  data_import.ReadData('financial_data').read_json()
-    self.data['list_x'] = self.data.apply(lambda x: [pandas.to_datetime(date) for date in x['list_x']], axis=1)
-    self.list_indic = args
+    self.data =  data_import.ReadData('graph_data').read_json()
+    print(self.data)
+
+    if isinstance(args, str):
+      self.list_indic = [args]
+    else:
+      self.list_indic = list(args)
+
     self.color = '#3D3D34'
 
   def plot_bar(self):
@@ -121,6 +123,7 @@ class FinancialChart:
     list_graph = []
 
     for indic in self.list_indic:
+      list_x = [pandas.to_datetime(date) for date in self.data.loc[indic, 'list_x']]
       data = go.Bar(x=self.data.loc[indic, 'list_x'], y=self.data.loc[indic, 'list_y'], marker_color=self.color)
       layout = go.Layout(paper_bgcolor='rgba(61,61,51,0)', plot_bgcolor='rgba(0,0,0,0)',
                          xaxis_title='Date' , yaxis_title=self.data.loc[indic, 'name'], font=dict(color='#5cba47'), margin=dict(l=0, r=20, t=20, b=0),
@@ -142,6 +145,7 @@ class FinancialChart:
     list_graph = []
 
     for indic in self.list_indic:
+      list_x = [pandas.to_datetime(date) for date in self.data.loc[indic, 'list_x']]
       data = go.Scatter(x=self.data.loc[indic, 'list_x'], y=self.data.loc[indic, 'list_y'])
       layout = go.Layout(paper_bgcolor='rgba(61,61,51,0)', plot_bgcolor='rgba(0,0,0,0)',
                          xaxis_title='Date' , yaxis_title=self.data.loc[indic, 'name'], font=dict(color='#5cba47'), margin=dict(l=0, r=20, t=20, b=0)
@@ -162,6 +166,7 @@ class FinancialChart:
     fig = make_subplots(specs=[[{"secondary_y": True}]])
     secondary_axes = False
     for indic in self.list_indic:
+      list_x = [pandas.to_datetime(date) for date in self.data.loc[indic, 'list_x']]
       fig.add_trace(go.Scatter(x=self.data.loc[indic, 'list_x'], y=self.data.loc[indic, 'list_y'],
                                name=self.data.loc[indic, 'name']),
                     secondary_y=secondary_axes
@@ -232,10 +237,51 @@ class CaniculePlot:
       self.plot()
       
       return self.graphjson
-      
-      
-      
 
+
+class RadarChart:
+  """Cette classe est utilisée pour représenter le score de plusieurs """
+
+  def __init__ (self, *args):
+    self.data =  data_import.ReadData('graph_data').read_json()
+    self.val_rg = data_import.ReadData('value_range').read_json()
+    self.indic = args
+  
+  def data_prep(self):
+    """Preparation data pour format circulaire"""
+    self.r = []
+    self.theta = []
+    for indic in self.indic:
+      r.append(self.data.loc[indic[0], 'list_x'][-1])
+      theta.append(self.indic[1])
+
+  def range_bin (self):
+    self.val_max = self.val_rg.loc[list_indic, 'Max'].max()
+    self.val_min = self.val_rg.loc[list_indic, 'Max'].min()
+
+    self.r_bin = [[],[],[]]
+    self.r_theta = [[],[],[]]
+    
+    for a_bin in range(len(self.r_bin[0])):
+      for indic in self.indic:
+        r.append(self.val_rg.loc[indic[0], 'list_x'][-1])
+        theta.append(self.indic[1])
+
+
+
+  def plot(self):
+    """Actual plot"""
+    data = go.Scatterpolar(r=self.r,
+      theta = self.theta,
+      )
+
+    list_indic = [indic[0] for indic in self.indic]
+    val_max = self.val_rg.loc[list_indic, 'Max'].max()
+
+    layout = go.Layout(polar=dict(radialaxis=dict(visible=True, range=[0, val_max])),
+      show_legend=True)
+
+    fig = go.Figure(data=data, layout=layout)
 
 
     
