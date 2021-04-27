@@ -8,7 +8,7 @@ Sert à lire et écrire dans la db des logins
 """
 
 from flask_login import UserMixin
-from sqlalchemy import Binary, Column, Integer, String
+from sqlalchemy import Binary, Column, Integer, String, Boolean
 
 from app import db, login_manager
 
@@ -16,11 +16,13 @@ from app.base.util import hash_pass
 
 class User(db.Model, UserMixin):
 
-    __tablename__ = 'User'
+    __tablename__ = 'User2'
 
     id = Column(Integer, primary_key=True)
     username = Column(String, unique=True)
     email = Column(String, unique=True)
+    two_fa = Column(Boolean)
+    two_fa_key = Column(String)
     password = Column(Binary)
 
     def __init__(self, **kwargs):
@@ -29,13 +31,13 @@ class User(db.Model, UserMixin):
             # unpack it's value (when **kwargs is request.form, some values
             # will be a 1-element list)
             if hasattr(value, '__iter__') and not isinstance(value, str):
-                # the ,= unpack of a singleton fails PEP8 (travis flake8 test)
                 value = value[0]
 
             if property == 'password':
                 value = hash_pass( value ) # we need bytes here (not plain str)
                 
             setattr(self, property, value)
+
 
     def __repr__(self):
         return str(self.username)

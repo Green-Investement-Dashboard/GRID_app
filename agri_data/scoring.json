@@ -26,7 +26,7 @@
     "data":[
         {
             "indicateur":"environement",
-            "value":54,
+            "value":62,
             "average":80,
             "max":100
         },
@@ -38,7 +38,7 @@
         },
         {
             "indicateur":"gouvernance",
-            "value":93,
+            "value":57,
             "average":40,
             "max":100
         }

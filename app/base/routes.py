@@ -14,7 +14,8 @@ from flask_login import (
     login_user,
     logout_user
 )
-import pandas
+import pandas, os
+import pyotp
 
 from app import db, login_manager
 
@@ -34,6 +35,8 @@ import json
 import run
 from agri_data import data_draw
 
+import qrcode
+
 @blueprint.route('/')
 def route_default():
     return redirect(url_for('base_blueprint.login'))
@@ -43,30 +46,85 @@ def route_default():
 @blueprint.route('/login', methods=['GET', 'POST'])
 def login():
     login_form = LoginForm(request.form)
-    if 'login' in request.form:
-        # read form data
+    if 'key' in request.form:
+        print('C1', request.form)
         username = request.form['username']
         password = request.form['password']
+        var_key = request.form['key']
 
-        # Locate user
         user = User.query.filter_by(username=username).first()
-        
-        # Check the password
-        if user and verify_pass( password, user.password):
+        key = user.two_fa_key
+        current_var_key = pyotp.TOTP(key).now()
 
+        if user and verify_pass( password, user.password):
+            print('C1.1', request.form)
+            if var_key == current_var_key:
+                print('C1.1.1', request.form)
+                login_user(user)
+                data_draw.RandomDraw().main()
+
+                render = run.index()
+                return render
+            else:
+                print('C1.1.2', request.form)
+                return render_template('accounts/login.html', msg = 'Mauvaise clé',
+                    two_fa=True, pwd = True, user=user, form=login_form)
+
+        else:
+            print('C2.1', request.form)
+            return render_template('accounts/login.html', msg = 'Mauvais mot de passe',
+                    two_fa=True, pwd = True, user=user, form=login_form)
+
+    elif 'login' in request.form:
+        # read form data
+        username = request.form['username']
+        user = User.query.filter_by(username=username).first()
+        print('C2', request.form)
+        if user:
+            if 'password' in request.form:
+                password = request.form['password']
+                print('C2.1')
+                if user and verify_pass( password, user.password):
+                    print('C2.1.1')
+                    login_user(user)
+                    data_draw.RandomDraw().main()
+
+                    render = run.index()
+                    return render
+                else:
+                    print('C.1.2', request.form)
+                    return render_template('accounts/login.html', msg = 'Mauvais mot de passe',
+                        two_fa=False, pwd = True, user=user, form=login_form)
+
+            else :
+                print('C2.2')
+                if user.two_fa:
+                    print('C2.2.1')
+                    print(f'2FA log with key {user.two_fa_key}')
+                    return render_template('accounts/login.html', msg = 'Rentrer mot de passe et clé unique',
+                        two_fa=True, pwd = True, user=user, form=login_form)
+
+                else:
+                    print('C2.2.2')
+                    print('Not 2FA')
+                    return render_template('accounts/login.html', msg = 'Rentrer mot de passe et clé unique',
+                        two_fa=False, pwd = True, user=user, form=login_form)
+        else:
+            return redirect(f"/register")
+
+        """
             login_user(user)
             data_draw.RandomDraw().main()
 
             render = run.index()
             return render
-
-
+        """
         # Something (user or pass) is not ok
         return render_template( 'accounts/login.html', msg='Wrong user or password', form=login_form)
 
     if not current_user.is_authenticated:
         return render_template( 'accounts/login.html',
-                                form=login_form)
+                                form=login_form, user='test')
 
     render = run.index()
     return render
@@ -77,38 +135,100 @@ def register():
     login_form = LoginForm(request.form)
     create_account_form = CreateAccountForm(request.form)
     if 'register' in request.form:
+        if 'cle' not in request.form.keys():
+            username  = request.form['username']
+            email     = request.form['email'   ]
 
-        username  = request.form['username']
-        email     = request.form['email'   ]
+            # Check usename exists
+            user = User.query.filter_by(username=username).first()
+            
+            if user:
+                return render_template( 'accounts/register.html', 
+                                        msg='Username already registered',
+                                        success=False,
+                                        register = True,
+                                        registration = True,
+                                        form=create_account_form)
 
-        # Check usename exists
-        user = User.query.filter_by(username=username).first()
-        if user:
+            # Check email exists
+            user = User.query.filter_by(email=email).first()
+            if user:
+                return render_template( 'accounts/register.html', 
+                                        msg='Email already registered', 
+                                        success=False,
+                                        register = True,
+                                        registration = True,
+                                        form=create_account_form)
+                
+            type_auth = 'totp'
+            issuer = 'GRID'
+            account = username
+
+            key = pyotp.random_base32()
+            url = f'otpauth://{type_auth}/{issuer}:{account}?secret={key}'
+
+            current = os.path.normcase(os.path.dirname(os.path.realpath(__file__)))
+            file_name='qrcode_test.png'
+            full_path = os.path.normcase(f'{current}/static/assets/img/{file_name}')
+
+            img = qrcode.make(url)
+            img.save(full_path)
+
+            data = {'two_fa' : True, 'two_fa_key': key}
+            
+            user = User(**request.form, 
+                **data
+                )
+            print(user)
+            
+            db.session.add(user)
+            db.session.commit()
+            
             return render_template( 'accounts/register.html', 
-                                    msg='Username already registered',
-                                    success=False,
+                                    img=file_name, 
+                                    register = True,
+                                    registration=False,
+                                    form=create_account_form)
+            
+
+        else:
+            return render_template( 'accounts/register.html', 
+                                    msg='User created please <a href="/login">login</a>', 
+                                    success=True,
+                                    register = False,
+                                    registration=True,
                                     form=create_account_form)
 
-        # Check email exists
-        user = User.query.filter_by(email=email).first()
-        if user:
-            return render_template( 'accounts/register.html', 
-                                    msg='Email already registered', 
-                                    success=False,
+            """
+            user = User.query.filter_by(username=username).first()
+            key = user.two_fa_key
+            current_var_key = pyotp.TOTP(key).now()
+
+            current = os.path.normcase(os.path.dirname(os.path.realpath(__file__)))
+            file_name='qrcode_test.png'
+            full_path = os.path.normcase(f'{current}/static/assets/img/{file_name}')
+
+            print (int(request.form['cle']))
+            print(current_key)
+            print(type(current_key))
+
+            if request.form['cle'] == current_key:
+                print('hey')
+                return render_template( 'accounts/register.html', 
+                                    msg='User created please <a href="/login">login</a>', 
+                                    success=True,
+                                    register = False,
+                                    registration=True,
                                     form=create_account_form)
-
-        # else we can create the user
-        user = User(**request.form)
-        db.session.add(user)
-        db.session.commit()
-
-        return render_template( 'accounts/register.html', 
-                                msg='User created please <a href="/login">login</a>', 
-                                success=True,
-                                form=create_account_form)
+            else:
+                return render_template( 'accounts/register.html',
+                                    register = True,
+                                    registration=False,
+                                    form=create_account_form)
+            """
 
     else:
-        return render_template( 'accounts/register.html', form=create_account_form)
+        return render_template( 'accounts/register.html', form=create_account_form, register = True, registration=True)
 
 @blueprint.route('/logout')
 def logout():

@@ -36,11 +36,13 @@
                 <div class="col-md-3 px-md-1">
                   <div class="form-group">
                     <label>Nom utilisateur</label>
-                    {{ form.username(class="form-control", value='test') }}
+                    {{ form.username(class="form-control", value=user) }}
                   </div>
                 </div>
 
               </div>
+
+              {% if pwd %}
               <div class="row">
 
                 <div class="col-md-3 px-md-1">
@@ -51,6 +53,21 @@
                 </div>
 
               </div>
+              {% endif %}
+
+              {% if two_fa %}
+              <div class="row">
+
+                <div class="col-md-3 px-md-1">
+                  <div class="form-group">
+                    <label>Clé</label>
+                    {{ form.key(class="form-control", value='') }}
+                  </div>
+                </div>
+
+              </div>
+              {% endif %}
+
               <p>Valeurs par défaut: <b>test</b> et <b>test</b></p>
           </div>
           <div class="card-footer">
