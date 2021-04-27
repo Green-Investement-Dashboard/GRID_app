@@ -22,7 +22,7 @@ class BulletChart:
       :type addr: str
     """
     def __init__ (self, indic, indic_name):
-        self.data = data_import.ReadData('graph_val').read_json()
+        self.data = data_import.ReadData('graph_data').read_json()
         self.value_range = data_import.ReadData('value_range').read_json()
         self.indic = indic
         self.indic_name = indic_name
