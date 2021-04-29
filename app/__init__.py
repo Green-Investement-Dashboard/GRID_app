@@ -17,7 +17,7 @@ login_manager = LoginManager()
 
 SAVE_MODE, DEMO_MODE = [False, False]
 #SAVE_MODE, DEMO_MODE = [True, False]
-#SAVE_MODE, DEMO_MODE = [False, True]
+SAVE_MODE, DEMO_MODE = [False, True]
 
 def register_extensions(app):
     db.init_app(app)
