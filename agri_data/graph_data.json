@@ -6,6 +6,10 @@
                 "type":"string"
             },
             {
+                "name":"name",
+                "type":"string"
+            },
+            {
                 "name":"list_x",
                 "type":"string"
             },
@@ -22,77 +26,101 @@
     "data":[
         {
             "index":"E0",
+            "name":null,
             "list_x":[
-                2,
-                0
+
             ],
             "list_y":[
-                2,
-                0
+                70
             ]
         },
         {
             "index":"E1",
+            "name":null,
             "list_x":null,
             "list_y":null
         },
         {
             "index":"E2",
+            "name":null,
             "list_x":null,
             "list_y":null
         },
         {
             "index":"E3",
+            "name":null,
             "list_x":null,
             "list_y":null
         },
         {
             "index":"E4",
+            "name":null,
             "list_x":null,
             "list_y":null
         },
         {
             "index":"E5",
+            "name":null,
             "list_x":null,
             "list_y":null
         },
         {
             "index":"E6",
+            "name":null,
             "list_x":null,
             "list_y":null
         },
         {
             "index":"E7",
+            "name":null,
             "list_x":null,
             "list_y":null
         },
         {
             "index":"E8",
+            "name":null,
             "list_x":null,
             "list_y":null
         },
         {
             "index":"E9",
+            "name":null,
             "list_x":null,
             "list_y":null
         },
         {
             "index":"S0",
-            "list_x":null,
-            "list_y":null
+            "name":null,
+            "list_x":[
+
+            ],
+            "list_y":[
+                52
+            ]
         },
         {
             "index":"S1",
-            "list_x":null,
-            "list_y":null
+            "name":null,
+            "list_x":[
+
+            ],
+            "list_y":[
+                60
+            ]
         },
         {
             "index":"S2",
-            "list_x":null,
-            "list_y":null
+            "name":null,
+            "list_x":[
+
+            ],
+            "list_y":[
+                10
+            ]
         },
         {
             "index":"S3",
+            "name":null,
             "list_x":[
                 "Tr\u00e8s satisfaisant",
                 "Satisfaisant",
@@ -106,56 +134,71 @@
         },
         {
             "index":"S4",
+            "name":null,
             "list_x":null,
             "list_y":null
         },
         {
             "index":"S5",
+            "name":null,
             "list_x":null,
             "list_y":null
         },
         {
             "index":"S6",
+            "name":null,
             "list_x":null,
             "list_y":null
         },
         {
             "index":"S7",
+            "name":null,
             "list_x":null,
             "list_y":null
         },
         {
             "index":"G0",
-            "list_x":null,
-            "list_y":null
+            "name":null,
+            "list_x":[
+
+            ],
+            "list_y":[
+                66
+            ]
         },
         {
             "index":"G1",
+            "name":null,
             "list_x":null,
             "list_y":null
         },
         {
             "index":"G2",
+            "name":null,
             "list_x":null,
             "list_y":null
         },
         {
             "index":"G3",
+            "name":null,
             "list_x":null,
             "list_y":null
         },
         {
             "index":"G4",
+            "name":null,
             "list_x":null,
             "list_y":null
         },
         {
             "index":"G5",
+            "name":null,
             "list_x":null,
             "list_y":null
         },
         {
             "index":"G6",
+            "name":null,
             "list_x":[
                 "Vente directe",
                 "Coop\u00e9rative",
@@ -169,23 +212,63 @@
         },
         {
             "index":"G7",
+            "name":null,
             "list_x":null,
             "list_y":null
         },
         {
             "index":"G8",
+            "name":null,
             "list_x":null,
             "list_y":null
         },
         {
             "index":"G9",
+            "name":null,
+            "list_x":[
+
+            ],
+            "list_y":[
+                30
+            ]
+        },
+        {
+            "index":"G10",
+            "name":null,
             "list_x":null,
             "list_y":null
         },
         {
-            "index":"G10",
-            "list_x":null,
-            "list_y":null
+            "index":"F1",
+            "name":"EBITDA",
+            "list_x":[
+                "2017-01-01",
+                "2018-01-01",
+                "2019-01-01",
+                "2020-01-01"
+            ],
+            "list_y":[
+                1133.69,
+                1295.11,
+                1514.66,
+                1904.23
+            ]
+        },
+        {
+            "index":"F2",
+            "name":"Endetement",
+            "list_x":[
+                "2017-01-01",
+                "2018-01-01",
+                "2019-01-01",
+                "2020-01-01"
+            ],
+            "list_y":[
+                1.47,
+                1.87,
+                2.3,
+                2.58
+            ]
         }
     ]
 }

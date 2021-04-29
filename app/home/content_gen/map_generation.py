@@ -11,6 +11,7 @@ import plotly
 import tqdm
 import numpy
 from agri_data import data_import
+from app import SAVE_MODE, DEMO_MODE
 
 class CaniculePlot:
     """Cette classe génère une heat map des canicules sur la base des données de Copernicus.
@@ -263,19 +264,34 @@ class FirePlot:
                            )
         
         #fig.write_html("fire.html") #utilisé en phase de test
-        plot_json = json.dumps(fig, cls=plotly.utils.PlotlyJSONEncoder)
+        self.plot_json = json.dumps(fig, cls=plotly.utils.PlotlyJSONEncoder)
 
-        return plot_json
+    def save (self):
+      if SAVE_MODE:
+        with open(os.path.normcase(f"{self.current}/json_files/FireMap.json"), "w") as outfile:
+          outfile.write(self.plot_json)
+          print(f'Saved FireMap.json')
+
+    def open (self):
+      with open(os.path.normcase(f"{self.current}/json_files/FireMap.json"), 'r') as openfile:
+        self.plot_json = json.dumps(json.load(openfile))
     
     def main(self):
-        """Fonction lançant le tout
+      """Fonction lançant le tout
 
-        :return: objet json
-        :rtype: json
-        """
+      :return: objet json
+      :rtype: json
+      """
+      if DEMO_MODE:
+        self.open()
+
+      else:
         self.read_json()
-        plot_json = self.plot_cursor()
-        return plot_json
+        self.plot_cursor()
+
+      self.save()
+
+      return self.plot_json
         
          
          

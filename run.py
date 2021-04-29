@@ -80,8 +80,8 @@ def gouv():
 	:return: renderer de la page avec ses variables associées
     """
 	critical_alert = index_renderer.CriticalAlert().main()
-	G6_indic = ggen.PieChart('G6', "Diversification d'activité").plot()
-	G9_indic = ggen.BulletChart('G9', "Matériel mutualisé").plot()
+	G6_indic = ggen.PieChart('G6', "Diversification d'activité").main()
+	G9_indic = ggen.BulletChart('G9', "Matériel mutualisé").main()
 
 	return render_template('gouvernance.html', G6_indic=G6_indic, G9_indic=G9_indic, critical_alert = critical_alert)
 
@@ -91,9 +91,9 @@ def soc():
 
 	:return: renderer de la page avec ses variables associées
     """
-	S1_indic = ggen.BulletChart('S1', "Communication").plot()
-	S2_indic = ggen.BulletChart('S2', "Barrières douanières").plot()
-	S3_indic = ggen.PieChart('S3', "Diversification d'activité").plot() 
+	S1_indic = ggen.BulletChart('S1', "Communication").main()
+	S2_indic = ggen.BulletChart('S2', "Barrières douanières").main()
+	S3_indic = ggen.PieChart('S3', "Diversification d'activité").main() 
 	critical_alert = index_renderer.CriticalAlert().main()
 
 	return render_template('social.html', bullet_charts = [S1_indic, S2_indic], S3_indic = S3_indic,
@@ -105,7 +105,7 @@ def finance():
 
 	:return: renderer de la page avec ses variables associées
     """
-	list_graph = ggen.FinancialChart('F1', 'F2').plot_bar()
+	list_graph = ggen.FinancialChart('plot_bar', 'F1', 'F2').main()
 
 	return render_template('finance.html', ebitda=list_graph[0], endet=list_graph[1])
 
@@ -120,11 +120,9 @@ def index():
 	scoring = index_renderer.Scoring().main()
 	critical_alert = index_renderer.CriticalAlert().main()
 
-	list_graph = ggen.FinancialChart('F1', 'F2').plot_bar()
-	#ebitda, endet = gen_graph.FinancialChart('F1', 'F2').plot_sgl_line()
-	ebitda_endet = ggen.FinancialChart('F1', 'F2').plot_mltpl_line()
+	list_graph = ggen.FinancialChart('plot_bar', 'F1', 'F2').main()
 
-	return render_template('index.html', ebitda=list_graph[0], endet=list_graph[1], ebitda_endet = ebitda_endet, scoring=scoring, critical_alert = critical_alert)
+	return render_template('index.html', ebitda=list_graph[0], endet=list_graph[1], scoring=scoring, critical_alert = critical_alert)
 
 @app.route('/questionnaire', methods=['GET', 'POST'])
 def set_up_q():
@@ -141,8 +139,6 @@ def set_up_q():
 		return render_template('questionaire.html',  end=True, message= 'Merci {}, données enregistrées'.format(form.name_exploit.data), table = result)	
 
 	return render_template('questionaire.html',  end=False, form=form)
-
-
 
 if __name__ == "__main__":
 	app.run()
