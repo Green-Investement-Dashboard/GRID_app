@@ -5,6 +5,7 @@
 import pandas
 import numpy
 import os
+from app import SAVE_MODE, DEMO_MODE
 
 class RandomDraw:
 	"""Cette classe télécharge les données de GitHub et les stocke en local. Pour certains jeux de données, ils sont modifiés par un tri 
@@ -55,7 +56,6 @@ class RandomDraw:
 		print('Saved Value range')
 
 
-
 	def financial_draw (self):
 		"""Randomisation des données financières en 2 étapes:
 		1- Selection d'une valeur initiale alétoire dans un intervalle
@@ -83,8 +83,11 @@ class RandomDraw:
 	
 
 	def main(self):
-		self.data_agri()
-		self.graph_val()
-		self.indic_critique()
-		self.value_rg()
-		print('data_generated')
+		if DEMO_MODE:
+			print('Demo mode')
+		else:
+			self.data_agri()
+			self.graph_val()
+			self.indic_critique()
+			self.value_rg()
+			print('data_generated')

@@ -12,6 +12,7 @@ import numpy
 from plotly.subplots import make_subplots
 from agri_data import data_import
 import os
+from app import SAVE_MODE, DEMO_MODE
 
 class BulletChart:
     """Cette classe génère une échelle à 3 couleurs pour un indicateur donné
@@ -22,50 +23,84 @@ class BulletChart:
       :type addr: str
     """
     def __init__ (self, indic, indic_name):
-        self.data = data_import.ReadData('graph_data').read_json()
-        self.value_range = data_import.ReadData('value_range').read_json()
-        self.indic = indic
-        self.indic_name = indic_name
+      self.data = data_import.ReadData('graph_data').read_json()
+      self.value_range = data_import.ReadData('value_range').read_json()
+      self.indic = indic
+      self.indic_name = indic_name
+      self.current = os.path.normcase(os.path.dirname(os.path.realpath(__file__)))
 
     def plot(self):
-        """Les données sont importées depuis l'__init__
+      """Les données sont importées depuis l'__init__
 
-        :return: objet json contenant le plot
-        :rtype: json
-        """
-        value = self.data.loc[self.indic, 'list_y'][-1]
-        data = go.Indicator(mode = "gauge", 
-                      gauge = {'shape': "bullet",
-                               'steps': [
-                                   {'range': [self.value_range.loc[self.indic, 'Bin'][0], self.value_range.loc[self.indic, 'Bin'][1]], 'color': "#e5f5e0"},
-                                   {'range': [self.value_range.loc[self.indic, 'Bin'][1], self.value_range.loc[self.indic, 'Bin'][2]], 'color': "#a1d99b"},
-                                   {'range': [self.value_range.loc[self.indic, 'Bin'][2], self.value_range.loc[self.indic, 'Bin'][3]], 'color': "#31a354"}
-                                   ],
-                               'axis': {'range': [self.value_range.loc[self.indic, 'Bin'][0], self.value_range.loc[self.indic, 'Bin'][-1]]},
-                               'bar': {'color': "black"}
-                               },
-                      #title = {'text': f'<b>{self.indic_name}</b>'},
-                      value = value, 
-                      #delta = {'reference': 300},
-                      domain = {'x': [0, 1], 'y': [0, 1]}
-                      )
-        
-        layout = go.Layout(height=250, 
-                     paper_bgcolor='rgba(61,61,51,0.01)', plot_bgcolor='rgba(0,0,0,0)', font=dict(color='#5cba47'),
-                           )
+      :return: objet json contenant le plot
+      :rtype: json
+      """
+      self.value = self.data.loc[self.indic, 'list_y'][-1]
+      data = go.Indicator(mode = "gauge", 
+                    gauge = {'shape': "bullet",
+                             'steps': [
+                                 {'range': [self.value_range.loc[self.indic, 'Bin'][0], self.value_range.loc[self.indic, 'Bin'][1]], 'color': "#e5f5e0"},
+                                 {'range': [self.value_range.loc[self.indic, 'Bin'][1], self.value_range.loc[self.indic, 'Bin'][2]], 'color': "#a1d99b"},
+                                 {'range': [self.value_range.loc[self.indic, 'Bin'][2], self.value_range.loc[self.indic, 'Bin'][3]], 'color': "#31a354"}
+                                 ],
+                             'axis': {'range': [self.value_range.loc[self.indic, 'Bin'][0], self.value_range.loc[self.indic, 'Bin'][-1]]},
+                             'bar': {'color': "black"}
+                             },
+                    #title = {'text': f'<b>{self.indic_name}</b>'},
+                    value = self.value, 
+                    #delta = {'reference': 300},
+                    domain = {'x': [0, 1], 'y': [0, 1]}
+                    )
+      
+      layout = go.Layout(height=250, 
+                   paper_bgcolor='rgba(61,61,51,0.01)', plot_bgcolor='rgba(0,0,0,0)', font=dict(color='#5cba47'),
+                         )
 
-        fig = go.Figure(data, layout)
-        #fig.write_html("html/gauge.html")
-        plot_json = json.dumps(fig, cls=plotly.utils.PlotlyJSONEncoder)
+      fig = go.Figure(data, layout)
+      #fig.write_html("html/gauge.html")
+      self.plot_json = json.dumps(fig, cls=plotly.utils.PlotlyJSONEncoder)
 
-        if value < self.value_range.loc[self.indic, 'Bin'][1]:
-          color = 'red'
-        elif value > self.value_range.loc[self.indic, 'Bin'][1] and value <= self.value_range.loc[self.indic, 'Bin'][2]:
-          color = 'yellow'
-        else:
-          color = 'red'
 
-        return {'graph':plot_json, 'title': self.indic_name, 'color':color, 'value':value}
+      if self.value < self.value_range.loc[self.indic, 'Bin'][1]:
+        self.color = 'red'
+      elif self.value > self.value_range.loc[self.indic, 'Bin'][1] and self.value <= self.value_range.loc[self.indic, 'Bin'][2]:
+        self.color = 'yellow'
+      else:
+        self.color = 'red'
+
+    def save (self):
+      if SAVE_MODE:
+        with open(os.path.normcase(f"{self.current}/json_files/BulletChart_{self.indic}.json"), "w") as outfile:
+          outfile.write(self.plot_json)
+          print(f'Saved BulletChart_{self.indic}.json')
+        with open(os.path.normcase(f"{self.current}/json_files/BulletChart_para_{self.indic}.txt"), "w") as outfile:
+          outfile.writelines(self.indic_name + '\n')
+          outfile.writelines(self.color + '\n')
+          outfile.writelines(str(self.value) + '\n')
+
+    def open (self):
+      with open(os.path.normcase(f"{self.current}/json_files/BulletChart_{self.indic}.json"), 'r') as openfile:
+        plot_json = json.load(openfile)
+        self.plot_json = json.dumps(plot_json)
+
+      with open(os.path.normcase(f"{self.current}/json_files/BulletChart_para_{self.indic}.txt"), "r") as outfile:
+        list_lines = outfile.readlines()
+        self.indic_name = list_lines[0]
+        self.color = list_lines [1]
+        self.value = list_lines [2]
+
+    def main(self):
+      if DEMO_MODE:
+        self.open()
+        self.color = 'red'
+
+      else:
+        self.plot()
+
+      self.save()
+      return {'graph':self.plot_json, 'title': self.indic_name, 'color':self.color, 'value':self.value}
+
+
 
 class PieChart:
   """Cette classe génère les diagrames camembert
@@ -80,6 +115,7 @@ class PieChart:
     self.indic = indic
     self.indic_name = indic_name
     self.colors = ['#35978f', '#66c2a4', '#c7eae5', "#dfc27d"]
+    self.current = os.path.normcase(os.path.dirname(os.path.realpath(__file__)))
 
   def plot(self):
     """Les données sont importées depuis l'__init__
@@ -94,8 +130,27 @@ class PieChart:
                            )
     fig = go.Figure(data, layout)
     #fig.write_html("pie_ch.html")
-    plot_json = json.dumps(fig, cls=plotly.utils.PlotlyJSONEncoder)
-    return plot_json
+    self.plot_json = json.dumps(fig, cls=plotly.utils.PlotlyJSONEncoder)
+
+  def save (self):
+    if SAVE_MODE:
+      with open(os.path.normcase(f"{self.current}/json_files/PieChart_{self.indic}.json"), "w") as outfile:
+        outfile.write(self.plot_json)
+        print(f'Saved BulletChart_{self.indic}.json')
+
+  def open (self):
+    with open(os.path.normcase(f"{self.current}/json_files/PieChart_{self.indic}.json"), 'r') as openfile:
+      self.plot_json = json.dumps(json.load(openfile))
+
+  def main(self):
+    if DEMO_MODE:
+      self.open()
+
+    else:
+      self.plot()
+
+    self.save()
+    return self.plot_json
 
 class FinancialChart:
   """Cette classe génère les diagrammes pour la partie finance
@@ -103,9 +158,10 @@ class FinancialChart:
     :param *args: le code indicateur au format Ex, Sx ou Gx (où x est un int)
     :type indic: str
   """
-  def __init__ (self, *args):
+  def __init__ (self, type_graph, *args):
     self.data =  data_import.ReadData('graph_data').read_json()
-    print(self.data)
+    self.type = type_graph
+    self.current = os.path.normcase(os.path.dirname(os.path.realpath(__file__)))
 
     if isinstance(args, str):
       self.list_indic = [args]
@@ -120,7 +176,7 @@ class FinancialChart:
         :return: list d'objet json
         :rtype: list[json]
     """
-    list_graph = []
+    self.list_graph = []
 
     for indic in self.list_indic:
       list_x = [pandas.to_datetime(date) for date in self.data.loc[indic, 'list_x']]
@@ -129,12 +185,9 @@ class FinancialChart:
                          xaxis_title='Date' , yaxis_title=self.data.loc[indic, 'name'], font=dict(color='#5cba47'), margin=dict(l=0, r=20, t=20, b=0),
                          )
       fig = go.Figure(data=data, layout=layout)
-      graphjson = json.dumps(fig, cls=plotly.utils.PlotlyJSONEncoder)
-      list_graph.append(graphjson)
+      plot_json = json.dumps(fig, cls=plotly.utils.PlotlyJSONEncoder)
+      self.list_graph.append(plot_json)
       #fig.write_html(f"{indic}.html")
-    a,b=list_graph
-
-    return list_graph
 
   def plot_sgl_line (self):
     """Les données sont importées depuis l'__init__. Génère un graphique ligne
@@ -142,7 +195,7 @@ class FinancialChart:
         :return: list d'objet json
         :rtype: list[json]
     """
-    list_graph = []
+    self.list_graph = []
 
     for indic in self.list_indic:
       list_x = [pandas.to_datetime(date) for date in self.data.loc[indic, 'list_x']]
@@ -151,11 +204,10 @@ class FinancialChart:
                          xaxis_title='Date' , yaxis_title=self.data.loc[indic, 'name'], font=dict(color='#5cba47'), margin=dict(l=0, r=20, t=20, b=0)
                          )
       fig = go.Figure(data=data, layout=layout)
-      graphjson = json.dumps(fig, cls=plotly.utils.PlotlyJSONEncoder)
-      list_graph.append(graphjson)
+      plot_json = json.dumps(fig, cls=plotly.utils.PlotlyJSONEncoder)
+      self.list_graph.append(plot_json)
       #fig.write_html(f"{indic}_sgl.html")
 
-    return list_graph
 
   def plot_mltpl_line (self):
     """Les données sont importées depuis l'__init__. Génère un graphique ligne avec 2 axes y
@@ -180,9 +232,52 @@ class FinancialChart:
       secondary_axes=True
 
     #fig.write_html(f"{indic}_mtpl.html")  
-    graphjson = json.dumps(fig, cls=plotly.utils.PlotlyJSONEncoder)
+    self.list_graph = [json.dumps(fig, cls=plotly.utils.PlotlyJSONEncoder)]
 
-    return graphjson
+  def save (self):
+    if SAVE_MODE:
+      if self.type in ['plot_bar', 'plot_sgl_line']:
+        for graph, indic in zip(self.list_graph, self.list_indic):
+          with open(os.path.normcase(f"{self.current}/json_files/FinancialChart_{self.type}_{indic}.json"), "w") as outfile:
+            outfile.write(graph)
+            print(f'Saved FinancialChart_{self.type}_{indic}.json')
+      else:
+        indic = f'{self.list_indic[0]}_{self.list_indic[1]}'
+        with open(os.path.normcase(f"{self.current}/json_files/FinancialChart_{self.type}_{indic}.json"), "w") as outfile:
+            outfile.write(self.list_graph[0])
+            print(f'Saved {self.current}/json_files/FinancialChart_{self.type}_{indic}.json')
+
+  def open (self):
+    self.list_graph = []
+    if self.type in ['plot_bar', 'plot_sgl_line']:
+      for indic in self.list_indic:
+        with open(os.path.normcase(f"{self.current}/json_files/FinancialChart_{self.type}_{indic}.json"), "r") as openfile:
+          plot_json = json.load(openfile)
+          self.list_graph.append(json.dumps(plot_json))
+    else:
+      indic = f'{self.list_indic[0]}_{self.list_indic[1]}'
+      with open(os.path.normcase(f"{self.current}/json_files/FinancialChart_{self.type}_{indic}.json"), "r") as openfile:
+          plot_json = json.load(openfile)
+          self.list_graph.append(json.dumps(plot_json))
+
+
+  def main(self):
+    if DEMO_MODE:
+      self.open()
+
+    else: 
+      if self.type == 'plot_bar':
+        self.plot_bar()
+
+      elif self.type == 'plot_sgl_line':
+        self.plot_sgl_line()
+
+      elif self.type == 'plot_mltpl_line':
+        self.plot_mltpl_line()
+        
+    self.save()
+    return self.list_graph
+
 
 class CaniculePlot:
   """Cette classe génère le graphique des canicules dans la page Environnement.
@@ -193,6 +288,7 @@ class CaniculePlot:
     self.file_name='data/full_data_heatwave.json'
     self.full_path = os.path.normcase(f'{self.current}/{self.file_name}')
     self.df = pandas.read_json(self.full_path, orient='table')
+    self.current = os.path.normcase(os.path.dirname(os.path.realpath(__file__)))
 
     self.agri_data =  data_import.ReadData('data_agri').read_json()
 
@@ -213,7 +309,7 @@ class CaniculePlot:
     
 
   def plot (self):
-      """Plot un graphique ligne et stocke l'object json dans self.graphjson
+      """Plot un graphique ligne et stocke l'object json dans self.plot_json
       """
       data_extract = self.df.loc[(self.lat, self.lon, slice(None)), ['HWD_EU_climate']].reset_index()
       
@@ -222,21 +318,36 @@ class CaniculePlot:
                          xaxis_title='Date' , yaxis_title='Nombre de jours de canicules', font=dict(color='#5cba47'), margin=dict(l=0, r=20, t=20, b=0)
                          )
       fig = go.Figure(data=data, layout=layout)
-      self.graphjson = json.dumps(fig, cls=plotly.utils.PlotlyJSONEncoder)
+      self.plot_json = json.dumps(fig, cls=plotly.utils.PlotlyJSONEncoder)
       
-  
+  def save (self):
+      if SAVE_MODE:
+        with open(os.path.normcase(f"{self.current}/json_files/CaniculePlot.json"), "w") as outfile:
+          outfile.write(self.plot_json)
+          print(f'Saved Canicule Plot.json')
+
+  def open (self):
+    with open(os.path.normcase(f"{self.current}/json_files/CaniculePlot.json"), 'r') as openfile:
+      self.plot_json = json.dumps(json.load(openfile))
+
+
   def main(self):
       """Fonction principale de la classe
 
           :return: objet json
           :rtype: json
       """
-      #self.find_closest()
-      self.lat = 43.8 
-      self.lon = 3.9
-      self.plot()
-      
-      return self.graphjson
+      if DEMO_MODE:
+        self.open()
+
+      else:
+        self.find_closest()
+        #self.lat = 43.8 
+        #self.lon = 3.9
+        self.plot()
+
+      self.save()
+      return self.plot_json
 
 
 class RadarChart:
@@ -246,28 +357,27 @@ class RadarChart:
     self.data =  data_import.ReadData('graph_data').read_json()
     self.val_rg = data_import.ReadData('value_range').read_json()
     self.indic = args
+    self.current = os.path.normcase(os.path.dirname(os.path.realpath(__file__)))
   
   def data_prep(self):
     """Preparation data pour format circulaire"""
     self.r = []
     self.theta = []
     for indic in self.indic:
-      r.append(self.data.loc[indic[0], 'list_x'][-1])
-      theta.append(self.indic[1])
+      self.r.append(self.data.loc[indic[0], 'list_x'][-1])
+      self.theta.append(self.indic[1])
 
   def range_bin (self):
-    self.val_max = self.val_rg.loc[list_indic, 'Max'].max()
-    self.val_min = self.val_rg.loc[list_indic, 'Max'].min()
+    self.val_max = self.val_rg.loc[self.list_indic, 'Max'].max()
+    self.val_min = self.val_rg.loc[self.list_indic, 'Max'].min()
 
     self.r_bin = [[],[],[]]
     self.r_theta = [[],[],[]]
     
     for a_bin in range(len(self.r_bin[0])):
       for indic in self.indic:
-        r.append(self.val_rg.loc[indic[0], 'list_x'][-1])
-        theta.append(self.indic[1])
-
-
+        self.r.append(self.val_rg.loc[indic[0], 'list_x'][-1])
+        self.theta.append(self.indic[1])
 
   def plot(self):
     """Actual plot"""
@@ -282,6 +392,29 @@ class RadarChart:
       show_legend=True)
 
     fig = go.Figure(data=data, layout=layout)
+    fig.write_html(f"html/radar.html")  
+    self.plot_json = json.dumps(fig, cls=plotly.utils.PlotlyJSONEncoder)
+
+  def save (self):
+      if SAVE_MODE:
+        with open(os.path.normcase(f"{self.current}/json_files/RadarChart_{self.indic}.json"), "w") as outfile:
+          outfile.write(self.plot_json)
+          print(f'Saved RadarChart_{self.indic}.json')
+
+  def open (self):
+    with open(os.path.normcase(f"{self.current}/json_files/RadarChart_{self.indic}.json"), 'r') as openfile:
+      self.plot_json = json.dumps(json.load(openfile))
+
+  def main(self):
+    if DEMO_MODE:
+      self.open()
+
+    else:
+      self.data_prep()
+      self.plot()
+
+    self.save()
+    return self.plot_json
 
 
     
@@ -292,6 +425,7 @@ if __name__ == '__main__':
   #FinancialChart('F1', 'F2').plot_sgl_line()
   #FinancialChart('F1', 'F2').plot_mltpl_line()
   
-  PlotCanicule().find_closest()
+  #PlotCanicule().find_closest()
+  RadarChart(('E0', 'Indic E'), ('E9', 'Indic1'), ('S1', 'Indic 2'), ('S3', 'Indic 4')).plot()
 
 

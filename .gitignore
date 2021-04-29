@@ -33,3 +33,4 @@ app/home/content_gen/innondations.html
 *.pyc
 *.pyc
 *.pyc
+app/home/content_gen/__pycache__/index_renderer.cpython-39.pyc
