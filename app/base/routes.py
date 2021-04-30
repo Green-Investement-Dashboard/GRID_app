@@ -67,12 +67,12 @@ def login():
                 return render
             else:
                 print('C1.1.2', request.form)
-                return render_template('accounts/login.html', msg = 'Mauvaise clé',
+                return render_template('accounts/login.html', msg = 'Clé incorrecte', type='wrong',
                     two_fa=True, pwd = True, user=user, form=login_form)
 
         else:
             print('C2.1', request.form)
-            return render_template('accounts/login.html', msg = 'Mauvais mot de passe',
+            return render_template('accounts/login.html', msg = 'Mot de passe incorrecte', type='wrong',
                     two_fa=True, pwd = True, user=user, form=login_form)
 
     elif 'login' in request.form:
@@ -93,21 +93,19 @@ def login():
                     return render
                 else:
                     print('C.1.2', request.form)
-                    return render_template('accounts/login.html', msg = 'Mauvais mot de passe',
+                    return render_template('accounts/login.html', msg = 'Mot de passe incorrecte', type='wrong',
                         two_fa=False, pwd = True, user=user, form=login_form)
 
             else :
                 print('C2.2')
                 if user.two_fa:
                     print('C2.2.1')
-                    print(f'2FA log with key {user.two_fa_key}')
-                    return render_template('accounts/login.html', msg = 'Rentrer mot de passe et clé unique',
+                    return render_template('accounts/login.html', msg = 'Rentrez votre mot de passe et clé unique', type='info',
                         two_fa=True, pwd = True, user=user, form=login_form)
 
                 else:
                     print('C2.2.2')
-                    print('Not 2FA')
-                    return render_template('accounts/login.html', msg = 'Rentrer mot de passe et clé unique',
+                    return render_template('accounts/login.html', msg = 'Rentrez votre mot de passe', type='info',
                         two_fa=False, pwd = True, user=user, form=login_form)
         else:
             return redirect(f"/register")
@@ -120,7 +118,7 @@ def login():
             return render
         """
         # Something (user or pass) is not ok
-        return render_template( 'accounts/login.html', msg='Wrong user or password', form=login_form)
+        return render_template( 'accounts/login.html', msg='Utilisateur non existant ou mot de passe incorrecte', form=login_form)
 
     if not current_user.is_authenticated:
         return render_template( 'accounts/login.html',

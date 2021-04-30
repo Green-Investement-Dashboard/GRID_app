@@ -20,7 +20,12 @@
 
             <h6 class="card-category">
                 {% if msg %}
-                  <span class="text-danger">{{ msg | safe }}</span>
+                  {% if type == "wrong"%} 
+                  <span class="text-danger">
+                  {% elif type == "info"%}
+                  <span class="text-info">
+                  {%endif%}
+                  {{ msg | safe }}</span>
                 {% else %}
                 <span>
                   Merci de vous connecter
