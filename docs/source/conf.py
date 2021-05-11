@@ -17,6 +17,10 @@ src_path = os.path.normcase(f'{src_path}')
 sys.path.insert(0, src_path)
 #Auto generation using from root: sphinx-apidoc -f -o docs/source app
 
+on_rtd = os.environ.get('READTHEDOCS') == 'True'
+if on_rtd:
+	sys.path.insert(0, os.path.abspath("../"))
+
 
 # -- Project information -----------------------------------------------------
 
