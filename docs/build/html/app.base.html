@@ -94,7 +94,7 @@
               <ul class="current">
 <li class="toctree-l1"><a class="reference internal" href="intro.html">1. Introduction</a></li>
 <li class="toctree-l1"><a class="reference internal" href="infrastructure.html">2. Infrastructure</a></li>
-<li class="toctree-l1"><a class="reference internal" href="indicateurs.html">3. Indictateurs et graphiques</a></li>
+<li class="toctree-l1"><a class="reference internal" href="indicateurs.html">3. Indicateurs et graphiques</a></li>
 <li class="toctree-l1"><a class="reference internal" href="use.html">4. Déploiement et installation</a></li>
 <li class="toctree-l1"><a class="reference internal" href="modules.html">5. Module agri_data</a></li>
 <li class="toctree-l1 current"><a class="reference internal" href="app.html">6. Module app</a><ul class="current">
@@ -198,6 +198,11 @@
 <em class="property"><span class="pre">class</span> </em><code class="sig-prename descclassname"><span class="pre">app.base.forms.</span></code><code class="sig-name descname"><span class="pre">CreateAccountForm</span></code><span class="sig-paren">(</span><em class="sig-param"><span class="o"><span class="pre">*</span></span><span class="n"><span class="pre">args</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/app/base/forms.html#CreateAccountForm"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#app.base.forms.CreateAccountForm" title="Lien permanent vers cette définition">¶</a></dt>
 <dd><p>Bases : <code class="xref py py-class docutils literal notranslate"><span class="pre">flask_wtf.form.FlaskForm</span></code></p>
 <dl class="py attribute">
+<dt id="app.base.forms.CreateAccountForm.cle">
+<code class="sig-name descname"><span class="pre">cle</span></code><em class="property"> <span class="pre">=</span> <span class="pre">&lt;UnboundField(TextField,</span> <span class="pre">('Key',),</span> <span class="pre">{'id':</span> <span class="pre">'key'})&gt;</span></em><a class="headerlink" href="#app.base.forms.CreateAccountForm.cle" title="Lien permanent vers cette définition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
 <dt id="app.base.forms.CreateAccountForm.email">
 <code class="sig-name descname"><span class="pre">email</span></code><em class="property"> <span class="pre">=</span> <span class="pre">&lt;UnboundField(TextField,</span> <span class="pre">('Email',),</span> <span class="pre">{'id':</span> <span class="pre">'email_create',</span> <span class="pre">'validators':</span> <span class="pre">[&lt;wtforms.validators.DataRequired</span> <span class="pre">object&gt;,</span> <span class="pre">&lt;wtforms.validators.Email</span> <span class="pre">object&gt;]})&gt;</span></em><a class="headerlink" href="#app.base.forms.CreateAccountForm.email" title="Lien permanent vers cette définition">¶</a></dt>
 <dd></dd></dl>
@@ -218,6 +223,11 @@
 <dt id="app.base.forms.LoginForm">
 <em class="property"><span class="pre">class</span> </em><code class="sig-prename descclassname"><span class="pre">app.base.forms.</span></code><code class="sig-name descname"><span class="pre">LoginForm</span></code><span class="sig-paren">(</span><em class="sig-param"><span class="o"><span class="pre">*</span></span><span class="n"><span class="pre">args</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/app/base/forms.html#LoginForm"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#app.base.forms.LoginForm" title="Lien permanent vers cette définition">¶</a></dt>
 <dd><p>Bases : <code class="xref py py-class docutils literal notranslate"><span class="pre">flask_wtf.form.FlaskForm</span></code></p>
+<dl class="py attribute">
+<dt id="app.base.forms.LoginForm.key">
+<code class="sig-name descname"><span class="pre">key</span></code><em class="property"> <span class="pre">=</span> <span class="pre">&lt;UnboundField(TextField,</span> <span class="pre">('Password',),</span> <span class="pre">{'id':</span> <span class="pre">'pwd_login',</span> <span class="pre">'validators':</span> <span class="pre">[&lt;wtforms.validators.DataRequired</span> <span class="pre">object&gt;,</span> <span class="pre">&lt;wtforms.validators.Length</span> <span class="pre">object&gt;]})&gt;</span></em><a class="headerlink" href="#app.base.forms.LoginForm.key" title="Lien permanent vers cette définition">¶</a></dt>
+<dd></dd></dl>
+
 <dl class="py attribute">
 <dt id="app.base.forms.LoginForm.password">
 <code class="sig-name descname"><span class="pre">password</span></code><em class="property"> <span class="pre">=</span> <span class="pre">&lt;UnboundField(PasswordField,</span> <span class="pre">('Password',),</span> <span class="pre">{'id':</span> <span class="pre">'pwd_login',</span> <span class="pre">'validators':</span> <span class="pre">[&lt;wtforms.validators.DataRequired</span> <span class="pre">object&gt;]})&gt;</span></em><a class="headerlink" href="#app.base.forms.LoginForm.password" title="Lien permanent vers cette définition">¶</a></dt>
@@ -253,6 +263,16 @@
 <dl class="py attribute">
 <dt id="app.base.models.User.password">
 <code class="sig-name descname"><span class="pre">password</span></code><a class="headerlink" href="#app.base.models.User.password" title="Lien permanent vers cette définition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt id="app.base.models.User.two_fa">
+<code class="sig-name descname"><span class="pre">two_fa</span></code><a class="headerlink" href="#app.base.models.User.two_fa" title="Lien permanent vers cette définition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt id="app.base.models.User.two_fa_key">
+<code class="sig-name descname"><span class="pre">two_fa_key</span></code><a class="headerlink" href="#app.base.models.User.two_fa_key" title="Lien permanent vers cette définition">¶</a></dt>
 <dd></dd></dl>
 
 <dl class="py attribute">

@@ -7,7 +7,7 @@
   
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   
-  <title>app.home.content_gen.map_generation &mdash; Documentation GRID 0.1</title>
+  <title>app.home.content_gen.map_generation &mdash; Documentation GRID 1.0</title>
   
 
   
@@ -92,7 +92,7 @@
               <ul>
 <li class="toctree-l1"><a class="reference internal" href="../../../../intro.html">1. Introduction</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../../../../infrastructure.html">2. Infrastructure</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../../../../indicateurs.html">3. Indictateurs et graphiques</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../indicateurs.html">3. Indicateurs et graphiques</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../../../../use.html">4. Déploiement et installation</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../../../../modules.html">5. Module agri_data</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../../../../app.html">6. Module app</a></li>
@@ -177,6 +177,7 @@
 <span class="kn">import</span> <span class="nn">tqdm</span>
 <span class="kn">import</span> <span class="nn">numpy</span>
 <span class="kn">from</span> <span class="nn">agri_data</span> <span class="kn">import</span> <span class="n">data_import</span>
+<span class="kn">from</span> <span class="nn">app</span> <span class="kn">import</span> <span class="n">SAVE_MODE</span><span class="p">,</span> <span class="n">DEMO_MODE</span>
 
 <div class="viewcode-block" id="CaniculePlot"><a class="viewcode-back" href="../../../../app.home.content_gen.html#app.home.content_gen.map_generation.CaniculePlot">[docs]</a><span class="k">class</span> <span class="nc">CaniculePlot</span><span class="p">:</span>
     <span class="sd">&quot;&quot;&quot;Cette classe génère une heat map des canicules sur la base des données de Copernicus.</span>
@@ -429,19 +430,34 @@
                            <span class="p">)</span>
         
         <span class="c1">#fig.write_html(&quot;fire.html&quot;) #utilisé en phase de test</span>
-        <span class="n">plot_json</span> <span class="o">=</span> <span class="n">json</span><span class="o">.</span><span class="n">dumps</span><span class="p">(</span><span class="n">fig</span><span class="p">,</span> <span class="bp">cls</span><span class="o">=</span><span class="n">plotly</span><span class="o">.</span><span class="n">utils</span><span class="o">.</span><span class="n">PlotlyJSONEncoder</span><span class="p">)</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">plot_json</span> <span class="o">=</span> <span class="n">json</span><span class="o">.</span><span class="n">dumps</span><span class="p">(</span><span class="n">fig</span><span class="p">,</span> <span class="bp">cls</span><span class="o">=</span><span class="n">plotly</span><span class="o">.</span><span class="n">utils</span><span class="o">.</span><span class="n">PlotlyJSONEncoder</span><span class="p">)</span></div>
 
-        <span class="k">return</span> <span class="n">plot_json</span></div>
+<div class="viewcode-block" id="FirePlot.save"><a class="viewcode-back" href="../../../../app.home.content_gen.html#app.home.content_gen.map_generation.FirePlot.save">[docs]</a>    <span class="k">def</span> <span class="nf">save</span> <span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+      <span class="k">if</span> <span class="n">SAVE_MODE</span><span class="p">:</span>
+        <span class="k">with</span> <span class="nb">open</span><span class="p">(</span><span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">normcase</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;</span><span class="si">{</span><span class="bp">self</span><span class="o">.</span><span class="n">current</span><span class="si">}</span><span class="s2">/json_files/FireMap.json&quot;</span><span class="p">),</span> <span class="s2">&quot;w&quot;</span><span class="p">)</span> <span class="k">as</span> <span class="n">outfile</span><span class="p">:</span>
+          <span class="n">outfile</span><span class="o">.</span><span class="n">write</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">plot_json</span><span class="p">)</span>
+          <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s1">&#39;Saved FireMap.json&#39;</span><span class="p">)</span></div>
+
+<div class="viewcode-block" id="FirePlot.open"><a class="viewcode-back" href="../../../../app.home.content_gen.html#app.home.content_gen.map_generation.FirePlot.open">[docs]</a>    <span class="k">def</span> <span class="nf">open</span> <span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+      <span class="k">with</span> <span class="nb">open</span><span class="p">(</span><span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">normcase</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;</span><span class="si">{</span><span class="bp">self</span><span class="o">.</span><span class="n">current</span><span class="si">}</span><span class="s2">/json_files/FireMap.json&quot;</span><span class="p">),</span> <span class="s1">&#39;r&#39;</span><span class="p">)</span> <span class="k">as</span> <span class="n">openfile</span><span class="p">:</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">plot_json</span> <span class="o">=</span> <span class="n">json</span><span class="o">.</span><span class="n">dumps</span><span class="p">(</span><span class="n">json</span><span class="o">.</span><span class="n">load</span><span class="p">(</span><span class="n">openfile</span><span class="p">))</span></div>
     
 <div class="viewcode-block" id="FirePlot.main"><a class="viewcode-back" href="../../../../app.home.content_gen.html#app.home.content_gen.map_generation.FirePlot.main">[docs]</a>    <span class="k">def</span> <span class="nf">main</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
-        <span class="sd">&quot;&quot;&quot;Fonction lançant le tout</span>
+      <span class="sd">&quot;&quot;&quot;Fonction lançant le tout</span>
 
-<span class="sd">        :return: objet json</span>
-<span class="sd">        :rtype: json</span>
-<span class="sd">        &quot;&quot;&quot;</span>
+<span class="sd">      :return: objet json</span>
+<span class="sd">      :rtype: json</span>
+<span class="sd">      &quot;&quot;&quot;</span>
+      <span class="k">if</span> <span class="n">DEMO_MODE</span><span class="p">:</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">open</span><span class="p">()</span>
+
+      <span class="k">else</span><span class="p">:</span>
         <span class="bp">self</span><span class="o">.</span><span class="n">read_json</span><span class="p">()</span>
-        <span class="n">plot_json</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">plot_cursor</span><span class="p">()</span>
-        <span class="k">return</span> <span class="n">plot_json</span></div></div>
+        <span class="bp">self</span><span class="o">.</span><span class="n">plot_cursor</span><span class="p">()</span>
+
+      <span class="bp">self</span><span class="o">.</span><span class="n">save</span><span class="p">()</span>
+
+      <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">plot_json</span></div></div>
         
          
          

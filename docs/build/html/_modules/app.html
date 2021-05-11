@@ -7,7 +7,7 @@
   
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   
-  <title>app &mdash; Documentation GRID 0.1</title>
+  <title>app &mdash; Documentation GRID 1.0</title>
   
 
   
@@ -92,7 +92,7 @@
               <ul>
 <li class="toctree-l1"><a class="reference internal" href="../intro.html">1. Introduction</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../infrastructure.html">2. Infrastructure</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../indicateurs.html">3. Indictateurs et graphiques</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../indicateurs.html">3. Indicateurs et graphiques</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../use.html">4. Déploiement et installation</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../modules.html">5. Module agri_data</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../app.html">6. Module app</a></li>
@@ -178,6 +178,11 @@
 
 <span class="n">db</span> <span class="o">=</span> <span class="n">SQLAlchemy</span><span class="p">()</span>
 <span class="n">login_manager</span> <span class="o">=</span> <span class="n">LoginManager</span><span class="p">()</span>
+
+
+<span class="n">SAVE_MODE</span><span class="p">,</span> <span class="n">DEMO_MODE</span> <span class="o">=</span> <span class="p">[</span><span class="kc">False</span><span class="p">,</span> <span class="kc">False</span><span class="p">]</span>
+<span class="c1">#SAVE_MODE, DEMO_MODE = [True, False]</span>
+<span class="c1">#SAVE_MODE, DEMO_MODE = [False, True]</span>
 
 <div class="viewcode-block" id="register_extensions"><a class="viewcode-back" href="../app.html#app.register_extensions">[docs]</a><span class="k">def</span> <span class="nf">register_extensions</span><span class="p">(</span><span class="n">app</span><span class="p">):</span>
     <span class="n">db</span><span class="o">.</span><span class="n">init_app</span><span class="p">(</span><span class="n">app</span><span class="p">)</span>

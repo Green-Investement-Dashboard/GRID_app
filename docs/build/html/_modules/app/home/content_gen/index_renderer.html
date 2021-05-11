@@ -7,7 +7,7 @@
   
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   
-  <title>app.home.content_gen.index_renderer &mdash; Documentation GRID 0.1</title>
+  <title>app.home.content_gen.index_renderer &mdash; Documentation GRID 1.0</title>
   
 
   
@@ -92,7 +92,7 @@
               <ul>
 <li class="toctree-l1"><a class="reference internal" href="../../../../intro.html">1. Introduction</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../../../../infrastructure.html">2. Infrastructure</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../../../../indicateurs.html">3. Indictateurs et graphiques</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../indicateurs.html">3. Indicateurs et graphiques</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../../../../use.html">4. Déploiement et installation</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../../../../modules.html">5. Module agri_data</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../../../../app.html">6. Module app</a></li>
@@ -164,7 +164,8 @@
            <div itemprop="articleBody">
             
   <h1>Code source de app.home.content_gen.index_renderer</h1><div class="highlight"><pre>
-<span></span><span class="sd">&quot;&quot;&quot;</span>
+<span></span><span class="c1"># -*- coding: utf-8 -*-</span>
+<span class="sd">&quot;&quot;&quot;</span>
 <span class="sd">© GRID Team, 2021</span>
 <span class="sd">&quot;&quot;&quot;</span>
 
@@ -181,28 +182,20 @@
     <span class="sd">&quot;&quot;&quot;Cette classe donne les données nécessaires au rendu des gauges indiquant les scores ESG </span>
 <span class="sd">    &quot;&quot;&quot;</span>
     <span class="k">def</span> <span class="fm">__init__</span> <span class="p">(</span><span class="bp">self</span><span class="p">):</span>
-      <span class="bp">self</span><span class="o">.</span><span class="n">data</span> <span class="o">=</span> <span class="n">data_import</span><span class="o">.</span><span class="n">ReadData</span><span class="p">(</span><span class="s1">&#39;scoring&#39;</span><span class="p">)</span><span class="o">.</span><span class="n">read_json</span><span class="p">()</span>
-        
-    
-<div class="viewcode-block" id="Scoring.bin"><a class="viewcode-back" href="../../../../app.home.content_gen.html#app.home.content_gen.index_renderer.Scoring.bin">[docs]</a>    <span class="k">def</span> <span class="nf">bin</span> <span class="p">(</span><span class="bp">self</span><span class="p">):</span>
-      <span class="sd">&quot;&quot;&quot;Génère les intervalles autour de la valeur moyenne</span>
-<span class="sd">      &quot;&quot;&quot;</span>
-      <span class="bp">self</span><span class="o">.</span><span class="n">data</span><span class="p">[</span><span class="s1">&#39;min&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="mf">0.0</span>
-      <span class="bp">self</span><span class="o">.</span><span class="n">data</span><span class="p">[</span><span class="s1">&#39;low_avg&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="mf">0.9</span><span class="o">*</span><span class="bp">self</span><span class="o">.</span><span class="n">data</span><span class="p">[</span><span class="s1">&#39;average&#39;</span><span class="p">]</span>
-      <span class="bp">self</span><span class="o">.</span><span class="n">data</span><span class="p">[</span><span class="s1">&#39;high_avg&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="mf">1.1</span><span class="o">*</span><span class="bp">self</span><span class="o">.</span><span class="n">data</span><span class="p">[</span><span class="s1">&#39;average&#39;</span><span class="p">]</span></div>
+      <span class="c1">#self.data = data_import.ReadData(&#39;scoring&#39;).read_json()</span>
+      <span class="bp">self</span><span class="o">.</span><span class="n">data</span> <span class="o">=</span>  <span class="n">data_import</span><span class="o">.</span><span class="n">ReadData</span><span class="p">(</span><span class="s1">&#39;graph_data&#39;</span><span class="p">)</span><span class="o">.</span><span class="n">read_json</span><span class="p">()</span>
+      <span class="bp">self</span><span class="o">.</span><span class="n">value_rg</span> <span class="o">=</span> <span class="n">data_import</span><span class="o">.</span><span class="n">ReadData</span><span class="p">(</span><span class="s1">&#39;value_range&#39;</span><span class="p">)</span><span class="o">.</span><span class="n">read_json</span><span class="p">()</span>
     
 <div class="viewcode-block" id="Scoring.main"><a class="viewcode-back" href="../../../../app.home.content_gen.html#app.home.content_gen.index_renderer.Scoring.main">[docs]</a>    <span class="k">def</span> <span class="nf">main</span> <span class="p">(</span><span class="bp">self</span><span class="p">):</span>
       <span class="sd">&quot;&quot;&quot;</span>
 <span class="sd">        :return: liste de listes (une par indicateur) contenant pour chaque: sa valeur, la valeur max de l&#39;echelle, une liste avec les intervalles de couleurs</span>
 <span class="sd">        :rtype: list</span>
 <span class="sd">        &quot;&quot;&quot;</span>
-      <span class="bp">self</span><span class="o">.</span><span class="n">bin</span><span class="p">()</span>
       <span class="n">list_output</span> <span class="o">=</span> <span class="p">[]</span>
-      <span class="k">for</span> <span class="n">indic</span> <span class="ow">in</span> <span class="bp">self</span><span class="o">.</span><span class="n">data</span><span class="o">.</span><span class="n">index</span><span class="p">:</span>
-        <span class="n">indic_val</span> <span class="o">=</span> <span class="p">[</span><span class="bp">self</span><span class="o">.</span><span class="n">data</span><span class="o">.</span><span class="n">loc</span><span class="p">[</span><span class="n">indic</span><span class="p">,</span> <span class="s1">&#39;value&#39;</span><span class="p">]]</span>
-        <span class="n">indic_val</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">data</span><span class="o">.</span><span class="n">loc</span><span class="p">[</span><span class="n">indic</span><span class="p">,</span> <span class="s1">&#39;max&#39;</span><span class="p">])</span>
-        <span class="n">indic_val</span><span class="o">.</span><span class="n">append</span><span class="p">([</span><span class="bp">self</span><span class="o">.</span><span class="n">data</span><span class="o">.</span><span class="n">loc</span><span class="p">[</span><span class="n">indic</span><span class="p">,</span> <span class="s1">&#39;min&#39;</span><span class="p">],</span> <span class="bp">self</span><span class="o">.</span><span class="n">data</span><span class="o">.</span><span class="n">loc</span><span class="p">[</span><span class="n">indic</span><span class="p">,</span> <span class="s1">&#39;low_avg&#39;</span><span class="p">],</span> <span class="bp">self</span><span class="o">.</span><span class="n">data</span><span class="o">.</span><span class="n">loc</span><span class="p">[</span><span class="n">indic</span><span class="p">,</span> <span class="s1">&#39;high_avg&#39;</span><span class="p">],</span> <span class="nb">float</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">data</span><span class="o">.</span><span class="n">loc</span><span class="p">[</span><span class="n">indic</span><span class="p">,</span> <span class="s1">&#39;max&#39;</span><span class="p">])])</span>
-        <span class="n">list_output</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">indic_val</span><span class="p">)</span>
+      <span class="k">for</span> <span class="n">indic</span> <span class="ow">in</span> <span class="s1">&#39;ESG&#39;</span><span class="p">:</span>
+        <span class="n">indic_val</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">data</span><span class="o">.</span><span class="n">loc</span><span class="p">[</span><span class="sa">f</span><span class="s1">&#39;</span><span class="si">{</span><span class="n">indic</span><span class="si">}</span><span class="s1">0&#39;</span><span class="p">,</span> <span class="s1">&#39;list_y&#39;</span><span class="p">][</span><span class="o">-</span><span class="mi">1</span><span class="p">]</span>
+        <span class="n">bin_val</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">value_rg</span><span class="o">.</span><span class="n">loc</span><span class="p">[</span><span class="sa">f</span><span class="s1">&#39;</span><span class="si">{</span><span class="n">indic</span><span class="si">}</span><span class="s1">0&#39;</span><span class="p">,</span> <span class="s1">&#39;Bin&#39;</span><span class="p">]</span>
+        <span class="n">list_output</span><span class="o">.</span><span class="n">append</span><span class="p">([</span><span class="n">indic_val</span><span class="p">,</span> <span class="n">bin_val</span><span class="p">])</span>
     
       <span class="k">return</span> <span class="n">list_output</span></div></div>
 

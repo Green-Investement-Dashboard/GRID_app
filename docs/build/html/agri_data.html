@@ -94,7 +94,7 @@
               <ul class="current">
 <li class="toctree-l1"><a class="reference internal" href="intro.html">1. Introduction</a></li>
 <li class="toctree-l1"><a class="reference internal" href="infrastructure.html">2. Infrastructure</a></li>
-<li class="toctree-l1"><a class="reference internal" href="indicateurs.html">3. Indictateurs et graphiques</a></li>
+<li class="toctree-l1"><a class="reference internal" href="indicateurs.html">3. Indicateurs et graphiques</a></li>
 <li class="toctree-l1"><a class="reference internal" href="use.html">4. Déploiement et installation</a></li>
 <li class="toctree-l1 current"><a class="reference internal" href="modules.html">5. Module agri_data</a><ul class="current">
 <li class="toctree-l2 current"><a class="current reference internal" href="#">5.1. agri_data package</a><ul>
@@ -197,16 +197,11 @@ alétoire à chaque login</p>
 </dd></dl>
 
 <dl class="py method">
-<dt id="agri_data.data_draw.RandomDraw.financial_data">
-<code class="sig-name descname"><span class="pre">financial_data</span></code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="_modules/agri_data/data_draw.html#RandomDraw.financial_data"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#agri_data.data_draw.RandomDraw.financial_data" title="Lien permanent vers cette définition">¶</a></dt>
-<dd><p>Télécharge et enregistre les données liées aux données financières.
-Elles sont randomisées avant l’enregistrement.</p>
-</dd></dl>
-
-<dl class="py method">
-<dt id="agri_data.data_draw.RandomDraw.gauges_val">
-<code class="sig-name descname"><span class="pre">gauges_val</span></code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="_modules/agri_data/data_draw.html#RandomDraw.gauges_val"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#agri_data.data_draw.RandomDraw.gauges_val" title="Lien permanent vers cette définition">¶</a></dt>
-<dd><p>Télécharge et enregistre les données pour générer les échelles de couleurs.</p>
+<dt id="agri_data.data_draw.RandomDraw.financial_draw">
+<code class="sig-name descname"><span class="pre">financial_draw</span></code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="_modules/agri_data/data_draw.html#RandomDraw.financial_draw"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#agri_data.data_draw.RandomDraw.financial_draw" title="Lien permanent vers cette définition">¶</a></dt>
+<dd><p>Randomisation des données financières en 2 étapes:
+1- Selection d’une valeur initiale alétoire dans un intervalle
+2- Tirage aléatoire par rapport à la valeur précédente dans un intervalle</p>
 </dd></dl>
 
 <dl class="py method">
@@ -227,16 +222,15 @@ Elles sont randomisées avant l’enregistrement.</p>
 <dd></dd></dl>
 
 <dl class="py method">
-<dt id="agri_data.data_draw.RandomDraw.scoring_data">
-<code class="sig-name descname"><span class="pre">scoring_data</span></code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="_modules/agri_data/data_draw.html#RandomDraw.scoring_data"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#agri_data.data_draw.RandomDraw.scoring_data" title="Lien permanent vers cette définition">¶</a></dt>
-<dd><p>Télécharge et enregistre les données de scoring RSE.
-Elles sont randomisées avant l’enregistrement.</p>
+<dt id="agri_data.data_draw.RandomDraw.scoring_draw">
+<code class="sig-name descname"><span class="pre">scoring_draw</span></code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="_modules/agri_data/data_draw.html#RandomDraw.scoring_draw"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#agri_data.data_draw.RandomDraw.scoring_draw" title="Lien permanent vers cette définition">¶</a></dt>
+<dd><p>Randomisation des données de scoring dans un intervalle donné</p>
 </dd></dl>
 
 <dl class="py method">
-<dt id="agri_data.data_draw.RandomDraw.stat_data">
-<code class="sig-name descname"><span class="pre">stat_data</span></code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="_modules/agri_data/data_draw.html#RandomDraw.stat_data"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#agri_data.data_draw.RandomDraw.stat_data" title="Lien permanent vers cette définition">¶</a></dt>
-<dd><p>Télécharge et enregistre les données donnant les statiques liés à la région.</p>
+<dt id="agri_data.data_draw.RandomDraw.value_rg">
+<code class="sig-name descname"><span class="pre">value_rg</span></code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="_modules/agri_data/data_draw.html#RandomDraw.value_rg"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#agri_data.data_draw.RandomDraw.value_rg" title="Lien permanent vers cette définition">¶</a></dt>
+<dd><p>Télécharge et enregistre les données donnant l’amplitude de valeurs des données</p>
 </dd></dl>
 
 </dd></dl>

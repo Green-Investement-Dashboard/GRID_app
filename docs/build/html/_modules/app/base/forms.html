@@ -7,7 +7,7 @@
   
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   
-  <title>app.base.forms &mdash; Documentation GRID 0.1</title>
+  <title>app.base.forms &mdash; Documentation GRID 1.0</title>
   
 
   
@@ -92,7 +92,7 @@
               <ul>
 <li class="toctree-l1"><a class="reference internal" href="../../../intro.html">1. Introduction</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../../../infrastructure.html">2. Infrastructure</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../../../indicateurs.html">3. Indictateurs et graphiques</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../indicateurs.html">3. Indicateurs et graphiques</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../../../use.html">4. Déploiement et installation</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../../../modules.html">5. Module agri_data</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../../../app.html">6. Module app</a></li>
@@ -174,17 +174,19 @@
 <span class="sd">&quot;&quot;&quot;</span>
 
 <span class="kn">from</span> <span class="nn">flask_wtf</span> <span class="kn">import</span> <span class="n">FlaskForm</span>
-<span class="kn">from</span> <span class="nn">wtforms</span> <span class="kn">import</span> <span class="n">TextField</span><span class="p">,</span> <span class="n">PasswordField</span><span class="p">,</span> <span class="n">SubmitField</span>
-<span class="kn">from</span> <span class="nn">wtforms.validators</span> <span class="kn">import</span> <span class="n">InputRequired</span><span class="p">,</span> <span class="n">Email</span><span class="p">,</span> <span class="n">DataRequired</span>
+<span class="kn">from</span> <span class="nn">wtforms</span> <span class="kn">import</span> <span class="n">TextField</span><span class="p">,</span> <span class="n">PasswordField</span><span class="p">,</span> <span class="n">SubmitField</span><span class="p">,</span> <span class="n">IntegerField</span>
+<span class="kn">from</span> <span class="nn">wtforms.validators</span> <span class="kn">import</span> <span class="n">InputRequired</span><span class="p">,</span> <span class="n">Email</span><span class="p">,</span> <span class="n">DataRequired</span><span class="p">,</span> <span class="n">Length</span>
 
 <div class="viewcode-block" id="LoginForm"><a class="viewcode-back" href="../../../app.base.html#app.base.forms.LoginForm">[docs]</a><span class="k">class</span> <span class="nc">LoginForm</span><span class="p">(</span><span class="n">FlaskForm</span><span class="p">):</span>
     <span class="n">username</span> <span class="o">=</span> <span class="n">TextField</span>    <span class="p">(</span><span class="s1">&#39;Username&#39;</span><span class="p">,</span> <span class="nb">id</span><span class="o">=</span><span class="s1">&#39;username_login&#39;</span>   <span class="p">,</span> <span class="n">validators</span><span class="o">=</span><span class="p">[</span><span class="n">DataRequired</span><span class="p">()])</span>
-    <span class="n">password</span> <span class="o">=</span> <span class="n">PasswordField</span><span class="p">(</span><span class="s1">&#39;Password&#39;</span><span class="p">,</span> <span class="nb">id</span><span class="o">=</span><span class="s1">&#39;pwd_login&#39;</span>        <span class="p">,</span> <span class="n">validators</span><span class="o">=</span><span class="p">[</span><span class="n">DataRequired</span><span class="p">()])</span></div>
+    <span class="n">password</span> <span class="o">=</span> <span class="n">PasswordField</span><span class="p">(</span><span class="s1">&#39;Password&#39;</span><span class="p">,</span> <span class="nb">id</span><span class="o">=</span><span class="s1">&#39;pwd_login&#39;</span>        <span class="p">,</span> <span class="n">validators</span><span class="o">=</span><span class="p">[</span><span class="n">DataRequired</span><span class="p">()])</span>
+    <span class="n">key</span> <span class="o">=</span> <span class="n">TextField</span><span class="p">(</span><span class="s1">&#39;Password&#39;</span><span class="p">,</span> <span class="nb">id</span><span class="o">=</span><span class="s1">&#39;pwd_login&#39;</span>        <span class="p">,</span> <span class="n">validators</span><span class="o">=</span><span class="p">[</span><span class="n">DataRequired</span><span class="p">(),</span> <span class="n">Length</span><span class="p">(</span><span class="nb">min</span><span class="o">=</span><span class="mi">6</span><span class="p">,</span> <span class="nb">max</span><span class="o">=</span><span class="mi">6</span><span class="p">,</span> <span class="n">message</span><span class="o">=</span><span class="s1">&#39;Code à 6 chiffres&#39;</span><span class="p">)])</span></div>
 
 <div class="viewcode-block" id="CreateAccountForm"><a class="viewcode-back" href="../../../app.base.html#app.base.forms.CreateAccountForm">[docs]</a><span class="k">class</span> <span class="nc">CreateAccountForm</span><span class="p">(</span><span class="n">FlaskForm</span><span class="p">):</span>
     <span class="n">username</span> <span class="o">=</span> <span class="n">TextField</span><span class="p">(</span><span class="s1">&#39;Username&#39;</span>     <span class="p">,</span> <span class="nb">id</span><span class="o">=</span><span class="s1">&#39;username_create&#39;</span> <span class="p">,</span> <span class="n">validators</span><span class="o">=</span><span class="p">[</span><span class="n">DataRequired</span><span class="p">()])</span>
     <span class="n">email</span>    <span class="o">=</span> <span class="n">TextField</span><span class="p">(</span><span class="s1">&#39;Email&#39;</span>        <span class="p">,</span> <span class="nb">id</span><span class="o">=</span><span class="s1">&#39;email_create&#39;</span>    <span class="p">,</span> <span class="n">validators</span><span class="o">=</span><span class="p">[</span><span class="n">DataRequired</span><span class="p">(),</span> <span class="n">Email</span><span class="p">()])</span>
-    <span class="n">password</span> <span class="o">=</span> <span class="n">PasswordField</span><span class="p">(</span><span class="s1">&#39;Password&#39;</span> <span class="p">,</span> <span class="nb">id</span><span class="o">=</span><span class="s1">&#39;pwd_create&#39;</span>      <span class="p">,</span> <span class="n">validators</span><span class="o">=</span><span class="p">[</span><span class="n">DataRequired</span><span class="p">()])</span></div>
+    <span class="n">password</span> <span class="o">=</span> <span class="n">PasswordField</span><span class="p">(</span><span class="s1">&#39;Password&#39;</span> <span class="p">,</span> <span class="nb">id</span><span class="o">=</span><span class="s1">&#39;pwd_create&#39;</span>      <span class="p">,</span> <span class="n">validators</span><span class="o">=</span><span class="p">[</span><span class="n">DataRequired</span><span class="p">()])</span>
+    <span class="n">cle</span> <span class="o">=</span><span class="n">TextField</span><span class="p">(</span><span class="s1">&#39;Key&#39;</span> <span class="p">,</span> <span class="nb">id</span><span class="o">=</span><span class="s1">&#39;key&#39;</span><span class="p">)</span></div>
 
 
 </pre></div>
