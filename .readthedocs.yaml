@@ -13,4 +13,4 @@ formats:
 python:
    version: 3.7
    install:
-   - requirements: docs/environement.yaml
+   - requirements: docs/environment.yaml
