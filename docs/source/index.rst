@@ -18,7 +18,7 @@ Ici, vous trouverez:
 5. La documentation spécifique au moudule `data_agri` qui génère les données
 6. La documentation spécifique au module `app` qui génère l'app
 
-`Documentation PDF <https://docs.grid-tech.fr/_/downloads/en/latest/pdf/>`__
+`Documentation PDF <http://docs.grid-tech.fr/grid.pdf>`__
 
 .. attention::
    Le dashboard est pour le moment optimisé uniquement pour les écrans d'ordinateurs
